@@ -30,7 +30,7 @@ enum LegalDocument: String, CaseIterable, Identifiable {
             return [
                 .init(
                     title: "1. 適用",
-                    body: "本規約は、SDXL Test（以下「本アプリ」）の利用条件を定めるものです。本アプリを利用することで、本規約に同意したものとみなします。"
+                    body: "本規約は、ローカル画像生成（以下「本アプリ」）の利用条件を定めるものです。本アプリを利用することで、本規約に同意したものとみなします。"
                 ),
                 .init(
                     title: "2. 本アプリの内容",
@@ -58,7 +58,7 @@ enum LegalDocument: String, CaseIterable, Identifiable {
                 ),
                 .init(
                     title: "8. お問い合わせ",
-                    body: "本規約に関するお問い合わせは、\(AppSupport.email) までご連絡ください。App Store ConnectのサポートURLには、公開されたサポートページのURLを設定してください。"
+                    body: "本規約に関するお問い合わせは、\(AppSupport.email) までご連絡ください。"
                 ),
             ]
         case .privacy:

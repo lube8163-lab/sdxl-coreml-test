@@ -56,7 +56,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 26, height: 26)
                             .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                        Text("SDXL 画像生成")
+                        Text("ローカル画像生成")
                             .font(.headline)
                             .foregroundStyle(AppStyle.ink)
                     }
