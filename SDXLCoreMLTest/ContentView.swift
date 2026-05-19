@@ -33,7 +33,6 @@ struct ContentView: View {
 
                 ScrollView {
                     VStack(spacing: 14) {
-                        appHeader
                         promptCard
                         generateButton
                         progressCard
@@ -85,21 +84,6 @@ struct ContentView: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
-            .safeAreaInset(edge: .bottom) {
-                if focusedField != nil {
-                    HStack {
-                        Spacer()
-                        Button("キーボードを閉じる") {
-                            hideKeyboard()
-                        }
-                        .buttonStyle(.borderedProminent)
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.top, 8)
-                    .padding(.bottom, 4)
-                    .background(.regularMaterial)
-                }
-            }
             .sheet(isPresented: $isShowingShareSheet) {
                 if let image = viewModel.image {
                     ShareSheet(items: [image])
@@ -122,68 +106,7 @@ struct ContentView: View {
                 Text(alertMessage ?? "")
             }
         }
-    }
-
-    private var appHeader: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            HStack(alignment: .center, spacing: 14) {
-                Image("AppLogoMark")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 58, height: 58)
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .stroke(Color.white.opacity(0.72), lineWidth: 1)
-                    )
-
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("ローカルAI画像生成")
-                        .font(.title3.weight(.bold))
-                        .foregroundStyle(AppStyle.ink)
-                    Text("端末内のCore MLモデルで生成します")
-                        .font(.subheadline)
-                        .foregroundStyle(AppStyle.muted)
-                }
-
-                Spacer()
-            }
-
-            HStack(spacing: 8) {
-                statusPill(systemImage: "iphone", text: "端末内処理")
-                statusPill(systemImage: "square.and.arrow.down", text: viewModel.selectedResolution.label)
-                statusPill(systemImage: "sparkles", text: viewModel.schedulerOption.displayName)
-            }
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            LinearGradient(
-                colors: [
-                    AppStyle.surface,
-                    Color(red: 0.925, green: 0.902, blue: 0.855),
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        )
-        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .stroke(Color.white.opacity(0.75), lineWidth: 1)
-        )
-        .shadow(color: Color.black.opacity(0.06), radius: 14, y: 6)
-    }
-
-    private func statusPill(systemImage: String, text: String) -> some View {
-        Label(text, systemImage: systemImage)
-            .font(.caption.weight(.semibold))
-            .foregroundStyle(AppStyle.slate)
-            .lineLimit(1)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 7)
-            .background(Color.white.opacity(0.64))
-            .clipShape(Capsule())
+        .preferredColorScheme(.light)
     }
 
     private var promptCard: some View {
@@ -409,10 +332,12 @@ struct ContentView: View {
 }
 
 private struct SecondaryActionButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.subheadline.weight(.semibold))
-            .foregroundStyle(AppStyle.slate)
+            .foregroundStyle(isEnabled ? AppStyle.slate : AppStyle.muted.opacity(0.72))
             .padding(.horizontal, 12)
             .padding(.vertical, 9)
             .background(configuration.isPressed ? AppStyle.surfaceInset.opacity(0.72) : AppStyle.surfaceInset)
@@ -421,6 +346,40 @@ private struct SecondaryActionButtonStyle: ButtonStyle {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .stroke(AppStyle.line, lineWidth: 1)
             )
+    }
+}
+
+private struct StepperControl: View {
+    let value: Int
+    let range: ClosedRange<Int>
+    let onDecrement: () -> Void
+    let onIncrement: () -> Void
+
+    var body: some View {
+        HStack(spacing: 0) {
+            Button(action: onDecrement) {
+                Image(systemName: "minus")
+                    .frame(width: 48, height: 36)
+            }
+            .disabled(value <= range.lowerBound)
+
+            Divider()
+                .frame(height: 22)
+
+            Button(action: onIncrement) {
+                Image(systemName: "plus")
+                    .frame(width: 48, height: 36)
+            }
+            .disabled(value >= range.upperBound)
+        }
+        .font(.headline.weight(.semibold))
+        .foregroundStyle(AppStyle.ink)
+        .background(AppStyle.surfaceInset)
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                .stroke(AppStyle.line, lineWidth: 1)
+        )
     }
 }
 
@@ -488,13 +447,7 @@ private struct SettingsView: View {
                 VStack(spacing: 14) {
                     SettingSection(title: "サポート", systemImage: "envelope") {
                         Link(destination: AppSupport.emailURL) {
-                            settingRowLabel("メールで問い合わせ", value: AppSupport.email, systemImage: "paperplane")
-                        }
-                        Button {
-                            UIPasteboard.general.string = AppSupport.email
-                            alertMessage = "問い合わせ先メールアドレスをコピーしました。"
-                        } label: {
-                            settingRowLabel("メールアドレスをコピー", value: AppSupport.email, systemImage: "doc.on.doc")
+                            settingRowLabel("問い合わせ", value: AppSupport.email, systemImage: "paperplane")
                         }
                     }
 
@@ -521,8 +474,14 @@ private struct SettingsView: View {
                         VStack(alignment: .leading, spacing: 8) {
                             labeledValue("ステップ数", value: "\(viewModel.stepCount)")
                             helperText("ノイズ除去の反復回数です。増やすほど時間は伸びます。")
-                            Stepper(value: stepBinding, in: 1...80) {
-                                EmptyView()
+                            HStack {
+                                Spacer()
+                                StepperControl(
+                                    value: viewModel.stepCount,
+                                    range: 1...80,
+                                    onDecrement: { stepBinding.wrappedValue -= 1 },
+                                    onIncrement: { stepBinding.wrappedValue += 1 }
+                                )
                             }
                         }
 
@@ -545,6 +504,7 @@ private struct SettingsView: View {
                                 Text(option.displayName).tag(option)
                             }
                         }
+                        .tint(AppStyle.slate)
 
                         helperText(viewModel.schedulerOption.detailText)
 
@@ -561,6 +521,7 @@ private struct SettingsView: View {
                             }
                         }
                         .pickerStyle(.segmented)
+                        .tint(AppStyle.slate)
 
                         helperText(viewModel.seedMode.detailText)
 
@@ -595,6 +556,7 @@ private struct SettingsView: View {
                                 Text(preset.displayName).tag(preset)
                             }
                         }
+                        .tint(AppStyle.slate)
 
                         helperText(viewModel.selectedNegativePromptPreset.detailText)
 
@@ -602,6 +564,7 @@ private struct SettingsView: View {
                             .scrollContentBackground(.hidden)
                             .frame(minHeight: 120)
                             .padding(10)
+                            .foregroundStyle(AppStyle.ink)
                             .background(AppStyle.surfaceInset)
                             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                             .overlay(
