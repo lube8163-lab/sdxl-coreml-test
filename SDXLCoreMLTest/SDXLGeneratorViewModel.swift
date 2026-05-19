@@ -136,12 +136,17 @@ private enum SDXLRuntimeResources {
     static let tokenizerFiles = ["vocab.json", "merges.txt"]
 }
 
-private final class RuntimeResourceCompiler {
+private final class RuntimeResourceCompiler: @unchecked Sendable {
     private let fileManager = FileManager.default
 
     func prepareCompiledResources(
         publish: @escaping @Sendable (String) -> Void
     ) throws -> URL {
+        if let precompiledURL = try bundledCompiledResourcesDirectoryIfAvailable() {
+            publish("同梱済みモデルを確認しました。")
+            return precompiledURL
+        }
+
         let bundledSourcesURL = try bundledSourcesDirectory()
         let compiledResourcesURL = try compiledResourcesDirectory()
 
@@ -176,6 +181,41 @@ private final class RuntimeResourceCompiler {
         }
 
         return compiledResourcesURL
+    }
+
+    private func bundledCompiledResourcesDirectoryIfAvailable() throws -> URL? {
+        guard let resourceURL = Bundle.main.resourceURL else {
+            throw SDXLGeneratorViewModel.GeneratorError.missingResources("Bundle.main.resourceURL")
+        }
+
+        let url = resourceURL
+            .appending(path: "BundledResources", directoryHint: .isDirectory)
+            .appending(path: "sdxl", directoryHint: .isDirectory)
+            .appending(path: "768", directoryHint: .isDirectory)
+            .appending(path: "Resources", directoryHint: .isDirectory)
+
+        guard fileManager.fileExists(atPath: url.path) else {
+            return nil
+        }
+
+        for package in SDXLRuntimeResources.modelPackages {
+            let modelURL = url.appending(path: package.compiledName, directoryHint: .isDirectory)
+            let weightsURL = modelURL
+                .appending(path: "weights", directoryHint: .isDirectory)
+                .appending(path: "weight.bin")
+            guard fileManager.fileExists(atPath: modelURL.path),
+                  fileManager.fileExists(atPath: weightsURL.path) else {
+                return nil
+            }
+        }
+
+        for tokenFile in SDXLRuntimeResources.tokenizerFiles {
+            guard fileManager.fileExists(atPath: url.appending(path: tokenFile).path) else {
+                return nil
+            }
+        }
+
+        return url
     }
 
     private func bundledSourcesDirectory() throws -> URL {
