@@ -147,6 +147,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
 				"$(SRCROOT)/artifacts/sdxl-base-ios",
 				"$(SRCROOT)/artifacts/sdxl-base-ios/Resources",
 			);

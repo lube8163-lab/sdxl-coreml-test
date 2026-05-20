@@ -25,7 +25,7 @@ do
     echo "Missing compiled model weights: ${SRC_PATH}/weights/weight.bin" >&2
     exit 1
   fi
-  /usr/bin/ditto "$SRC_PATH" "$DST/$model_dir"
+  /usr/bin/ditto --noextattr --noqtn "$SRC_PATH" "$DST/$model_dir"
 done
 
 for token_file in vocab.json merges.txt; do
@@ -34,5 +34,12 @@ for token_file in vocab.json merges.txt; do
     echo "Missing tokenizer file: $SRC_PATH" >&2
     exit 1
   fi
-  /usr/bin/ditto "$SRC_PATH" "$DST/$token_file"
+  /usr/bin/ditto --noextattr --noqtn "$SRC_PATH" "$DST/$token_file"
 done
+
+APP_ROOT="${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+
+/usr/bin/find "$APP_ROOT" -name ".DS_Store" -delete
+/usr/bin/xattr -cr "$DST_ROOT" 2>/dev/null || true
+/usr/bin/find "$APP_ROOT" -exec /usr/bin/xattr -d com.apple.FinderInfo {} \; 2>/dev/null || true
+/usr/bin/find "$APP_ROOT" -exec /usr/bin/xattr -d 'com.apple.fileprovider.fpfs#P' {} \; 2>/dev/null || true
