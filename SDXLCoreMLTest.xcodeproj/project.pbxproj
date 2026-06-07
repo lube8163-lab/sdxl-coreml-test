@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A100000A2F60000100000000 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = A10000142F60000100000000 /* StableDiffusion */; };
+		B200000A2F60000100000000 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = A10000142F60000100000000 /* StableDiffusion */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A10000032F60000100000000 /* SDXLCoreMLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDXLCoreMLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B20000032F60000100000000 /* SDXLTeacherDataset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDXLTeacherDataset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -22,6 +24,13 @@
 			);
 			target = A10000022F60000100000000 /* SDXLCoreMLTest */;
 		};
+		B200000C2F60000100000000 /* Exceptions for "SDXLTeacherDataset" folder in "SDXLTeacherDataset" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B20000022F60000100000000 /* SDXLTeacherDataset */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -31,6 +40,14 @@
 				A100000C2F60000100000000 /* Exceptions for "SDXLCoreMLTest" folder in "SDXLCoreMLTest" target */,
 			);
 			path = SDXLCoreMLTest;
+			sourceTree = "<group>";
+		};
+		B20000042F60000100000000 /* SDXLTeacherDataset */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B200000C2F60000100000000 /* Exceptions for "SDXLTeacherDataset" folder in "SDXLTeacherDataset" target */,
+			);
+			path = SDXLTeacherDataset;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +61,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B20000062F60000100000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B200000A2F60000100000000 /* StableDiffusion in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000042F60000100000000 /* SDXLCoreMLTest */,
+				B20000042F60000100000000 /* SDXLTeacherDataset */,
 				A10000052F60000100000000 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000032F60000100000000 /* SDXLCoreMLTest.app */,
+				B20000032F60000100000000 /* SDXLTeacherDataset.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +117,30 @@
 			productReference = A10000032F60000100000000 /* SDXLCoreMLTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B20000022F60000100000000 /* SDXLTeacherDataset */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B20000102F60000100000000 /* Build configuration list for PBXNativeTarget "SDXLTeacherDataset" */;
+			buildPhases = (
+				B20000072F60000100000000 /* Sources */,
+				B20000082F60000100000000 /* Resources */,
+				B20000062F60000100000000 /* Frameworks */,
+				B20000152F60000100000000 /* Embed Bundled Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B20000042F60000100000000 /* SDXLTeacherDataset */,
+			);
+			name = SDXLTeacherDataset;
+			packageProductDependencies = (
+				A10000142F60000100000000 /* StableDiffusion */,
+			);
+			productName = SDXLTeacherDataset;
+			productReference = B20000032F60000100000000 /* SDXLTeacherDataset.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +152,9 @@
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					A10000022F60000100000000 = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+					B20000022F60000100000000 = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
 				};
@@ -123,6 +177,7 @@
 			projectRoot = "";
 			targets = (
 				A10000022F60000100000000 /* SDXLCoreMLTest */,
+				B20000022F60000100000000 /* SDXLTeacherDataset */,
 			);
 		};
 /* End PBXProject section */
@@ -135,10 +190,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B20000082F60000100000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		A10000152F60000100000000 /* Embed Bundled Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
+				"$(SRCROOT)/artifacts/sdxl-base-ios",
+				"$(SRCROOT)/artifacts/sdxl-base-ios/Resources",
+			);
+			name = "Embed Bundled Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/BundledResources",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n\"${SRCROOT}/scripts/embed_bundled_resources.sh\"\n";
+		};
+		B20000152F60000100000000 /* Embed Bundled Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -339,6 +424,56 @@
 			};
 			name = Release;
 		};
+		B20000112F60000100000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YY58VZMU56;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SDXLTeacherDataset/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlteacherdataset;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B20000122F60000100000000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YY58VZMU56;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SDXLTeacherDataset/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlteacherdataset;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,6 +491,15 @@
 			buildConfigurations = (
 				A10000112F60000100000000 /* Debug */,
 				A10000122F60000100000000 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B20000102F60000100000000 /* Build configuration list for PBXNativeTarget "SDXLTeacherDataset" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B20000112F60000100000000 /* Debug */,
+				B20000122F60000100000000 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
