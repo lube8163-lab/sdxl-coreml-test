@@ -289,3 +289,11 @@ xcodebuild build \
 
 - [Apple ml-stable-diffusion README](https://github.com/apple/ml-stable-diffusion)
 - [Hugging Face: Stable Diffusion XL on Mac with Advanced Core ML Quantization](https://huggingface.co/blog/stable-diffusion-xl-coreml)
+
+## License
+
+Repository-authored application code, scripts, and documentation are licensed
+under the MIT License. Apple's vendored Stable Diffusion source retains its
+upstream MIT license, while model checkpoints and converted artifacts remain
+under their respective upstream terms. See `LICENSE` and
+`THIRD_PARTY_NOTICES.md`.
