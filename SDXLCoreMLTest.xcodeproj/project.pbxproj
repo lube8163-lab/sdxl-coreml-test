@@ -6,12 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+        D50000122F60000100000000 = {isa = PBXContainerItemProxy; containerPortal = A10000002F60000100000000; proxyType = 1; remoteGlobalIDString = A10000022F60000100000000; remoteInfo = SDXLCoreMLTest; };
+/* End PBXContainerItemProxy section */
+/* Begin PBXTargetDependency section */
+        D50000112F60000100000000 = {isa = PBXTargetDependency; target = A10000022F60000100000000; targetProxy = D50000122F60000100000000; };
+/* End PBXTargetDependency section */
+
 /* Begin PBXBuildFile section */
-		A100000A2F60000100000000 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = A10000142F60000100000000 /* StableDiffusion */; };
+		A100000A2F60000100000000 /* LocalImageGeneration in Frameworks */ = {isa = PBXBuildFile; productRef = F40000022F60000100000000 /* LocalImageGeneration */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A10000032F60000100000000 /* SDXLCoreMLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDXLCoreMLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50000032F60000100000000 /* LocalImageGenerationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = LocalImageGenerationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -33,6 +41,7 @@
 			path = SDXLCoreMLTest;
 			sourceTree = "<group>";
 		};
+		D50000042F60000100000000 /* LocalImageGenerationUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = LocalImageGenerationUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,16 +49,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A100000A2F60000100000000 /* StableDiffusion in Frameworks */,
+				A100000A2F60000100000000 /* LocalImageGeneration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D50000062F60000100000000 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A10000012F60000100000000 = {
 			isa = PBXGroup;
 			children = (
+                D50000042F60000100000000 /* LocalImageGenerationUITests */,
 				A10000042F60000100000000 /* SDXLCoreMLTest */,
 				A10000052F60000100000000 /* Products */,
 			);
@@ -58,6 +69,7 @@
 		A10000052F60000100000000 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+                D50000032F60000100000000 /* LocalImageGenerationUITests.xctest */,
 				A10000032F60000100000000 /* SDXLCoreMLTest.app */,
 			);
 			name = Products;
@@ -84,12 +96,24 @@
 			);
 			name = SDXLCoreMLTest;
 			packageProductDependencies = (
-				A10000142F60000100000000 /* StableDiffusion */,
+				F40000022F60000100000000 /* LocalImageGeneration */,
 			);
 			productName = SDXLCoreMLTest;
 			productReference = A10000032F60000100000000 /* SDXLCoreMLTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D50000022F60000100000000 /* LocalImageGenerationUITests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = D50000102F60000100000000;
+            buildPhases = (D50000072F60000100000000, D50000062F60000100000000, D50000082F60000100000000);
+            buildRules = ();
+            dependencies = (D50000112F60000100000000);
+            fileSystemSynchronizedGroups = (D50000042F60000100000000);
+            name = LocalImageGenerationUITests;
+            productName = LocalImageGenerationUITests;
+            productReference = D50000032F60000100000000;
+            productType = "com.apple.product-type.bundle.ui-testing";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -115,6 +139,7 @@
 			mainGroup = A10000012F60000100000000;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				F40000012F60000100000000 /* LocalImageGeneration */,
 				A10000132F60000100000000 /* XCLocalSwiftPackageReference "Vendor/StableDiffusionLocal" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -122,6 +147,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+                D50000022F60000100000000 /* LocalImageGenerationUITests */,
 				A10000022F60000100000000 /* SDXLCoreMLTest */,
 			);
 		};
@@ -135,6 +161,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D50000082F60000100000000 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -148,8 +175,8 @@
 			);
 			inputPaths = (
 				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
-				"$(SRCROOT)/artifacts/sdxl-base-ios",
-				"$(SRCROOT)/artifacts/sdxl-base-ios/Resources",
+				"$(SRCROOT)/SDXLCoreMLTest/Resources/ImageSafetyClassifier.mlpackage",
+				"$(SRCROOT)/artifacts/flux2-klein-4b-512",
 			);
 			name = "Embed Bundled Resources";
 			outputFileListPaths = (
@@ -159,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -eu\n\"${SRCROOT}/scripts/embed_bundled_resources.sh\"\n";
+			shellScript = "set -eu\n/usr/bin/python3 \"${SRCROOT}/scripts/embed_flux_resources.py\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -171,6 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D50000072F60000100000000 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -292,19 +320,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YY58VZMU56;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SDXLCoreMLTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -318,19 +346,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YY58VZMU56;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SDXLCoreMLTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -339,6 +367,18 @@
 			};
 			name = Release;
 		};
+		D500000D2F60000100000000 = {isa = XCBuildConfiguration; buildSettings = {
+            CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = YY58VZMU56; GENERATE_INFOPLIST_FILE = YES;
+            IPHONEOS_DEPLOYMENT_TARGET = 27.0.1; SDKROOT = iphoneos; TARGETED_DEVICE_FAMILY = 1;
+            PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest.uitests; PRODUCT_NAME = "$(TARGET_NAME)";
+            SWIFT_VERSION = 6.0; TEST_TARGET_NAME = SDXLCoreMLTest;
+        }; name = Debug; };
+        D500000E2F60000100000000 = {isa = XCBuildConfiguration; buildSettings = {
+            CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = YY58VZMU56; GENERATE_INFOPLIST_FILE = YES;
+            IPHONEOS_DEPLOYMENT_TARGET = 27.0.1; SDKROOT = iphoneos; TARGETED_DEVICE_FAMILY = 1;
+            PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest.uitests; PRODUCT_NAME = "$(TARGET_NAME)";
+            SWIFT_VERSION = 6.0; TEST_TARGET_NAME = SDXLCoreMLTest;
+        }; name = Release; };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -360,12 +400,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D50000102F60000100000000 = {isa = XCConfigurationList; buildConfigurations = (D500000D2F60000100000000, D500000E2F60000100000000); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
 		A10000132F60000100000000 /* XCLocalSwiftPackageReference "Vendor/StableDiffusionLocal" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Vendor/StableDiffusionLocal;
+		};
+		F40000012F60000100000000 /* LocalImageGeneration */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Vendor/LocalImageGeneration;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -374,6 +419,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A10000132F60000100000000 /* XCLocalSwiftPackageReference "Vendor/StableDiffusionLocal" */;
 			productName = StableDiffusion;
+		};
+		F40000022F60000100000000 /* LocalImageGeneration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F40000012F60000100000000 /* LocalImageGeneration */;
+			productName = LocalImageGeneration;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

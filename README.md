@@ -1,299 +1,82 @@
-# Stable Diffusion Core ML iPhone Test
+# ローカル画像生成 — FLUX.2 on an 8 GB iPhone
 
-This workspace is for building fresh Stable Diffusion -> Core ML test apps for iPhone, starting from model conversion rather than relying on Apple's published converted artifacts.
+The active `SDXLCoreMLTest` iPhone app runs **FLUX.2 Klein 4B, 512×512, four steps** with Apple's CoreAI GPU runtime. Prompt encoding, generation and mandatory output safety checks run on the device. Physical validation used an **iPhone 17, 8 GB RAM, iOS 27.0.1 / 24A446**, on 2026-10-13/14. This repository preserves the [earlier Stable Diffusion conversion work](docs/legacy-conversion.md).
 
-## Current direction
+![Actual checked output on iPhone 17](measurements/2026-10-14/iphone17-generated-downloaded.png)
 
-The current milestone is a reproducible conversion pipeline that is safer on 8 GB Macs and produces assets suitable for iPhone deployment:
+[26-second real-device demo](media/iphone17-flux2-demo.mp4) · [15-second download recording](media/iphone17-model-download.mp4) · [JSON / CSV measurements](measurements/2026-10-14/README.md) · [Related work and reporting scope](docs/flux2-ios-report.md)
 
-- SDXL base 1.0 -> Core ML
-- SD 1.5 -> Core ML
-- iPhone/iPad-oriented 768x768 latent size (`96x96`)
-- `SPLIT_EINSUM` attention for Neural Engine deployment
-- sequential per-component conversion to reduce peak host RAM usage
-- optional UNet chunking
-- optional 6-bit quantization
-- optional mixed-bit palettization pass for lower memory usage
+## First use and app size
 
-## Why this setup
+The app includes onboarding and an explicit download announcement. Generation weights are **excluded from the default build**. The safety classifier stays bundled. The tested signed development app is approximately **30 MB**, compared with approximately **4.07 GB** when generation weights were bundled. These are app-directory measurements, not App Store download-size estimates.
 
-Apple's current public guidance for SDXL on iPhone/iPad is effectively:
+| Storage item | Bytes | Decimal size |
+| --- | ---: | ---: |
+| First model download | 3,542,141,404 | 3.54 GB |
+| Installed generation files | 4,043,710,174 | 4.04 GB |
+| Initial free-space check, including cache budget | 8,830,581,086 | About 9 GB free |
 
-- `iOS 17+`
-- `CPU_AND_NE`
-- `SPLIT_EINSUM`
-- `reduceMemory = true`
-- 768x768 output for mobile
-- aggressive UNet compression for practical memory use on iPhone
+The tested app container also held 4,032,691,053 bytes of CoreAI compilation cache, in addition to model files. Total model/cache/app usage is approximately 8.2 GB; cache growth can vary. The initial free-space check includes a 4.25 GB runtime-cache budget and margin.
 
-The published `apple/coreml-stable-diffusion-xl-base-ios` benchmark also uses a heavily compressed UNet, so reproducing and controlling that pipeline ourselves is the right starting point if preconverted models were crashing on your devices.
+MiM's existing Cloudflare R2 server supplies 18 resumable fragments. Wi-Fi is the default; cellular data requires an explicit switch. Pausing or backgrounding retains received bytes. The installer checks the archive SHA-256 and all 17 required files before activating an installation. It handles staging, cancellation, space checks and backup exclusions, then removes the archive. Installed hashes are checked at app launch. Prompts/images are never sent to this server; normal connection metadata such as IP addresses reaches the distribution provider.
 
-## Files
+The physical download test paused at 12,361,088 bytes and resumed the real HTTP transfer. An initial hashing implementation hit iOS's process-memory limit after download; draining autoreleased buffers per read fixed it. The complete archive was reused, all hashes passed, and installation finished in 22.75 seconds. Verification/extraction reached 145 MiB of sampled process footprint. These observations are not a general network-speed benchmark.
 
-- `scripts/convert_stable_diffusion.py`
-  Stage-by-stage conversion wrapper around Apple's `python_coreml_stable_diffusion.torch2coreml` for both SDXL and SD 1.5.
-- `scripts/convert_sdxl.py`
-  Older SDXL-specific wrapper kept for reference.
-- `scripts/apply_mixed_bit_palettization.py`
-  Wrapper for applying a mixed-bit recipe to a converted UNet.
-- `scripts/run_first_conversion.sh`
-  Local convenience wrapper that uses the workspace venv and local Apple repo for the first SDXL base float16 conversion.
-- `scripts/run_first_sd15_conversion.sh`
-  Local convenience wrapper for a first SD 1.5 512x512 float16 conversion.
-- `scripts/run_first_pre_analysis.sh`
-  Local convenience wrapper for Apple's mixed-bit recipe pre-analysis.
-- `scripts/run_unet_6bit_palettization.sh`
-  Applies 6-bit palettization to the converted UNet after float16 conversion succeeds.
-- `scripts/run_sd15_unet_6bit_palettization.sh`
-  Applies 6-bit palettization to the converted SD 1.5 UNet after float16 conversion succeeds.
-- `scripts/convert_swinir_sr.py`
-  Converts the official SwinIR lightweight x2 super-resolution weights into fixed-size Core ML upscalers for iPhone use. The app can reuse the `512x512` model as a tiled fallback for `768x768` SDXL outputs.
-- `scripts/chunk_palettized_unet_for_ios.sh`
-  Splits the palettized UNet into `UnetChunk1` and `UnetChunk2` for iPhone deployment.
-- `scripts/verify_ios_resources.sh`
-  Checks that the iPhone app has the expected Core ML resource set.
-- `scripts/package_resources_for_ios.sh`
-  Zips the finished `Resources/` directory for easier transfer/testing.
-- `SDXLCoreMLTest.xcodeproj`
-  Minimal SwiftUI iPhone test app wired to Apple's `StableDiffusion` runtime through a local package wrapper.
-- `Vendor/StableDiffusionLocal`
-  Local Swift package exposing only Apple's `StableDiffusion` library target so Xcode does not need the CLI dependency tree.
+## Physical measurements
 
-## Expected external dependencies
+The generation benchmark used a separately signed copy with the production engine, RAM guard, GPU configuration, resource policy and safety gate. A startup driver invoked the real view model. Initial preparation was separate; each image time includes six output safety checks. Two runs completed with matching fixed-seed pixels.
 
-This repo does not vendor Apple's conversion code. The scripts expect a local clone of:
+| iPhone 17 operation | Run 1 | Run 2 |
+| --- | ---: | ---: |
+| Initial prompt preparation | 5.69 s | 3.95 s |
+| First image after preparation | 13.97 s | 14.34 s |
+| Same prompt and seed again | 10.98 s | 11.36 s |
+| Changed prompt | 17.96 s | 18.03 s |
+| Generation after 32-second idle | 12.74 s | 13.22 s |
+| Generation after full release | 18.06 s | 18.17 s |
 
-- `https://github.com/apple/ml-stable-diffusion`
+![Two physical runs, including safety](measurements/2026-10-14/iphone17-timings.svg)
 
-Generated Core ML model packages and Hugging Face caches are intentionally not tracked in git. They are large local build artifacts and need to be regenerated with the scripts in this repo, or copied into `artifacts/` before making an App Store build.
+Stage-sampled physical footprint reached 1,529–1,570 MiB. This is not a continuous maximum, a GPU allocation total or the minimum required RAM. Process footprint and Metal allocation must not be added together. No increased-memory-limit entitlement is used.
 
-Recommended local layout:
+The separate **downloaded-model demo** uses changed prompts: the UI reports 23.0 seconds for the apple and 16.7 seconds for the robot. Those differ from the prepared-prompt benchmark. The robot clip is a trimmed, silent USB recording at 720×1280 / 30 fps, at normal elapsed time. A test-only startup driver supplies prompts and invokes production actions; the rendered app, computation and classifier are real.
 
-```text
-SDXL_test/
-├── README.md
-├── artifacts/
-├── recipes/
-└── scripts/
+An iPhone 14 / iOS 27.2 / 24B5099f reports 5,986,615,296 bytes of RAM. The normal app refuses generation under its 7.5-billion-byte guard. Lowering only that guard in an isolated experiment still produced no images: transformer GPU specialization aborted with `std::bad_alloc`. Summary-metadata lookup let Qwen run, but the transformer still aborted; CPU specialization returned a model-loading error. RAM, A15 GPU constraints and the different OS version were not isolated. **6 GB support has not been demonstrated.** Known-benign six-view classification did work on that phone.
+
+## Optimizations and mandatory safety
+
+MiM's dedicated single-function 512px transformer keeps its 4-bit weights, tokenizer/metadata reuse and sequential stage loading. The app prepares the current allowed prompt at launch/resume, retains the denoiser for at most 30 seconds of foreground idle, and keeps three CPU conditioning entries within 45 MiB. An uncached prompt releases the denoiser before Qwen loads. Low-power or serious/critical thermal states disable retention. Idle expiry preserves light resources; full release clears them. Every generation runs and is classified again.
+
+Prompt checks run before inference. Only a typed, checked result reaches display, Photos or sharing. The whole image requires SFW probability ≥0.90 and combined unsafe probability ≤0.10. Five overlapping 67% crops each veto combined unsafe probability ≥0.90. All six results must be present, normalized, finite and valid. Missing assets, invalid scores, refusal and cancellation stop output. There is no safety-disable control, unchecked preview or model-import path.
+
+Foreground memory warnings finish an active checked operation before releasing owned resources, without immediately preloading again. Backgrounding/user cancellation still interrupt. A UIKit notification at step one passed the regression and triggered cleanup; it was not an induced memory-pressure stress test. The original warning-handler cancellation and hashing failure are retained in the reports.
+
+Input regressions, malformed-score failures, missing-classifier refusal, benign device cases and installer validation passed. Adversarial classifier effectiveness, broad prompt coverage, Photos/share permissions, sustained thermal behavior and App Review acceptance remain unverified. XCTest UI-runner initialization timed out; physical flows use isolated startup drivers and real app screens.
+
+## Build
+
+Use Xcode 27 and a compatible physical iPhone, iOS 27.0.1+, with at least 8 GB RAM. Set your signing team/bundle identifiers. SDK availability does not prove every device works.
+
+```sh
+python3 scripts/prepare_safety_assets.py
+xcodebuild -project SDXLCoreMLTest.xcodeproj -scheme SDXLCoreMLTest \
+  -configuration Release -destination 'generic/platform=iOS' \
+  -derivedDataPath /tmp/local-image-generation-build -jobs 2 build
 ```
 
-Apple's repo can live anywhere, for example:
+The preparation script fetches only the pinned small classifier; build checks reject incomplete/modified assets. Users download generation models in the app. Simulator compilation can check UI/refusal code; CoreAI inference requires a physical device. `LOCAL_FLUX_EMBED_MODELS=YES` exists only for legacy isolated probes with locally prepared generation assets.
 
-```text
-~/src/ml-stable-diffusion
+```sh
+swift test --package-path Vendor/LocalGenerationSafety \
+  --scratch-path /tmp/local-generation-safety-tests -j 2
+swift test --package-path Vendor/LocalImageGeneration \
+  --scratch-path /tmp/local-generation-tests -c release -j 2
 ```
 
-## Example flow
+See [measurement reproduction](measurements/2026-10-14/README.md) for the distinct drivers. Model weights/build artifacts are ignored by Git.
 
-1. Create a Python environment inside Apple's repo and install its dependencies.
-2. Run `scripts/convert_sdxl.py` to export SDXL base for iPhone-oriented settings.
-3. If memory is still too high on device, apply 6-bit quantization or mixed-bit palettization to the UNet.
-4. Feed the resulting `Resources/` directory into a Swift iOS app using Apple's `StableDiffusion` package.
+## Attribution
 
-For multi-model app testing, the recommended output layout is:
+This is an integration and device-validation report using existing work. FLUX.2 is by [Black Forest Labs](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B); Qwen3 is by Alibaba Cloud. Assets derive from [dushandz's CoreAI conversion](https://huggingface.co/dushandz/FLUX.2-klein-4B-CoreAI/tree/a7f65cdd6b2c8e2616dab3887efd0ae6ce983e44): we extract its existing 512px half graph as `main` and retain converted 4-bit weights. Apple's [CoreAI runtime](https://github.com/apple/coreai-models) is adapted at `97a14be40bb1c5b95badb08b8532530443d62d26`. The safety conversion is by [InspiratioNULL](https://huggingface.co/InspiratioNULL/image-safety-classifier-s-CoreML).
 
-```text
-artifacts/ios-models/
-├── sd15/
-│   ├── 512/Resources/
-│   ├── 640/Resources/
-│   └── 768/Resources/
-└── sdxl/
-    ├── 512/Resources/
-    ├── 768/Resources/
-    └── 1024/Resources/
-```
-
-Example conversion:
-
-```bash
-python3 scripts/convert_sdxl.py \
-  --apple-repo ~/src/ml-stable-diffusion \
-  --python-bin ./.venv/bin/python \
-  --output-dir ./artifacts/sdxl-base-ios \
-  --model-version stabilityai/stable-diffusion-xl-base-1.0 \
-  --custom-vae-version madebyollin/sdxl-vae-fp16-fix \
-  --skip-chunk-unet
-```
-
-Example fixed 6-bit UNet palettization after conversion:
-
-```bash
-python3 scripts/apply_fixed_bit_palettization.py \
-  --mlpackage-path ./artifacts/sdxl-base-ios/Stable_Diffusion_version_stabilityai_stable-diffusion-xl-base-1.0_unet.mlpackage \
-  --output-mlpackage-path ./artifacts/sdxl-base-ios/Stable_Diffusion_version_stabilityai_stable-diffusion-xl-base-1.0_unet_6bit.mlpackage \
-  --nbits 6 \
-  --compile-to ./artifacts/sdxl-base-ios/Resources \
-  --final-name Unet
-```
-
-Example chunking the palettized UNet for iPhone runtime:
-
-```bash
-./scripts/chunk_palettized_unet_for_ios.sh
-```
-
-Example mixed-bit pre-analysis:
-
-```bash
-python3 scripts/run_mixed_bit_pre_analysis.py \
-  --apple-repo ~/src/ml-stable-diffusion \
-  --python-bin ./.venv/bin/python \
-  --output-dir ./recipes \
-  --model-version stabilityai/stable-diffusion-xl-base-1.0
-```
-
-Example mixed-bit application:
-
-```bash
-python3 scripts/apply_mixed_bit_palettization.py \
-  --apple-repo ~/src/ml-stable-diffusion \
-  --python-bin ./.venv/bin/python \
-  --converted-model-dir ./artifacts/sdxl-base-ios \
-  --pre-analysis-json ./recipes/stabilityai_stable-diffusion-xl-base-1.0.json \
-  --selected-recipe recipe_4.04_bit_mixedpalette
-```
-
-## Notes
-
-- The conversion wrappers default to separate subprocesses per model component because Apple explicitly recommends this for low-memory conversion on 8 GB systems.
-- The conversion and pre-analysis wrappers default to a workspace-local cache at `.cache/huggingface`, avoiding permission issues with `~/.cache`.
-- The recommended path in this workspace is float16 conversion first, then separate UNet-only palettization, then chunking that palettized UNet for iPhone runtime.
-- Apple `torch2coreml --quantize-nbits` also tries to quantize existing text encoders, which failed here.
-- `madebyollin/sdxl-vae-fp16-fix` is exposed as an option because Apple's own SDXL mobile benchmark used it to keep the VAE on float16.
-- The scripts currently target the base model only. Refiner support can be added after the iPhone baseline is stable.
-
-## Next step
-
-After the conversion pipeline is validated locally, the next implementation step is a minimal iOS app that:
-
-- downloads or locates `Resources/`
-- loads `StableDiffusionPipeline` with `reduceMemory = true`
-- uses `.cpuAndNeuralEngine`
-- runs a fixed prompt/seed smoke test on device
-
-## iPhone test app
-
-The workspace now includes a minimal app at `SDXLCoreMLTest.xcodeproj`.
-
-What it does:
-
-- uses both `StableDiffusionXLPipeline` and `StableDiffusionPipeline`
-- forces `reduceMemory = true`
-- uses `.cpuAndNeuralEngine`
-- targets `iOS 17+`
-- supports model selection between `SDXL` and `SD 1.5`
-- supports resolution presets and switches between preconverted resource folders
-- preloads resources on launch and releases them on backgrounding
-
-Expected resource location inside the app sandbox:
-
-```text
-Documents/Models/<model>/<resolution>/Resources
-```
-
-Examples:
-
-```text
-Documents/Models/sdxl/768/Resources
-Documents/Models/sd15/512/Resources
-```
-
-Recommended test flow:
-
-1. Build and install `SDXLCoreMLTest` on the iPhone.
-2. Copy the converted `Resources/` directory into the app's Documents folder using Finder file sharing.
-3. Launch the app and choose the model family and resolution that match the copied resources.
-4. Run the built-in prompt first before changing settings.
-
-## First commands in this workspace
-
-After accepting the SDXL license on Hugging Face and making a token available, the shortest path is:
-
-```bash
-chmod +x scripts/run_first_conversion.sh scripts/run_first_pre_analysis.sh scripts/run_unet_6bit_palettization.sh scripts/chunk_palettized_unet_for_ios.sh
-HF_TOKEN=... ./scripts/run_first_conversion.sh
-```
-
-For a first SD 1.5 build:
-
-```bash
-HF_TOKEN=... ./scripts/run_first_sd15_conversion.sh
-```
-
-Then compress only the SD 1.5 UNet:
-
-```bash
-./scripts/run_sd15_unet_6bit_palettization.sh
-```
-
-Then compress only the UNet:
-
-```bash
-./scripts/run_unet_6bit_palettization.sh
-```
-
-Then split that palettized UNet into two runtime chunks:
-
-```bash
-./scripts/chunk_palettized_unet_for_ios.sh
-```
-
-Verify the final mobile resource set:
-
-```bash
-chmod +x scripts/*.sh
-./scripts/verify_ios_resources.sh
-```
-
-Optional zip packaging:
-
-```bash
-./scripts/package_resources_for_ios.sh
-```
-
-Optional mixed-bit recipe generation:
-
-```bash
-HF_TOKEN=... ./scripts/run_first_pre_analysis.sh
-```
-
-Optional super-resolution conversion:
-
-```bash
-python3 scripts/convert_swinir_sr.py --sizes 512 --compile
-```
-
-## Store support pages
-
-GitHub Pages can serve the App Store support and privacy policy pages from `docs/`:
-
-- `docs/support.html`
-- `docs/privacy.html`
-
-After enabling Pages for the repository, use the public `support.html` URL as the App Store Connect Support URL and the public `privacy.html` URL as the Privacy Policy URL.
-
-Unsigned compile-only verification command used here:
-
-```bash
-xcodebuild build \
-  -project SDXLCoreMLTest.xcodeproj \
-  -scheme SDXLCoreMLTest \
-  -destination 'generic/platform=iOS' \
-  CODE_SIGNING_ALLOWED=NO \
-  -derivedDataPath .build/xcode-derived-data-nosign \
-  -clonedSourcePackagesDirPath .build/xcode-source-packages
-```
-
-## Sources
-
-- [Apple ml-stable-diffusion README](https://github.com/apple/ml-stable-diffusion)
-- [Hugging Face: Stable Diffusion XL on Mac with Advanced Core ML Quantization](https://huggingface.co/blog/stable-diffusion-xl-coreml)
-
-## License
-
-Repository-authored application code, scripts, and documentation are licensed
-under the MIT License. Apple's vendored Stable Diffusion source retains its
-upstream MIT license, while model checkpoints and converted artifacts remain
-under their respective upstream terms. See `LICENSE` and
-`THIRD_PARTY_NOTICES.md`.
+Repository-authored code is MIT. Vendored runtime, models and classifier retain their own licenses. See [third-party notices](THIRD_PARTY_NOTICES.md) and notices bundled in the app.

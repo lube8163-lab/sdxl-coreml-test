@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import LocalImageGeneration
 
 enum AppStyle {
     static let background = Color(red: 0.965, green: 0.953, blue: 0.925)
@@ -31,19 +32,24 @@ struct ContentView: View {
                 AppStyle.background
                     .ignoresSafeArea()
 
+                ScrollViewReader { scroller in
                 ScrollView {
                     VStack(spacing: 14) {
                         promptCard
                         generateButton
                         progressCard
 
-                        if let image = viewModel.image {
-                            resultCard(image: image)
+                        if let result = viewModel.result {
+                            resultCard(result: result).id("generated-result")
                         }
                     }
                     .padding(.horizontal, 16)
                     .padding(.top, 10)
                     .padding(.bottom, 24)
+                }
+                .onChange(of: viewModel.result != nil) { _, ready in
+                    if ready { withAnimation { scroller.scrollTo("generated-result", anchor: .top) } }
+                }
                 }
             }
             .navigationTitle("")
@@ -74,6 +80,7 @@ struct ContentView: View {
                             .clipShape(Circle())
                             .shadow(color: Color.black.opacity(0.08), radius: 8, y: 3)
                     }
+                    .accessibilityIdentifier("settings.open")
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -85,8 +92,8 @@ struct ContentView: View {
             }
             .scrollDismissesKeyboard(.interactively)
             .sheet(isPresented: $isShowingShareSheet) {
-                if let image = viewModel.image {
-                    ShareSheet(items: [image])
+                if let result = viewModel.result {
+                    ShareSheet(result: result)
                 }
             }
             .sheet(isPresented: $isShowingSettings) {
@@ -139,6 +146,7 @@ struct ContentView: View {
                         )
 
                     TextEditor(text: $viewModel.prompt)
+                        .accessibilityIdentifier("generation.prompt")
                         .focused($focusedField, equals: .prompt)
                         .scrollContentBackground(.hidden)
                         .frame(minHeight: 180)
@@ -193,7 +201,8 @@ struct ContentView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
             .shadow(color: Color.black.opacity(0.12), radius: 12, y: 6)
         }
-        .disabled(viewModel.isGenerating)
+        .disabled(viewModel.isGenerating || viewModel.isPreparing)
+        .accessibilityIdentifier("generation.generate")
     }
 
     private var progressCard: some View {
@@ -201,6 +210,7 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
                     Label(viewModel.progressTitle, systemImage: viewModel.isGenerating ? "wand.and.stars" : "checkmark.seal")
+                        .accessibilityIdentifier("generation.status")
                         .font(.headline)
                         .foregroundStyle(AppStyle.ink)
                     Spacer()
@@ -223,6 +233,11 @@ struct ContentView: View {
                     .font(.subheadline)
                     .foregroundStyle(AppStyle.slate)
 
+                if viewModel.isGenerating {
+                    Button("生成を中断", role: .cancel) { viewModel.cancelGeneration() }
+                        .buttonStyle(SecondaryActionButtonStyle())
+                }
+
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .font(.footnote)
@@ -233,7 +248,7 @@ struct ContentView: View {
         }
     }
 
-    private func resultCard(image: UIImage) -> some View {
+    private func resultCard(result: GeneratedImage) -> some View {
         card {
             VStack(alignment: .leading, spacing: 14) {
                 Label("生成結果", systemImage: "photo")
@@ -259,7 +274,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(SecondaryActionButtonStyle())
 
-                Image(uiImage: image)
+                Image(uiImage: UIImage(cgImage: result.cgImage))
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
@@ -272,7 +287,7 @@ struct ContentView: View {
                             isShowingShareSheet = true
                         }
                         Button("写真に保存") {
-                            saveImageToPhotos(image)
+                            saveImageToPhotos(result)
                         }
                     }
 
@@ -285,7 +300,7 @@ struct ContentView: View {
                     .buttonStyle(SecondaryActionButtonStyle())
 
                     Button {
-                        saveImageToPhotos(image)
+                        saveImageToPhotos(result)
                     } label: {
                         Label("写真に保存", systemImage: "square.and.arrow.down")
                     }
@@ -309,8 +324,8 @@ struct ContentView: View {
             .shadow(color: Color.black.opacity(0.05), radius: 12, y: 5)
     }
 
-    private func saveImageToPhotos(_ image: UIImage) {
-        PhotoLibrarySaver.save(image) { result in
+    private func saveImageToPhotos(_ result: GeneratedImage) {
+        PhotoLibrarySaver.save(result) { result in
             switch result {
             case .success:
                 alertMessage = "写真アプリに保存しました。"
@@ -424,21 +439,6 @@ private struct SettingsView: View {
 
     private enum Field: Hashable {
         case manualSeed
-        case negativePrompt
-    }
-
-    private var stepBinding: Binding<Int> {
-        Binding(
-            get: { viewModel.stepCount },
-            set: { viewModel.stepCount = min(max($0, 1), 80) }
-        )
-    }
-
-    private var guidanceBinding: Binding<Double> {
-        Binding(
-            get: { Double(viewModel.guidanceScale) },
-            set: { viewModel.guidanceScale = Float(min(max($0, 1), 12)) }
-        )
     }
 
     var body: some View {
@@ -467,51 +467,30 @@ private struct SettingsView: View {
 
                     SettingSection(title: "モデル", systemImage: "cpu") {
                         labeledValue("使用モデル", value: viewModel.modelSummaryText)
-                        helperText("モデルはアプリに同梱されたものを使います。")
+                        helperText("初回にダウンロードしたモデルを端末内で使います。モデルの保存容量は約4.04GBです。")
+                    }
+
+                    SettingSection(title: "ライセンス", systemImage: "doc.plaintext") {
+                        NavigationLink("画像生成モデル") {
+                            NoticeView(title: "画像生成モデル", resource: "ModelLicenseNotices")
+                        }
+                        NavigationLink("推論ライブラリ") {
+                            NoticeView(title: "推論ライブラリ", resource: "CoreAIRuntimeNotices")
+                        }
+                        NavigationLink("画像安全判定モデル") {
+                            NoticeView(title: "画像安全判定モデル", resource: "ImageSafetyNotices")
+                        }
+                    }
+
+                    SettingSection(title: "安全性", systemImage: "checkmark.shield") {
+                        labeledValue("コンテンツの安全確認", value: "常に有効")
+                        helperText("性的な内容や過度な暴力表現などの入力を制限し、生成画像は安全性を確認してから表示します。確認できない画像は保存・共有できません。")
                     }
 
                     SettingSection(title: "生成設定", systemImage: "slider.horizontal.3") {
-                        VStack(alignment: .leading, spacing: 8) {
-                            labeledValue("ステップ数", value: "\(viewModel.stepCount)")
-                            helperText("ノイズ除去の反復回数です。増やすほど時間は伸びます。")
-                            HStack {
-                                Spacer()
-                                StepperControl(
-                                    value: viewModel.stepCount,
-                                    range: 1...80,
-                                    onDecrement: { stepBinding.wrappedValue -= 1 },
-                                    onIncrement: { stepBinding.wrappedValue += 1 }
-                                )
-                            }
-                        }
-
-                        Divider().opacity(0.55)
-
-                        VStack(alignment: .leading, spacing: 8) {
-                            labeledValue(
-                                "指示の強さ",
-                                value: viewModel.guidanceScale.formatted(.number.precision(.fractionLength(1)))
-                            )
-                            helperText("CFG Scale です。高いほどプロンプトに忠実ですが、不自然さが出ることがあります。")
-                            Slider(value: guidanceBinding, in: 1...12, step: 0.5)
-                                .tint(AppStyle.accent)
-                        }
-
-                        Divider().opacity(0.55)
-
-                        Picker("生成アルゴリズム", selection: $viewModel.schedulerOption) {
-                            ForEach(SchedulerOption.allCases) { option in
-                                Text(option.displayName).tag(option)
-                            }
-                        }
-                        .tint(AppStyle.slate)
-
-                        helperText(viewModel.schedulerOption.detailText)
-
-                        Toggle("安全チェッカーを無効にする", isOn: $viewModel.disableSafety)
-                            .tint(AppStyle.accent)
-
-                        helperText("通常はオフのままで問題ありません。")
+                        labeledValue("ステップ数", value: "4")
+                        labeledValue("画像サイズ", value: "512×512")
+                        helperText("FLUX.2 Kleinに適した設定で生成します。メモリ8GB以上・iOS 27.0.1以降の対応端末が必要です。")
                     }
 
                     SettingSection(title: "シード値", systemImage: "number") {
@@ -521,12 +500,14 @@ private struct SettingsView: View {
                             }
                         }
                         .pickerStyle(.segmented)
+                        .accessibilityIdentifier("settings.seed-mode")
                         .tint(AppStyle.slate)
 
                         helperText(viewModel.seedMode.detailText)
 
                         if viewModel.seedMode == .manual {
                             TextField("固定シード値 (0〜4294967295)", text: $viewModel.manualSeedText)
+                                .accessibilityIdentifier("settings.manual-seed")
                                 .keyboardType(.numberPad)
                                 .textInputAutocapitalization(.never)
                                 .focused($focusedField, equals: .manualSeed)
@@ -547,32 +528,7 @@ private struct SettingsView: View {
                         .disabled(viewModel.lastUsedSeed == nil)
                     }
 
-                    SettingSection(title: "ネガティブプロンプト", systemImage: "minus.circle") {
-                        Picker("プリセット", selection: Binding(
-                            get: { viewModel.selectedNegativePromptPreset },
-                            set: { viewModel.applyNegativePromptPreset($0) }
-                        )) {
-                            ForEach(NegativePromptPreset.allCases) { preset in
-                                Text(preset.displayName).tag(preset)
-                            }
-                        }
-                        .tint(AppStyle.slate)
 
-                        helperText(viewModel.selectedNegativePromptPreset.detailText)
-
-                        TextEditor(text: $viewModel.negativePrompt)
-                            .scrollContentBackground(.hidden)
-                            .frame(minHeight: 120)
-                            .padding(10)
-                            .foregroundStyle(AppStyle.ink)
-                            .background(AppStyle.surfaceInset)
-                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                    .stroke(AppStyle.line, lineWidth: 1)
-                            )
-                            .focused($focusedField, equals: .negativePrompt)
-                    }
                 }
                 .padding(16)
             }
@@ -584,6 +540,7 @@ private struct SettingsView: View {
                     Button("閉じる") {
                         dismiss()
                     }
+                    .accessibilityIdentifier("settings.close")
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -649,11 +606,37 @@ private struct SettingsView: View {
     }
 }
 
+private struct NoticeView: View {
+    let title: String
+    let resource: String
+
+    var body: some View {
+        ScrollView {
+            Text(contents)
+                .font(.footnote)
+                .textSelection(.enabled)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(16)
+        }
+        .background(AppStyle.background)
+        .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var contents: String {
+        guard let url = Bundle.main.url(forResource: resource, withExtension: "txt"),
+              let text = try? String(contentsOf: url, encoding: .utf8) else {
+            return "ライセンス本文を読み込めません。"
+        }
+        return text
+    }
+}
+
 private struct ShareSheet: UIViewControllerRepresentable {
-    let items: [Any]
+    let result: GeneratedImage
 
     func makeUIViewController(context: Context) -> UIActivityViewController {
-        UIActivityViewController(activityItems: items, applicationActivities: nil)
+        UIActivityViewController(activityItems: [UIImage(cgImage: result.cgImage)], applicationActivities: nil)
     }
 
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
@@ -662,11 +645,11 @@ private struct ShareSheet: UIViewControllerRepresentable {
 private final class PhotoLibrarySaver: NSObject {
     private var completion: ((Result<Void, Error>) -> Void)?
 
-    static func save(_ image: UIImage, completion: @escaping (Result<Void, Error>) -> Void) {
+    static func save(_ result: GeneratedImage, completion: @escaping (Result<Void, Error>) -> Void) {
         let saver = PhotoLibrarySaver()
         saver.completion = completion
         UIImageWriteToSavedPhotosAlbum(
-            image,
+            UIImage(cgImage: result.cgImage),
             saver,
             #selector(PhotoLibrarySaver.image(_:didFinishSavingWithError:contextInfo:)),
             nil

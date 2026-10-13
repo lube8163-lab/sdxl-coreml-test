@@ -1,0 +1,10 @@
+{
+  "scope": "Production source hashes used by the isolated download/generation startup driver; app startup automation is appended only to the test copy.",
+  "sourceSHA256": {
+    "SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "53016a43af1c46da9bc0ac27654c264193dbac230148b7c2a79cc9f6d77019d2",
+    "SDXLCoreMLTest/ModelSetupViewModel.swift": "72a37915fb7e1f002844335ddc2845cf6ee89c61c725d5d88140653bf4b58385",
+    "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "34982d81edba3bedb2806ffccbf7e548aaffc494fc60fe8fefd69d13651b6952",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "0e42c6bd5b7809fcb0ae58f03bc22cbf3a3d4407814426b2ae38b58248df550a",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift": "2822787c50aeb2ad27cde5e756c353bae9d5636d9de02ed67a62cace603452d7"
+  }
+}

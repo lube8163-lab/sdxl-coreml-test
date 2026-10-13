@@ -1,0 +1,536 @@
+// Copyright 2026 Apple Inc.
+//
+// Use of this source code is governed by a BSD-3-clause license that can
+// be found in the LICENSE file or at https://opensource.org/licenses/BSD-3-Clause
+
+#if canImport(CoreAI) && !targetEnvironment(simulator)
+import Accelerate
+import CoreAI
+import FluxProbeShared
+import Foundation
+
+/// Core AI diffusion model function — manages a single InferenceFunction
+/// for stateless model evaluation (text encoder, denoiser, VAE).
+public actor CoreAIDiffusionModelFunction {
+    private let modelURL: URL
+    private var model: AIModel?
+    /// Cached InferenceFunctions keyed by name. Reusing loaded functions (rather
+    /// than reloading per call) avoids a GPU memory leak — see PR #110.
+    private var functionCache: [String: InferenceFunction] = [:]
+    private var isLoaded = false
+    private var probeChunks: [CoreAIDiffusionModelFunction]?
+    // Cache only names. The initializer asks about several optional img2img
+    // entrypoints; reopening the same 2 GB asset for each query wastes I/O.
+    // Keeping strings avoids retaining AIModel or materialized GPU weights.
+    private var metadataFunctionNames: [String]?
+
+    public init(modelURL: URL) {
+        self.modelURL = modelURL
+    }
+
+    // MARK: - ResourceManaging
+
+    public func loadResources() async throws {
+        guard !isLoaded else { return }
+
+        // Fail fast on a missing asset.
+        guard FileManager.default.fileExists(atPath: modelURL.path) else {
+            throw CoreAIDiffusionError.modelFileNotFound(modelURL)
+        }
+        FluxProbeEvents.emit("model_load_begin", asset: modelURL.lastPathComponent)
+        let options = SpecializationOptions(preferredComputeUnitKind: .gpu)
+        let loadedModel = try await AIModel(contentsOf: modelURL, options: options)
+        self.model = loadedModel
+        self.isLoaded = true
+        FluxProbeEvents.emit("model_load_end", asset: modelURL.lastPathComponent)
+    }
+
+    public func unloadResources() async {
+        FluxProbeEvents.emit("model_unload_begin", asset: modelURL.lastPathComponent)
+        if let probeChunks {
+            for chunk in probeChunks { await chunk.unloadResources() }
+        }
+        probeChunks = nil
+        functionCache.removeAll()
+        model = nil
+        isLoaded = false
+        FluxProbeEvents.emit("model_unload_end", asset: modelURL.lastPathComponent)
+    }
+
+    /// Whether the model asset declares a function with the given name.
+    ///
+    /// Only looks at the asset's function table. This is so that it does not resolve the
+    /// function, so no weights are materialized. `loadFunction` would make a
+    /// GPU-resident copy of the entire weight set and hold it for the lifetime of this actor.
+    /// The asset is released once this function returns.
+    public func hasFunction(named name: String) async throws -> Bool {
+        if let model { return model.functionNames.contains(name) }
+        if let metadataFunctionNames { return metadataFunctionNames.contains(name) }
+        guard FileManager.default.fileExists(atPath: modelURL.path) else {
+            throw CoreAIDiffusionError.modelFileNotFound(modelURL)
+        }
+        let options = SpecializationOptions(preferredComputeUnitKind: .gpu)
+        FluxProbeEvents.emit("metadata_probe_begin", asset: modelURL.lastPathComponent)
+        let probe = try await AIModel(contentsOf: modelURL, options: options)
+        metadataFunctionNames = probe.functionNames
+        FluxProbeEvents.emit("metadata_probe_end", asset: modelURL.lastPathComponent,
+            detail: "\(probe.functionNames.count) names; no GPU functions retained")
+        return probe.functionNames.contains(name)
+    }
+
+    // MARK: - [Float]-based API
+
+    /// Each input is either a pre-built NDArray (for cached constants) or a (Float, shape) pair.
+    public enum ModelInput: Sendable {
+        case floats([Float], [Int])
+        case cached(NDArray)
+    }
+
+    /// Pre-pack a Float array into an NDArray matching the model's input descriptor at a given index.
+    public func prepackInput(index: Int, data: [Float], shape: [Int]) async throws -> NDArray {
+        let fn = try await ensureLoaded()
+        let names = fn.descriptor.inputNames
+        guard index < names.count else {
+            throw CoreAIDiffusionError.functionNotFound("index \(index)", modelURL)
+        }
+        let name = names[index]
+        guard case .ndArray(let nd) = fn.descriptor.inputDescriptor(of: name) else {
+            throw CoreAIDiffusionError.functionNotFound(name, modelURL)
+        }
+        let resolved = nd.resolvingDynamicDimensions(shape)
+        try Self.requireExactCount(data.count, resolved, input: name)
+        var array = NDArray(descriptor: resolved)
+        Self.packFloatsIntoNDArray(&array, data: data, scalarType: resolved.scalarType)
+        return array
+    }
+
+    /// Reject a supplied buffer whose element count doesn't match its descriptor.
+    ///
+    /// The fills below copy `data.count` elements into an array sized by the
+    /// descriptor, so a short buffer would leave the tail zeroed and produce silently
+    /// wrong output rather than an error.
+    ///
+    /// Runs *after* `resolvingDynamicDimensions`, so a dynamic axis has a concrete
+    /// value by this point and gets checked like any other. The `> 0` guard only
+    /// skips axes the caller left unresolved.
+    private static func requireExactCount(
+        _ count: Int, _ descriptor: NDArrayDescriptor, input name: String
+    ) throws {
+        // Skip when dimensions are still dynamic — there is no expected count yet.
+        guard descriptor.shape.allSatisfy({ $0 > 0 }) else { return }
+        let expected = descriptor.shape.reduce(1, *)
+        if count != expected {
+            throw CoreAIDiffusionError.inputCountMismatch(
+                name: name, shape: descriptor.shape, expected: expected, got: count)
+        }
+    }
+
+    public func run(
+        floatInputs: [([Float], [Int])], functionName: String = "main"
+    ) async throws -> [Float] {
+        try await run(inputs: floatInputs.map { .floats($0.0, $0.1) }, functionName: functionName)
+    }
+
+    public func run(inputs: [ModelInput], functionName: String = "main") async throws -> [Float] {
+        let chunkMode = ProcessInfo.processInfo.environment["MIM_FLUX_CHUNK_MODE"] ?? "none"
+        if modelURL.lastPathComponent == "Transformer_512.aimodel", chunkMode != "none" {
+            return try await runProbeChunks(inputs: inputs, mode: chunkMode)
+        }
+        let fn = try await function(named: functionName)
+
+        var namedInputs: [String: NDArray] = [:]
+        for (i, name) in fn.descriptor.inputNames.enumerated() where i < inputs.count {
+            switch inputs[i] {
+            case .cached(let array):
+                namedInputs[name] = array
+            case .floats(let data, let shape):
+                guard case .ndArray(let nd) = fn.descriptor.inputDescriptor(of: name) else { continue }
+                let resolved = nd.resolvingDynamicDimensions(shape)
+                try Self.requireExactCount(data.count, resolved, input: name)
+                var array = NDArray(descriptor: resolved)
+                Self.packFloatsIntoNDArray(&array, data: data, scalarType: resolved.scalarType)
+                namedInputs[name] = array
+            }
+        }
+
+        return try await encodeAndSync(fn: fn, inputs: namedInputs)
+    }
+
+    /// Experiment-only block chain. NDArray outputs cross the boundary without
+    /// a CPU Float conversion, and sequential mode releases each model before
+    /// loading the next. The final Float conversion matches the baseline API.
+    private func runProbeChunks(inputs: [ModelInput], mode: String) async throws -> [Float] {
+        if probeChunks == nil {
+            let directory = modelURL.deletingLastPathComponent()
+            probeChunks = (0..<2).map { index in
+                CoreAIDiffusionModelFunction(modelURL: directory.appendingPathComponent("TransformerChunk_\(index).aimodel"))
+            }
+        }
+        guard let probeChunks else { throw CoreAIDiffusionError.notLoaded }
+        // Resident mode materializes both functions before the first step.
+        if mode == "resident" {
+            for chunk in probeChunks { try await chunk.prepareProbeFunction() }
+        }
+        var values = try await probeChunks[0].runProbeAll(inputs: inputs)
+        if mode == "stream" { await probeChunks[0].unloadResources() }
+        values = try await probeChunks[1].runProbeNamed(inputs: values)
+        if mode == "stream" { await probeChunks[1].unloadResources() }
+        guard let array = values.values.first, values.count == 1 else { throw CoreAIDiffusionError.notLoaded }
+        return try ndArrayToFloats(array)
+    }
+
+    private func prepareProbeFunction() async throws {
+        _ = try await function(named: "main")
+    }
+
+    private func runProbeAll(inputs: [ModelInput]) async throws -> [String: NDArray] {
+        let fn = try await function(named: "main")
+        var named: [String: NDArray] = [:]
+        for (index, name) in fn.descriptor.inputNames.enumerated() where index < inputs.count {
+            switch inputs[index] {
+            case .cached(let array): named[name] = array
+            case .floats(let data, let shape):
+                guard case .ndArray(let descriptor) = fn.descriptor.inputDescriptor(of: name) else { continue }
+                let resolved = descriptor.resolvingDynamicDimensions(shape)
+                try Self.requireExactCount(data.count, resolved, input: name)
+                var array = NDArray(descriptor: resolved)
+                Self.packFloatsIntoNDArray(&array, data: data, scalarType: resolved.scalarType)
+                named[name] = array
+            }
+        }
+        return try await probeOutputs(fn: fn, named: named)
+    }
+
+    private func runProbeNamed(inputs: [String: NDArray]) async throws -> [String: NDArray] {
+        let fn = try await function(named: "main")
+        guard Set(fn.descriptor.inputNames) == Set(inputs.keys) else { throw CoreAIDiffusionError.notLoaded }
+        return try await probeOutputs(fn: fn, named: inputs)
+    }
+
+    private func probeOutputs(fn: InferenceFunction, named: [String: NDArray]) async throws -> [String: NDArray] {
+        FluxProbeEvents.emit("inference_begin", asset: modelURL.lastPathComponent)
+        defer { FluxProbeEvents.emit("inference_end", asset: modelURL.lastPathComponent) }
+        var outputs = try await fn.run(inputs: named)
+        var arrays: [String: NDArray] = [:]
+        for name in fn.descriptor.outputNames {
+            guard let array = outputs.remove(name)?.ndArray else { throw CoreAIDiffusionError.notLoaded }
+            arrays[name] = array
+        }
+        return arrays
+    }
+
+    private static func packFloatsIntoNDArray(
+        _ array: inout NDArray, data: [Float], scalarType: NDArray.ScalarType
+    ) {
+        switch scalarType {
+        #if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
+        case .float16:
+            let view = array.mutableView(as: Float16.self)
+            view.withUnsafeMutablePointer { ptr, shape, strides in
+                fillStrided(ptr, data: data, shape: shape, strides: strides) { Float16($0) }
+            }
+        case .bfloat16:
+            array.mutableRawView().withUnsafeMutableBytes { ptr, shape, strides in
+                let dst = ptr.assumingMemoryBound(to: UInt16.self)
+                fillStrided(dst, data: data, shape: shape, strides: strides) { val in
+                    let bits = val.bitPattern
+                    let lsb = (bits >> 16) & 1
+                    let rounded = bits &+ 0x7FFF &+ lsb
+                    return UInt16(truncatingIfNeeded: rounded >> 16)
+                }
+            }
+        #endif
+        case .float32:
+            let view = array.mutableView(as: Float.self)
+            view.withUnsafeMutablePointer { ptr, shape, strides in
+                fillStrided(ptr, data: data, shape: shape, strides: strides) { $0 }
+            }
+        default:
+            break
+        }
+    }
+
+    public func run(intInputs: [([Int32], [Int])]) async throws -> [Float] {
+        let fn = try await ensureLoaded()
+
+        var namedInputs: [String: NDArray] = [:]
+        for (i, name) in fn.descriptor.inputNames.enumerated() where i < intInputs.count {
+            let (data, shape) = intInputs[i]
+            guard case .ndArray(let nd) = fn.descriptor.inputDescriptor(of: name) else { continue }
+            let resolved = nd.resolvingDynamicDimensions(shape)
+            try Self.requireExactCount(data.count, resolved, input: name)
+            var array = NDArray(descriptor: resolved)
+            fillNDArray(&array, as: Int32.self, count: data.count) { data[$0] }
+            namedInputs[name] = array
+        }
+
+        return try await encodeAndSync(fn: fn, inputs: namedInputs)
+    }
+
+    // MARK: - NDArray-based API (for parity tests)
+
+    public func predict(inputs: [String: NDArray]) async throws -> [String: [Float]] {
+        let fn = try await ensureLoaded()
+        try Self.requireSingleOutput(fn)
+        let floats = try await encodeAndSync(fn: fn, inputs: inputs)
+        return [fn.descriptor.outputNames[0]: floats]
+    }
+
+    public func predictAllOutputs(inputs: [String: NDArray]) async throws -> [String: [Float]] {
+        let fn = try await ensureLoaded()
+        return try await encodeAndSyncAll(fn: fn, inputs: inputs)
+    }
+
+    public func predictAutoNamed(inputs: [NDArray]) async throws -> [String: [Float]] {
+        let fn = try await ensureLoaded()
+        try Self.requireSingleOutput(fn)
+        var namedInputs: [String: NDArray] = [:]
+        for (i, name) in fn.descriptor.inputNames.enumerated() where i < inputs.count {
+            namedInputs[name] = inputs[i]
+        }
+        let floats = try await encodeAndSync(fn: fn, inputs: namedInputs)
+        return [fn.descriptor.outputNames[0]: floats]
+    }
+
+    private static func requireSingleOutput(_ fn: InferenceFunction) throws {
+        let names = fn.descriptor.outputNames
+        if names.count != 1 {
+            throw CoreAIDiffusionError.expectedSingleOutput(got: names)
+        }
+    }
+
+    // MARK: - Core inference
+
+    private func ensureLoaded() async throws -> InferenceFunction {
+        try await function(named: "main")
+    }
+
+    /// Return the named InferenceFunction, loading the model and caching the
+    /// function on first use. Throws if the function is absent from the asset.
+    private func function(named name: String) async throws -> InferenceFunction {
+        guard let fn = try await functionIfPresent(named: name) else {
+            throw CoreAIDiffusionError.functionNotFound(name, modelURL)
+        }
+        return fn
+    }
+
+    /// Like `function(named:)` but returns nil (instead of throwing) when the
+    /// function is not present in the model asset.
+    private func functionIfPresent(named name: String) async throws -> InferenceFunction? {
+        if !isLoaded { try await loadResources() }
+        if let cached = functionCache[name] { return cached }
+        FluxProbeEvents.emit("function_load_begin", asset: modelURL.lastPathComponent, detail: name)
+        guard let mdl = model, let fn = try mdl.loadFunction(named: name) else {
+            return nil
+        }
+        functionCache[name] = fn
+        FluxProbeEvents.emit("function_load_end", asset: modelURL.lastPathComponent, detail: name)
+        return fn
+    }
+
+    /// Run inference and return the output as an NDArray (no CPU readback).
+    public func runReturningNDArray(inputs: [ModelInput]) async throws -> NDArray {
+        let fn = try await ensureLoaded()
+
+        var namedInputs: [String: NDArray] = [:]
+        for (i, name) in fn.descriptor.inputNames.enumerated() where i < inputs.count {
+            switch inputs[i] {
+            case .cached(let array):
+                namedInputs[name] = array
+            case .floats(let data, let shape):
+                guard case .ndArray(let nd) = fn.descriptor.inputDescriptor(of: name) else { continue }
+                let resolved = nd.resolvingDynamicDimensions(shape)
+                try Self.requireExactCount(data.count, resolved, input: name)
+                var array = NDArray(descriptor: resolved)
+                Self.packFloatsIntoNDArray(&array, data: data, scalarType: resolved.scalarType)
+                namedInputs[name] = array
+            }
+        }
+
+        var outputs = try await fn.run(inputs: namedInputs)
+        guard let outputName = fn.descriptor.outputNames.first,
+            let srcArray = outputs.remove(outputName)?.ndArray
+        else {
+            throw CoreAIDiffusionError.notLoaded
+        }
+        return srcArray
+    }
+
+    private func encodeAndSync(fn: InferenceFunction, inputs: [String: NDArray]) async throws -> [Float] {
+        FluxProbeEvents.emit("inference_begin", asset: modelURL.lastPathComponent)
+        defer { FluxProbeEvents.emit("inference_end", asset: modelURL.lastPathComponent) }
+        var outputs = try await fn.run(inputs: inputs)
+
+        guard let outputName = fn.descriptor.outputNames.first,
+            let srcArray = outputs.remove(outputName)?.ndArray
+        else {
+            return []
+        }
+
+        return try ndArrayToFloats(srcArray)
+    }
+
+    private func encodeAndSyncAll(fn: InferenceFunction, inputs: [String: NDArray]) async throws -> [String: [Float]] {
+        var outputs = try await fn.run(inputs: inputs)
+
+        var result: [String: [Float]] = [:]
+        for name in fn.descriptor.outputNames {
+            guard let srcArray = outputs.remove(name)?.ndArray else { continue }
+            result[name] = try ndArrayToFloats(srcArray)
+        }
+        return result
+    }
+
+    /// Read an output NDArray into a dense `[Float]`.
+    ///
+    /// Stride-aware so a padded output buffer is indexed by stride rather than read
+    /// linearly, matching how inputs are written. `bfloat16` is stored as `UInt16`
+    /// and needs its own reinterpretation — reading it through a `Float16` view
+    /// yields garbage — so it goes through `flattenBFloat16NDArray`.
+    private func ndArrayToFloats(_ array: NDArray) throws -> [Float] {
+        switch array.scalarType {
+        #if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
+        case .float16:
+            return flattenNDArray(array, as: Float16.self)
+        case .bfloat16:
+            return flattenBFloat16NDArray(array)
+        #endif
+        case .float32:
+            return flattenNDArray(array, as: Float.self)
+        default:
+            throw CoreAIDiffusionError.unsupportedOutputScalarType(array.scalarType)
+        }
+    }
+
+    public var inputDescriptors: [String: NDArrayDescriptor] {
+        get async throws {
+            let fn = try await ensureLoaded()
+            var result: [String: NDArrayDescriptor] = [:]
+            for name in fn.descriptor.inputNames {
+                if case .ndArray(let desc) = fn.descriptor.inputDescriptor(of: name) {
+                    result[name] = desc
+                }
+            }
+            return result
+        }
+    }
+
+    public var outputDescriptors: [String: NDArrayDescriptor] {
+        get async throws {
+            let fn = try await ensureLoaded()
+            var result: [String: NDArrayDescriptor] = [:]
+            for name in fn.descriptor.outputNames {
+                if case .ndArray(let desc) = fn.descriptor.outputDescriptor(of: name) {
+                    result[name] = desc
+                }
+            }
+            return result
+        }
+    }
+
+    /// Infer the sequence length from the first input's shape (dim 1).
+    /// Returns nil if the model isn't loaded or has no rank-2 input.
+    public func inferSequenceLength() async throws -> Int? {
+        let descs = try await inputDescriptors
+        guard let desc = descs.values.first, desc.shape.count >= 2 else {
+            return nil
+        }
+        let dim = desc.shape[1]
+        return dim > 0 ? dim : nil
+    }
+
+    // MARK: - Stride-aware fill/read helpers
+
+    /// Fill an NDArray buffer respecting non-contiguous strides.
+    ///
+    /// - Precondition: `data.count` must not exceed the array's logical capacity.
+    ///   Without it an oversized buffer overruns the allocation on the contiguous
+    ///   path, and on the strided path the index odometer wraps to zero and
+    ///   overwrites from the start. `requireExactCount` catches the recoverable case
+    ///   with a thrown error before this runs; this is the backstop, and mirrors
+    ///   `fillNDArray` in NDArray+Helpers.swift.
+    private static func fillStrided<T>(
+        _ ptr: UnsafeMutablePointer<T>,
+        data: [Float],
+        shape: Span<Int>,
+        strides: Span<Int>,
+        convert: (Float) -> T
+    ) {
+        let capacity = (0..<shape.count).reduce(1) { $0 * shape[$1] }
+        precondition(
+            data.count <= capacity,
+            "fillStrided: count \(data.count) exceeds array capacity \(capacity)")
+
+        let ndim = shape.count
+        if ndim <= 1 {
+            for j in 0..<data.count { ptr[j] = convert(data[j]) }
+            return
+        }
+        if isContiguousRowMajor(shape: shape, strides: strides) {
+            for j in 0..<data.count { ptr[j] = convert(data[j]) }
+            return
+        }
+        var indices = [Int](repeating: 0, count: ndim)
+        for j in 0..<data.count {
+            var offset = 0
+            for d in 0..<ndim { offset += indices[d] * strides[d] }
+            ptr[offset] = convert(data[j])
+            var d = ndim - 1
+            while d >= 0 {
+                indices[d] += 1
+                if indices[d] < shape[d] { break }
+                indices[d] = 0
+                d -= 1
+            }
+        }
+    }
+}
+
+// MARK: - Errors
+
+public enum CoreAIDiffusionError: Error, LocalizedError {
+    case modelFileNotFound(URL)
+    case functionNotFound(String, URL)
+    case notLoaded
+    case unsupportedInputScalarType(NDArray.ScalarType)
+    case unsupportedOutputScalarType(NDArray.ScalarType)
+    case expectedSingleOutput(got: [String])
+    case inputCountMismatch(name: String, shape: [Int], expected: Int, got: Int)
+    case latentsNotFinite(step: Int)
+
+    public var errorDescription: String? {
+        switch self {
+        case .modelFileNotFound(let url):
+            return "Model asset not found at \(url.path)"
+        case .functionNotFound(let name, let url):
+            return "Function '\(name)' not found in \(url.lastPathComponent)"
+        case .notLoaded:
+            return "Model not loaded. Call loadResources() first."
+        case .unsupportedInputScalarType(let type):
+            return "Unsupported model input scalar type: \(type) (expected float16 or float32)"
+        case .unsupportedOutputScalarType(let type):
+            return "Unsupported model output scalar type: \(type) (expected float16 or float32)"
+        case .expectedSingleOutput(let names):
+            return "Model declares \(names.count) outputs \(names); predict(...) expects exactly one. "
+                + "Use predictAllOutputs(inputs:) for multi-output models."
+        case .inputCountMismatch(let name, let shape, let expected, let got):
+            return "Input '\(name)' expects \(expected) elements for shape \(shape), got \(got). "
+                + "Check the order of the values passed to run(...) — binding is positional."
+        case .latentsNotFinite(let step):
+            return "Non-finite values (NaN or Inf) detected in latents at denoising step \(step). "
+                + "This usually indicates float16 overflow in the model. Re-export with float32 compute precision."
+        }
+    }
+}
+
+// MARK: - Latent Validation
+
+func checkLatentsAreFinite(_ latents: [Float], step: Int) throws {
+    var sum: Float = 0
+    vDSP_sve(latents, 1, &sum, vDSP_Length(latents.count))
+    if !sum.isFinite {
+        throw CoreAIDiffusionError.latentsNotFinite(step: step)
+    }
+}
+
+#endif

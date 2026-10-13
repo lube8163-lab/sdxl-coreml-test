@@ -1,0 +1,96 @@
+{
+  "fragments": [
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part001",
+      "bytes": 200000000,
+      "sha256": "d5bc733dae1308b28f2ccb4c42c1a451e7277ffbdb0c1c975e9a34f05cd0a178"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part002",
+      "bytes": 200000000,
+      "sha256": "da7462caf3d16da8b2d2f90e82e393c26a26745ef49e22e84d3c38983cebd538"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part003",
+      "bytes": 200000000,
+      "sha256": "6c7ee6676e8e97d970f559ba50a93ad1a46467f6f2bc670d92f5cf24623c7641"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part004",
+      "bytes": 200000000,
+      "sha256": "db607758a282197c08d4302b3ede13558fca9d2fb7a649fd4e20845ea3c0af23"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part005",
+      "bytes": 200000000,
+      "sha256": "338ca535f202543bf6ce5b450c5c4c41a4e969ef17fa622bfaed3fa2f6a70edb"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part006",
+      "bytes": 200000000,
+      "sha256": "7fec4a0ede32f31e566782035d0d3165d2cc9664243ee3c74531a413a3508cc3"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part007",
+      "bytes": 200000000,
+      "sha256": "184174e1e848349e312ebe5fb1928a1f83c4df6c969f8e06524b9a93c99dad39"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part008",
+      "bytes": 200000000,
+      "sha256": "afce43671063b6bae4b9b8ab4f6dc4a899dda9092e11dc120767893c8b64b64b"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part009",
+      "bytes": 200000000,
+      "sha256": "bef71b9fa4117da0dd115569bc184c357dadfa56937fa3ab6c40212227be5d35"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part010",
+      "bytes": 200000000,
+      "sha256": "9f265bc1e6f5e97102a26be55a538301483cc1b4bc5924001e12669c98ed536f"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part011",
+      "bytes": 200000000,
+      "sha256": "405ed4e69229cbab1d4b687d48b81cc2a0702b642697883540e9f522fda70929"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part012",
+      "bytes": 200000000,
+      "sha256": "4a4e9e3b8c565e3ba4b4b28973d991ff9af09e3372a8103a376f40f44b39172b"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part013",
+      "bytes": 200000000,
+      "sha256": "a5be50761ee682b61637e7cd38892b14f8999ffc8769072d35ff7fc8f057199e"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part014",
+      "bytes": 200000000,
+      "sha256": "4c713263e8b78a7580907501776f6793aa544295b9143a22e74cc820d655ca9b"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part015",
+      "bytes": 200000000,
+      "sha256": "eef662d482f2f375c874a30572ae956ffc639d2e8817c8054d6cefc0ae81d024"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part016",
+      "bytes": 200000000,
+      "sha256": "5c7ed9164c9348c84a5b5db5b9219e53cf0a76e197004b5479d645a734e99ebc"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part017",
+      "bytes": 200000000,
+      "sha256": "0012af15594bd0dd4f13118f60a4b3abeadd15bb3d1c79566272207abf5a87bc"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux2-klein-4b-512-a7f65cd-v1/flux2_klein_4b_512_coreai_a7f65cd_v1.zip.part018",
+      "bytes": 142141404,
+      "sha256": "11214f960a3287a3810b4e2edff933d66828461a0b7f77c8274e05a3540cd786"
+    }
+  ],
+  "archiveSHA256": "9eee2a1226677c396c165b7204d912a3c1d785fd89aa8b7b22b7aa7ac3af3968",
+  "manifestSHA256": "9495423c73c37f1c16d8da1e9b5c955de07847d3068f57f05a071342ac81a75d"
+}

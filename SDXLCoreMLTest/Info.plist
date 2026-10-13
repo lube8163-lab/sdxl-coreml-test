@@ -23,7 +23,7 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
-	<true/>
+	<false/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>生成した画像を写真ライブラリへ保存するために使用します。</string>
 	<key>UIApplicationSceneManifest</key>
@@ -34,7 +34,7 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIFileSharingEnabled</key>
-	<true/>
+	<false/>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>

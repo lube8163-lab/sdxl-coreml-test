@@ -1,0 +1,24 @@
+{
+  "scope": "Normal shipping startup, no test flags; existing model receipt and all file hashes accepted; default prompt prepared; UI reached ready. No new image generated in this startup check.",
+  "bundleID": "com.tasuku.sdxlcoremltest",
+  "version": "1.1",
+  "build": "4",
+  "signedBundleBytesBeforeNoticeTrim": 30002529,
+  "generationModelsBundled": false,
+  "mandatoryClassifierCompiled": true,
+  "coreaiCompilationCacheBytes": 4032691053,
+  "storageNote": "Cache is additional to the 4,043,710,174 generation model bytes. Free-space policy subsequently increased to about 9 GB; cache growth and peak temporary compilation space vary.",
+  "finalSignedBundleBytes": 29980632,
+  "finalExecutableSHA256": "b7247f177e4722a5d8f6796a2089f5dd3edff49fadce00c588a795709c97ebf6",
+  "finalFreeSpacePolicyBytesAtEmptyDownload": 8830581086,
+  "finalDevelopmentInstalled": true,
+  "finalNormalStartupPrepared": true,
+  "finalProductionSourceSHA256": {
+    "SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "53016a43af1c46da9bc0ac27654c264193dbac230148b7c2a79cc9f6d77019d2",
+    "SDXLCoreMLTest/ModelSetupView.swift": "7df700aaf4230fce948a2e0b5fce3f5be910b1b5a3a9076e076b0c53be7c4a65",
+    "SDXLCoreMLTest/ModelSetupViewModel.swift": "75e11d3d7f2376b91c4eaf4c89e8be1c4599e9519795463a7907f2a0d9d4d371",
+    "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "34982d81edba3bedb2806ffccbf7e548aaffc494fc60fe8fefd69d13651b6952",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "0e42c6bd5b7809fcb0ae58f03bc22cbf3a3d4407814426b2ae38b58248df550a",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift": "2d7c37bd239b34cd3d52ee762392462d2a36faa86e0b7a4f500f7d381bb46b81"
+  }
+}

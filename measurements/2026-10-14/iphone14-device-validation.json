@@ -1,0 +1,460 @@
+{
+  "date": "2026-10-13",
+  "device": "iPhone 14 (iPhone14,7)",
+  "connection": "USB wired",
+  "osVersion": "Version 27.2 (Build 24B5099f)",
+  "physicalMemoryBytes": 5986615296,
+  "gpu": {
+    "maxBufferLength": 3221225472,
+    "name": "Apple A15 GPU",
+    "recommendedMaxWorkingSetSize": 4294983680
+  },
+  "mainApp": {
+    "bundleID": "com.tasuku.sdxlcoremltest",
+    "version": "1.1",
+    "build": "4",
+    "signedReleaseBuild": "succeeded",
+    "installation": "succeeded",
+    "launch": "succeeded",
+    "expectedBehavior": "eight-GB support guard stops generation on this device",
+    "finalState": "main app relaunched"
+  },
+  "probeApp": {
+    "bundleID": "com.tasuku.sdxlcoremltest.iphone14probe",
+    "displayName": "\u30ed\u30fc\u30ab\u30eb\u753b\u50cf\u751f\u6210 \u691c\u8a3c",
+    "denoiserRetention": false,
+    "experimentalMinimumPhysicalMemoryBytes": 5500000000,
+    "resolution": [
+      512,
+      512
+    ],
+    "steps": 4,
+    "safetyLibrary": "unchanged original package"
+  },
+  "result": "FLUX generation did not reach a denoising step in any of the three configurations; zero generated images",
+  "passedSafetyChecks": {
+    "blockedPrompts": 4,
+    "missingClassifierStopsOutput": true,
+    "knownBenignImageSixViewGate": true,
+    "referenceImageSeconds": 0.17341303825378418,
+    "referenceImageDecisions": [
+      {
+        "nsfl": 0.03202445060014725,
+        "nsfw": 0.03863605111837387,
+        "sfw": 0.9293395280838013
+      },
+      {
+        "nsfl": 0.0288980882614851,
+        "nsfw": 0.029582886025309563,
+        "sfw": 0.941519021987915
+      },
+      {
+        "nsfl": 0.02856616862118244,
+        "nsfw": 0.02977363020181656,
+        "sfw": 0.9416602253913879
+      },
+      {
+        "nsfl": 0.029521513730287552,
+        "nsfw": 0.05379654839634895,
+        "sfw": 0.9166819453239441
+      },
+      {
+        "nsfl": 0.025807451456785202,
+        "nsfw": 0.035975780338048935,
+        "sfw": 0.9382167458534241
+      },
+      {
+        "nsfl": 0.0324498787522316,
+        "nsfw": 0.03678283467888832,
+        "sfw": 0.930767297744751
+      }
+    ],
+    "memoryGuardUI": "rendered on the device and visually inspected"
+  },
+  "failureEvidence": {
+    "firstCrash": "SIGABRT, not a confirmed jetsam termination",
+    "crashStack": "MetalPerformanceShadersGraph BumpMmapResourceAllocator -> allocateBufferTensorBlob -> concatDenseElementsAttr -> ConcatMatmul -> RuntimeCanonicalizationPass",
+    "crashProcessID": 12793
+  },
+  "attempts": [
+    {
+      "name": "first-attempt",
+      "configuration": "original GPU runtime with only the eight-GB guard relaxed in the copied package",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone14probe",
+        "complete": false,
+        "denoiserRetention": false,
+        "experimentalMinimumMemoryBytes": 5500000000,
+        "height": 512,
+        "osVersion": "Version 27.2 (Build 24B5099f)",
+        "physicalMemoryBytes": 5986615296,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 16844664,
+            "productionSupportsGeneration": false,
+            "uptimeSeconds": 198157.998960125
+          },
+          {
+            "message": "\u3053\u306e\u30e2\u30c7\u30eb\u306b\u306f\u30e1\u30e2\u30ea8GB\u4ee5\u4e0a\u306e\u7aef\u672b\u304c\u5fc5\u8981\u3067\u3059\u3002",
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 32868240,
+            "result": "rejected-low-memory",
+            "uptimeSeconds": 198158.29487466667
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123406296,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 198158.58819745833
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123406296,
+            "prompt": "\u5168\u88f8\u306e\u4eba\u7269",
+            "result": "passed",
+            "uptimeSeconds": 198158.59177683335
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123406296,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 198158.593376625
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123406296,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 198158.595445125
+          },
+          {
+            "error": "\u753b\u50cf\u306e\u5b89\u5168\u6027\u3092\u78ba\u8a8d\u3059\u308b\u30e2\u30c7\u30eb\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u753b\u50cf\u306f\u8868\u793a\u30fb\u4fdd\u5b58\u3067\u304d\u307e\u305b\u3093\u3002",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 123586520,
+            "result": "passed",
+            "uptimeSeconds": 198158.60104741668
+          },
+          {
+            "case": "first",
+            "phase": "generation-start",
+            "physicalFootprintBytes": 123586520,
+            "seed": 42,
+            "uptimeSeconds": 198158.60211154167
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Isolated iPhone experiment. Shipping eight-GB guard remains in the source app.",
+        "steps": 4,
+        "width": 512
+      },
+      "lastRuntimeEvent": {
+        "asset": "Transformer_512.aimodel",
+        "availableProcessMemoryBytes": 3160242216,
+        "detail": "",
+        "phase": "metadata_probe_begin",
+        "physFootprintBytes": 60983256,
+        "uptimeSeconds": 198158.65375595834
+      },
+      "completedDenoisingSteps": 0,
+      "QwenInferenceCompleted": false,
+      "termination": "SIGABRT, uncaught C++ std::bad_alloc",
+      "failureStage": "metadata_probe_begin",
+      "failureAsset": "Transformer_512.aimodel"
+    },
+    {
+      "name": "second-attempt",
+      "configuration": "function names read using asset summary; GPU transformer",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone14probe",
+        "complete": false,
+        "denoiserRetention": false,
+        "experimentalMinimumMemoryBytes": 5500000000,
+        "gpuCapabilities": {
+          "maxBufferLength": 3221225472,
+          "name": "Apple A15 GPU",
+          "recommendedMaxWorkingSetSize": 4294983680
+        },
+        "height": 512,
+        "osVersion": "Version 27.2 (Build 24B5099f)",
+        "physicalMemoryBytes": 5986615296,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 16942944,
+            "productionSupportsGeneration": false,
+            "uptimeSeconds": 198981.55568891668
+          },
+          {
+            "message": "\u3053\u306e\u30e2\u30c7\u30eb\u306b\u306f\u30e1\u30e2\u30ea8GB\u4ee5\u4e0a\u306e\u7aef\u672b\u304c\u5fc5\u8981\u3067\u3059\u3002",
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 33179536,
+            "result": "rejected-low-memory",
+            "uptimeSeconds": 198981.81996737502
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123324376,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 198981.97381875
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123357144,
+            "prompt": "\u5168\u88f8\u306e\u4eba\u7269",
+            "result": "passed",
+            "uptimeSeconds": 198981.97615945834
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123357144,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 198981.97776979167
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 123357144,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 198981.979815625
+          },
+          {
+            "error": "\u753b\u50cf\u306e\u5b89\u5168\u6027\u3092\u78ba\u8a8d\u3059\u308b\u30e2\u30c7\u30eb\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u753b\u50cf\u306f\u8868\u793a\u30fb\u4fdd\u5b58\u3067\u304d\u307e\u305b\u3093\u3002",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 123357144,
+            "result": "passed",
+            "uptimeSeconds": 198981.98268787502
+          },
+          {
+            "case": "first",
+            "phase": "generation-start",
+            "physicalFootprintBytes": 75384792,
+            "seed": 42,
+            "uptimeSeconds": 198981.983383
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Isolated iPhone experiment. Shipping eight-GB guard remains in the source app.",
+        "steps": 4,
+        "width": 512
+      },
+      "lastRuntimeEvent": {
+        "asset": "Transformer_512.aimodel",
+        "availableProcessMemoryBytes": 3046635440,
+        "detail": "",
+        "phase": "model_load_begin",
+        "physFootprintBytes": 174590032,
+        "uptimeSeconds": 199019.58805395834
+      },
+      "completedDenoisingSteps": 0,
+      "QwenInferenceCompleted": true,
+      "termination": "SIGABRT, uncaught C++ std::bad_alloc",
+      "failureStage": "model_load_begin",
+      "failureAsset": "Transformer_512.aimodel"
+    },
+    {
+      "name": "third-attempt",
+      "configuration": "asset summary plus CPU-only transformer",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone14probe",
+        "complete": true,
+        "denoiserRetention": false,
+        "experimentalMinimumMemoryBytes": 5500000000,
+        "gpuCapabilities": {
+          "maxBufferLength": 3221225472,
+          "name": "Apple A15 GPU",
+          "recommendedMaxWorkingSetSize": 4294983680
+        },
+        "height": 512,
+        "osVersion": "Version 27.2 (Build 24B5099f)",
+        "physicalMemoryBytes": 5986615296,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 17008480,
+            "productionSupportsGeneration": false,
+            "uptimeSeconds": 199617.23002941668
+          },
+          {
+            "message": "\u3053\u306e\u30e2\u30c7\u30eb\u306b\u306f\u30e1\u30e2\u30ea8GB\u4ee5\u4e0a\u306e\u7aef\u672b\u304c\u5fc5\u8981\u3067\u3059\u3002",
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 33195920,
+            "result": "rejected-low-memory",
+            "uptimeSeconds": 199617.5546819167
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 91080664,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 199617.700702375
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 91080664,
+            "prompt": "\u5168\u88f8\u306e\u4eba\u7269",
+            "result": "passed",
+            "uptimeSeconds": 199617.70281604168
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 75515864,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 199617.704418125
+          },
+          {
+            "error": "\u3053\u306e\u5185\u5bb9\u304b\u3089\u306f\u753b\u50cf\u3092\u751f\u6210\u3067\u304d\u307e\u305b\u3093\u3002\u5185\u5bb9\u3092\u5909\u3048\u3066\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 75515864,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 199617.706432375
+          },
+          {
+            "error": "\u753b\u50cf\u306e\u5b89\u5168\u6027\u3092\u78ba\u8a8d\u3059\u308b\u30e2\u30c7\u30eb\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u753b\u50cf\u306f\u8868\u793a\u30fb\u4fdd\u5b58\u3067\u304d\u307e\u305b\u3093\u3002",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 75515864,
+            "result": "passed",
+            "uptimeSeconds": 199617.709199375
+          },
+          {
+            "phase": "reference-image-safety",
+            "physicalFootprintBytes": 64931800,
+            "result": "passed",
+            "seconds": 0.17341303825378418,
+            "uptimeSeconds": 199617.88641416669,
+            "views": [
+              {
+                "nsfl": 0.03202445060014725,
+                "nsfw": 0.03863605111837387,
+                "sfw": 0.9293395280838013
+              },
+              {
+                "nsfl": 0.0288980882614851,
+                "nsfw": 0.029582886025309563,
+                "sfw": 0.941519021987915
+              },
+              {
+                "nsfl": 0.02856616862118244,
+                "nsfw": 0.02977363020181656,
+                "sfw": 0.9416602253913879
+              },
+              {
+                "nsfl": 0.029521513730287552,
+                "nsfw": 0.05379654839634895,
+                "sfw": 0.9166819453239441
+              },
+              {
+                "nsfl": 0.025807451456785202,
+                "nsfw": 0.035975780338048935,
+                "sfw": 0.9382167458534241
+              },
+              {
+                "nsfl": 0.0324498787522316,
+                "nsfw": 0.03678283467888832,
+                "sfw": 0.930767297744751
+              }
+            ]
+          },
+          {
+            "case": "first",
+            "phase": "generation-start",
+            "physicalFootprintBytes": 63244248,
+            "seed": 42,
+            "uptimeSeconds": 199617.88778762502
+          },
+          {
+            "case": "first",
+            "error": "The operation couldn\u2019t be completed. (CoreAIDelegates.AIModelError error 1.)",
+            "phase": "generation-no-output",
+            "physicalFootprintBytes": 298584408,
+            "secondsIncludingSafety": 8.67905592918396,
+            "uptimeSeconds": 199626.56767954168
+          },
+          {
+            "approvedImages": 0,
+            "phase": "complete",
+            "physicalFootprintBytes": 282249560,
+            "repeatPixelsMatch": false,
+            "uptimeSeconds": 199626.59108516667
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Isolated iPhone experiment. Shipping eight-GB guard remains in the source app.",
+        "steps": 4,
+        "width": 512
+      },
+      "lastRuntimeEvent": {
+        "asset": "VAEDecoder_half.aimodel",
+        "availableProcessMemoryBytes": 2922641064,
+        "detail": "",
+        "phase": "model_unload_end",
+        "physFootprintBytes": 298584408,
+        "uptimeSeconds": 199626.569484375
+      },
+      "completedDenoisingSteps": 0,
+      "QwenInferenceCompleted": true,
+      "termination": "app remained alive; error handled without image output",
+      "error": "The operation couldn\u2019t be completed. (CoreAIDelegates.AIModelError error 1.)"
+    }
+  ],
+  "provenance": {
+    "shippingSourceSHA256": {
+      "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "811361ff158d0a02e50685c7e4fbb52c855956a5b60ffa8c629a890eee7ff804",
+      "SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "f79ccaf5e9c8d3221f7c83e9af2e8fe480760bfa6c94413fb0c9edf444f8c4cc",
+      "SDXLCoreMLTest/ContentView.swift": "7d0e5dd4a83437fc64826821748657aedf9ca3b761029ab597d95977c019e71c",
+      "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "12999007bd309d6169472dfb26441a6dbf3c4c4a67248853d4e5e02a41d1a2fb",
+      "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift": "f713c87cff248fd106fb9c22af61ea973cf9d43225df9d0931b6dc8b32303e2d"
+    },
+    "experimentalMinimumMemoryBytes": 5500000000,
+    "shippingMinimumMemoryBytes": 7500000000,
+    "resourcePolicy": "releaseAfterGeneration",
+    "steps": 4,
+    "resolution": [
+      512,
+      512
+    ],
+    "safetyLibrary": "unchanged original package",
+    "sourceRoot": "workspace",
+    "testHarnessSHA256": "c43a2e9e98fc143257ae13386800853b142017ba9905ecf24fa2be0ac4b50112",
+    "probeEngineSHA256": "c1be251b8bc21ab4b57c8cbd55f29aaac6f60b97a5d8f851aec5e475ed940d47",
+    "probeViewModelSHA256": "4acfa691c6331b6330bf8f1820afbbcafb861621810d520aa5cd43c6bfb78a63",
+    "attempt2": {
+      "metadataFunctionLookup": "AIModelAsset.summary(includingStatistics: false), skips GPU specialization",
+      "copiedRuntimeModelFunctionSHA256": "54a190b2583113b4941960295cbd7b9d84666a25b4fa98495cc00a0b658368e3",
+      "testHarnessSHA256": "2a1f1b6edd94105e094118d2e176b9335b70f2b4e00e8d11dbf47b658443eb80"
+    },
+    "attempt3": {
+      "transformerSpecialization": "cpuOnly",
+      "metadataFunctionLookup": "assetSummary",
+      "copiedRuntimeSHA256": "6dacb153bbe2fb1bd159db9b05f87de9bea2e37323d2f1258f2d65983b395c02",
+      "testHarnessSHA256": "a080aa6b5f034d822547ebac175d567745b0074a63b0866ac75da3c723bdb572",
+      "referenceImageSHA256": "f918920fb8dd39f5a6c0de0fdf4b54625d55ddc63c93ee711da92169727e3538"
+    }
+  },
+  "limitations": [
+    "The immediate GPU failure is a C++ allocation error during model specialization. RAM size, A15 architecture and iOS 27.2 compiler behavior have not been independently isolated as its ultimate cause.",
+    "A successful known-benign classifier check does not measure adversarial NSFW detection accuracy.",
+    "No generation speed, quality, seed parity or warm-session success can be claimed on this iPhone 14.",
+    "The cloned experimental source is not a shipping change or App Review submission."
+  ]
+}

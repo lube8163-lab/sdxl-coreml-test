@@ -1,0 +1,20 @@
+{
+  "revision": "image-safety-1d6482987f783eb431458a2501cd6f59db6c8e6d",
+  "files": [
+    {
+      "path": "Data/com.apple.CoreML/model.mlmodel",
+      "bytes": 151735,
+      "sha256": "aec31b0aba3c6ec8a9415f53bcf5ee1149471abb10839f184b0169bfe8beb841"
+    },
+    {
+      "path": "Data/com.apple.CoreML/weights/weight.bin",
+      "bytes": 22550272,
+      "sha256": "02ffa6356688da769ab1dcc909db10bac3a4c7e12db34a40697e19a5580cc95a"
+    },
+    {
+      "path": "Manifest.json",
+      "bytes": 617,
+      "sha256": "3c9fbb5869597b5a2285098703efcbacbf169326f06f8a3a57816febeed9dce3"
+    }
+  ]
+}

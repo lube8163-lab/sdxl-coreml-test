@@ -1,0 +1,5507 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUTC": "2026-10-13T17:33:50.403902+00:00",
+  "scope": "Instrumented copies of the real app view model; original RAM guard, runtime, four-step model, retention policy and safety library. This records the bundled configuration before first-run downloading is introduced.",
+  "device": {
+    "model": "iPhone 17",
+    "productType": "iPhone18,3",
+    "os": "Version 27.0.1 (Build 24A446)",
+    "physicalMemoryBytes": 8045641728,
+    "gpu": {
+      "maxBufferLength": 4294967296,
+      "name": "Apple A19 GPU",
+      "recommendedMaxWorkingSetSize": 5726633984
+    }
+  },
+  "productionApp": {
+    "bundleID": "com.tasuku.sdxlcoremltest",
+    "version": "1.1",
+    "build": "4",
+    "signedBundleBytes": 4072985266,
+    "executableSHA256": "76cc819827f2a76d8f2cb3ad280470b87eac78ee6362965a538d1b85cf3b09b5",
+    "developmentInstalled": true,
+    "normalStartupScope": "Launched; device later returned to Home. Generation evidence is from the instrumented copies."
+  },
+  "beforeFix": "Two attempts cancelled. The second instrumented run logged a real UIKit memory warning while active at nominal thermal state; the previous handler cancelled generation.",
+  "fix": "Memory-warning cleanup waits for active preparation/generation including mandatory output screening, fully unloads and avoids automatic preload. Backgrounding and explicit cancellation still cancel active tasks.",
+  "afterFix": {
+    "ordinaryRuns": 2,
+    "ordinaryApprovedImages": 10,
+    "sixViewsOnEveryOutput": true,
+    "repeatIdleAndFullReleasePixelsMatch": true,
+    "memoryWarningNotificationRegressionApproved": true,
+    "memoryWarningPixelsMatchOrdinaryRun": true,
+    "memoryWarningCleanupCompleted": true,
+    "warningInjectionMethod": "Main-actor test driver posts UIKit didReceiveMemoryWarningNotification at diffusion step 1. This verifies the handler, not artificial allocation pressure."
+  },
+  "provenance": {
+    "shippingSourceSHA256": {
+      "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "2fe5cf7489da26896b9f4f571708ad6b8c01616d3ccdb35026aa1e227fd702b7",
+      "SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "4002502191d190f65916a04b0648c64d546a1936eb6986669ac56904a0127ac1",
+      "SDXLCoreMLTest/ContentView.swift": "7d0e5dd4a83437fc64826821748657aedf9ca3b761029ab597d95977c019e71c",
+      "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "12999007bd309d6169472dfb26441a6dbf3c4c4a67248853d4e5e02a41d1a2fb",
+      "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift": "f713c87cff248fd106fb9c22af61ea973cf9d43225df9d0931b6dc8b32303e2d"
+    },
+    "probeMinimumMemoryBytes": 7500000000,
+    "shippingMinimumMemoryBytes": 7500000000,
+    "shippingConfiguration": true,
+    "bundleID": "com.tasuku.sdxlcoremltest.iphone17probe",
+    "resourcePolicy": "keepWarm",
+    "copiedEngineMatchesShipping": true,
+    "copiedViewModelPrefixMatchesShipping": true,
+    "steps": 4,
+    "resolution": [
+      512,
+      512
+    ],
+    "metadataFunctionLookup": "shippingRuntime",
+    "transformerCompute": "gpuPreferred",
+    "safetyLibrary": "unchanged original package",
+    "sourceRoot": "SDXL_test workspace (path omitted in public evidence)"
+  },
+  "runs": [
+    {
+      "name": "first-attempt",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone17probe",
+        "complete": true,
+        "denoiserRetention": true,
+        "gpuCapabilities": {
+          "maxBufferLength": 4294967296,
+          "name": "Apple A19 GPU",
+          "recommendedMaxWorkingSetSize": 5726633984
+        },
+        "height": 512,
+        "osVersion": "Version 27.0.1 (Build 24A446)",
+        "physicalMemoryBytes": 8045641728,
+        "probeMinimumMemoryBytes": 7500000000,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 16860952,
+            "productionSupportsGeneration": true,
+            "uptimeSeconds": 377068.1494089167
+          },
+          {
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 77350944,
+            "result": "supported",
+            "uptimeSeconds": 377080.5720469584
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 159467600,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 377080.9162750417
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 143362128,
+            "prompt": "全裸の人物",
+            "result": "passed",
+            "uptimeSeconds": 377080.9181826667
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 143362128,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 377080.9192402917
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 143362128,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 377080.9206217084
+          },
+          {
+            "error": "画像の安全性を確認するモデルを読み込めません。画像は表示・保存できません。",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 143362128,
+            "result": "passed",
+            "uptimeSeconds": 377080.92255045834
+          },
+          {
+            "phase": "preparation-start",
+            "physicalFootprintBytes": 143362128,
+            "uptimeSeconds": 377080.9240772917
+          },
+          {
+            "error": "",
+            "lowPowerMode": false,
+            "phase": "preparation-end",
+            "physicalFootprintBytes": 1017677904,
+            "prepared": true,
+            "seconds": 12.613059043884277,
+            "thermalState": 1,
+            "uptimeSeconds": 377093.5375302917
+          },
+          {
+            "case": "first",
+            "phase": "generation-start",
+            "physicalFootprintBytes": 1017677904,
+            "seed": 42,
+            "uptimeSeconds": 377093.5389900834
+          },
+          {
+            "case": "first",
+            "error": "生成を中断しました",
+            "phase": "generation-no-output",
+            "physicalFootprintBytes": 761415784,
+            "secondsIncludingSafety": 12.60173499584198,
+            "uptimeSeconds": 377106.1412146667
+          },
+          {
+            "afterIdlePixelsMatch": false,
+            "afterReleasePixelsMatch": false,
+            "approvedImages": 0,
+            "phase": "complete",
+            "physicalFootprintBytes": 599427176,
+            "repeatPixelsMatch": false,
+            "uptimeSeconds": 377106.17245504167
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Copied app with unchanged production RAM guard, engine, GPU runtime, retention and safety. Test-only driver appended to view model.",
+        "shippingConfiguration": true,
+        "steps": 4,
+        "width": 512
+      },
+      "lifecycle": [],
+      "runtimeEvents": [
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3506518176,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 33474400,
+          "uptimeSeconds": 377068.4139870417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3484579928,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 55412648,
+          "uptimeSeconds": 377079.81773608335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.5713065417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.5715435
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.5716453334
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.57173845835
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.5718374167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.57193154166
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.57383525005
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.57393612503
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.57402425003
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.57411416667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3462641632,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 77350944,
+          "uptimeSeconds": 377080.57420225005
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3462625248,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 77367328,
+          "uptimeSeconds": 377080.574290875
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3411883952,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 128108624,
+          "uptimeSeconds": 377080.98267608334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3411867568,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 128125008,
+          "uptimeSeconds": 377080.9854602917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3375052720,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 164939856,
+          "uptimeSeconds": 377081.7460854167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3375052720,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 164939856,
+          "uptimeSeconds": 377081.74630983337
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3375052720,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 164939856,
+          "uptimeSeconds": 377081.74646337505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3374987184,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 165005392,
+          "uptimeSeconds": 377081.7577364584
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3442816992,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 97175584,
+          "uptimeSeconds": 377088.554770875
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3442816992,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 97175584,
+          "uptimeSeconds": 377088.55548104167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3411604104,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 128388472,
+          "uptimeSeconds": 377091.810053625
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3411571336,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 128421240,
+          "uptimeSeconds": 377091.8126455417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2467770992,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1072221584,
+          "uptimeSeconds": 377093.44644745835
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2467770992,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1072221584,
+          "uptimeSeconds": 377093.447833875
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2522183600,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1017808976,
+          "uptimeSeconds": 377093.47617537505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2521692080,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 1018300496,
+          "uptimeSeconds": 377093.61081825005
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2521692080,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1018300496,
+          "uptimeSeconds": 377093.61116075004
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2521692080,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1018300496,
+          "uptimeSeconds": 377093.6115162917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2521757616,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1018234960,
+          "uptimeSeconds": 377093.61457954167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2521757616,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1018234960,
+          "uptimeSeconds": 377093.62055395835
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2521757616,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1018234960,
+          "uptimeSeconds": 377093.6207285417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3269734664,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 270257912,
+          "uptimeSeconds": 377096.9437012917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3261493512,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 278499064,
+          "uptimeSeconds": 377096.94733208336
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2691084528,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 848908048,
+          "uptimeSeconds": 377100.6843515
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2682401008,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 857591568,
+          "uptimeSeconds": 377100.69398045837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2689626352,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 850726672,
+          "uptimeSeconds": 377103.33683675004
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2763075824,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 776916752,
+          "uptimeSeconds": 377103.34371625003
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2764534000,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 775458576,
+          "uptimeSeconds": 377106.1106863334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2764534000,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 775458576,
+          "uptimeSeconds": 377106.11239025
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.14038420835
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.14066850004
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.14077908336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.1408767917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.141026375
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.14122362505
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.14136675
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.14157562505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.14168925
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.1417805
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2778576792,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 761415784,
+          "uptimeSeconds": 377106.141944125
+        }
+      ],
+      "peakStageSampledFootprintBytes": 1072221584
+    },
+    {
+      "name": "second-attempt",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone17probe",
+        "complete": true,
+        "denoiserRetention": true,
+        "gpuCapabilities": {
+          "maxBufferLength": 4294967296,
+          "name": "Apple A19 GPU",
+          "recommendedMaxWorkingSetSize": 5726633984
+        },
+        "height": 512,
+        "osVersion": "Version 27.0.1 (Build 24A446)",
+        "physicalMemoryBytes": 8045641728,
+        "probeMinimumMemoryBytes": 7500000000,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 16877336,
+            "productionSupportsGeneration": true,
+            "uptimeSeconds": 377425.9242013334
+          },
+          {
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 78579672,
+            "result": "supported",
+            "uptimeSeconds": 377426.79539600003
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 211486728,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 377426.89769720833
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 211519496,
+            "prompt": "全裸の人物",
+            "result": "passed",
+            "uptimeSeconds": 377426.8989607917
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 211519496,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 377426.89993379166
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 195397640,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 377426.90118345834
+          },
+          {
+            "error": "画像の安全性を確認するモデルを読み込めません。画像は表示・保存できません。",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 195414024,
+            "result": "passed",
+            "uptimeSeconds": 377426.9029009584
+          },
+          {
+            "phase": "preparation-start",
+            "physicalFootprintBytes": 195414024,
+            "uptimeSeconds": 377426.9032891667
+          },
+          {
+            "error": "",
+            "lowPowerMode": false,
+            "phase": "preparation-end",
+            "physicalFootprintBytes": 1012926496,
+            "prepared": true,
+            "seconds": 5.486752986907959,
+            "thermalState": 0,
+            "uptimeSeconds": 377432.39037075004
+          },
+          {
+            "case": "first",
+            "phase": "generation-start",
+            "physicalFootprintBytes": 1012926496,
+            "seed": 42,
+            "uptimeSeconds": 377432.391220125
+          },
+          {
+            "case": "first",
+            "error": "生成を中断しました",
+            "phase": "generation-no-output",
+            "physicalFootprintBytes": 288491624,
+            "secondsIncludingSafety": 22.84013295173645,
+            "uptimeSeconds": 377455.23113050003
+          },
+          {
+            "afterIdlePixelsMatch": false,
+            "afterReleasePixelsMatch": false,
+            "approvedImages": 0,
+            "phase": "complete",
+            "physicalFootprintBytes": 288671848,
+            "repeatPixelsMatch": false,
+            "uptimeSeconds": 377455.266754375
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Copied app with unchanged production RAM guard, engine, GPU runtime, retention and safety. Test-only driver appended to view model.",
+        "shippingConfiguration": true,
+        "steps": 4,
+        "width": 512
+      },
+      "lifecycle": [
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3507779744,
+          "event": "scene-active",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 32212832,
+          "thermalState": 0,
+          "uptimeSeconds": 377425.99142695835
+        },
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 2499571832,
+          "event": "memory-warning",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 1040420744,
+          "thermalState": 0,
+          "uptimeSeconds": 377449.21917320834
+        },
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3085465424,
+          "event": "smoke-driver-ended-cancelled-false",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 454527152,
+          "thermalState": 0,
+          "uptimeSeconds": 377455.420333875
+        }
+      ],
+      "runtimeEvents": [
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3506616504,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 33376072,
+          "uptimeSeconds": 377426.1037326667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3506485432,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 33507144,
+          "uptimeSeconds": 377426.109519875
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461412904,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78579672,
+          "uptimeSeconds": 377426.79471008334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461412904,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78579672,
+          "uptimeSeconds": 377426.7948997917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461412904,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78579672,
+          "uptimeSeconds": 377426.7950050834
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461412904,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78579672,
+          "uptimeSeconds": 377426.79510033334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461412904,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78579672,
+          "uptimeSeconds": 377426.7951950417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461412904,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78579672,
+          "uptimeSeconds": 377426.79528820835
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461380136,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78612440,
+          "uptimeSeconds": 377426.79595658334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461380136,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78612440,
+          "uptimeSeconds": 377426.7960835417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461380136,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78612440,
+          "uptimeSeconds": 377426.796183375
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461380136,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78612440,
+          "uptimeSeconds": 377426.7962784584
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461380136,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78612440,
+          "uptimeSeconds": 377426.79636958335
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461380136,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78612440,
+          "uptimeSeconds": 377426.79646079167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3360258040,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 179734536,
+          "uptimeSeconds": 377426.9280804167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3360241656,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 179750920,
+          "uptimeSeconds": 377426.929173125
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3385407480,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 154585096,
+          "uptimeSeconds": 377427.63485979167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3385407480,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 154585096,
+          "uptimeSeconds": 377427.6350680417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385407480,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 154585096,
+          "uptimeSeconds": 377427.6351757917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385325560,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 154667016,
+          "uptimeSeconds": 377427.6400337917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385325560,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 154667016,
+          "uptimeSeconds": 377427.6414517917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385325560,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 154667016,
+          "uptimeSeconds": 377427.64156379167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3420238496,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 119754080,
+          "uptimeSeconds": 377431.31272833335
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3420205728,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 119786848,
+          "uptimeSeconds": 377431.31779633334
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2472915592,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1067076984,
+          "uptimeSeconds": 377432.3391361667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2472915592,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1067076984,
+          "uptimeSeconds": 377432.3398424167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526935008,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1013057568,
+          "uptimeSeconds": 377432.3600250417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526590944,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 1013401632,
+          "uptimeSeconds": 377432.4389501667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526590944,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1013401632,
+          "uptimeSeconds": 377432.43923741666
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526590944,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1013401632,
+          "uptimeSeconds": 377432.43938
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526590944,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1013401632,
+          "uptimeSeconds": 377432.4415094167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526590944,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1013401632,
+          "uptimeSeconds": 377432.44414208335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526590944,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1013401632,
+          "uptimeSeconds": 377432.44432170835
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3276124424,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 263868152,
+          "uptimeSeconds": 377436.46112108335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3267866888,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 272125688,
+          "uptimeSeconds": 377436.4708361667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2653843696,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 886148880,
+          "uptimeSeconds": 377438.80464745837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2644979952,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 895012624,
+          "uptimeSeconds": 377438.81613291666
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2687774936,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 852217640,
+          "uptimeSeconds": 377441.3129931667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2678894808,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 861097768,
+          "uptimeSeconds": 377441.3236519167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2763911384,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 776081192,
+          "uptimeSeconds": 377444.0340449167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2755113176,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 784879400,
+          "uptimeSeconds": 377444.0568615
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2726539480,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 813453096,
+          "uptimeSeconds": 377447.11501891667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2726179032,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 813813544,
+          "uptimeSeconds": 377447.11969379167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2985717976,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 554274600,
+          "uptimeSeconds": 377447.96646275005
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2985717976,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 554274600,
+          "uptimeSeconds": 377447.96667883336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2339008632,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1200983944,
+          "uptimeSeconds": 377448.13426508335
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2338746488,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1201246088,
+          "uptimeSeconds": 377448.13627925003
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2348953720,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1191038856,
+          "uptimeSeconds": 377455.032800875
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2348953720,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1191038856,
+          "uptimeSeconds": 377455.03469933337
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3079876824,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 460115752,
+          "uptimeSeconds": 377455.08956754167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3075567832,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 464424744,
+          "uptimeSeconds": 377455.097974625
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3251648408,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 288344168,
+          "uptimeSeconds": 377455.16483458335
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3251648408,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 288344168,
+          "uptimeSeconds": 377455.168020375
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3251648408,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 288344168,
+          "uptimeSeconds": 377455.1683843334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3251648408,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 288344168,
+          "uptimeSeconds": 377455.1689016667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3251648408,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 288344168,
+          "uptimeSeconds": 377455.16908645834
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3251500952,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 288491624,
+          "uptimeSeconds": 377455.2311419167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3251500952,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 288491624,
+          "uptimeSeconds": 377455.23167504166
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3251500952,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 288491624,
+          "uptimeSeconds": 377455.2320199584
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3251500952,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 288491624,
+          "uptimeSeconds": 377455.2321805417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3251500952,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 288491624,
+          "uptimeSeconds": 377455.23257345834
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3251500952,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 288491624,
+          "uptimeSeconds": 377455.2328616667
+        }
+      ],
+      "peakStageSampledFootprintBytes": 1201246088
+    },
+    {
+      "name": "third-attempt",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone17probe",
+        "complete": true,
+        "denoiserRetention": true,
+        "gpuCapabilities": {
+          "maxBufferLength": 4294967296,
+          "name": "Apple A19 GPU",
+          "recommendedMaxWorkingSetSize": 5726633984
+        },
+        "height": 512,
+        "osVersion": "Version 27.0.1 (Build 24A446)",
+        "physicalMemoryBytes": 8045641728,
+        "probeMinimumMemoryBytes": 7500000000,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 16942872,
+            "productionSupportsGeneration": true,
+            "uptimeSeconds": 377829.48196237505
+          },
+          {
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 79661016,
+            "result": "supported",
+            "uptimeSeconds": 377830.40103583335
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 196446216,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 377830.5012591667
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 196478984,
+            "prompt": "全裸の人物",
+            "result": "passed",
+            "uptimeSeconds": 377830.5025795417
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 196478984,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 377830.50357608334
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 196478984,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 377830.50484458334
+          },
+          {
+            "error": "画像の安全性を確認するモデルを読み込めません。画像は表示・保存できません。",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 196478984,
+            "result": "passed",
+            "uptimeSeconds": 377830.5066061667
+          },
+          {
+            "phase": "preparation-start",
+            "physicalFootprintBytes": 196478984,
+            "uptimeSeconds": 377830.50700733333
+          },
+          {
+            "error": "",
+            "lowPowerMode": false,
+            "phase": "preparation-end",
+            "physicalFootprintBytes": 1012844576,
+            "prepared": true,
+            "seconds": 5.688086986541748,
+            "thermalState": 0,
+            "uptimeSeconds": 377836.19539300003
+          },
+          {
+            "case": "first",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 1012844576,
+            "prepared": true,
+            "seed": 42,
+            "thermalState": 0,
+            "uptimeSeconds": 377836.1961832917
+          },
+          {
+            "case": "first",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 464031528,
+            "pixelSHA256": "fd402c356f932bfbef727c029fcf9cd6bc70e4f872a7c2aa621751266d03a47c",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 13.96963906288147,
+            "seed": 42,
+            "uptimeSeconds": 377850.1661218334,
+            "views": [
+              {
+                "nsfl": 0.03202928230166435,
+                "nsfw": 0.03767119720578194,
+                "sfw": 0.9302994608879089
+              },
+              {
+                "nsfl": 0.02928084321320057,
+                "nsfw": 0.030281050130724907,
+                "sfw": 0.9404380917549133
+              },
+              {
+                "nsfl": 0.028541263192892075,
+                "nsfw": 0.029641419649124146,
+                "sfw": 0.9418173432350159
+              },
+              {
+                "nsfl": 0.029635919257998466,
+                "nsfw": 0.053574591875076294,
+                "sfw": 0.9167894721031189
+              },
+              {
+                "nsfl": 0.025974934920668602,
+                "nsfw": 0.03610727936029434,
+                "sfw": 0.9379177689552307
+              },
+              {
+                "nsfl": 0.0326400101184845,
+                "nsfw": 0.03632518649101257,
+                "sfw": 0.9310348033905029
+              }
+            ],
+            "width": 512
+          },
+          {
+            "case": "repeat",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 633917296,
+            "prepared": true,
+            "seed": 42,
+            "thermalState": 0,
+            "uptimeSeconds": 377850.323981
+          },
+          {
+            "case": "repeat",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 624643904,
+            "pixelSHA256": "fd402c356f932bfbef727c029fcf9cd6bc70e4f872a7c2aa621751266d03a47c",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 10.979740023612976,
+            "seed": 42,
+            "uptimeSeconds": 377861.3043941667,
+            "views": [
+              {
+                "nsfl": 0.03202928230166435,
+                "nsfw": 0.03767119720578194,
+                "sfw": 0.9302994608879089
+              },
+              {
+                "nsfl": 0.02928084321320057,
+                "nsfw": 0.030281050130724907,
+                "sfw": 0.9404380917549133
+              },
+              {
+                "nsfl": 0.028541263192892075,
+                "nsfw": 0.029641419649124146,
+                "sfw": 0.9418173432350159
+              },
+              {
+                "nsfl": 0.029635919257998466,
+                "nsfw": 0.053574591875076294,
+                "sfw": 0.9167894721031189
+              },
+              {
+                "nsfl": 0.025974934920668602,
+                "nsfw": 0.03610727936029434,
+                "sfw": 0.9379177689552307
+              },
+              {
+                "nsfl": 0.0326400101184845,
+                "nsfw": 0.03632518649101257,
+                "sfw": 0.9310348033905029
+              }
+            ],
+            "width": 512
+          },
+          {
+            "case": "changed-prompt",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 658657160,
+            "prepared": true,
+            "seed": 43,
+            "thermalState": 0,
+            "uptimeSeconds": 377861.42036312504
+          },
+          {
+            "case": "changed-prompt",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 641568600,
+            "pixelSHA256": "115cc9495e696d2a8987c528dcab5d3848d77f52ff07cf5d7a035e992f019e2a",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 17.95530092716217,
+            "seed": 43,
+            "uptimeSeconds": 377879.376237875,
+            "views": [
+              {
+                "nsfl": 0.032407473772764206,
+                "nsfw": 0.037447329610586166,
+                "sfw": 0.930145263671875
+              },
+              {
+                "nsfl": 0.03240210935473442,
+                "nsfw": 0.03599070385098457,
+                "sfw": 0.9316072463989258
+              },
+              {
+                "nsfl": 0.032144539058208466,
+                "nsfw": 0.032256320118904114,
+                "sfw": 0.935599148273468
+              },
+              {
+                "nsfl": 0.03446067124605179,
+                "nsfw": 0.041714128106832504,
+                "sfw": 0.923825204372406
+              },
+              {
+                "nsfl": 0.03380103036761284,
+                "nsfw": 0.04060821980237961,
+                "sfw": 0.9255908131599426
+              },
+              {
+                "nsfl": 0.033390745520591736,
+                "nsfw": 0.03652307763695717,
+                "sfw": 0.9300861358642578
+              }
+            ],
+            "width": 512
+          },
+          {
+            "phase": "idle-start",
+            "physicalFootprintBytes": 593694600,
+            "seconds": 32,
+            "uptimeSeconds": 377879.50995108334
+          },
+          {
+            "phase": "idle-end",
+            "physicalFootprintBytes": 125733016,
+            "uptimeSeconds": 377912.9328035417
+          },
+          {
+            "case": "after-idle",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 125733016,
+            "prepared": true,
+            "seed": 43,
+            "thermalState": 0,
+            "uptimeSeconds": 377912.93561658333
+          },
+          {
+            "case": "after-idle",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 648138584,
+            "pixelSHA256": "115cc9495e696d2a8987c528dcab5d3848d77f52ff07cf5d7a035e992f019e2a",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 12.737165093421936,
+            "seed": 43,
+            "uptimeSeconds": 377925.67465108336,
+            "views": [
+              {
+                "nsfl": 0.032407473772764206,
+                "nsfw": 0.037447329610586166,
+                "sfw": 0.930145263671875
+              },
+              {
+                "nsfl": 0.03240210935473442,
+                "nsfw": 0.03599070385098457,
+                "sfw": 0.9316072463989258
+              },
+              {
+                "nsfl": 0.032144539058208466,
+                "nsfw": 0.032256320118904114,
+                "sfw": 0.935599148273468
+              },
+              {
+                "nsfl": 0.03446067124605179,
+                "nsfw": 0.041714128106832504,
+                "sfw": 0.923825204372406
+              },
+              {
+                "nsfl": 0.03380103036761284,
+                "nsfw": 0.04060821980237961,
+                "sfw": 0.9255908131599426
+              },
+              {
+                "nsfl": 0.033390745520591736,
+                "nsfw": 0.03652307763695717,
+                "sfw": 0.9300861358642578
+              }
+            ],
+            "width": 512
+          },
+          {
+            "phase": "resource-release-start",
+            "physicalFootprintBytes": 600625032,
+            "uptimeSeconds": 377925.807505625
+          },
+          {
+            "phase": "resource-release-end",
+            "physicalFootprintBytes": 341362936,
+            "prepared": false,
+            "uptimeSeconds": 377925.8607964584
+          },
+          {
+            "case": "after-release",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 341362936,
+            "prepared": false,
+            "seed": 43,
+            "thermalState": 0,
+            "uptimeSeconds": 377925.86178000004
+          },
+          {
+            "case": "after-release",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 469290840,
+            "pixelSHA256": "115cc9495e696d2a8987c528dcab5d3848d77f52ff07cf5d7a035e992f019e2a",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 18.06200909614563,
+            "seed": 43,
+            "uptimeSeconds": 377943.9243451667,
+            "views": [
+              {
+                "nsfl": 0.032407473772764206,
+                "nsfw": 0.037447329610586166,
+                "sfw": 0.930145263671875
+              },
+              {
+                "nsfl": 0.03240210935473442,
+                "nsfw": 0.03599070385098457,
+                "sfw": 0.9316072463989258
+              },
+              {
+                "nsfl": 0.032144539058208466,
+                "nsfw": 0.032256320118904114,
+                "sfw": 0.935599148273468
+              },
+              {
+                "nsfl": 0.03446067124605179,
+                "nsfw": 0.041714128106832504,
+                "sfw": 0.923825204372406
+              },
+              {
+                "nsfl": 0.03380103036761284,
+                "nsfw": 0.04060821980237961,
+                "sfw": 0.9255908131599426
+              },
+              {
+                "nsfl": 0.033390745520591736,
+                "nsfw": 0.03652307763695717,
+                "sfw": 0.9300861358642578
+              }
+            ],
+            "width": 512
+          },
+          {
+            "afterIdlePixelsMatch": true,
+            "afterReleasePixelsMatch": true,
+            "approvedImages": 5,
+            "phase": "complete",
+            "physicalFootprintBytes": 324798712,
+            "repeatPixelsMatch": true,
+            "uptimeSeconds": 377944.12845433335
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Copied app with unchanged production RAM guard, engine, GPU runtime, retention and safety. Test-only driver appended to view model.",
+        "shippingConfiguration": true,
+        "steps": 4,
+        "width": 512
+      },
+      "lifecycle": [
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3507501240,
+          "event": "scene-active",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 32491336,
+          "thermalState": 0,
+          "uptimeSeconds": 377829.5677479167
+        },
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3081238280,
+          "event": "smoke-driver-ended-cancelled-false",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 458754296,
+          "thermalState": 0,
+          "uptimeSeconds": 377944.2642670834
+        }
+      ],
+      "runtimeEvents": [
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3506288800,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 33703776,
+          "uptimeSeconds": 377829.711522
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3506124960,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 33867616,
+          "uptimeSeconds": 377829.7222216667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3460347944,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 79644632,
+          "uptimeSeconds": 377830.4003130834
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3460347944,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 79644632,
+          "uptimeSeconds": 377830.40050825005
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3460347944,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 79644632,
+          "uptimeSeconds": 377830.40061454166
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3460347944,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 79644632,
+          "uptimeSeconds": 377830.4007091667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3460347944,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 79644632,
+          "uptimeSeconds": 377830.40082879167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3460331560,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 79661016,
+          "uptimeSeconds": 377830.40092720836
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3460331560,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 79661016,
+          "uptimeSeconds": 377830.40164933336
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3460331560,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 79661016,
+          "uptimeSeconds": 377830.40176233335
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3460331560,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 79661016,
+          "uptimeSeconds": 377830.4018541667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3460331560,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 79661016,
+          "uptimeSeconds": 377830.4019412917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3460331560,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 79661016,
+          "uptimeSeconds": 377830.4020277917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3460315176,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 79677400,
+          "uptimeSeconds": 377830.40211875003
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3359242232,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 180750344,
+          "uptimeSeconds": 377830.53154258337
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3359209464,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 180783112,
+          "uptimeSeconds": 377830.532555625
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3384342520,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 155650056,
+          "uptimeSeconds": 377831.2129032917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3384342520,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 155650056,
+          "uptimeSeconds": 377831.2131314167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3384342520,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 155650056,
+          "uptimeSeconds": 377831.21337770834
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3384276984,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 155715592,
+          "uptimeSeconds": 377831.2198321667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3384260600,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 155731976,
+          "uptimeSeconds": 377831.22810320836
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3384260600,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 155731976,
+          "uptimeSeconds": 377831.22823837504
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3422515872,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 117476704,
+          "uptimeSeconds": 377835.08078329166
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3422483104,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 117509472,
+          "uptimeSeconds": 377835.08332591667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2470376072,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1069616504,
+          "uptimeSeconds": 377836.13613683335
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2470359688,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1069632888,
+          "uptimeSeconds": 377836.139133375
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2527311840,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1012680736,
+          "uptimeSeconds": 377836.16645608336
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526377952,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 1013614624,
+          "uptimeSeconds": 377836.252181
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526377952,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1013614624,
+          "uptimeSeconds": 377836.25245662505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526377952,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1013614624,
+          "uptimeSeconds": 377836.25258183334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526377952,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1013614624,
+          "uptimeSeconds": 377836.2548057917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526377952,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1013614624,
+          "uptimeSeconds": 377836.25866625004
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526377952,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1013614624,
+          "uptimeSeconds": 377836.2587943334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3265491208,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 274501368,
+          "uptimeSeconds": 377839.74609970837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3257250056,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 282742520,
+          "uptimeSeconds": 377839.7582346667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2644127984,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 895864592,
+          "uptimeSeconds": 377841.86897120834
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2635493616,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 904498960,
+          "uptimeSeconds": 377841.8791202917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2641932528,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 898060048,
+          "uptimeSeconds": 377844.145850375
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2633642224,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 906350352,
+          "uptimeSeconds": 377844.1542067917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2639769840,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 900222736,
+          "uptimeSeconds": 377846.514659125
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2631299312,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 908693264,
+          "uptimeSeconds": 377846.5210483334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2678124784,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 861867792,
+          "uptimeSeconds": 377848.92931225
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2678124784,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 861867792,
+          "uptimeSeconds": 377848.93108433334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2678075632,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 861916944,
+          "uptimeSeconds": 377848.93638691667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2678075632,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 861916944,
+          "uptimeSeconds": 377848.93653295835
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2028957840,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1511034736,
+          "uptimeSeconds": 377849.2070720417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2028695696,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1511296880,
+          "uptimeSeconds": 377849.2077390417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2106224760,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1433767816,
+          "uptimeSeconds": 377849.81130837504
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2106224760,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1433767816,
+          "uptimeSeconds": 377849.8125648334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2116514008,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1423478568,
+          "uptimeSeconds": 377849.8219867917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2973773992,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 566218584,
+          "uptimeSeconds": 377850.34531712503
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2973773992,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 566218584,
+          "uptimeSeconds": 377850.34562408336
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2973773992,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 566218584,
+          "uptimeSeconds": 377850.3457842917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2965303464,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 574689112,
+          "uptimeSeconds": 377850.34907645837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2576314560,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 963678016,
+          "uptimeSeconds": 377852.7772110417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2568073408,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 971919168,
+          "uptimeSeconds": 377852.7809379167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2589126872,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 950865704,
+          "uptimeSeconds": 377855.2943682083
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2580885720,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 959106856,
+          "uptimeSeconds": 377855.29815470835
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2589028568,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 950964008,
+          "uptimeSeconds": 377857.8445607917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2580787416,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 959205160,
+          "uptimeSeconds": 377857.8479542917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2665115864,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 874876712,
+          "uptimeSeconds": 377860.43777300004
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2665115864,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 874876712,
+          "uptimeSeconds": 377860.439098
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2665099480,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 874893096,
+          "uptimeSeconds": 377860.44149775
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2665050328,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 874942248,
+          "uptimeSeconds": 377860.44172162504
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 1936633976,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1603358600,
+          "uptimeSeconds": 377860.607421875
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 1936371832,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1603620744,
+          "uptimeSeconds": 377860.6082204584
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2194567288,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1345425288,
+          "uptimeSeconds": 377861.22670083336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2194567288,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1345425288,
+          "uptimeSeconds": 377861.2272065417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2200531160,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1339461416,
+          "uptimeSeconds": 377861.2359127917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2985603216,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 554389360,
+          "uptimeSeconds": 377861.43624087505
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3161339704,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 378652872,
+          "uptimeSeconds": 377861.46172408335
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3161339704,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 378652872,
+          "uptimeSeconds": 377861.4620346667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3161618232,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 378374344,
+          "uptimeSeconds": 377861.46709075
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3177740088,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 362252488,
+          "uptimeSeconds": 377861.46890225
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3177740088,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 362252488,
+          "uptimeSeconds": 377861.46902633336
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3362173432,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 177819144,
+          "uptimeSeconds": 377864.08262550004
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3362140664,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 177851912,
+          "uptimeSeconds": 377864.0829801667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2426384888,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1113607688,
+          "uptimeSeconds": 377864.76102525
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2426384888,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1113607688,
+          "uptimeSeconds": 377864.761951
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2480486224,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1059506352,
+          "uptimeSeconds": 377864.7807772917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2480420688,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1059571888,
+          "uptimeSeconds": 377864.7826961667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2480420688,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1059571888,
+          "uptimeSeconds": 377864.78443962504
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2480420688,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1059571888,
+          "uptimeSeconds": 377864.78457308334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3236196520,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 303796056,
+          "uptimeSeconds": 377867.79960408335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3227906216,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 312086360,
+          "uptimeSeconds": 377867.8068915
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2692280488,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 847712088,
+          "uptimeSeconds": 377870.21117645834
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2683695272,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 856297304,
+          "uptimeSeconds": 377870.21606495837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2655006888,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 884985688,
+          "uptimeSeconds": 377872.8555190417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2646405288,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 893587288,
+          "uptimeSeconds": 377872.85919829167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2689511592,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 850480984,
+          "uptimeSeconds": 377875.5594417917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2681270440,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 858722136,
+          "uptimeSeconds": 377875.5635955
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2689429672,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 850562904,
+          "uptimeSeconds": 377878.3022379167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2689429672,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 850562904,
+          "uptimeSeconds": 377878.3040397917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2689364136,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 850628440,
+          "uptimeSeconds": 377878.308730375
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2689364136,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 850628440,
+          "uptimeSeconds": 377878.308861125
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2079699016,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1460293560,
+          "uptimeSeconds": 377878.5288047917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2079436872,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1460555704,
+          "uptimeSeconds": 377878.52926108334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2101669960,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1438322616,
+          "uptimeSeconds": 377879.21227016667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2101669960,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1438322616,
+          "uptimeSeconds": 377879.2129247917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2107945128,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1432047448,
+          "uptimeSeconds": 377879.22233170836
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3238539432,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 301453144,
+          "uptimeSeconds": 377909.91462700005
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3414259560,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 125733016,
+          "uptimeSeconds": 377909.98869933333
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3414259560,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 125733016,
+          "uptimeSeconds": 377909.9890154584
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3414259560,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 125733016,
+          "uptimeSeconds": 377909.98930870835
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3414259560,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 125733016,
+          "uptimeSeconds": 377909.98943683336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3414259560,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 125733016,
+          "uptimeSeconds": 377909.9895504167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3415209832,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 124782744,
+          "uptimeSeconds": 377912.9620776667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3415209832,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 124782744,
+          "uptimeSeconds": 377912.96291683335
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3415209832,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 124782744,
+          "uptimeSeconds": 377912.96328520833
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3414439784,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 125552792,
+          "uptimeSeconds": 377912.9679645417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3414423400,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 125569176,
+          "uptimeSeconds": 377912.97154520836
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3414423400,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 125569176,
+          "uptimeSeconds": 377912.9722136667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3246354600,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 293637976,
+          "uptimeSeconds": 377915.83093962504
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3237916840,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 302075736,
+          "uptimeSeconds": 377915.837371625
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2591289512,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 948703064,
+          "uptimeSeconds": 377917.8189052917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2583031976,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 956960600,
+          "uptimeSeconds": 377917.82367483334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2552393896,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 987598680,
+          "uptimeSeconds": 377919.98463329166
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2544152744,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 995839832,
+          "uptimeSeconds": 377919.988086375
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2665951400,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 874041176,
+          "uptimeSeconds": 377922.29209195834
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2657710248,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 882282328,
+          "uptimeSeconds": 377922.2954606667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2627874984,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 912117592,
+          "uptimeSeconds": 377924.659207375
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2627874984,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 912117592,
+          "uptimeSeconds": 377924.6609654584
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2627825832,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 912166744,
+          "uptimeSeconds": 377924.6654154584
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2627825832,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 912166744,
+          "uptimeSeconds": 377924.66558979166
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2012180552,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1527812024,
+          "uptimeSeconds": 377924.949974625
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2011918408,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1528074168,
+          "uptimeSeconds": 377924.95047358336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2056482888,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1483509688,
+          "uptimeSeconds": 377925.5286925
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2056482888,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1483509688,
+          "uptimeSeconds": 377925.52928625
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2063429800,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1476562776,
+          "uptimeSeconds": 377925.5402084167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2990059640,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 549932936,
+          "uptimeSeconds": 377925.8104692917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3181885192,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 358107384,
+          "uptimeSeconds": 377925.83702879166
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3181885192,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 358107384,
+          "uptimeSeconds": 377925.837409375
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3181885192,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 358107384,
+          "uptimeSeconds": 377925.8376837917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3181885192,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 358107384,
+          "uptimeSeconds": 377925.83809833333
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3181885192,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 358107384,
+          "uptimeSeconds": 377925.8383837917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3197613856,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 342378720,
+          "uptimeSeconds": 377925.9128839167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3197613856,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 342378720,
+          "uptimeSeconds": 377925.91430912504
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3323197264,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 216795312,
+          "uptimeSeconds": 377926.77491458337
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3323197264,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 216795312,
+          "uptimeSeconds": 377926.7752005417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3323197264,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 216795312,
+          "uptimeSeconds": 377926.77533670835
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3323197264,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 216795312,
+          "uptimeSeconds": 377926.78323945834
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3323197264,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 216795312,
+          "uptimeSeconds": 377926.78484470834
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3323197264,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 216795312,
+          "uptimeSeconds": 377926.784979125
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3344511480,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 195481096,
+          "uptimeSeconds": 377928.94831658335
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3344478712,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 195513864,
+          "uptimeSeconds": 377928.9487576667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2420519416,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1119473160,
+          "uptimeSeconds": 377929.58944862505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2420519416,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1119473160,
+          "uptimeSeconds": 377929.58991645835
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2474489704,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1065502872,
+          "uptimeSeconds": 377929.6070592084
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2474489704,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1065502872,
+          "uptimeSeconds": 377929.60876670835
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2474489704,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1065502872,
+          "uptimeSeconds": 377929.61042900005
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2474489704,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1065502872,
+          "uptimeSeconds": 377929.61054900003
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3272650920,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 267341656,
+          "uptimeSeconds": 377932.74862250005
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3264409768,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 275582808,
+          "uptimeSeconds": 377932.75024875003
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2621108392,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 918884184,
+          "uptimeSeconds": 377935.04232495837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2612850856,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 927141720,
+          "uptimeSeconds": 377935.04594308336
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2657153192,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 882839384,
+          "uptimeSeconds": 377937.56591475004
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2648912040,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 891080536,
+          "uptimeSeconds": 377937.5691595417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2733338792,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 806653784,
+          "uptimeSeconds": 377940.16528866667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2725097640,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 814894936,
+          "uptimeSeconds": 377940.17090662505
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2694656168,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 845336408,
+          "uptimeSeconds": 377942.81895283336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2694656168,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 845336408,
+          "uptimeSeconds": 377942.82042787503
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2694656168,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 845336408,
+          "uptimeSeconds": 377942.8226490417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2694656168,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 845336408,
+          "uptimeSeconds": 377942.82295220834
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2028908616,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1511083960,
+          "uptimeSeconds": 377943.0767495
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2028646472,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1511346104,
+          "uptimeSeconds": 377943.0779179584
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2150887496,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1389105080,
+          "uptimeSeconds": 377943.74853054166
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2150887496,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1389105080,
+          "uptimeSeconds": 377943.748923
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2156589224,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1383403352,
+          "uptimeSeconds": 377943.75829333335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2905124984,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 634867592,
+          "uptimeSeconds": 377944.0708177083
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3198285576,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 341707000,
+          "uptimeSeconds": 377944.1013823334
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3198285576,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 341707000,
+          "uptimeSeconds": 377944.1017276667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3198285576,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 341707000,
+          "uptimeSeconds": 377944.10187862505
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3198285576,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 341707000,
+          "uptimeSeconds": 377944.1020095834
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3198285576,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 341707000,
+          "uptimeSeconds": 377944.10213845834
+        }
+      ],
+      "peakStageSampledFootprintBytes": 1603620744
+    },
+    {
+      "name": "fourth-attempt",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone17probe",
+        "complete": true,
+        "denoiserRetention": true,
+        "gpuCapabilities": {
+          "maxBufferLength": 4294967296,
+          "name": "Apple A19 GPU",
+          "recommendedMaxWorkingSetSize": 5726633984
+        },
+        "height": 512,
+        "osVersion": "Version 27.0.1 (Build 24A446)",
+        "physicalMemoryBytes": 8045641728,
+        "probeMinimumMemoryBytes": 7500000000,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 17254168,
+            "productionSupportsGeneration": true,
+            "uptimeSeconds": 378023.1940196667
+          },
+          {
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 64882648,
+            "result": "supported",
+            "uptimeSeconds": 378024.04184125003
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 197904392,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 378024.1375506667
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 197937160,
+            "prompt": "全裸の人物",
+            "result": "passed",
+            "uptimeSeconds": 378024.138975
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 197937160,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 378024.1398974167
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 197937160,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 378024.1411235417
+          },
+          {
+            "error": "画像の安全性を確認するモデルを読み込めません。画像は表示・保存できません。",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 197937160,
+            "result": "passed",
+            "uptimeSeconds": 378024.14282120834
+          },
+          {
+            "phase": "preparation-start",
+            "physicalFootprintBytes": 197937160,
+            "uptimeSeconds": 378024.14322883333
+          },
+          {
+            "error": "",
+            "lowPowerMode": false,
+            "phase": "preparation-end",
+            "physicalFootprintBytes": 1110116408,
+            "prepared": true,
+            "seconds": 3.9545600414276123,
+            "thermalState": 0,
+            "uptimeSeconds": 378028.09815083334
+          },
+          {
+            "case": "first",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 1110116408,
+            "prepared": true,
+            "seed": 42,
+            "thermalState": 0,
+            "uptimeSeconds": 378028.0989665
+          },
+          {
+            "case": "first",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 474517312,
+            "pixelSHA256": "fd402c356f932bfbef727c029fcf9cd6bc70e4f872a7c2aa621751266d03a47c",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 14.33923602104187,
+            "seed": 42,
+            "uptimeSeconds": 378042.4385201667,
+            "views": [
+              {
+                "nsfl": 0.03202928230166435,
+                "nsfw": 0.03767119720578194,
+                "sfw": 0.9302994608879089
+              },
+              {
+                "nsfl": 0.02928084321320057,
+                "nsfw": 0.030281050130724907,
+                "sfw": 0.9404380917549133
+              },
+              {
+                "nsfl": 0.028541263192892075,
+                "nsfw": 0.029641419649124146,
+                "sfw": 0.9418173432350159
+              },
+              {
+                "nsfl": 0.029635919257998466,
+                "nsfw": 0.053574591875076294,
+                "sfw": 0.9167894721031189
+              },
+              {
+                "nsfl": 0.025974934920668602,
+                "nsfw": 0.03610727936029434,
+                "sfw": 0.9379177689552307
+              },
+              {
+                "nsfl": 0.0326400101184845,
+                "nsfw": 0.03632518649101257,
+                "sfw": 0.9310348033905029
+              }
+            ],
+            "width": 512
+          },
+          {
+            "case": "repeat",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 643043208,
+            "prepared": true,
+            "seed": 42,
+            "thermalState": 0,
+            "uptimeSeconds": 378042.5855860417
+          },
+          {
+            "case": "repeat",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 633737024,
+            "pixelSHA256": "fd402c356f932bfbef727c029fcf9cd6bc70e4f872a7c2aa621751266d03a47c",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 11.361306071281433,
+            "seed": 42,
+            "uptimeSeconds": 378053.9476975,
+            "views": [
+              {
+                "nsfl": 0.03202928230166435,
+                "nsfw": 0.03767119720578194,
+                "sfw": 0.9302994608879089
+              },
+              {
+                "nsfl": 0.02928084321320057,
+                "nsfw": 0.030281050130724907,
+                "sfw": 0.9404380917549133
+              },
+              {
+                "nsfl": 0.028541263192892075,
+                "nsfw": 0.029641419649124146,
+                "sfw": 0.9418173432350159
+              },
+              {
+                "nsfl": 0.029635919257998466,
+                "nsfw": 0.053574591875076294,
+                "sfw": 0.9167894721031189
+              },
+              {
+                "nsfl": 0.025974934920668602,
+                "nsfw": 0.03610727936029434,
+                "sfw": 0.9379177689552307
+              },
+              {
+                "nsfl": 0.0326400101184845,
+                "nsfw": 0.03632518649101257,
+                "sfw": 0.9310348033905029
+              }
+            ],
+            "width": 512
+          },
+          {
+            "case": "changed-prompt",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 666947488,
+            "prepared": true,
+            "seed": 43,
+            "thermalState": 0,
+            "uptimeSeconds": 378054.0719869584
+          },
+          {
+            "case": "changed-prompt",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 650923840,
+            "pixelSHA256": "115cc9495e696d2a8987c528dcab5d3848d77f52ff07cf5d7a035e992f019e2a",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 18.028100967407227,
+            "seed": 43,
+            "uptimeSeconds": 378072.10082308337,
+            "views": [
+              {
+                "nsfl": 0.032407473772764206,
+                "nsfw": 0.037447329610586166,
+                "sfw": 0.930145263671875
+              },
+              {
+                "nsfl": 0.03240210935473442,
+                "nsfw": 0.03599070385098457,
+                "sfw": 0.9316072463989258
+              },
+              {
+                "nsfl": 0.032144539058208466,
+                "nsfw": 0.032256320118904114,
+                "sfw": 0.935599148273468
+              },
+              {
+                "nsfl": 0.03446067124605179,
+                "nsfw": 0.041714128106832504,
+                "sfw": 0.923825204372406
+              },
+              {
+                "nsfl": 0.03380103036761284,
+                "nsfw": 0.04060821980237961,
+                "sfw": 0.9255908131599426
+              },
+              {
+                "nsfl": 0.033390745520591736,
+                "nsfw": 0.03652307763695717,
+                "sfw": 0.9300861358642578
+              }
+            ],
+            "width": 512
+          },
+          {
+            "phase": "idle-start",
+            "physicalFootprintBytes": 654495624,
+            "seconds": 32,
+            "uptimeSeconds": 378072.29771920835
+          },
+          {
+            "phase": "idle-end",
+            "physicalFootprintBytes": 128305304,
+            "uptimeSeconds": 378104.696150875
+          },
+          {
+            "case": "after-idle",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 128305304,
+            "prepared": true,
+            "seed": 43,
+            "thermalState": 1,
+            "uptimeSeconds": 378104.70113445836
+          },
+          {
+            "case": "after-idle",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 686427968,
+            "pixelSHA256": "115cc9495e696d2a8987c528dcab5d3848d77f52ff07cf5d7a035e992f019e2a",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 13.222725987434387,
+            "seed": 43,
+            "uptimeSeconds": 378117.9262552084,
+            "views": [
+              {
+                "nsfl": 0.032407473772764206,
+                "nsfw": 0.037447329610586166,
+                "sfw": 0.930145263671875
+              },
+              {
+                "nsfl": 0.03240210935473442,
+                "nsfw": 0.03599070385098457,
+                "sfw": 0.9316072463989258
+              },
+              {
+                "nsfl": 0.032144539058208466,
+                "nsfw": 0.032256320118904114,
+                "sfw": 0.935599148273468
+              },
+              {
+                "nsfl": 0.03446067124605179,
+                "nsfw": 0.041714128106832504,
+                "sfw": 0.923825204372406
+              },
+              {
+                "nsfl": 0.03380103036761284,
+                "nsfw": 0.04060821980237961,
+                "sfw": 0.9255908131599426
+              },
+              {
+                "nsfl": 0.033390745520591736,
+                "nsfw": 0.03652307763695717,
+                "sfw": 0.9300861358642578
+              }
+            ],
+            "width": 512
+          },
+          {
+            "phase": "resource-release-start",
+            "physicalFootprintBytes": 850874248,
+            "uptimeSeconds": 378118.05148658337
+          },
+          {
+            "phase": "resource-release-end",
+            "physicalFootprintBytes": 341313736,
+            "prepared": false,
+            "uptimeSeconds": 378118.09938045836
+          },
+          {
+            "case": "after-release",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 341313736,
+            "prepared": false,
+            "seed": 43,
+            "thermalState": 1,
+            "uptimeSeconds": 378118.10022475
+          },
+          {
+            "case": "after-release",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 663408448,
+            "pixelSHA256": "115cc9495e696d2a8987c528dcab5d3848d77f52ff07cf5d7a035e992f019e2a",
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 18.165360927581787,
+            "seed": 43,
+            "uptimeSeconds": 378136.2661591667,
+            "views": [
+              {
+                "nsfl": 0.032407473772764206,
+                "nsfw": 0.037447329610586166,
+                "sfw": 0.930145263671875
+              },
+              {
+                "nsfl": 0.03240210935473442,
+                "nsfw": 0.03599070385098457,
+                "sfw": 0.9316072463989258
+              },
+              {
+                "nsfl": 0.032144539058208466,
+                "nsfw": 0.032256320118904114,
+                "sfw": 0.935599148273468
+              },
+              {
+                "nsfl": 0.03446067124605179,
+                "nsfw": 0.041714128106832504,
+                "sfw": 0.923825204372406
+              },
+              {
+                "nsfl": 0.03380103036761284,
+                "nsfw": 0.04060821980237961,
+                "sfw": 0.9255908131599426
+              },
+              {
+                "nsfl": 0.033390745520591736,
+                "nsfw": 0.03652307763695717,
+                "sfw": 0.9300861358642578
+              }
+            ],
+            "width": 512
+          },
+          {
+            "afterIdlePixelsMatch": true,
+            "afterReleasePixelsMatch": true,
+            "approvedImages": 5,
+            "phase": "complete",
+            "physicalFootprintBytes": 334006472,
+            "repeatPixelsMatch": true,
+            "uptimeSeconds": 378136.499341375
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Copied app with unchanged production RAM guard, engine, GPU runtime, retention and safety. Test-only driver appended to view model.",
+        "shippingConfiguration": true,
+        "steps": 4,
+        "width": 512
+      },
+      "lifecycle": [
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3510466744,
+          "event": "scene-active",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 29525832,
+          "thermalState": 0,
+          "uptimeSeconds": 378023.26099104166
+        },
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3088332576,
+          "event": "smoke-driver-ended-cancelled-false",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 451660000,
+          "thermalState": 1,
+          "uptimeSeconds": 378136.618041625
+        }
+      ],
+      "runtimeEvents": [
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3510696120,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 29296456,
+          "uptimeSeconds": 378023.25460987503
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3510433976,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 29558600,
+          "uptimeSeconds": 378023.2615334167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.0410585417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.0412670417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.0414060417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.0415134167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.04162358335
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.0417245417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.04253870837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.04264225
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.0427327917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.04282537504
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3475109928,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 64882648,
+          "uptimeSeconds": 378024.04291658336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3475093544,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 64899032,
+          "uptimeSeconds": 378024.04300683335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3357718520,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 182274056,
+          "uptimeSeconds": 378024.16632741666
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3357702136,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 182290440,
+          "uptimeSeconds": 378024.16743770835
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3391879160,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 148113416,
+          "uptimeSeconds": 378024.85564975004
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3391879160,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 148113416,
+          "uptimeSeconds": 378024.85586420837
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3391879160,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 148113416,
+          "uptimeSeconds": 378024.855992875
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3391813624,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 148178952,
+          "uptimeSeconds": 378024.86089091667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3391813624,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 148178952,
+          "uptimeSeconds": 378024.8622474167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3391813624,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 148178952,
+          "uptimeSeconds": 378024.86235320836
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3305615984,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 234376592,
+          "uptimeSeconds": 378027.44846829167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3305583216,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 234409360,
+          "uptimeSeconds": 378027.449262125
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2375234136,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1164758440,
+          "uptimeSeconds": 378028.04999575
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2375234136,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1164758440,
+          "uptimeSeconds": 378028.05034087505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2429958088,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1110034488,
+          "uptimeSeconds": 378028.065685875
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2429204424,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 1110788152,
+          "uptimeSeconds": 378028.1529296667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2429204424,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1110788152,
+          "uptimeSeconds": 378028.153164
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2429204424,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1110788152,
+          "uptimeSeconds": 378028.15327970835
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2429204424,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1110788152,
+          "uptimeSeconds": 378028.1550645417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2429188040,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1110804536,
+          "uptimeSeconds": 378028.1567046667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2429188040,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1110804536,
+          "uptimeSeconds": 378028.156821875
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3275157744,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 264834832,
+          "uptimeSeconds": 378031.4461765417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3266916592,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 273075984,
+          "uptimeSeconds": 378031.45823608333
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2610442480,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 929550096,
+          "uptimeSeconds": 378033.50547558337
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2601824496,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 938168080,
+          "uptimeSeconds": 378033.5123835417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2637885656,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 902106920,
+          "uptimeSeconds": 378035.8055712917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2629169368,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 910823208,
+          "uptimeSeconds": 378035.8179727917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2685006016,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 854986560,
+          "uptimeSeconds": 378038.4077412917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2675962048,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 864030528,
+          "uptimeSeconds": 378038.4207392917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2721296576,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 818696000,
+          "uptimeSeconds": 378041.07928370836
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2721067200,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 818925376,
+          "uptimeSeconds": 378041.08314775
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2720739520,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 819253056,
+          "uptimeSeconds": 378041.09805562504
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2720739520,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 819253056,
+          "uptimeSeconds": 378041.0982379167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2069377096,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1470615480,
+          "uptimeSeconds": 378041.38395383337
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2069114952,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1470877624,
+          "uptimeSeconds": 378041.38471783337
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2181525576,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1358467000,
+          "uptimeSeconds": 378042.01329175005
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2181525576,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1358467000,
+          "uptimeSeconds": 378042.01391870837
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2192208064,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1347784512,
+          "uptimeSeconds": 378042.02381433337
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2963615888,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 576376688,
+          "uptimeSeconds": 378042.6119770417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2963615888,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 576376688,
+          "uptimeSeconds": 378042.61229233333
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2963615888,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 576376688,
+          "uptimeSeconds": 378042.61243233335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2955407504,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 584585072,
+          "uptimeSeconds": 378042.62041254167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2603823296,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 936169280,
+          "uptimeSeconds": 378045.14224429167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2595582144,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 944410432,
+          "uptimeSeconds": 378045.1485139167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2655793344,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 884199232,
+          "uptimeSeconds": 378047.78324925003
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2647535808,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 892456768,
+          "uptimeSeconds": 378047.7869039167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2617323712,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 922668864,
+          "uptimeSeconds": 378050.4586681667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2609082560,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 930910016,
+          "uptimeSeconds": 378050.46138750005
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2618142912,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 921849664,
+          "uptimeSeconds": 378053.14861095836
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2618142912,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 921849664,
+          "uptimeSeconds": 378053.1500791667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2618110144,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 921882432,
+          "uptimeSeconds": 378053.1514301667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2618110144,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 921882432,
+          "uptimeSeconds": 378053.15158970834
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 1894068296,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1645924280,
+          "uptimeSeconds": 378053.2502790834
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 1893806152,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1646186424,
+          "uptimeSeconds": 378053.2513909584
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2186342472,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1353650104,
+          "uptimeSeconds": 378053.88012600003
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2186342472,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1353650104,
+          "uptimeSeconds": 378053.880654125
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2192650432,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1347342144,
+          "uptimeSeconds": 378053.88804058335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2939596944,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 600395632,
+          "uptimeSeconds": 378054.0883527917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2953131832,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 586860744,
+          "uptimeSeconds": 378054.11142325
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2953131832,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 586860744,
+          "uptimeSeconds": 378054.111713875
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2953131832,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 586860744,
+          "uptimeSeconds": 378054.1172365834
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2953131832,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 586860744,
+          "uptimeSeconds": 378054.11913762504
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2953131832,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 586860744,
+          "uptimeSeconds": 378054.11926758336
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3363369464,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 176623112,
+          "uptimeSeconds": 378056.3176645417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3363336696,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 176655880,
+          "uptimeSeconds": 378056.31814633333
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2425532920,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1114459656,
+          "uptimeSeconds": 378057.032933
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2425532920,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1114459656,
+          "uptimeSeconds": 378057.03353250003
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2479699792,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1060292784,
+          "uptimeSeconds": 378057.05296095833
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2479699792,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1060292784,
+          "uptimeSeconds": 378057.0548474167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2479961936,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1060030640,
+          "uptimeSeconds": 378057.0591657084
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2479961936,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1060030640,
+          "uptimeSeconds": 378057.05931720836
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3234361536,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 305631040,
+          "uptimeSeconds": 378059.9988272917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3225809088,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 314183488,
+          "uptimeSeconds": 378060.0074604167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2665787584,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 874204992,
+          "uptimeSeconds": 378062.49117337505
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2657202368,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 882790208,
+          "uptimeSeconds": 378062.4991237917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2658218176,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 881774400,
+          "uptimeSeconds": 378065.27778875
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2649927872,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 890064704,
+          "uptimeSeconds": 378065.2878764584
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2733502656,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 806489920,
+          "uptimeSeconds": 378068.158275375
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2725179584,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 814812992,
+          "uptimeSeconds": 378068.16796083335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2696392896,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 843599680,
+          "uptimeSeconds": 378071.02570062503
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2696392896,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 843599680,
+          "uptimeSeconds": 378071.0274945417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2696343744,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 843648832,
+          "uptimeSeconds": 378071.03257283336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2696343744,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 843648832,
+          "uptimeSeconds": 378071.0327224167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2048012384,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1491980192,
+          "uptimeSeconds": 378071.22221575
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2047750240,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1492242336,
+          "uptimeSeconds": 378071.22261145833
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2168352864,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1371639712,
+          "uptimeSeconds": 378071.89512400003
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2168352864,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1371639712,
+          "uptimeSeconds": 378071.89547337504
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2174464192,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1365528384,
+          "uptimeSeconds": 378071.9031771667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3235983552,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 304009024,
+          "uptimeSeconds": 378103.4947989167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3411687272,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 128305304,
+          "uptimeSeconds": 378103.5698364167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3411687272,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 128305304,
+          "uptimeSeconds": 378103.5701964167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3411687272,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 128305304,
+          "uptimeSeconds": 378103.5705290417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3411687272,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 128305304,
+          "uptimeSeconds": 378103.57065662503
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3411687272,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 128305304,
+          "uptimeSeconds": 378103.5707744167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3412621160,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 127371416,
+          "uptimeSeconds": 378104.7296227917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3412621160,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 127371416,
+          "uptimeSeconds": 378104.73016929167
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3412621160,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 127371416,
+          "uptimeSeconds": 378104.73046750005
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3412342632,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 127649944,
+          "uptimeSeconds": 378104.7347769167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3412293480,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 127699096,
+          "uptimeSeconds": 378104.7373404584
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3412293480,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 127699096,
+          "uptimeSeconds": 378104.73751275
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3242275008,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 297717568,
+          "uptimeSeconds": 378107.9375681667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3234033856,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 305958720,
+          "uptimeSeconds": 378107.9444082917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2508157120,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1031835456,
+          "uptimeSeconds": 378109.9626734167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2499604672,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1040387904,
+          "uptimeSeconds": 378109.967339125
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2582655168,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 957337408,
+          "uptimeSeconds": 378112.19838995836
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2574414016,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 965578560,
+          "uptimeSeconds": 378112.20363025
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2658726080,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 881266496,
+          "uptimeSeconds": 378114.5428959167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2650484928,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 889507648,
+          "uptimeSeconds": 378114.5465660417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2620289216,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 919703360,
+          "uptimeSeconds": 378116.981245625
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2620289216,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 919703360,
+          "uptimeSeconds": 378116.9834540417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2620240064,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 919752512,
+          "uptimeSeconds": 378116.9886999167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2620240064,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 919752512,
+          "uptimeSeconds": 378116.98884170834
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 1973727328,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1566265248,
+          "uptimeSeconds": 378117.18694466667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 1973465184,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1566527392,
+          "uptimeSeconds": 378117.187276875
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2018996320,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1520996256,
+          "uptimeSeconds": 378117.77248850005
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2018996320,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1520996256,
+          "uptimeSeconds": 378117.77301629167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2024943808,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1515048768,
+          "uptimeSeconds": 378117.77958195837
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2739826832,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 800165744,
+          "uptimeSeconds": 378118.05467425
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3181934392,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 358058184,
+          "uptimeSeconds": 378118.0769045834
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3181934392,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 358058184,
+          "uptimeSeconds": 378118.07719650003
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3181934392,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 358058184,
+          "uptimeSeconds": 378118.0773220417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3181934392,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 358058184,
+          "uptimeSeconds": 378118.07743237505
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3181934392,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 358058184,
+          "uptimeSeconds": 378118.07753887505
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3196532536,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 343460040,
+          "uptimeSeconds": 378118.1524044167
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3196532536,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 343460040,
+          "uptimeSeconds": 378118.1538272084
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3427432296,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 112560280,
+          "uptimeSeconds": 378119.0290640417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3427432296,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 112560280,
+          "uptimeSeconds": 378119.02932000003
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3427432296,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 112560280,
+          "uptimeSeconds": 378119.0294521667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3427432296,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 112560280,
+          "uptimeSeconds": 378119.0377261667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3427432296,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 112560280,
+          "uptimeSeconds": 378119.03934175003
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3427432296,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 112560280,
+          "uptimeSeconds": 378119.03949366667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3398644240,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 141348336,
+          "uptimeSeconds": 378121.2544797917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3398611472,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 141381104,
+          "uptimeSeconds": 378121.25499808334
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2457481744,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1082510832,
+          "uptimeSeconds": 378121.91445512505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2457481744,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1082510832,
+          "uptimeSeconds": 378121.9153651667
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2511877992,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1028114584,
+          "uptimeSeconds": 378121.934571625
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2511697768,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1028294808,
+          "uptimeSeconds": 378121.9364535
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2511697768,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1028294808,
+          "uptimeSeconds": 378121.93821975
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2511697768,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1028294808,
+          "uptimeSeconds": 378121.93835633335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3266326720,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 273665856,
+          "uptimeSeconds": 378125.1327201667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3258085568,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 281907008,
+          "uptimeSeconds": 378125.13549787505
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2647781568,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 892211008,
+          "uptimeSeconds": 378127.44920075004
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2639409344,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 900583232,
+          "uptimeSeconds": 378127.45312975004
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2683875520,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 856117056,
+          "uptimeSeconds": 378130.01683358336
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2675634368,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 864358208,
+          "uptimeSeconds": 378130.02060608333
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2722246848,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 817745728,
+          "uptimeSeconds": 378132.6643700417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2713825472,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 826167104,
+          "uptimeSeconds": 378132.66794508335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2683433152,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 856559424,
+          "uptimeSeconds": 378135.35286420834
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2683433152,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 856559424,
+          "uptimeSeconds": 378135.35419904167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2683433152,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 856559424,
+          "uptimeSeconds": 378135.35636333335
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2683400384,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 856592192,
+          "uptimeSeconds": 378135.3564895417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2035429472,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1504563104,
+          "uptimeSeconds": 378135.5281075417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2035167328,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1504825248,
+          "uptimeSeconds": 378135.52844375
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2155491424,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1384501152,
+          "uptimeSeconds": 378136.1673002917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2155491424,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1384501152,
+          "uptimeSeconds": 378136.167904375
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2162192576,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1377800000,
+          "uptimeSeconds": 378136.175462
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2962845816,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 577146760,
+          "uptimeSeconds": 378136.45290562505
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3205379896,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 334612680,
+          "uptimeSeconds": 378136.4810607917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3205379896,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 334612680,
+          "uptimeSeconds": 378136.48135925
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3205379896,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 334612680,
+          "uptimeSeconds": 378136.48168483336
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3205379896,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 334612680,
+          "uptimeSeconds": 378136.48179416667
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3205379896,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 334612680,
+          "uptimeSeconds": 378136.4819114167
+        }
+      ],
+      "peakStageSampledFootprintBytes": 1646186424
+    },
+    {
+      "name": "memory-warning-attempt",
+      "report": {
+        "bundleID": "com.tasuku.sdxlcoremltest.iphone17probe",
+        "complete": true,
+        "denoiserRetention": true,
+        "gpuCapabilities": {
+          "maxBufferLength": 4294967296,
+          "name": "Apple A19 GPU",
+          "recommendedMaxWorkingSetSize": 5726633984
+        },
+        "height": 512,
+        "memoryWarningInjectionRun": true,
+        "osVersion": "Version 27.0.1 (Build 24A446)",
+        "physicalMemoryBytes": 8045641728,
+        "probeMinimumMemoryBytes": 7500000000,
+        "productionMinimumMemoryBytes": 7500000000,
+        "records": [
+          {
+            "phase": "start",
+            "physicalFootprintBytes": 16746264,
+            "productionSupportsGeneration": true,
+            "uptimeSeconds": 378447.41807816667
+          },
+          {
+            "phase": "shipping-memory-guard",
+            "physicalFootprintBytes": 78694360,
+            "result": "supported",
+            "uptimeSeconds": 378448.30058287503
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 211634184,
+            "prompt": "nude adult portrait",
+            "result": "passed",
+            "uptimeSeconds": 378448.4112337084
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 195528712,
+            "prompt": "全裸の人物",
+            "result": "passed",
+            "uptimeSeconds": 378448.41285995836
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 195528712,
+            "prompt": "p.o.r.n",
+            "result": "passed",
+            "uptimeSeconds": 378448.41374650004
+          },
+          {
+            "error": "この内容からは画像を生成できません。内容を変えてお試しください。",
+            "phase": "blocked-prompt",
+            "physicalFootprintBytes": 195528712,
+            "prompt": "gore",
+            "result": "passed",
+            "uptimeSeconds": 378448.4149396667
+          },
+          {
+            "error": "画像の安全性を確認するモデルを読み込めません。画像は表示・保存できません。",
+            "phase": "missing-classifier",
+            "physicalFootprintBytes": 195528712,
+            "result": "passed",
+            "uptimeSeconds": 378448.41663883335
+          },
+          {
+            "phase": "preparation-start",
+            "physicalFootprintBytes": 195528712,
+            "uptimeSeconds": 378448.41703
+          },
+          {
+            "error": "",
+            "lowPowerMode": false,
+            "phase": "preparation-end",
+            "physicalFootprintBytes": 1013254176,
+            "prepared": true,
+            "seconds": 4.617472052574158,
+            "thermalState": 0,
+            "uptimeSeconds": 378453.0346790833
+          },
+          {
+            "case": "memory-warning",
+            "lowPowerMode": false,
+            "phase": "generation-start",
+            "physicalFootprintBytes": 1013254176,
+            "prepared": true,
+            "seed": 42,
+            "thermalState": 0,
+            "uptimeSeconds": 378453.0356015
+          },
+          {
+            "activeGeneration": true,
+            "method": "test driver posts the UIKit notification; no artificial allocation pressure",
+            "phase": "memory-warning-injected",
+            "physicalFootprintBytes": 1180979008,
+            "step": 1,
+            "uptimeSeconds": 378458.6957714167
+          },
+          {
+            "case": "memory-warning",
+            "height": 512,
+            "phase": "generation-approved",
+            "physicalFootprintBytes": 335087744,
+            "pixelSHA256": "fd402c356f932bfbef727c029fcf9cd6bc70e4f872a7c2aa621751266d03a47c",
+            "preparedAfterOperation": false,
+            "safetyRevision": "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1",
+            "secondsIncludingSafety": 13.556596994400024,
+            "seed": 42,
+            "uptimeSeconds": 378466.59225695836,
+            "views": [
+              {
+                "nsfl": 0.03202928230166435,
+                "nsfw": 0.03767119720578194,
+                "sfw": 0.9302994608879089
+              },
+              {
+                "nsfl": 0.02928084321320057,
+                "nsfw": 0.030281050130724907,
+                "sfw": 0.9404380917549133
+              },
+              {
+                "nsfl": 0.028541263192892075,
+                "nsfw": 0.029641419649124146,
+                "sfw": 0.9418173432350159
+              },
+              {
+                "nsfl": 0.029635919257998466,
+                "nsfw": 0.053574591875076294,
+                "sfw": 0.9167894721031189
+              },
+              {
+                "nsfl": 0.025974934920668602,
+                "nsfw": 0.03610727936029434,
+                "sfw": 0.9379177689552307
+              },
+              {
+                "nsfl": 0.0326400101184845,
+                "nsfw": 0.03632518649101257,
+                "sfw": 0.9310348033905029
+              }
+            ],
+            "width": 512
+          },
+          {
+            "afterIdlePixelsMatch": false,
+            "afterReleasePixelsMatch": false,
+            "approvedImages": 1,
+            "phase": "complete",
+            "physicalFootprintBytes": 361171120,
+            "repeatPixelsMatch": false,
+            "uptimeSeconds": 378466.72466137505
+          }
+        ],
+        "safetyViews": 6,
+        "scope": "Copied app with unchanged production RAM guard, engine, GPU runtime, retention and safety. Test-only driver appended to view model.",
+        "shippingConfiguration": true,
+        "steps": 4,
+        "width": 512
+      },
+      "lifecycle": [
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3508074680,
+          "event": "scene-active",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 31917896,
+          "thermalState": 0,
+          "uptimeSeconds": 378447.49270870833
+        },
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 2359013568,
+          "event": "memory-warning",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 1180979008,
+          "thermalState": 0,
+          "uptimeSeconds": 378458.69731200003
+        },
+        {
+          "applicationState": 0,
+          "availableProcessMemoryBytes": 3077093176,
+          "event": "smoke-driver-ended-cancelled-false",
+          "lowPowerMode": false,
+          "physicalFootprintBytes": 462899400,
+          "thermalState": 0,
+          "uptimeSeconds": 378466.8431312084
+        }
+      ],
+      "runtimeEvents": [
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3506550944,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 33441632,
+          "uptimeSeconds": 378447.59381570836
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3506403488,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 33589088,
+          "uptimeSeconds": 378447.597178125
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.29987983336
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.3000745417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.300206125
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.30030062504
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.3003885417
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.30047825
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.30114237504
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.30123570835
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.30147320835
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.30157687503
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461298216,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 78694360,
+          "uptimeSeconds": 378448.30166895833
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3461281832,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 78710744,
+          "uptimeSeconds": 378448.301762875
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3360126968,
+          "detail": "",
+          "phase": "metadata_probe_begin",
+          "physFootprintBytes": 179865608,
+          "uptimeSeconds": 378448.44312695833
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3360110584,
+          "detail": "1 names; no GPU functions retained",
+          "phase": "metadata_probe_end",
+          "physFootprintBytes": 179881992,
+          "uptimeSeconds": 378448.44417800003
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3385325536,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 154667040,
+          "uptimeSeconds": 378449.10723983333
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3385325536,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 154667040,
+          "uptimeSeconds": 378449.107446375
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385325536,
+          "detail": "",
+          "phase": "text_cache_miss",
+          "physFootprintBytes": 154667040,
+          "uptimeSeconds": 378449.1078030417
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385260000,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 154732576,
+          "uptimeSeconds": 378449.114548625
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385260000,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 154732576,
+          "uptimeSeconds": 378449.11620362505
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3385260000,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 154732576,
+          "uptimeSeconds": 378449.1163077917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3420992160,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 119000416,
+          "uptimeSeconds": 378452.3682300834
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3420959392,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 119033184,
+          "uptimeSeconds": 378452.3716933334
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2472243848,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1067748728,
+          "uptimeSeconds": 378452.98314483336
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2472243848,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1067748728,
+          "uptimeSeconds": 378452.98431195837
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526918624,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1013073952,
+          "uptimeSeconds": 378453.0024118334
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526394336,
+          "detail": "15728640 CPU bytes",
+          "phase": "text_cache_hit",
+          "physFootprintBytes": 1013598240,
+          "uptimeSeconds": 378453.08796150004
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526394336,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1013598240,
+          "uptimeSeconds": 378453.088213875
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 2526394336,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1013598240,
+          "uptimeSeconds": 378453.08832125005
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526361568,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 1013631008,
+          "uptimeSeconds": 378453.09064108337
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526361568,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 1013631008,
+          "uptimeSeconds": 378453.0931067084
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2526361568,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 1013631008,
+          "uptimeSeconds": 378453.0932312917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3275157768,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 264834808,
+          "uptimeSeconds": 378456.57822608337
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3266916616,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 273075960,
+          "uptimeSeconds": 378456.58472883335
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2531078360,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1008914216,
+          "uptimeSeconds": 378458.5923773334
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2522607832,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1017384744,
+          "uptimeSeconds": 378458.60094820836
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2603397312,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 936595264,
+          "uptimeSeconds": 378460.7943252917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2595025088,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 944967488,
+          "uptimeSeconds": 378460.8022581667
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2601693376,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 938299200,
+          "uptimeSeconds": 378463.0797947917
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2593403072,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 946589504,
+          "uptimeSeconds": 378463.0863427084
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 2677715136,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 862277440,
+          "uptimeSeconds": 378465.4531203334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2677715136,
+          "detail": "",
+          "phase": "model_load_begin",
+          "physFootprintBytes": 862277440,
+          "uptimeSeconds": 378465.4565148334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2677698752,
+          "detail": "",
+          "phase": "model_load_end",
+          "physFootprintBytes": 862293824,
+          "uptimeSeconds": 378465.46240625
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2677698752,
+          "detail": "main",
+          "phase": "function_load_begin",
+          "physFootprintBytes": 862293824,
+          "uptimeSeconds": 378465.462587375
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2067443808,
+          "detail": "main",
+          "phase": "function_load_end",
+          "physFootprintBytes": 1472548768,
+          "uptimeSeconds": 378465.7582267917
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2067181664,
+          "detail": "",
+          "phase": "inference_begin",
+          "physFootprintBytes": 1472810912,
+          "uptimeSeconds": 378465.75884
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2105913440,
+          "detail": "",
+          "phase": "inference_end",
+          "physFootprintBytes": 1434079136,
+          "uptimeSeconds": 378466.3388463334
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2105913440,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 1434079136,
+          "uptimeSeconds": 378466.33940337505
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 2116972736,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 1423019840,
+          "uptimeSeconds": 378466.34738333337
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3028349120,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 511643456,
+          "uptimeSeconds": 378466.5337270417
+        },
+        {
+          "asset": "Transformer_512.aimodel",
+          "availableProcessMemoryBytes": 3043538768,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 496453808,
+          "uptimeSeconds": 378466.5574732917
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3043538768,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 496453808,
+          "uptimeSeconds": 378466.557782375
+        },
+        {
+          "asset": "TextEncoder.aimodel",
+          "availableProcessMemoryBytes": 3043538768,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 496453808,
+          "uptimeSeconds": 378466.55791362503
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3043538768,
+          "detail": "",
+          "phase": "model_unload_begin",
+          "physFootprintBytes": 496453808,
+          "uptimeSeconds": 378466.55803454167
+        },
+        {
+          "asset": "VAEDecoder_half.aimodel",
+          "availableProcessMemoryBytes": 3043538768,
+          "detail": "",
+          "phase": "model_unload_end",
+          "physFootprintBytes": 496453808,
+          "uptimeSeconds": 378466.5581385834
+        }
+      ],
+      "peakStageSampledFootprintBytes": 1472810912
+    }
+  ],
+  "limitations": [
+    "Timings are two sequential development runs on one physical device after earlier model loads, not fresh-boot statistical benchmarks.",
+    "Physical footprint is sampled at stages; it is not a continuous maximum and must not be added to GPU allocation counters.",
+    "The notification injection does not establish survival under arbitrary memory exhaustion.",
+    "Adversarial classifier accuracy, Photos/share permission UI, distribution signing and App Review acceptance remain separate checks.",
+    "No general claim that every device below 8 GB fails; the iPhone 14 result is specific to the tested RAM/GPU/OS combination."
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "scope": "Test-only startup driver calls the unchanged production downloader and view model on iPhone 17; shipping model assets are absent from the app bundle.",
+  "firstAttempt": {
+    "bundleID": "com.tasuku.sdxlcoremltest",
+    "complete": false,
+    "OS": "Version 27.0.1 (Build 24A446)",
+    "physicalMemoryBytes": 8045641728,
+    "records": [
+      {
+        "bundledFluxExists": false,
+        "phase": "start",
+        "supportsGeneration": true,
+        "uptimeSeconds": 382058.2987796667
+      },
+      {
+        "bytes": 9690496,
+        "phase": "before-pause",
+        "uptimeSeconds": 382064.76898670837
+      },
+      {
+        "bytes": 12361088,
+        "phase": "paused",
+        "state": "paused",
+        "uptimeSeconds": 382064.9750983334
+      },
+      {
+        "bytes": 12361088,
+        "fraction": 0.003489721778481546,
+        "phase": "install-progress",
+        "state": "paused",
+        "uptimeSeconds": 382066.10627225
+      },
+      {
+        "bytes": 122228416,
+        "fraction": 0.03450692732423734,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382076.30787662504
+      },
+      {
+        "bytes": 227884224,
+        "fraction": 0.06433515718561077,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382086.46366195835
+      },
+      {
+        "bytes": 343080064,
+        "fraction": 0.09685668212245092,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382096.56076220836
+      },
+      {
+        "bytes": 439810560,
+        "fraction": 0.12416516164581667,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382106.6959139167
+      },
+      {
+        "bytes": 554429248,
+        "fraction": 0.1565237478588249,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382116.79627720837
+      },
+      {
+        "bytes": 652530816,
+        "fraction": 0.18421930170916462,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382126.94061320834
+      },
+      {
+        "bytes": 767959872,
+        "fraction": 0.21680666704405796,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382137.05180845835
+      },
+      {
+        "bytes": 868630016,
+        "fraction": 0.2452273686812984,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382147.21148220834
+      },
+      {
+        "bytes": 982958656,
+        "fraction": 0.27750406996456545,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382157.34353045834
+      },
+      {
+        "bytes": 1088487424,
+        "fraction": 0.30729643451580285,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382167.4893134167
+      },
+      {
+        "bytes": 1200000000,
+        "fraction": 0.33877811841302763,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382177.6504106667
+      },
+      {
+        "bytes": 1313767936,
+        "fraction": 0.37089652449120575,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382187.76739758335
+      },
+      {
+        "bytes": 1410797056,
+        "fraction": 0.398289310078599,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382197.95175191667
+      },
+      {
+        "bytes": 1527366656,
+        "fraction": 0.43119866820539837,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382208.06444620836
+      },
+      {
+        "bytes": 1636019520,
+        "fraction": 0.4618730122271539,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382218.1797000417
+      },
+      {
+        "bytes": 1752790720,
+        "fraction": 0.49483928507784664,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382228.27546033333
+      },
+      {
+        "bytes": 1860373632,
+        "fraction": 0.5252115654951419,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382238.425512125
+      },
+      {
+        "bytes": 1974233664,
+        "fraction": 0.5573559716646479,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382248.56625412503
+      },
+      {
+        "bytes": 2085843264,
+        "fraction": 0.5888650469020067,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382258.66361033334
+      },
+      {
+        "bytes": 2200000000,
+        "fraction": 0.6210932170905507,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382268.78045950003
+      },
+      {
+        "bytes": 2231712576,
+        "fraction": 0.6300461561133092,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382278.991771875
+      },
+      {
+        "bytes": 2344441344,
+        "fraction": 0.6618711893750248,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382289.10452545836
+      },
+      {
+        "bytes": 2446877056,
+        "fraction": 0.6907903375164071,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382299.24609845836
+      },
+      {
+        "bytes": 2523034944,
+        "fraction": 0.7122908591821988,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382309.4807067917
+      },
+      {
+        "bytes": 2588351488,
+        "fraction": 0.7307307057468336,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382319.69224825
+      },
+      {
+        "bytes": 2640851456,
+        "fraction": 0.7455522393933204,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382329.7022632917
+      },
+      {
+        "bytes": 2754335872,
+        "fraction": 0.7775906034947214,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382339.8390121667
+      },
+      {
+        "bytes": 2860014592,
+        "fraction": 0.8074253017596358,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382350.01486600004
+      },
+      {
+        "bytes": 2973126912,
+        "fraction": 0.8393586175420794,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382360.11442170833
+      },
+      {
+        "bytes": 3082396288,
+        "fraction": 0.8702070122099507,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382370.25060475
+      },
+      {
+        "bytes": 3197604864,
+        "fraction": 0.9027321327118877,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382380.3405845
+      },
+      {
+        "bytes": 3302626816,
+        "fraction": 0.9323814154540737,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382390.4933717917
+      },
+      {
+        "bytes": 3400884736,
+        "fraction": 0.9601211098347219,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382400.669817375
+      },
+      {
+        "bytes": 3517143040,
+        "fraction": 0.9929425844005634,
+        "phase": "install-progress",
+        "state": "downloading",
+        "uptimeSeconds": 382410.774520125
+      }
+    ],
+    "scope": "Test-only startup driver; unmodified production model setup, download, generation and safety methods. Main app bundle ID preserves downloaded assets."
+  },
+  "fixedAttempt": {
+    "bundleID": "com.tasuku.sdxlcoremltest",
+    "complete": true,
+    "OS": "Version 27.0.1 (Build 24A446)",
+    "physicalMemoryBytes": 8045641728,
+    "records": [
+      {
+        "bundledFluxExists": false,
+        "phase": "start",
+        "supportsGeneration": true,
+        "uptimeSeconds": 382989.35653341666
+      },
+      {
+        "bytes": 3542141404,
+        "phase": "resume-complete-archive",
+        "uptimeSeconds": 382993.6345784167
+      },
+      {
+        "bytes": 3542141404,
+        "fraction": 0,
+        "phase": "install-progress",
+        "state": "idle",
+        "uptimeSeconds": 382993.6351620417
+      },
+      {
+        "bytes": 3542141404,
+        "fraction": 0.30340639618253706,
+        "phase": "install-progress",
+        "state": "installing",
+        "uptimeSeconds": 383003.80187687505
+      },
+      {
+        "bytes": 3542141404,
+        "fraction": 0.7000007134042441,
+        "phase": "install-progress",
+        "state": "installing",
+        "uptimeSeconds": 383014.02333087503
+      },
+      {
+        "archiveRemoved": true,
+        "phase": "model-ready",
+        "receipt": true,
+        "seconds": 22.747340083122253,
+        "uptimeSeconds": 383016.3828125
+      },
+      {
+        "appTimingText": "安全性の確認を含めて 23.0 秒。保存や共有ができます。",
+        "case": 0,
+        "observedSecondsIncludingSafety": 23.16407597064972,
+        "phase": "generation-approved",
+        "pixelSHA256": "fd402c356f932bfbef727c029fcf9cd6bc70e4f872a7c2aa621751266d03a47c",
+        "seed": 42,
+        "uptimeSeconds": 383065.12651908334,
+        "views": [
+          {
+            "nsfl": 0.03202928230166435,
+            "nsfw": 0.03767119720578194,
+            "sfw": 0.9302994608879089
+          },
+          {
+            "nsfl": 0.02928084321320057,
+            "nsfw": 0.030281050130724907,
+            "sfw": 0.9404380917549133
+          },
+          {
+            "nsfl": 0.028541263192892075,
+            "nsfw": 0.029641419649124146,
+            "sfw": 0.9418173432350159
+          },
+          {
+            "nsfl": 0.029635919257998466,
+            "nsfw": 0.053574591875076294,
+            "sfw": 0.9167894721031189
+          },
+          {
+            "nsfl": 0.025974934920668602,
+            "nsfw": 0.03610727936029434,
+            "sfw": 0.9379177689552307
+          },
+          {
+            "nsfl": 0.0326400101184845,
+            "nsfw": 0.03632518649101257,
+            "sfw": 0.9310348033905029
+          }
+        ]
+      },
+      {
+        "appTimingText": "安全性の確認を含めて 16.7 秒。保存や共有ができます。",
+        "case": 1,
+        "observedSecondsIncludingSafety": 16.841426014900208,
+        "phase": "generation-approved",
+        "pixelSHA256": "dea3c95b80c7b86c8a54c1783a931b575e2310577fbf10febc534a859b9b3046",
+        "seed": 42,
+        "uptimeSeconds": 383085.583144875,
+        "views": [
+          {
+            "nsfl": 0.03469359874725342,
+            "nsfw": 0.03499447926878929,
+            "sfw": 0.9303119778633118
+          },
+          {
+            "nsfl": 0.03340185806155205,
+            "nsfw": 0.034703969955444336,
+            "sfw": 0.9318942427635193
+          },
+          {
+            "nsfl": 0.033565156161785126,
+            "nsfw": 0.03368804231286049,
+            "sfw": 0.9327468276023865
+          },
+          {
+            "nsfl": 0.03514924645423889,
+            "nsfw": 0.03695887327194214,
+            "sfw": 0.9278918504714966
+          },
+          {
+            "nsfl": 0.034932155162096024,
+            "nsfw": 0.03729262202978134,
+            "sfw": 0.9277752637863159
+          },
+          {
+            "nsfl": 0.03533414378762245,
+            "nsfw": 0.03805891051888466,
+            "sfw": 0.9266069531440735
+          }
+        ]
+      },
+      {
+        "phase": "complete",
+        "uptimeSeconds": 383086.8552392917
+      }
+    ],
+    "scope": "Test-only startup driver; unmodified production model setup, download, generation and safety methods. Main app bundle ID preserves downloaded assets."
+  },
+  "downloadBytes": 3542141404,
+  "installedModelBytes": 4043710174,
+  "resumeBytesAfterExplicitPause": 12361088,
+  "firstFailure": "iOS Jetsam per-process-limit at PID 29774 after receiving the complete archive; the full archive was preserved.",
+  "fix": "Drain Foundation autoreleased buffers inside each SHA-256 read iteration, including worker tasks. All archive and per-file hashes remain mandatory.",
+  "installationPeak250msSampledFootprintBytes": 152176528,
+  "overallPeak250msSampledFootprintBytes": 1486344120,
+  "applePixelsMatchBundledBaseline": true,
+  "actualUIAutomationScope": "XCTest UI-runner initialization timed out on this setup. The driver automates state/actions; rendered screens, network transfer, installed bytes, generation and classifier are real."
+}

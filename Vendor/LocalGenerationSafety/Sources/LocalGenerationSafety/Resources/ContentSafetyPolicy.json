@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "revision": "local-generation-20261013-v1",
+  "supportedLanguages": [
+    "en",
+    "ja",
+    "es",
+    "pt-BR",
+    "ko",
+    "zh-Hans",
+    "zh-Hant"
+  ],
+  "maxUTF16Length": 4000,
+  "benignPhrases": [
+    "sexual health",
+    "sex education",
+    "sexual education",
+    "sexual assault prevention",
+    "child sexual abuse prevention",
+    "rape prevention",
+    "pornography addiction support",
+    "pornography addiction recovery",
+    "naked eye",
+    "naked mole rat",
+    "educación sexual",
+    "salud sexual",
+    "educação sexual",
+    "saúde sexual",
+    "性教育",
+    "性的暴行の防止",
+    "성교육",
+    "성 건강",
+    "性健康教育",
+    "are not vermin",
+    "are not subhuman",
+    "must not be killed",
+    "no gore",
+    "without gore",
+    "人間以下ではない",
+    "皆殺しにすべきではない"
+  ],
+  "rules": [
+    {
+      "id": "minor-sexual",
+      "category": "sexualExploitation",
+      "contexts": [
+        "publicText",
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:underage|minor(?:s)?|child(?:ren)?|kids?|menor(?:es)?|niñ[oa]s?|crianças?|menores)(?![\\p{L}\\p{N}])|未成年|児童|幼児|幼女|小学生|中学生|高校生|儿童|兒童|未成年人|幼童|미성년|아동|어린이|(?<![\\p{L}\\p{N}])(?:[0-9]|1[0-7])[- ]year[- ]old(?![\\p{L}\\p{N}])|(?<![\\p{N}])(?:[0-9]|1[0-7])\\s*(?:歳|岁|歲|세|años|anos)"
+        ],
+        [
+          "(?<![\\p{L}\\p{N}])(?:porn(?:ography|ographic|o)?|nudes?|naked|sexual|erotic|genitals?|nipples?|sex|violaci[oó]n|estupro)(?![\\p{L}\\p{N}])|裸体|裸の|全裸|性行為|性的|陰部|乳首|色情|性交|性行为|性行為|음란|성행위|성적|나체"
+        ]
+      ],
+      "maxSpan": 160
+    },
+    {
+      "id": "explicit-promotion",
+      "category": "explicitSexual",
+      "contexts": [
+        "publicText",
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:p[\\s._-]*o[\\s._-]*r[\\s._-]*n(?:ography|ographic|o)?|xxx|hentai)(?![\\p{L}\\p{N}])|ポルノ|エロ画像|無修正動画|色情视频|色情影片|色情圖片|色情图片|成人色情|음란물|포르노"
+        ]
+      ],
+      "maxSpan": 160
+    },
+    {
+      "id": "sexual-image-request",
+      "category": "explicitSexual",
+      "contexts": [
+        "publicText",
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:porn(?:ography|ographic|o)?|nudes?|naked|sexual|erotic|genitals?|nipples?|sex|violaci[oó]n|estupro)(?![\\p{L}\\p{N}])|裸体|裸の|全裸|性行為|性的|陰部|乳首|色情|性交|性行为|性行為|음란|성행위|성적|나체"
+        ],
+        [
+          "(?<![\\p{L}\\p{N}])(?:show|draw|generate|make|photo(?:s)?|image(?:s)?|picture(?:s)?|video(?:s)?|send|sell|buy)(?![\\p{L}\\p{N}])|画像|写真|描いて|生成|見せて|動画|사진|영상|그려|생성|图片|圖片|照片|视频|影片|生成"
+        ]
+      ],
+      "maxSpan": 160
+    },
+    {
+      "id": "sexual-scene-prompt",
+      "category": "explicitSexual",
+      "contexts": [
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:nudes?|naked|erotic|genitals?|nipples?|sexual|rape)(?![\\p{L}\\p{N}])|全裸|裸体|性行為|陰部|乳首|色情|性交|性行为|나체|성행위|음란"
+        ]
+      ],
+      "maxSpan": 160
+    },
+    {
+      "id": "graphic-violence",
+      "category": "graphicViolence",
+      "contexts": [
+        "publicText",
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:gore|dismember(?:ed|ment|ing)?|decapitat(?:ed|ion|ing)|behead(?:ed|ing)|mutilat(?:ed|ion)|tripas|desmembrad[oa]s?|decapitaç[aã]o)(?![\\p{L}\\p{N}])|臓器むき出し|生首|首を切り落と|切断死体|血まみれの死体|肢解|斩首|斬首|血腥尸体|血腥屍體|절단된 시체|참수|내장이 드러"
+        ]
+      ],
+      "maxSpan": 160
+    },
+    {
+      "id": "direct-threat",
+      "category": "threat",
+      "contexts": [
+        "publicText",
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:(?:i(?:'ll| will| am going to)|we(?:'ll| will))\\s+(?:kill|murder|rape)\\s+(?:you|them|him|her)|go\\s+(?:kill yourself|die)|te voy a matar|vou te matar)(?![\\p{L}\\p{N}])|お前を殺|あなたを殺|死ね|殺してやる|杀了你|殺了你|去死吧|죽여 버릴|죽어라|죽어버려"
+        ]
+      ],
+      "maxSpan": 160
+    },
+    {
+      "id": "group-dehumanization",
+      "category": "hate",
+      "contexts": [
+        "publicText",
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:jews?|muslims?|black people|immigrants?|gay people|trans people|migrants?)(?![\\p{L}\\p{N}])|ユダヤ人|黒人|移民|イスラム教徒|犹太人|猶太人|黑人|移民|유대인|흑인|이민자"
+        ],
+        [
+          "(?<![\\p{L}\\p{N}])(?:vermin|subhuman|should (?:all )?die|must be killed|exterminate)(?![\\p{L}\\p{N}])|皆殺し|人間以下|駆除すべき|全都该死|全都該死|杀光|殺光|모두 죽|인간 이하"
+        ]
+      ],
+      "maxSpan": 160
+    },
+    {
+      "id": "explicit-generation-expanded",
+      "category": "explicitSexual",
+      "contexts": [
+        "generationPrompt"
+      ],
+      "groups": [
+        [
+          "(?<![\\p{L}\\p{N}])(?:n[\\s._-]*[uυ][\\s._-]*d[\\s._-]*[e3](?:s|ity)?|n[\\s._-]*[a4][\\s._-]*k[\\s._-]*[e3][\\s._-]*d|p[\\s._-]*[o0][\\s._-]*r[\\s._-]*n(?:ography|ographic|o)?|nsfw|topless|bottomless|undress(?:ed|ing)?|unclothed|explicit(?:ly)?\\s+sexual|sex(?:ual|ualized|ualised|ually|y)?|fetish(?:es)?|bondage|masturbat(?:ion|ing|e)|penetration|intercourse|bare\\s+breasts|exposed\\s+breasts|without\\s+cloth(?:es|ing)|no\\s+cloth(?:es|ing)|blowjob|orgasm|vagina|penis|genitals?|nipples?)(?![\\p{L}\\p{N}])",
+          "裸の|ヌード|裸体|全裸|半裸|露出した胸|裸婦|裸女|服を脱|衣服のない|セクシー|陰茎|陰部|性器|乳首|性交|性行為|エロ|性的|脱衣|強姦|レイプ|オナニー|ポルノ|児童ポルノ|アダルト画像|成人向け画像",
+          "(?<![\\p{L}\\p{N}])(?:desnud[oa]s?|despid[oa]s?|nu[ae]s?|nudite|pornographique|erotique|pornografia|pornografico|sexo|sexuel(?:le)?|erotic[oa]s?|pelad[oa]s?)(?![\\p{L}\\p{N}])",
+          "裸体|裸體|裸露|全裸|性器官|色情|性行为|性行為|나체|음란|누드|포르노|성행위|성적|khoa than|khỏa thân|khoả thân|khiêu dâm|khieu dam"
+        ]
+      ],
+      "maxSpan": 4000
+    }
+  ]
+}

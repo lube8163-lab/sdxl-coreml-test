@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "modelID": "flux2-klein-4b",
+  "revision": "coreai-512-4bit-a7f65cd-v1",
+  "family": "flux2Klein4B",
+  "width": 512,
+  "height": 512,
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 9584,
+      "sha256": "ca02bc51900ab07789d1b70283329e7137f5af98f5161c23a1c81fc38a4af1fe"
+    },
+    {
+      "path": "TextEncoder.aimodel/main.hash",
+      "bytes": 32,
+      "sha256": "573fd36ce8a98e66012a0c4bb32e3e878ac7e2a5ffccbbbd74e22ab61000b334"
+    },
+    {
+      "path": "TextEncoder.aimodel/main.mlirb",
+      "bytes": 1752686429,
+      "sha256": "64e100ff1de568b9c2b139ae910c6bacd303ed5016593fc302ec2ffe3fefe578"
+    },
+    {
+      "path": "TextEncoder.aimodel/metadata.json",
+      "bytes": 396,
+      "sha256": "977879df53cb1ef08e71c763c00bce762eafef266d687ee1350ef9f6df07166c"
+    },
+    {
+      "path": "Transformer_512.aimodel/main.hash",
+      "bytes": 32,
+      "sha256": "afc28640aa9032e3251282618773af48f22221a0215aa29f98e812000b7a9001"
+    },
+    {
+      "path": "Transformer_512.aimodel/main.mlirb",
+      "bytes": 2180288478,
+      "sha256": "6101b36e6d5a78b674ea6702ebcec46e978b7ff5e00b93e90b306c7a1cc27d89"
+    },
+    {
+      "path": "Transformer_512.aimodel/metadata.json",
+      "bytes": 396,
+      "sha256": "c75ded8c70f923353c9ef62be11c297202ada986ed199d856aec3bf6accb1d11"
+    },
+    {
+      "path": "VAEDecoder_half.aimodel/main.hash",
+      "bytes": 32,
+      "sha256": "6df0e50cec942fd0f3130a6c19b5e1f60c98731b1775907b88505c0806d79685"
+    },
+    {
+      "path": "VAEDecoder_half.aimodel/main.mlirb",
+      "bytes": 99294665,
+      "sha256": "7896cc922541d851e2143f2750fea5992236f860bdb01b774f1144f103b44857"
+    },
+    {
+      "path": "VAEDecoder_half.aimodel/metadata.json",
+      "bytes": 400,
+      "sha256": "55dad545e14ee8b482b9fac555359d984dd48bb232b9fe837428f1de5b7b7803"
+    },
+    {
+      "path": "metadata.json",
+      "bytes": 882,
+      "sha256": "16377fd69b55d2d24d07ebdb67ed885855ba93e9152502436d13f9ad32d9eaeb"
+    },
+    {
+      "path": "tokenizer/chat_template.jinja",
+      "bytes": 4168,
+      "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+    },
+    {
+      "path": "tokenizer/config.json",
+      "bytes": 375,
+      "sha256": "b3f99a222a3edef3a756b61f6a67ada791c631aba983c13f59cb45aa9f6fb5f4"
+    },
+    {
+      "path": "tokenizer/tokenizer.json",
+      "bytes": 11422650,
+      "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+    },
+    {
+      "path": "tokenizer/tokenizer_config.json",
+      "bytes": 375,
+      "sha256": "b3f99a222a3edef3a756b61f6a67ada791c631aba983c13f59cb45aa9f6fb5f4"
+    },
+    {
+      "path": "vae_bn_mean.npy",
+      "bytes": 640,
+      "sha256": "b2e3b98b3b1483e4573093d41b9e3890627724c7c0bfaa215ba1e2ef151b6d09"
+    },
+    {
+      "path": "vae_bn_var.npy",
+      "bytes": 640,
+      "sha256": "9418da87092c06ffb4f72402e3c3d142b671878f6cea5e8da3c547befbd64861"
+    }
+  ]
+}
