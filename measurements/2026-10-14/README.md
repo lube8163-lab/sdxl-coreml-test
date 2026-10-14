@@ -1,4 +1,4 @@
-# Physical-device measurements, 2026-10-13/14
+# Physical-device measurements, 2026-10-13–15
 
 These are short development runs, not a distribution-build benchmark or a safety-effectiveness study. Device identifiers, private crash-report contents and unrelated device screens are excluded.
 
@@ -13,6 +13,7 @@ These are short development runs, not a distribution-build benchmark or a safety
 | `iphone14-device-validation.json` | Normal 8 GB refusal; isolated lower-guard GPU, metadata-summary and CPU experiments. No image was generated. |
 | [`iphone14-retest/README.md`](iphone14-retest/README.md) | Later connected iPhone 14 retest: three loading failures, then five checked 512px images using summary metadata and Extended Virtual Addressing. Full 50 ms memory traces and validated allocator diagnostics; shipping guard unchanged. |
 | [`bonsai-iphone14/README.md`](bonsai-iphone14/README.md) | Released Bonsai Studio on the same phone: Ternary/Binary 512px generations, actual setting/result frames, app-reported timing CSV and real-time recordings. |
+| [`bonsai-iphone17/README.md`](bonsai-iphone17/README.md) | Released Bonsai Studio on the same eight-GB phone: five completed 512px images, retained Library/time evidence and a separately recorded 14.3-second Binary case. Includes the original movie failure and step-count evidence limits. |
 | `iphone17-timings.svg` / `.png` | Plot of the two comparable completed timing runs. |
 | PNGs | Actual app UI and checked output. `current-9gb` files show the final storage guidance. Earlier download-test screenshots retain their original 8 GB wording and partial-download resume button. |
 

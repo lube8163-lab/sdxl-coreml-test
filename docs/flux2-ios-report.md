@@ -55,3 +55,15 @@ https://github.com/lube8163-lab/sdxl-coreml-test
 This is a development-copy result on iOS 27.2 / 24B5099f, with two benign prompts, one completed five-image series, two later single-image cases and unchanged production RAM guard. A later recorded apple generation shows 45.2 seconds in the UI after separate 7.54-second preparation and populated disk compilation caches. `media/iphone14-flux2-demo.mp4` is a 30-second normal-time excerpt of that case, not the full generation duration. The warning-regression driver timeout was corrected and a subsequent step-1 injection completed checked output with matching pixels and released prepared state.
 
 The released Bonsai Studio [same-phone comparison](../measurements/2026-10-14/bonsai-iphone14/README.md) completed 512px images with Ternary (88.3 / 107.0 s) and Binary (86.3 / 86.1 s), using app-reported times and the documented setting/cache/recording limits. This supports reporting a narrow observed FLUX reuse advantage, not a general speed, quality or memory winner. No six-GB post or App Store support announcement has been sent.
+
+## Same-iPhone-17 Bonsai follow-up, 2026-10-14/15
+
+The released app's [five-image iPhone 17 report](../measurements/2026-10-14/bonsai-iphone17/README.md) observed Ternary at 42.6 / 24.7 seconds and Binary at 25.6 / 24.2 seconds, followed by an added **14.3-second Binary image**. All five times are retained in the phone's Library screenshot. The original four-case QuickTime movie failed to save; the added Binary generation has a successfully saved normal-time video. Four steps were human configured and confirmed after the added case; the retained recording does not independently show the Parameters step count.
+
+The faster added case must be included in any speed discussion. FLUX's earlier same-phone prepared generation was about 14 seconds, with separate preparation of about 4–6 seconds, and cached repeats about 11 seconds including six safety views. App timing boundaries, cache/retention, recording and moderation differ, so a large general speed advantage over Bonsai on iPhone 17 is not established. No SNS post has been sent.
+
+Possible short follow-up draft:
+
+```text
+iPhone 17でFLUX.2とBonsai Studioを実機確認。512px・4ステップで、FLUXは準備後約14秒／再生成約11秒、安全確認込み。Bonsai Binaryは追加の再生成で14.3秒。準備・キャッシュ・計時条件の違いも含め、測定データと実機映像を公開しました。
+```
