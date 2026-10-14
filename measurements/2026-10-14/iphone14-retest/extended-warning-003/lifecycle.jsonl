@@ -1,0 +1,3 @@
+{"applicationState": 0, "availableProcessMemoryBytes": 3190093960, "event": "scene-active", "lowPowerMode": false, "physicalFootprintBytes": 31131512, "thermalState": 0, "uptimeSeconds": 230179.22411345836}
+{"applicationState": 0, "availableProcessMemoryBytes": 2321150144, "event": "memory-warning", "lowPowerMode": false, "physicalFootprintBytes": 900075328, "thermalState": 0, "uptimeSeconds": 230202.69525883335}
+{"applicationState": 0, "availableProcessMemoryBytes": 2064527552, "event": "memory-warning", "lowPowerMode": false, "physicalFootprintBytes": 1156697920, "thermalState": 0, "uptimeSeconds": 230214.14685858335}

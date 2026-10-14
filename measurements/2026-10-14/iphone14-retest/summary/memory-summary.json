@@ -1,0 +1,24 @@
+{
+  "footprint_bytes": {
+    "min": 17418104,
+    "max": 1060982160
+  },
+  "resident_bytes": {
+    "min": 43057152,
+    "max": 3121594368
+  },
+  "lifetime_max_footprint_bytes": {
+    "min": 17418104,
+    "max": 1061014928
+  },
+  "metal_allocated_bytes": {
+    "min": 65536,
+    "max": 4256579584
+  },
+  "available_process_memory_bytes": {
+    "min": 2160243312,
+    "max": 3203807368
+  },
+  "samples": 1174,
+  "maxSampleGapSeconds": 0.22729858334059827
+}

@@ -1,0 +1,31 @@
+{
+  "shippingSourceSHA256": {
+    "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "34982d81edba3bedb2806ffccbf7e548aaffc494fc60fe8fefd69d13651b6952",
+    "SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "53016a43af1c46da9bc0ac27654c264193dbac230148b7c2a79cc9f6d77019d2",
+    "SDXLCoreMLTest/ContentView.swift": "fde558c0dfdb3bb64ceb773b7ecb8705e0a58fba6d2601e30830c53e79649433",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "0e42c6bd5b7809fcb0ae58f03bc22cbf3a3d4407814426b2ae38b58248df550a",
+    "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift": "f713c87cff248fd106fb9c22af61ea973cf9d43225df9d0931b6dc8b32303e2d"
+  },
+  "probeMinimumMemoryBytes": 5500000000,
+  "shippingMinimumMemoryBytes": 7500000000,
+  "shippingConfiguration": false,
+  "bundleID": "com.tasuku.sdxlcoremltest.phone14extended",
+  "resourcePolicy": "keepWarm",
+  "memorySampling": "50 ms background serial queue; footprint, RSS, lifetime footprint maximum, default-device Metal allocation",
+  "expectFrequentReshapes": false,
+  "extendedVirtualAddressingRequested": true,
+  "copiedEngineMatchesShipping": false,
+  "copiedViewModelPrefixMatchesShipping": false,
+  "assetLocationOverride": "bundled assets for this legacy generation experiment only",
+  "steps": 4,
+  "resolution": [
+    512,
+    512
+  ],
+  "metadataFunctionLookup": "assetSummary",
+  "transformerCompute": "gpuPreferred",
+  "safetyLibrary": "unchanged original package",
+  "memoryWarningInjectionMaximumWaitSeconds": 10,
+  "usbRecordingActive": true,
+  "diskCompilationCachesPurged": false
+}

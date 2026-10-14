@@ -1,0 +1,6 @@
+id,model,width,height,steps,seed,appReportedSeconds,completed,cacheState,stepsEvidence
+ternary-256-exploratory,ternary,256,256,,915212167,44.9,True,First observed generation after model download; no cache purge performed.,
+ternary-512-random-seed,ternary,512,512,4,4031663144,88.3,True,"First observed 512px generation, after a 256px generation; no cache purge or app relaunch.",
+ternary-512-seed42,ternary,512,512,4,42,107.0,True,"Same app session, after two prior generations; no cache purge.",
+binary-512-seed42-first,binary,512,512,4,42,86.3,True,First observed generation after switching to downloaded binary in the same app session; no cache purge.,User requested 4; prior same-session parameter verified as 4; no Binary-specific parameter screenshot.
+binary-512-seed42-repeat,binary,512,512,4,42,86.1,True,"Second observed Binary generation in the same app session, same prompt/seed, without cache purge or relaunch.",Retained previous requested four-step setting; not separately visible in result.

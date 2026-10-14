@@ -11,6 +11,8 @@ These are short development runs, not a distribution-build benchmark or a safety
 | `first-download-memory.csv` | Patched installation/generation process footprint sampled approximately every 250 ms, best-effort main-actor schedule. |
 | `downloaded-model-source-provenance.json` | Hashes of the production sources used by the download startup driver. |
 | `iphone14-device-validation.json` | Normal 8 GB refusal; isolated lower-guard GPU, metadata-summary and CPU experiments. No image was generated. |
+| [`iphone14-retest/README.md`](iphone14-retest/README.md) | Later connected iPhone 14 retest: three loading failures, then five checked 512px images using summary metadata and Extended Virtual Addressing. Full 50 ms memory traces and validated allocator diagnostics; shipping guard unchanged. |
+| [`bonsai-iphone14/README.md`](bonsai-iphone14/README.md) | Released Bonsai Studio on the same phone: Ternary/Binary 512px generations, actual setting/result frames, app-reported timing CSV and real-time recordings. |
 | `iphone17-timings.svg` / `.png` | Plot of the two comparable completed timing runs. |
 | PNGs | Actual app UI and checked output. `current-9gb` files show the final storage guidance. Earlier download-test screenshots retain their original 8 GB wording and partial-download resume button. |
 
@@ -18,7 +20,7 @@ The first successful download/generation run preceded the cache-budget refinemen
 
 The benchmark's initial preparation is not a cold first-ever CoreAI compilation measurement. Runtime/OS caches may already be populated. Times include six safety views, but not preparation unless explicitly labeled. Stage and 250 ms physical-footprint samples can miss peaks. Metal counters are separate metrics; neither should be interpreted as total model memory or minimum RAM.
 
-RAM guard: `physicalMemory >= 7_500_000_000` bytes. iPhone 17: 8,045,641,728 bytes, A19 GPU, iOS 27.0.1 / 24A446. iPhone 14: 5,986,615,296 bytes, A15 GPU, iOS 27.2 / 24B5099f. Different OS/GPU/RAM prevent isolating the failed phone's root cause. No increased-memory-limit entitlement is used.
+Shipping RAM guard: `physicalMemory >= 7_500_000_000` bytes. iPhone 17: 8,045,641,728 bytes, A19 GPU, iOS 27.0.1 / 24A446. iPhone 14: 5,986,615,296 bytes, A15 GPU, iOS 27.2 / 24B5099f. The later same-phone retest completed checked generation with Extended Virtual Addressing; this expands address space rather than physical RAM. No increased-memory-limit entitlement is used. Results do not establish support for every six-GB device/OS.
 
 The UIKit memory-warning regression delivers a notification, not artificial allocation pressure. The download failure was an actual process-memory-limit termination; only a summary of the app's own crash is retained. XCTest's runner timed out before a case started, so the physical results are not claimed as successful XCTest UI tests. A test-only startup driver invokes production methods; actual screens, network, models and classifier are exercised.
 

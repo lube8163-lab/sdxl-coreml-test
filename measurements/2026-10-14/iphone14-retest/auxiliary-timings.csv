@@ -1,0 +1,3 @@
+run,preparationSeconds,secondsIncludingSafetyAndPNGWriting,uiReportedSeconds,usbRecordingActive,memoryWarningActuallyInjected,pixelMatchesOriginalAppleCase
+extended-recorded-002,7.5420180559158325,45.467779994010925,45.2,True,False,True
+extended-warning-003,7.847681999206543,45.666698932647705,,False,True,True

@@ -1,0 +1,3 @@
+{"applicationState":0,"availableProcessMemoryBytes":3188947032,"event":"scene-active","lowPowerMode":false,"physicalFootprintBytes":32278440,"thermalState":0,"uptimeSeconds":225415.34012470834}
+{"applicationState":0,"availableProcessMemoryBytes":2320380120,"event":"memory-warning","lowPowerMode":false,"physicalFootprintBytes":900845352,"thermalState":0,"uptimeSeconds":225540.5388375}
+{"applicationState":0,"availableProcessMemoryBytes":2850453256,"event":"smoke-driver-ended-cancelled-false","lowPowerMode":false,"physicalFootprintBytes":370772216,"thermalState":1,"uptimeSeconds":225831.93737783335}

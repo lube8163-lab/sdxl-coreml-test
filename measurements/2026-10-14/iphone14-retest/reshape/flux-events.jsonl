@@ -1,0 +1,17 @@
+{"asset":"Transformer_512.aimodel","availableProcessMemoryBytes":3157063768,"detail":"","phase":"metadata_summary_begin","physFootprintBytes":64161704,"uptimeSeconds":224470.48701383334}
+{"asset":"Transformer_512.aimodel","availableProcessMemoryBytes":3156162624,"detail":"1 names; no model specialization","phase":"metadata_summary_end","physFootprintBytes":65062848,"uptimeSeconds":224470.51509858336}
+{"asset":"Transformer_512.aimodel","availableProcessMemoryBytes":3148019704,"detail":"","phase":"model_unload_begin","physFootprintBytes":73205768,"uptimeSeconds":224471.60821820833}
+{"asset":"Transformer_512.aimodel","availableProcessMemoryBytes":3148019704,"detail":"","phase":"model_unload_end","physFootprintBytes":73205768,"uptimeSeconds":224471.60851579168}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3148019704,"detail":"","phase":"text_cache_miss","physFootprintBytes":73205768,"uptimeSeconds":224471.60867412502}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3147839456,"detail":"","phase":"model_load_begin","physFootprintBytes":73386016,"uptimeSeconds":224471.61757758335}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3119101920,"detail":"","phase":"model_load_end","physFootprintBytes":102123552,"uptimeSeconds":224496.55913216667}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3119101920,"detail":"main","phase":"function_load_begin","physFootprintBytes":102123552,"uptimeSeconds":224496.55986400001}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3101815432,"detail":"main","phase":"function_load_end","physFootprintBytes":119410040,"uptimeSeconds":224503.58503337501}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3101782664,"detail":"","phase":"inference_begin","physFootprintBytes":119442808,"uptimeSeconds":224503.59996379167}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":2991043184,"detail":"","phase":"inference_end","physFootprintBytes":230182288,"uptimeSeconds":224507.16324254169}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":2991043184,"detail":"","phase":"model_unload_begin","physFootprintBytes":230182288,"uptimeSeconds":224507.16383795836}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3045767088,"detail":"","phase":"model_unload_end","physFootprintBytes":175458384,"uptimeSeconds":224507.18737825}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3062298544,"detail":"15728640 CPU bytes","phase":"text_cache_hit","physFootprintBytes":158926928,"uptimeSeconds":224507.31183066667}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3062413232,"detail":"","phase":"model_unload_begin","physFootprintBytes":158812240,"uptimeSeconds":224507.32017475003}
+{"asset":"TextEncoder.aimodel","availableProcessMemoryBytes":3062413232,"detail":"","phase":"model_unload_end","physFootprintBytes":158812240,"uptimeSeconds":224507.32078045834}
+{"asset":"Transformer_512.aimodel","availableProcessMemoryBytes":3061331888,"detail":"","phase":"model_load_begin","physFootprintBytes":159893584,"uptimeSeconds":224507.32482679168}

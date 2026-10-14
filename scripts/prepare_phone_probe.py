@@ -43,13 +43,15 @@ def main():
                         help="Test Apple's public reshape-specialization hint on the transformer; implies metadata summary.")
     parser.add_argument("--keep-warm", action="store_true",
                         help="Keep the ordinary warm policy while lowering only the RAM guard in this test copy.")
+    parser.add_argument("--extended-virtual-addressing", action="store_true",
+                        help="Enable Apple's public extended-address-space entitlement only in the isolated probe.")
     parser.add_argument("--reference-image", type=Path,
                         help="Known benign PNG for a separate real six-view safety check.")
     args = parser.parse_args()
     if not re.fullmatch(r"com\.tasuku\.sdxlcoremltest\.[A-Za-z0-9-]+", args.bundle_id):
         parser.error("Use a separate com.tasuku.sdxlcoremltest.<probe> bundle ID.")
-    if args.shipping_configuration and (args.metadata_summary or args.transformer_cpu or args.frequent_reshapes):
-        parser.error("Shipping configuration cannot select experimental runtime changes.")
+    if args.shipping_configuration and (args.metadata_summary or args.transformer_cpu or args.frequent_reshapes or args.extended_virtual_addressing):
+        parser.error("Shipping configuration cannot select experimental runtime or entitlement changes.")
     if args.frequent_reshapes and args.transformer_cpu:
         parser.error("Test GPU reshape specialization and CPU specialization separately.")
     if args.frequent_reshapes:
@@ -177,8 +179,15 @@ struct SDXLCoreMLTestApp: App {
         shutil.copyfile(args.reference_image, app / "Resources/ProbeReference.png")
     text = (project / "project.pbxproj").read_text()
     assert text.count("PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest;") == 2
-    (project / "project.pbxproj").write_text(text.replace("PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest;",
-        "PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";"))
+    text = text.replace("PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest;",
+        "PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";")
+    if args.extended_virtual_addressing:
+        (destination / "PhoneProbe.entitlements").write_bytes(plistlib.dumps({
+            "com.apple.developer.kernel.extended-virtual-addressing": True
+        }))
+        text = text.replace("PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";",
+            "PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";\n\t\t\t\tCODE_SIGN_ENTITLEMENTS = PhoneProbe.entitlements;")
+    (project / "project.pbxproj").write_text(text)
     baseline_paths = [
         "SDXLCoreMLTest/SDXLGeneratorViewModel.swift", "SDXLCoreMLTest/SDXLCoreMLTestApp.swift",
         "SDXLCoreMLTest/ContentView.swift",
@@ -193,6 +202,7 @@ struct SDXLCoreMLTestApp: App {
         "resourcePolicy": "keepWarm" if args.shipping_configuration or args.keep_warm else "releaseAfterGeneration",
         "memorySampling": "50 ms background serial queue; footprint, RSS, lifetime footprint maximum, default-device Metal allocation",
         "expectFrequentReshapes": args.frequent_reshapes,
+        "extendedVirtualAddressingRequested": args.extended_virtual_addressing,
         "copiedEngineMatchesShipping": engine.read_bytes() == (root / "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift").read_bytes(),
         "copiedViewModelPrefixMatchesShipping": view_model.read_bytes().startswith((root / "SDXLCoreMLTest/SDXLGeneratorViewModel.swift").read_bytes()),
         "assetLocationOverride": "bundled assets for this legacy generation experiment only",

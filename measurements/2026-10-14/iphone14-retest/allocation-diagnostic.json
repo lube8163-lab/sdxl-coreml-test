@@ -1,0 +1,29 @@
+{
+  "diagnosticOnly": true,
+  "allocatorArgumentBytes": 80216064,
+  "alignmentArgumentBytes": 1,
+  "breakpointAtSymbolEntry": true,
+  "stack": [
+    "mlir::mps::(anonymous namespace)::BumpMmapResourceAllocator::allocateResource(unsigned long, unsigned long)",
+    "mlir::mps::MPSResourceBlobManagerInterface::allocateBufferTensorBlob(unsigned long, unsigned long)",
+    "mlir::mps::createBlobHandle(mlir::MLIRContext*, unsigned long, unsigned long)",
+    "mlir::mps::getBufferTensorAttr(mlir::RankedTensorType)",
+    "mlir::tryCreateMutableElementsAttr(mlir::RankedTensorType, mlir::ElementsAttr&)",
+    "mlir::concatDenseElementsAttr(llvm::ArrayRef<mlir::ElementsAttr>, long long)",
+    "mlir::mps::(anonymous namespace)::ConcatMatmul<false>::matchAndRewriteImpl(mlir::mps::MatMulOp, mlir::PatternRewriter&) const",
+    "void llvm::function_ref<void ()>::callback_fn<mlir::PatternApplicator::matchAndRewrite(mlir::Operation*, mlir::PatternRewriter&, llvm::function_ref<bool (mlir::Pattern const&)>, llvm::function_ref<void (mlir::Pattern const&)>, llvm::function_ref<llvm::LogicalResult (mlir::Pattern const&)>)::$_0>(long)",
+    "mlir::PatternApplicator::matchAndRewrite(mlir::Operation*, mlir::PatternRewriter&, llvm::function_ref<bool (mlir::Pattern const&)>, llvm::function_ref<void (mlir::Pattern const&)>, llvm::function_ref<llvm::LogicalResult (mlir::Pattern const&)>)",
+    "(anonymous namespace)::GreedyPatternRewriteDriver::processWorklist()",
+    "mlir::applyPatternsGreedily(mlir::Region&, mlir::FrozenRewritePatternSet const&, mlir::GreedyRewriteConfig, bool*)",
+    "mlir::mps::(anonymous namespace)::RuntimeCanonicalizationPass::canonicalize(mlir::Operation*)",
+    "mlir::mps::(anonymous namespace)::RuntimeCanonicalizationPass::runOnOperation()",
+    "mlir::detail::OpToOpPassAdaptor::run(mlir::Pass*, mlir::Operation*, mlir::AnalysisManager, bool, unsigned int)",
+    "mlir::detail::OpToOpPassAdaptor::runPipeline(mlir::OpPassManager&, mlir::Operation*, mlir::AnalysisManager, bool, unsigned int, mlir::PassInstrumentor*, mlir::PassInstrumentation::PipelineParentInfo const*)",
+    "mlir::detail::OpToOpPassAdaptor::runOnOperationImpl(bool)",
+    "mlir::detail::OpToOpPassAdaptor::run(mlir::Pass*, mlir::Operation*, mlir::AnalysisManager, bool, unsigned int)",
+    "mlir::PassManager::run(mlir::Operation*)"
+  ],
+  "termination": "SIGABRT / std::bad_alloc",
+  "callerRegisterValidation": "x20=0x4c80000 and x22=1; disassembly passes x20 as x0 and x22 as x1 to aligned operator new.",
+  "excludedInitialTrace": "An overly broad initial regexp also matched deallocateResource. Those records contain a pointer in x1 and are not allocation-size evidence."
+}

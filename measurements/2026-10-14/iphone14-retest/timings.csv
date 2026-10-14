@@ -1,0 +1,6 @@
+run,case,seconds_including_safety_and_png_write,prepared_at_start,thermal_at_start,seed,pixel_sha256
+extended-001,first,110.70146095752716,True,0,42,2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c
+extended-001,repeat,57.82370400428772,False,1,42,2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c
+extended-001,changed-prompt,61.276692032814026,True,1,43,a1ad170fb0c2053f951e22cfc06779f4c9068885a5c4ac644f7c1d6bcae563c3
+extended-001,after-idle,43.76608192920685,True,1,43,a1ad170fb0c2053f951e22cfc06779f4c9068885a5c4ac644f7c1d6bcae563c3
+extended-001,after-release,61.56119501590729,False,1,43,a1ad170fb0c2053f951e22cfc06779f4c9068885a5c4ac644f7c1d6bcae563c3

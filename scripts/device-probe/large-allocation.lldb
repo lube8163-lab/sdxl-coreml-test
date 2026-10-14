@@ -2,7 +2,9 @@
 # Symbols may be unavailable on a given OS; check 'breakpoint list' for locations.
 # No locations means no evidence. Do not substitute guessed addresses.
 # C++ member ABI: x0=this, x1=size, x2=alignment. This traces requests, not usage.
-breakpoint set --func-regex 'BumpMmapResourceAllocator.*allocateResource' --condition '$x1 >= 536870912'
+# Anchor the symbol to exclude deallocateResource and non-virtual thunks.
+# Entry breakpoints preserve argument registers; skipping the prologue does not.
+breakpoint set --func-regex '^mlir::mps::.*::BumpMmapResourceAllocator::allocateResource\(' --skip-prologue false --condition '$x1 >= 16777216'
 breakpoint command add
 register read x0 x1 x2
 thread backtrace -c 14

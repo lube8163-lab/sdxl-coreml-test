@@ -240,7 +240,9 @@ extension SDXLGeneratorViewModel {
             generate()
             let activeGeneration = generationTask
             let warningInjection: Task<Void, Never>? = label == "memory-warning" ? Task { @MainActor in
-                for _ in 0..<100 {
+                // A15 model/function loading can exceed the old ten-second window.
+                // Wait up to sixty seconds for a real diffusion progress update.
+                for _ in 0..<600 {
                     if self.isGenerating && self.currentStep > 0 {
                         recorder.record("memory-warning-injected", ["activeGeneration": true,
                             "step": self.currentStep,
