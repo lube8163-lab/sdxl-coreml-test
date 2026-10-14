@@ -1,0 +1,257 @@
+{
+  "counterScope" : "Footprint, RSS and Metal are overlapping different metrics; do not add. Metal counter is from the default device object. Lifetime footprint peak covers the entire process. Sampling can miss spikes; prior disk compilation caches may exist.",
+  "gpu" : "Apple M2",
+  "maxBufferLength" : 4294967296,
+  "memory" : {
+    "overall" : {
+      "maxFootprintBytes" : 1460177752,
+      "maxLifetimeFootprintBytes" : 1460423512,
+      "maxMetalAllocatedBytes" : 4276912128,
+      "maxResidentBytes" : 2823520256,
+      "maxSampleGapSeconds" : 0.99075441667810082,
+      "samples" : 1304
+    },
+    "phases" : {
+      "first-approved" : {
+        "maxFootprintBytes" : 484100808,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 3343532032,
+        "maxResidentBytes" : 1603960832,
+        "maxSampleGapSeconds" : 0.038477416674140841,
+        "samples" : 1
+      },
+      "first-begin" : {
+        "maxFootprintBytes" : 235914128,
+        "maxLifetimeFootprintBytes" : 295684328,
+        "maxMetalAllocatedBytes" : 2462711808,
+        "maxResidentBytes" : 62275584,
+        "maxSampleGapSeconds" : 0.0009476666455157101,
+        "samples" : 1
+      },
+      "first-checkingSafety" : {
+        "maxFootprintBytes" : 492456648,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 3343532032,
+        "maxResidentBytes" : 1607172096,
+        "maxSampleGapSeconds" : 0.055419250042177737,
+        "samples" : 7
+      },
+      "first-denoising(step: 1_ total: 4)" : {
+        "maxFootprintBytes" : 1135954584,
+        "maxLifetimeFootprintBytes" : 1171294896,
+        "maxMetalAllocatedBytes" : 3238510592,
+        "maxResidentBytes" : 1595998208,
+        "maxSampleGapSeconds" : 0.057665208296384662,
+        "samples" : 77
+      },
+      "first-denoising(step: 2_ total: 4)" : {
+        "maxFootprintBytes" : 1174915736,
+        "maxLifetimeFootprintBytes" : 1175685784,
+        "maxMetalAllocatedBytes" : 3238510592,
+        "maxResidentBytes" : 1595195392,
+        "maxSampleGapSeconds" : 0.058581333316396922,
+        "samples" : 77
+      },
+      "first-denoising(step: 3_ total: 4)" : {
+        "maxFootprintBytes" : 1137167000,
+        "maxLifetimeFootprintBytes" : 1175685784,
+        "maxMetalAllocatedBytes" : 3238510592,
+        "maxResidentBytes" : 1594687488,
+        "maxSampleGapSeconds" : 0.059620416664984077,
+        "samples" : 78
+      },
+      "first-denoising(step: 4_ total: 4)" : {
+        "maxFootprintBytes" : 1418529528,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 4164190208,
+        "maxResidentBytes" : 1740668928,
+        "maxSampleGapSeconds" : 0.10848437499953434,
+        "samples" : 30
+      },
+      "first-preparing" : {
+        "maxFootprintBytes" : 1133824688,
+        "maxLifetimeFootprintBytes" : 1171294896,
+        "maxMetalAllocatedBytes" : 3238084608,
+        "maxResidentBytes" : 2452815872,
+        "maxSampleGapSeconds" : 0.99075441667810082,
+        "samples" : 492
+      },
+      "preparation-begin" : {
+        "maxFootprintBytes" : 295684328,
+        "maxLifetimeFootprintBytes" : 295684328,
+        "maxMetalAllocatedBytes" : 4276912128,
+        "maxResidentBytes" : 2823520256,
+        "maxSampleGapSeconds" : 0.057176041649654508,
+        "samples" : 184
+      },
+      "preparation-end" : {
+        "maxFootprintBytes" : 235914128,
+        "maxLifetimeFootprintBytes" : 295684328,
+        "maxMetalAllocatedBytes" : 2462711808,
+        "maxResidentBytes" : 62062592,
+        "maxSampleGapSeconds" : 0.044070375035516918,
+        "samples" : 1
+      },
+      "repeat-approved" : {
+        "maxFootprintBytes" : 484821752,
+        "maxLifetimeFootprintBytes" : 1460423512,
+        "maxMetalAllocatedBytes" : 3343663104,
+        "maxResidentBytes" : 1586216960,
+        "maxSampleGapSeconds" : 0.031858625006861985,
+        "samples" : 1
+      },
+      "repeat-begin" : {
+        "maxFootprintBytes" : 483052232,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 3343532032,
+        "maxResidentBytes" : 1603141632,
+        "maxSampleGapSeconds" : 0.004578791616950184,
+        "samples" : 2
+      },
+      "repeat-checkingSafety" : {
+        "maxFootprintBytes" : 491981560,
+        "maxLifetimeFootprintBytes" : 1460423512,
+        "maxMetalAllocatedBytes" : 3343663104,
+        "maxResidentBytes" : 1588412416,
+        "maxSampleGapSeconds" : 0.05325833335518837,
+        "samples" : 6
+      },
+      "repeat-denoising(step: 1_ total: 4)" : {
+        "maxFootprintBytes" : 1148406520,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 3239624704,
+        "maxResidentBytes" : 1640333312,
+        "maxSampleGapSeconds" : 0.057322791661135852,
+        "samples" : 76
+      },
+      "repeat-denoising(step: 2_ total: 4)" : {
+        "maxFootprintBytes" : 1147915000,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 3239624704,
+        "maxResidentBytes" : 1596882944,
+        "maxSampleGapSeconds" : 0.058569250046275556,
+        "samples" : 77
+      },
+      "repeat-denoising(step: 3_ total: 4)" : {
+        "maxFootprintBytes" : 1184598776,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 3239624704,
+        "maxResidentBytes" : 1596014592,
+        "maxSampleGapSeconds" : 0.057301333348732442,
+        "samples" : 76
+      },
+      "repeat-denoising(step: 4_ total: 4)" : {
+        "maxFootprintBytes" : 1460177752,
+        "maxLifetimeFootprintBytes" : 1460423512,
+        "maxMetalAllocatedBytes" : 4164648960,
+        "maxResidentBytes" : 1721499648,
+        "maxSampleGapSeconds" : 0.061100375023670495,
+        "samples" : 31
+      },
+      "repeat-preparing" : {
+        "maxFootprintBytes" : 1184451272,
+        "maxLifetimeFootprintBytes" : 1432259320,
+        "maxMetalAllocatedBytes" : 3343532032,
+        "maxResidentBytes" : 1660862464,
+        "maxSampleGapSeconds" : 0.058956416673026979,
+        "samples" : 77
+      },
+      "start" : {
+        "maxFootprintBytes" : 4342432,
+        "maxLifetimeFootprintBytes" : 4342432,
+        "maxMetalAllocatedBytes" : 65536,
+        "maxResidentBytes" : 13746176,
+        "maxSampleGapSeconds" : 0.000141166674438864,
+        "samples" : 1
+      },
+      "startup" : {
+        "maxFootprintBytes" : 4326048,
+        "maxLifetimeFootprintBytes" : 4326048,
+        "maxMetalAllocatedBytes" : 65536,
+        "maxResidentBytes" : 13664256,
+        "maxSampleGapSeconds" : 0,
+        "samples" : 1
+      },
+      "unload-begin" : {
+        "maxFootprintBytes" : 483756792,
+        "maxLifetimeFootprintBytes" : 1460423512,
+        "maxMetalAllocatedBytes" : 3343663104,
+        "maxResidentBytes" : 1585397760,
+        "maxSampleGapSeconds" : 0.057062541658524424,
+        "samples" : 6
+      },
+      "unload-end" : {
+        "maxFootprintBytes" : 297305048,
+        "maxLifetimeFootprintBytes" : 1460423512,
+        "maxMetalAllocatedBytes" : 981139456,
+        "maxResidentBytes" : 81985536,
+        "maxSampleGapSeconds" : 0.013212208345066756,
+        "samples" : 2
+      }
+    },
+    "requestedIntervalSeconds" : 0.050000000000000003
+  },
+  "mode" : "generate",
+  "osVersion" : "Version 27.0.1 (Build 26A434)",
+  "physicalMemoryBytes" : 8589934592,
+  "platform" : "Mac; not a six-GB iPhone emulation",
+  "recommendedMaxWorkingSetSize" : 5726633984,
+  "records" : [
+    {
+      "phase" : "start",
+      "uptimeSeconds" : 395535.53860162501
+    },
+    {
+      "phase" : "preparation-begin",
+      "uptimeSeconds" : 395535.54046579171
+    },
+    {
+      "phase" : "preparation-end",
+      "seconds" : 9.1930678749922663,
+      "uptimeSeconds" : 395544.73358229169
+    },
+    {
+      "phase" : "first-begin",
+      "uptimeSeconds" : 395544.73451670835
+    },
+    {
+      "height" : 512,
+      "phase" : "first-approved",
+      "pixelSHA256" : "eee5ad8412b4785d45395289b268a0a9820c920efdd9153b77971e05bab1be35",
+      "safetyViews" : 6,
+      "secondsIncludingSafety" : 38.870264000026509,
+      "seed" : 42,
+      "steps" : 4,
+      "uptimeSeconds" : 395583.63693029172,
+      "width" : 512
+    },
+    {
+      "phase" : "repeat-begin",
+      "uptimeSeconds" : 395583.64150750003
+    },
+    {
+      "height" : 512,
+      "phase" : "repeat-approved",
+      "pixelSHA256" : "eee5ad8412b4785d45395289b268a0a9820c920efdd9153b77971e05bab1be35",
+      "safetyViews" : 6,
+      "secondsIncludingSafety" : 16.866008375014644,
+      "seed" : 42,
+      "steps" : 4,
+      "uptimeSeconds" : 395600.52761341666,
+      "width" : 512
+    },
+    {
+      "phase" : "unload-begin",
+      "uptimeSeconds" : 395600.53116191668
+    },
+    {
+      "phase" : "unload-end",
+      "uptimeSeconds" : 395600.75856758334
+    },
+    {
+      "phase" : "complete",
+      "samplerWriteError" : "",
+      "uptimeSeconds" : 395600.75959675002
+    }
+  ]
+}

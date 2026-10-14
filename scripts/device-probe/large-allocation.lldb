@@ -1,0 +1,10 @@
+# Optional iPhone ARM64 debugger aid. Use only with the isolated development probe.
+# Symbols may be unavailable on a given OS; check 'breakpoint list' for locations.
+# No locations means no evidence. Do not substitute guessed addresses.
+# C++ member ABI: x0=this, x1=size, x2=alignment. This traces requests, not usage.
+breakpoint set --func-regex 'BumpMmapResourceAllocator.*allocateResource' --condition '$x1 >= 536870912'
+breakpoint command add
+register read x0 x1 x2
+thread backtrace -c 14
+continue
+DONE

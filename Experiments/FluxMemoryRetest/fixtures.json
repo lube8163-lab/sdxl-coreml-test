@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "width": 512,
+  "height": 512,
+  "steps": 4,
+  "seeds": [42, 43, 44],
+  "safetyViews": 6,
+  "timingPolicy": "Record preparation, prompt encoding, denoising, VAE, six-view safety and PNG writing separately; report total button-to-approved-output as well.",
+  "cases": [
+    {"id": "still-life", "prompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography."},
+    {"id": "robot", "prompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed."},
+    {"id": "composition", "prompt": "A watercolor illustration of three yellow flowers in a blue vase, with a red book to the left and a green teacup to the right, white background."},
+    {"id": "landscape", "prompt": "A wide photograph of a mountain lake at sunrise, a wooden pier in the foreground, pine trees and mist, soft natural colors."}
+  ],
+  "comparisonLimits": "Matching integer seeds across different runtimes does not guarantee identical starting noise. Multiple outputs and blinded prompt-following review are required for a quality comparison. No quality-superiority score has been measured."
+}

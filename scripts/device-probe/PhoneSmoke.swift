@@ -8,20 +8,26 @@ import LocalGenerationSafety
 import UniformTypeIdentifiers
 
 private let phoneProbeUsesShippingConfiguration = true
+private let phoneProbeUsesWarmPolicy = true
 
 @MainActor
 private final class PhoneProbeRecorder {
     let directory: URL
     var records: [[String: Any]] = []
     var complete = false
+    let memory: MemorySampler
+    let memoryFile: String
 
     init() throws {
         directory = URL.documentsDirectory.appendingPathComponent("DeviceValidation", isDirectory: true)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        memoryFile = "memory-" + UUID().uuidString + ".csv"
+        memory = try MemorySampler(csv: directory.appendingPathComponent(memoryFile))
         setenv("MIM_FLUX_EVENT_PATH", directory.appendingPathComponent("flux-events.jsonl").path, 1)
     }
 
     func record(_ phase: String, _ fields: [String: Any] = [:]) {
+        memory.setPhase(phase)
         var value = fields
         value["phase"] = phase
         value["uptimeSeconds"] = ProcessInfo.processInfo.systemUptime
@@ -36,7 +42,10 @@ private final class PhoneProbeRecorder {
             "probeMinimumMemoryBytes": phoneProbeUsesShippingConfiguration ? 7_500_000_000 : 5_500_000_000,
             "shippingConfiguration": phoneProbeUsesShippingConfiguration,
             "memoryWarningInjectionRun": CommandLine.arguments.contains("--memory-warning-smoke"),
-            "denoiserRetention": phoneProbeUsesShippingConfiguration,
+            "denoiserRetention": phoneProbeUsesWarmPolicy,
+            "memoryCSV": memoryFile,
+            "memory": (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(memory.snapshot()))) ?? [:],
+            "memoryScope": "50ms background queue; counters overlap and must not be added; lifetime peak includes the entire process; sampling can miss spikes.",
             "width": 512, "height": 512, "steps": 4,
             "safetyViews": 6,
             "gpuCapabilities": Self.gpuCapabilities(),
@@ -125,6 +134,7 @@ extension SDXLGeneratorViewModel {
             UIApplication.shared.isIdleTimerDisabled = previousIdleSetting
         }
         guard let recorder = try? PhoneProbeRecorder() else { return }
+        defer { recorder.memory.stop() }
         recorder.record("start", ["productionSupportsGeneration": LocalFluxGenerator.supportsGeneration])
         let root = Bundle.main.resourceURL?.appendingPathComponent("BundledResources/flux2-klein-4b-512")
         let safety = Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc")
@@ -185,10 +195,10 @@ extension SDXLGeneratorViewModel {
             ("memory-warning", apple, 42)
         ] : [
             ("first", apple, 42), ("repeat", apple, 42), ("changed-prompt", robot, 43)
-        ] + (phoneProbeUsesShippingConfiguration ? [
+        ] + (phoneProbeUsesWarmPolicy ? [
             ("after-idle", robot, 43), ("after-release", robot, 43)
         ] : [])
-        if phoneProbeUsesShippingConfiguration {
+        if phoneProbeUsesWarmPolicy {
             prompt = apple
             recorder.record("preparation-start")
             let start = Date()

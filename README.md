@@ -43,6 +43,10 @@ The separate **downloaded-model demo** uses changed prompts: the UI reports 23.0
 
 An iPhone 14 / iOS 27.2 / 24B5099f reports 5,986,615,296 bytes of RAM. The normal app refuses generation under its 7.5-billion-byte guard. Lowering only that guard in an isolated experiment still produced no images: transformer GPU specialization aborted with `std::bad_alloc`. Summary-metadata lookup let Qwen run, but the transformer still aborted; CPU specialization returned a model-loading error. RAM, A15 GPU constraints and the different OS version were not isolated. **6 GB support has not been demonstrated.** Known-benign six-view classification did work on that phone.
 
+## Memory retest and six-GB investigation
+
+The [2026-10-14 Mac retest](measurements/2026-10-14/memory-retest/README.md) measures footprint, RSS, kernel lifetime footprint peak and default-device Metal allocation separately. A metadata-summary/reshape-hint candidate completed checked generation with matching pixels and comparable repeat time, but did not reduce peak Metal allocation. iPhone 14 has not been reconnected or retested. The production RAM guard and distributed models stay unchanged. [Probe tools and Bonsai comparison conditions](Experiments/FluxMemoryRetest/README.md) are ready for further device testing.
+
 ## Optimizations and mandatory safety
 
 MiM's dedicated single-function 512px transformer keeps its 4-bit weights, tokenizer/metadata reuse and sequential stage loading. The app prepares the current allowed prompt at launch/resume, retains the denoiser for at most 30 seconds of foreground idle, and keeps three CPU conditioning entries within 45 MiB. An uncached prompt releases the denoiser before Qwen loads. Low-power or serious/critical thermal states disable retention. Idle expiry preserves light resources; full release clears them. Every generation runs and is classified again.

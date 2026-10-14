@@ -39,13 +39,21 @@ def main():
                         help="Read function names without GPU model specialization in the copied runtime.")
     parser.add_argument("--transformer-cpu", action="store_true",
                         help="Use the public CPU-only specialization for the copied transformer.")
+    parser.add_argument("--frequent-reshapes", action="store_true",
+                        help="Test Apple's public reshape-specialization hint on the transformer; implies metadata summary.")
+    parser.add_argument("--keep-warm", action="store_true",
+                        help="Keep the ordinary warm policy while lowering only the RAM guard in this test copy.")
     parser.add_argument("--reference-image", type=Path,
                         help="Known benign PNG for a separate real six-view safety check.")
     args = parser.parse_args()
     if not re.fullmatch(r"com\.tasuku\.sdxlcoremltest\.[A-Za-z0-9-]+", args.bundle_id):
         parser.error("Use a separate com.tasuku.sdxlcoremltest.<probe> bundle ID.")
-    if args.shipping_configuration and (args.metadata_summary or args.transformer_cpu):
+    if args.shipping_configuration and (args.metadata_summary or args.transformer_cpu or args.frequent_reshapes):
         parser.error("Shipping configuration cannot select experimental runtime changes.")
+    if args.frequent_reshapes and args.transformer_cpu:
+        parser.error("Test GPU reshape specialization and CPU specialization separately.")
+    if args.frequent_reshapes:
+        args.metadata_summary = True
     root = Path(__file__).resolve().parents[1]
     destination = args.destination.resolve()
     if destination.exists():
@@ -72,7 +80,7 @@ def main():
     clone(root / "Vendor/LocalImageGeneration/Tests", package / "Tests")
     for name in ["LocalGenerationSafety", "StableDiffusionLocal"]:
         (vendor / name).symlink_to(root / "Vendor" / name, target_is_directory=True)
-    if args.metadata_summary or args.transformer_cpu:
+    if args.metadata_summary or args.transformer_cpu or args.frequent_reshapes:
         runtime = vendor / "MimCoreAIFlux"
         shutil.copytree(root / "Vendor/MimCoreAIFlux", runtime,
                         ignore=shutil.ignore_patterns(".git", ".build", "__pycache__", ".DS_Store"))
@@ -96,6 +104,9 @@ def main():
         if args.transformer_cpu:
             replace_once(model, "let options = SpecializationOptions(preferredComputeUnitKind: .gpu)",
                          'let options: SpecializationOptions = modelURL.lastPathComponent == "Transformer_512.aimodel" ? .cpuOnly : SpecializationOptions(preferredComputeUnitKind: .gpu)')
+        elif args.frequent_reshapes:
+            replace_once(model, "let options = SpecializationOptions(preferredComputeUnitKind: .gpu)",
+                'var options = SpecializationOptions(preferredComputeUnitKind: .gpu)\n        options.expectFrequentReshapes = modelURL.lastPathComponent == "Transformer_512.aimodel"')
     else:
         (vendor / "MimCoreAIFlux").symlink_to(root / "Vendor/MimCoreAIFlux", target_is_directory=True)
     for name in ["artifacts", "scripts"]:
@@ -117,13 +128,17 @@ def main():
                      "guard Self.supportsGeneration || (allowsLowMemoryProbe && ProcessInfo.processInfo.physicalMemory >= 5_500_000_000) else { throw GenerationError.insufficientMemory }")
         replace_once(view_model,
             'safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"))',
-            'safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"), resourcePolicy: .releaseAfterGeneration, allowsLowMemoryProbe: true)')
+            'safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"), resourcePolicy: ' + ('.keepWarm' if args.keep_warm else '.releaseAfterGeneration') + ', allowsLowMemoryProbe: true)')
         smoke_source = smoke_source.replace("private let phoneProbeUsesShippingConfiguration = true",
                                             "private let phoneProbeUsesShippingConfiguration = false")
+        if not args.keep_warm:
+            smoke_source = smoke_source.replace("private let phoneProbeUsesWarmPolicy = true",
+                                                "private let phoneProbeUsesWarmPolicy = false")
         smoke_source = smoke_source.replace("resourcePolicy: .releaseAfterGeneration) // Missing-classifier assertion",
                                             "resourcePolicy: .releaseAfterGeneration, allowsLowMemoryProbe: true) // Missing-classifier assertion")
+    sampler = root / "Experiments/FluxMemoryRetest/Sources/MemoryProbeCounters/MemorySampler.swift"
     with view_model.open("a") as stream:
-        stream.write("\n" + smoke_source)
+        stream.write("\n" + sampler.read_text() + "\n" + smoke_source)
     bootstrap = app / "SDXLCoreMLTestApp.swift"
     bootstrap.write_text('''import SwiftUI
 import UIKit
@@ -175,7 +190,9 @@ struct SDXLCoreMLTestApp: App {
         "probeMinimumMemoryBytes": 7_500_000_000 if args.shipping_configuration else 5_500_000_000,
         "shippingMinimumMemoryBytes": 7_500_000_000,
         "shippingConfiguration": args.shipping_configuration, "bundleID": args.bundle_id,
-        "resourcePolicy": "keepWarm" if args.shipping_configuration else "releaseAfterGeneration",
+        "resourcePolicy": "keepWarm" if args.shipping_configuration or args.keep_warm else "releaseAfterGeneration",
+        "memorySampling": "50 ms background serial queue; footprint, RSS, lifetime footprint maximum, default-device Metal allocation",
+        "expectFrequentReshapes": args.frequent_reshapes,
         "copiedEngineMatchesShipping": engine.read_bytes() == (root / "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift").read_bytes(),
         "copiedViewModelPrefixMatchesShipping": view_model.read_bytes().startswith((root / "SDXLCoreMLTest/SDXLGeneratorViewModel.swift").read_bytes()),
         "assetLocationOverride": "bundled assets for this legacy generation experiment only",

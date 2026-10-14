@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "platform": "Mac mini M2 / macOS 27.0.1 / 8 GB; not an iPhone simulation",
+  "sixGBDeviceRetested": false,
+  "productionRAMGuardChanged": false,
+  "modelBytesChanged": false,
+  "cases": {
+    "baseline-initial": {
+      "variant": "baseline",
+      "preparationSeconds": 26.992517416656483,
+      "memory": {
+        "maxFootprintBytes": 1201654616,
+        "maxLifetimeFootprintBytes": 1202719576,
+        "maxMetalAllocatedBytes": 4279517184,
+        "maxResidentBytes": 1819639808,
+        "maxSampleGapSeconds": 3.574082791688852,
+        "samples": 1637
+      }
+    },
+    "summary-reshape": {
+      "variant": "reshape",
+      "preparationSeconds": 9.193067874992266,
+      "memory": {
+        "maxFootprintBytes": 1460177752,
+        "maxLifetimeFootprintBytes": 1460423512,
+        "maxMetalAllocatedBytes": 4276912128,
+        "maxResidentBytes": 2823520256,
+        "maxSampleGapSeconds": 0.9907544166781008,
+        "samples": 1304
+      }
+    },
+    "baseline-after-candidate": {
+      "variant": "baseline",
+      "preparationSeconds": 40.35090883332305,
+      "memory": {
+        "maxFootprintBytes": 1278872360,
+        "maxLifetimeFootprintBytes": 1278888744,
+        "maxMetalAllocatedBytes": 4279664640,
+        "maxResidentBytes": 2986147840,
+        "maxSampleGapSeconds": 0.8589519166271202,
+        "samples": 1853
+      }
+    }
+  },
+  "sampling": "50 ms requested; actual maximum gaps 0.859-3.574 s. Kernel lifetime footprint high-water mark collected separately. Counters overlap; do not add.",
+  "limits": "One safe prompt, three sequential short runs. Prior compilation caches/run order differ. Candidate combines asset-summary lookup and public reshape hint; speed effects are not statistically isolated. GPU allocation peak did not materially decrease.",
+  "phoneCompileCheck": {
+    "ReleaseGenericIOS": true,
+    "buildSucceeded": true,
+    "deviceExecuted": false,
+    "generationWeightsEmbedded": false
+  },
+  "excludedAttempts": [
+    "Symlink experiment model directory failed catalog checks; copied all 17 files outside iCloud and verified pinned hashes.",
+    "Desktop stat blocked in File Provider (sample showed lstat, not inference).",
+    "Stale baseline binary ran during alternate build; events identified it and that run was excluded.",
+    "Relocated snapshot lacked SwiftPM bundles; corrected final baseline ran beside its bundles."
+  ],
+  "sources": {
+    "bonsai": "https://prismml.com/news/bonsai-image-4b",
+    "reshapeHint": "https://developer.apple.com/documentation/coreai/specializationoptions/expectfrequentreshapes"
+  },
+  "allSixCheckedImagesMatchPixels": true,
+  "pixelSHA256": "eee5ad8412b4785d45395289b268a0a9820c920efdd9153b77971e05bab1be35",
+  "baselineSourceProvenance": {
+    "scope": "Mac experiment only; identical model files and mandatory six-view generation gate. No six-GB iPhone emulation.",
+    "variant": "baseline",
+    "shippingSourceSHA256": {
+      "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "0e42c6bd5b7809fcb0ae58f03bc22cbf3a3d4407814426b2ae38b58248df550a",
+      "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift": "153183e202a5eadcd5919ab4107b9c7fc042cd0b3c7be759a5fab387ccd1c333"
+    },
+    "probeSourceSHA256": {
+      "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "0e42c6bd5b7809fcb0ae58f03bc22cbf3a3d4407814426b2ae38b58248df550a",
+      "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift": "153183e202a5eadcd5919ab4107b9c7fc042cd0b3c7be759a5fab387ccd1c333"
+    },
+    "mathematicalModelAndWeightsChanged": false
+  },
+  "candidateSourceProvenance": {
+    "scope": "Mac experiment only; identical model files and mandatory six-view generation gate. No six-GB iPhone emulation.",
+    "variant": "reshape",
+    "shippingSourceSHA256": {
+      "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "0e42c6bd5b7809fcb0ae58f03bc22cbf3a3d4407814426b2ae38b58248df550a",
+      "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift": "153183e202a5eadcd5919ab4107b9c7fc042cd0b3c7be759a5fab387ccd1c333"
+    },
+    "probeSourceSHA256": {
+      "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "0e42c6bd5b7809fcb0ae58f03bc22cbf3a3d4407814426b2ae38b58248df550a",
+      "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift": "f71ae588a03ff435ac695dc2291547241d3f1170396a7732cd527f9a08eedc3c"
+    },
+    "mathematicalModelAndWeightsChanged": false
+  }
+}
