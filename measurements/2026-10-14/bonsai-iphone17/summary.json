@@ -15,7 +15,6 @@
     "binary"
   ],
   "vaeTilePixelsObservedInSettings": 128,
-  "prompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
   "physicalMemorySource": "Earlier FLUX probe on the same physical phone. Bonsai process memory was not instrumented.",
   "recordingMethod": "QuickTime USB screen input; Device Hub live observations and direct phone screenshot. No synthetic frames.",
   "cases": [
@@ -86,7 +85,9 @@
       "timingEvidence": "Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot. Direct result screenshot also retained.",
       "fullyControlledBenchmark": false,
       "screen": "binary-512-repeat-result.png",
-      "historyScreen": "library-five-results.png"
+      "historyScreen": "library-five-results.png",
+      "prompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft light, realistic photography.",
+      "promptEvidence": "Full input visible in retained result screenshot; differs from FLUX reference by omission of window."
     },
     {
       "id": "binary-512-seed42-recorded-third",
@@ -106,7 +107,9 @@
       "historyScreen": "library-five-results.png",
       "screen": "binary-512-recorded-third-result.png",
       "recording": "binary-512-recorded-third-realtime.mp4",
-      "fullyControlledBenchmark": false
+      "fullyControlledBenchmark": false,
+      "prompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft light, realistic photography.",
+      "promptEvidence": "Full input visible in retained result screenshot; differs from FLUX reference by omission of window."
     }
   ],
   "recordingFailure": {
@@ -121,7 +124,8 @@
     "Bonsai thermal state, power mode, process memory, retention/cache policy and internal moderation were not instrumented.",
     "FLUX prepared generation times exclude separate prompt preparation and use different safety and timing boundaries; not a matched model-quality or memory benchmark.",
     "Matching integer seeds across runtimes does not imply equivalent initial random noise.",
-    "The added Binary case is faster than the original series and used a changed screen-recording setup. The cause of the difference was not isolated; do not use only the slower original-series times to claim a large speed advantage."
+    "The added Binary case is faster than the original series and used a changed screen-recording setup. The cause of the difference was not isolated; do not use only the slower original-series times to claim a large speed advantage.",
+    "October 16 prompt audit: retained 24.2/14.3-second Binary screens show soft light, while FLUX uses soft window light. Do not treat all five images as text-identical pairs."
   ],
   "validationWindow": "2026-10-14/15 (Asia/Ho_Chi_Minh)",
   "libraryEvidence": "library-five-results.png",
@@ -137,5 +141,17 @@
     "exportFrameRate": 30,
     "speedUp": false,
     "audioMuted": true
-  }
+  },
+  "promptAudit20261016": {
+    "referencePrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+    "actualPromptConfirmedInBinaryScreens": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft light, realistic photography.",
+    "confirmedCases": [
+      "binary-512-seed42-repeat",
+      "binary-512-seed42-recorded-third"
+    ],
+    "difference": "Bonsai screens omit window from soft window light. Earlier common-prompt description was too strong.",
+    "allFiveExactPromptsIndependentlyVerified": false,
+    "textIdenticalPairedBenchmark": false
+  },
+  "referencePrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography."
 }

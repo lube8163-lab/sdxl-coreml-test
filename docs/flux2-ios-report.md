@@ -1,6 +1,6 @@
 # FLUX.2 on an 8 GB iPhone: reporting scope and related work
 
-Checked on 2026-10-14. A standard iPhone 17 with 8 GB RAM performs on-device Qwen prompt encoding, FLUX.2 Klein 4B generation and six mandatory safety checks, with measured reuse/idle/release behavior. This is useful physical-device evidence. That assessment is an inference, not a world-first claim or a new model/runtime invention.
+Historical report checked on 2026-10-14; scope notes refreshed on 2026-10-16. Start with the [Japanese reproduction guide](flux2-iphone-reproduction.md) for the current app. The October 14 timings are historical and use the earlier output gate. A standard iPhone 17 with 8 GB RAM performs on-device Qwen prompt encoding, FLUX.2 Klein 4B generation and six mandatory safety checks, with measured reuse/idle/release behavior. This is useful physical-device evidence. That assessment is an inference, not a world-first claim or a new model/runtime invention.
 
 ## Existing work
 
@@ -27,7 +27,7 @@ GitHub, Hugging Face and public social searches were reviewed. X search did not 
 
 JSON/CSV distinguish stage samples, 250 ms samples and timings. Process footprint is not total GPU memory or a minimum RAM guarantee. The recorded robot case reports 16.7 seconds in the UI and differs from the cached-repeat benchmark. A startup driver automates real actions; the failed XCTest runner is not reported as a UI-test pass. Broad classifier effectiveness and App Review acceptance have not been established.
 
-Apple's [maximum-build-size reference](https://developer.apple.com/help/app-store-connect/reference/app-uploads/maximum-build-file-sizes/) lists a 4 GB uncompressed iOS/iPadOS app limit. The bundled development app measured about 4.07 GB decimal (3.79 GiB), near that boundary; this is not an App Store archive validation. Excluding generation models yields a roughly 30 MB development app and an explicit first-use download. No App Store upload was performed.
+Apple's [maximum-build-size reference](https://developer.apple.com/help/app-store-connect/reference/app-uploads/maximum-build-file-sizes/) lists a 4 GB uncompressed iOS/iPadOS app limit. The bundled development app measured about 4.07 GB decimal (3.79 GiB), near that boundary; this is not an App Store archive validation. Excluding generation models yields a roughly 30 MB development app and an explicit first-use download. At the October 14 reporting point no App Store upload had been performed. Version 1.1 build 6 was subsequently archived and uploaded on October 15; this does not establish App Review acceptance or remeasure the earlier iPhone 17 timings.
 
 ## Short posts — drafts only
 
@@ -60,7 +60,7 @@ The released Bonsai Studio [same-phone comparison](../measurements/2026-10-14/bo
 
 The released app's [five-image iPhone 17 report](../measurements/2026-10-14/bonsai-iphone17/README.md) observed Ternary at 42.6 / 24.7 seconds and Binary at 25.6 / 24.2 seconds, followed by an added **14.3-second Binary image**. All five times are retained in the phone's Library screenshot. The original four-case QuickTime movie failed to save; the added Binary generation has a successfully saved normal-time video. Four steps were human configured and confirmed after the added case; the retained recording does not independently show the Parameters step count.
 
-The faster added case must be included in any speed discussion. FLUX's earlier same-phone prepared generation was about 14 seconds, with separate preparation of about 4–6 seconds, and cached repeats about 11 seconds including six safety views. App timing boundaries, cache/retention, recording and moderation differ, so a large general speed advantage over Bonsai on iPhone 17 is not established. No SNS post has been sent.
+Retained 24.2/14.3-second Binary screens use `soft light`, while FLUX uses `soft window light`; the earlier exact-common-prompt description was too strong. The faster added case must be included in any speed discussion as a near-condition observation. FLUX's earlier same-phone prepared generation was about 14 seconds, with separate preparation of about 4–6 seconds, and cached repeats about 11 seconds including six safety views. App timing boundaries, cache/retention, recording and moderation differ, so a large general speed advantage over Bonsai on iPhone 17 is not established. No SNS post has been sent.
 
 Possible short follow-up draft:
 

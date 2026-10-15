@@ -4,7 +4,7 @@ The active `SDXLCoreMLTest` iPhone app runs **FLUX.2 Klein 4B, 512×512, four st
 
 ![Actual checked output on iPhone 17](measurements/2026-10-14/iphone17-generated-downloaded.png)
 
-[26-second real-device demo](media/iphone17-flux2-demo.mp4) · [15-second download recording](media/iphone17-model-download.mp4) · [JSON / CSV measurements](measurements/2026-10-14/README.md) · [Related work and reporting scope](docs/flux2-ios-report.md)
+[日本語の再現手順と測定条件](docs/flux2-iphone-reproduction.md) · [26-second real-device demo](media/iphone17-flux2-demo.mp4) · [15-second download recording](media/iphone17-model-download.mp4) · [JSON / CSV measurements](measurements/2026-10-14/README.md) · [Related work and reporting scope](docs/flux2-ios-report.md)
 
 ## Current device requirement
 
@@ -63,7 +63,7 @@ The [2026-10-14 Mac retest](measurements/2026-10-14/memory-retest/README.md) mea
 
 The released Bonsai Studio was also [tested on the same iPhone 14](measurements/2026-10-14/bonsai-iphone14/README.md): Ternary and Binary both completed 512px generation. App-reported times, parameter/result frames and normal-time recordings are published with cache/safety/step-count evidence limits. The observed FLUX reuse cases were faster; a general quality or memory advantage is not established. [The 30-second iPhone 14 FLUX clip](media/iphone14-flux2-demo.mp4) shows a later checked image with a 45.2-second UI time, after separate preparation and previously populated compilation caches.
 
-The later [same-iPhone-17 Bonsai observations](measurements/2026-10-14/bonsai-iphone17/README.md) measured Ternary at 42.6 / 24.7 seconds and Binary at 25.6 / 24.2 seconds, followed by a separately recorded **14.3-second Binary image**. All five times are corroborated by the phone's app Library; the original four-case movie failed to save. The faster added case narrows the observed gap with FLUX and must be included in any comparison. Four steps were human configured and confirmed; different cache, preparation, safety, recording and timing boundaries prevent a general speed claim.
+The later [same-iPhone-17 Bonsai observations](measurements/2026-10-14/bonsai-iphone17/README.md) measured Ternary at 42.6 / 24.7 seconds and Binary at 25.6 / 24.2 seconds, followed by a separately recorded **14.3-second Binary image**. All five times are corroborated by the phone's app Library; the original four-case movie failed to save. Retained 24.2/14.3-second result screens use `soft light`, while our reference prompt uses `soft window light`; they are near-condition observations rather than text-identical pairs. The faster added case narrows the observed gap with FLUX and must be included in any comparison. Four steps were human configured and confirmed; different cache, preparation, safety, recording and timing boundaries prevent a general speed claim.
 
 ## Optimizations and mandatory safety
 
@@ -77,7 +77,7 @@ Foreground memory warnings finish an active checked operation before releasing o
 
 The [October 15 usability and safety check](measurements/2026-10-15/app-readiness/README.md) strengthens multilingual input coverage to 54 refusals and 20 ordinary prompts. All 24 safety/generation/optimization/installer test functions passed. An iPhone 14 startup driver completed four checked examples and 43 assertions covering retained results, active cancellation and sharing-sheet presentation/dismissal. Its timings include safety and exclude initial preparation. The later UI tap test again failed to initialize the device's automation mode and did not execute.
 
-Adversarial classifier effectiveness, broad prompt coverage, actual Photos permission/write flows, OS suspension, sustained thermal behavior and App Review acceptance remain unverified. Startup-driver checks and normal signed builds are distinct from XCTest tap coverage and distribution review.
+The later build 6 check completed actual Photos permission/write flows and a real Home/background/resume cycle; see the dated release report above. Broad adversarial detection rates, sustained thermal behavior, forced memory-pressure termination and App Review acceptance remain unverified. The October 14 iPhone 17 timings use the older gate and have not been remeasured on build 6. Startup-driver checks and normal signed builds are distinct from XCTest tap coverage and distribution review.
 
 ## Build
 

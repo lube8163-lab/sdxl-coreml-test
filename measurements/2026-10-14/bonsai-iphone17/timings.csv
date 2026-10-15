@@ -1,6 +1,6 @@
-case,model,width,height,steps_requested,steps_confirmed_by_human_after_case,seed,app_reported_seconds,timing_evidence
-ternary-512-seed42-first,ternary,512,512,4,,42,42.6,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot."
-ternary-512-seed42-repeat,ternary,512,512,4,,42,24.7,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot."
-binary-512-seed42-first,binary,512,512,4,,42,25.6,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot."
-binary-512-seed42-repeat,binary,512,512,4,,42,24.2,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot. Direct result screenshot also retained."
-binary-512-seed42-recorded-third,binary,512,512,4,4,42,14.3,Saved generation recording and result frame; corroborated by five-result Library screenshot.
+case,model,width,height,steps_requested,steps_confirmed_by_human_after_case,seed,app_reported_seconds,timing_evidence,prompt_evidence
+ternary-512-seed42-first,ternary,512,512,4,,42,42.6,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot.",Full prompt not independently legible in retained Library thumbnail.
+ternary-512-seed42-repeat,ternary,512,512,4,,42,24.7,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot.",Full prompt not independently legible in retained Library thumbnail.
+binary-512-seed42-first,binary,512,512,4,,42,25.6,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot.",Full prompt not independently legible in retained Library thumbnail.
+binary-512-seed42-repeat,binary,512,512,4,,42,24.2,"Live Device Hub observation, corroborated by the retained five-result in-app Library screenshot. Direct result screenshot also retained.",Retained screenshot: soft light; differs from FLUX soft window light.
+binary-512-seed42-recorded-third,binary,512,512,4,4,42,14.3,Saved generation recording and result frame; corroborated by five-result Library screenshot.,Retained screenshot: soft light; differs from FLUX soft window light.

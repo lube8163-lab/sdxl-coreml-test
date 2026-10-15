@@ -2,9 +2,15 @@
 
 On 2026-10-14/15, **Bonsai Studio 0.4.0 / build 11** was tested on the same **iPhone 17 / A19 / iOS 27.0.1 (24A446)** used for the [earlier FLUX measurements](../README.md). Both Binary and Ternary weights were downloaded through the released app. The retained Settings frame shows **128px VAE tiles**. Physical RAM was 8,045,641,728 bytes in the earlier FLUX probe; Bonsai process memory was not instrumented.
 
-These are sequential app observations, not a controlled model benchmark. One common synthetic prompt was used:
+These are sequential app observations, not a controlled model benchmark. The FLUX reference prompt was:
 
 > A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.
+
+A later audit of the retained **24.2-second and 14.3-second Binary screens** on October 16 found this actual input:
+
+> A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft light, realistic photography.
+
+The word `window` is absent. The earlier report described a common prompt too strongly. These are near-condition app observations, not text-identical FLUX/Bonsai pairs. The original movie of the first four cases was not retained, and the full prompt cannot be independently read from every Library thumbnail. We preserve the observed times while recording that evidence limit.
 
 ## Observed images and times
 
@@ -33,7 +39,7 @@ The app Library contains only these five synthetic test images. Public evidence 
 
 ## Comparison with FLUX
 
-The earlier same-phone FLUX probe used the same apple prompt, 512px, four steps and seed 42. Its two completed runs measured **13.97 / 14.34 seconds after separate 5.69 / 3.95-second preparation**, and **10.98 / 11.36 seconds for cached repeats**. Those generation times include six output safety views; preparation is excluded. They were not USB-recorded, and first-ever disk compilation is not covered by those numbers.
+The earlier same-phone FLUX probe used the reference apple prompt, 512px, four steps and seed 42; the retained Bonsai Binary prompt differs as documented above. Its two completed runs measured **13.97 / 14.34 seconds after separate 5.69 / 3.95-second preparation**, and **10.98 / 11.36 seconds for cached repeats**. Those generation times include six output safety views; preparation is excluded. They were not USB-recorded, and first-ever disk compilation is not covered by those numbers.
 
 The **14.3-second added Bonsai Binary result matters**: comparing only its earlier 24–26-second results would overstate a FLUX speed advantage on iPhone 17. FLUX's cached repeat observations are lower, but the apps differ in prompt preparation, retention/cache policy, safety behavior, recording setup and internal timing boundaries. The cause of Bonsai's faster added case was not isolated. The retail app's thermal state, power mode and memory counters were not instrumented.
 
