@@ -69,13 +69,16 @@ public actor CoreAIDiffusionModelFunction {
         guard FileManager.default.fileExists(atPath: modelURL.path) else {
             throw CoreAIDiffusionError.modelFileNotFound(modelURL)
         }
-        let options = SpecializationOptions(preferredComputeUnitKind: .gpu)
-        FluxProbeEvents.emit("metadata_probe_begin", asset: modelURL.lastPathComponent)
-        let probe = try await AIModel(contentsOf: modelURL, options: options)
-        metadataFunctionNames = probe.functionNames
-        FluxProbeEvents.emit("metadata_probe_end", asset: modelURL.lastPathComponent,
-            detail: "\(probe.functionNames.count) names; no GPU functions retained")
-        return probe.functionNames.contains(name)
+        FluxProbeEvents.emit("metadata_summary_begin", asset: modelURL.lastPathComponent)
+        let asset = try AIModelAsset(contentsOf: modelURL)
+        guard let summary = try asset.summary(includingStatistics: false) else {
+            throw CoreAIDiffusionError.notLoaded
+        }
+        let names = summary.functions.map(\.name)
+        metadataFunctionNames = names
+        FluxProbeEvents.emit("metadata_summary_end", asset: modelURL.lastPathComponent,
+            detail: "\(names.count) names; no model specialization")
+        return names.contains(name)
     }
 
     // MARK: - [Float]-based API

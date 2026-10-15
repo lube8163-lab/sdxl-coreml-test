@@ -490,7 +490,7 @@ private struct SettingsView: View {
                     SettingSection(title: "生成設定", systemImage: "slider.horizontal.3") {
                         labeledValue("ステップ数", value: "4")
                         labeledValue("画像サイズ", value: "512×512")
-                        helperText("FLUX.2 Kleinに適した設定で生成します。メモリ8GB以上・iOS 27.0.1以降の対応端末が必要です。")
+                        helperText("FLUX.2 Kleinに適した設定で生成します。メモリ6GB以上・iOS 27.0.1以降の対応端末が必要です。6GB端末では生成に時間がかかることがあります。")
                     }
 
                     SettingSection(title: "シード値", systemImage: "number") {

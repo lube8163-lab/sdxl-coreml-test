@@ -38,8 +38,8 @@ private final class PhoneProbeRecorder {
             "physicalMemoryBytes": ProcessInfo.processInfo.physicalMemory,
             "osVersion": ProcessInfo.processInfo.operatingSystemVersionString,
             "bundleID": Bundle.main.bundleIdentifier ?? "",
-            "productionMinimumMemoryBytes": 7_500_000_000,
-            "probeMinimumMemoryBytes": phoneProbeUsesShippingConfiguration ? 7_500_000_000 : 5_500_000_000,
+            "productionMinimumMemoryBytes": LocalFluxGenerator.minimumPhysicalMemoryBytes,
+            "probeMinimumMemoryBytes": phoneProbeUsesShippingConfiguration ? LocalFluxGenerator.minimumPhysicalMemoryBytes : 5_500_000_000,
             "shippingConfiguration": phoneProbeUsesShippingConfiguration,
             "memoryWarningInjectionRun": CommandLine.arguments.contains("--memory-warning-smoke"),
             "denoiserRetention": phoneProbeUsesWarmPolicy,
@@ -51,7 +51,7 @@ private final class PhoneProbeRecorder {
             "gpuCapabilities": Self.gpuCapabilities(),
             "scope": phoneProbeUsesShippingConfiguration
                 ? "Copied app with unchanged production RAM guard, engine, GPU runtime, retention and safety. Test-only driver appended to view model."
-                : "Isolated lower-memory iPhone experiment. Shipping eight-GB guard remains in the source app."
+                : "Isolated iPhone experiment; production support now requires six GB and Extended Virtual Addressing."
         ]
         do {
             let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])

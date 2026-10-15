@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "testedDate": "2026-10-15",
+  "device": {
+    "model": "iPhone 14",
+    "soc": "A15",
+    "physicalMemoryBytes": 5986615296,
+    "os": "Version 27.2 (Build 24B5099f)"
+  },
+  "minimumPhysicalMemoryBytes": 5500000000,
+  "previousMinimumPhysicalMemoryBytes": 7500000000,
+  "nominalMinimumRAMGB": 6,
+  "fourGBSupported": false,
+  "metadataFunctionLookup": "AIModelAsset.summary(includingStatistics: false)",
+  "signedExtendedVirtualAddressing": true,
+  "increasedMemoryLimitRequested": false,
+  "modelRevision": "coreai-512-4bit-a7f65cd-v1",
+  "generationModelBytes": 4043710174,
+  "modelBytesChanged": false,
+  "inputAndSixViewOutputSafetyUnchanged": true,
+  "validationScope": "Production engine, installer, RAM guard, GPU runtime, resource policy and safety. Test-only startup driver calls real app setup and generation methods; no lower-memory override or bundled generation-model path.",
+  "archiveDelivery": "Existing pinned distribution archive copied over USB to the normal pending-download path. Production installer verified archive SHA-256 and all 17 extracted model hashes before activation. Network downloading was not repeated in this check.",
+  "installation": {
+    "receiptAccepted": true,
+    "archiveRemoved": true,
+    "seconds": 37.86476397514343
+  },
+  "cases": [
+    {
+      "case": 0,
+      "prompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "seed": 42,
+      "width": 512,
+      "height": 512,
+      "steps": 4,
+      "appReportedSeconds": 99.4,
+      "driverObservedSecondsIncludingSafety": 99.62445390224457,
+      "safetyViews": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "pixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "screen": "generated-0-ui.png"
+    },
+    {
+      "case": 1,
+      "prompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "seed": 42,
+      "width": 512,
+      "height": 512,
+      "steps": 4,
+      "appReportedSeconds": 53.1,
+      "driverObservedSecondsIncludingSafety": 53.1771479845047,
+      "safetyViews": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "pixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "screen": "generated-1-ui.png"
+    }
+  ],
+  "firstImageMatchesPreviousSuccessfulIPhone14Experiment": true,
+  "unitTests": {
+    "safety": 9,
+    "generationOptimizationInstallation": 15,
+    "result": "passed"
+  },
+  "normalApp": {
+    "extendedVirtualAddressingSigned": true,
+    "increasedMemoryLimit": false,
+    "generationModelsBundled": false,
+    "mandatoryClassifierCompiled": true,
+    "startupTestDriverInExecutable": false,
+    "executableSHA256": "6ad14813c1ca758baa0a43aba30c7e804944e45047df20fb90d1692f6455ee7c",
+    "bytes": 29981367,
+    "installedOnIPhone14": true,
+    "normalStartupWithoutTestFlags": true,
+    "defaultPromptEncodingCompleted": true,
+    "stillRunningAfterIdleRelease": true
+  },
+  "sourceSHA256": {
+    "SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "53016a43af1c46da9bc0ac27654c264193dbac230148b7c2a79cc9f6d77019d2",
+    "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "34982d81edba3bedb2806ffccbf7e548aaffc494fc60fe8fefd69d13651b6952",
+    "SDXLCoreMLTest/ModelSetupViewModel.swift": "75e11d3d7f2376b91c4eaf4c89e8be1c4599e9519795463a7907f2a0d9d4d371",
+    "SDXLCoreMLTest/ModelSetupView.swift": "befe5c754b5ffce137c21fcb7844bf9c708bc14e8fbf0cf12165b9afec9b0884",
+    "SDXLCoreMLTest/ContentView.swift": "c831eb8acd86411f7dc863a57dfd659c97feef4946e4655bee9ca67ed66e2a38",
+    "SDXLCoreMLTest/SDXLCoreMLTest.entitlements": "1ecc376ec4c7a5e9ca9207b7daced6505b6ba90ef857615dfb68cbbb0553e00e",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "f22bfacd253da4520f113e60a07f576f460e4627e3b2f1051832f404b8e97304",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift": "2d7c37bd239b34cd3d52ee762392462d2a36faa86e0b7a4f500f7d381bb46b81",
+    "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift": "54a190b2583113b4941960295cbd7b9d84666a25b4fa98495cc00a0b658368e3",
+    "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift": "f713c87cff248fd106fb9c22af61ea973cf9d43225df9d0931b6dc8b32303e2d",
+    "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/Resources/ContentSafetyPolicy.json": "a53333728af0849b36b89d582b2212096a437df8f381712e71a6247178aa63cf",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/Resources/flux2-catalog-manifest.json": "9495423c73c37f1c16d8da1e9b5c955de07847d3068f57f05a071342ac81a75d"
+  },
+  "limits": [
+    "Two synthetic prompts on one iPhone 14 / iOS 27.2. Other six-GB devices and iPhone 17 were not rechecked in this change.",
+    "App timings include output safety and exclude initial prompt preparation before the first button action. The first image includes new transformer compilation; the second uses a different prompt. These are integration checks, not matched performance benchmarks.",
+    "Normal build has no startup test driver; on-device automatic generation used a copied startup entry point with the unmodified production engine and setup/view-model methods.",
+    "Broad image-safety effectiveness and App Review acceptance remain unverified. Four-GB devices remain outside the support gate."
+  ]
+}

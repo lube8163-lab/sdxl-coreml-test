@@ -1,0 +1,141 @@
+{
+  "bundleID" : "com.tasuku.sdxlcoremltest",
+  "complete" : true,
+  "OS" : "Version 27.2 (Build 24B5099f)",
+  "physicalMemoryBytes" : 5986615296,
+  "records" : [
+    {
+      "bundledFluxExists" : false,
+      "phase" : "start",
+      "supportsGeneration" : true,
+      "uptimeSeconds" : 267019.72373879165
+    },
+    {
+      "bytes" : 3542141404,
+      "phase" : "resume-complete-archive",
+      "uptimeSeconds" : 267024.1866666667
+    },
+    {
+      "bytes" : 3542141404,
+      "fraction" : 0,
+      "phase" : "install-progress",
+      "state" : "idle",
+      "uptimeSeconds" : 267024.18751891667
+    },
+    {
+      "bytes" : 3542141404,
+      "fraction" : 1.664609902875794e-06,
+      "phase" : "install-progress",
+      "state" : "installing",
+      "uptimeSeconds" : 267034.31036345835
+    },
+    {
+      "bytes" : 3542141404,
+      "fraction" : 0.30340639618253706,
+      "phase" : "install-progress",
+      "state" : "installing",
+      "uptimeSeconds" : 267044.53788512503
+    },
+    {
+      "bytes" : 3542141404,
+      "fraction" : 0.68083261332665423,
+      "phase" : "install-progress",
+      "state" : "installing",
+      "uptimeSeconds" : 267054.66935958335
+    },
+    {
+      "archiveRemoved" : true,
+      "phase" : "model-ready",
+      "receipt" : true,
+      "seconds" : 37.864763975143433,
+      "uptimeSeconds" : 267062.0533259167
+    },
+    {
+      "appTimingText" : "安全性の確認を含めて 99.4 秒。保存や共有ができます。",
+      "case" : 0,
+      "observedSecondsIncludingSafety" : 99.624453902244568,
+      "phase" : "generation-approved",
+      "pixelSHA256" : "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "seed" : 42,
+      "uptimeSeconds" : 267251.61285429168,
+      "views" : [
+        {
+          "nsfl" : 0.032017078250646591,
+          "nsfw" : 0.038723867386579514,
+          "sfw" : 0.92925900220870972
+        },
+        {
+          "nsfl" : 0.028946630656719208,
+          "nsfw" : 0.029641792178153992,
+          "sfw" : 0.94141161441802979
+        },
+        {
+          "nsfl" : 0.02858811616897583,
+          "nsfw" : 0.02973233163356781,
+          "sfw" : 0.94167959690093994
+        },
+        {
+          "nsfl" : 0.029449775815010071,
+          "nsfw" : 0.053584109991788864,
+          "sfw" : 0.91696614027023315
+        },
+        {
+          "nsfl" : 0.025867026299238205,
+          "nsfw" : 0.036122441291809082,
+          "sfw" : 0.938010573387146
+        },
+        {
+          "nsfl" : 0.032440554350614548,
+          "nsfw" : 0.036900829523801804,
+          "sfw" : 0.93065863847732544
+        }
+      ]
+    },
+    {
+      "appTimingText" : "安全性の確認を含めて 53.1 秒。保存や共有ができます。",
+      "case" : 1,
+      "observedSecondsIncludingSafety" : 53.1771479845047,
+      "phase" : "generation-approved",
+      "pixelSHA256" : "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "seed" : 42,
+      "uptimeSeconds" : 267308.51500720833,
+      "views" : [
+        {
+          "nsfl" : 0.034604668617248535,
+          "nsfw" : 0.034350268542766571,
+          "sfw" : 0.9310450553894043
+        },
+        {
+          "nsfl" : 0.033516895025968552,
+          "nsfw" : 0.034541159868240356,
+          "sfw" : 0.9319419264793396
+        },
+        {
+          "nsfl" : 0.033534705638885498,
+          "nsfw" : 0.034003470093011856,
+          "sfw" : 0.93246179819107056
+        },
+        {
+          "nsfl" : 0.035045415163040161,
+          "nsfw" : 0.036869306117296219,
+          "sfw" : 0.92808526754379272
+        },
+        {
+          "nsfl" : 0.034981496632099152,
+          "nsfw" : 0.037038419395685196,
+          "sfw" : 0.92798012495040894
+        },
+        {
+          "nsfl" : 0.035139992833137512,
+          "nsfw" : 0.03825325146317482,
+          "sfw" : 0.92660677433013916
+        }
+      ]
+    },
+    {
+      "phase" : "complete",
+      "uptimeSeconds" : 267309.84742475004
+    }
+  ],
+  "scope" : "Test-only startup driver; unmodified production model setup, download, generation and safety methods. Main app bundle ID preserves downloaded assets."
+}

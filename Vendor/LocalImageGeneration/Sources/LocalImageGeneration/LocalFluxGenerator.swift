@@ -13,7 +13,7 @@ public enum GenerationError: Error, LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .unsupportedEnvironment: "画像生成には iOS 27.0.1 以降の対応する実機が必要です。"
-        case .insufficientMemory: "このモデルにはメモリ8GB以上の端末が必要です。"
+        case .insufficientMemory: "このモデルにはメモリ6GB以上の端末が必要です。"
         case .missingAssets: "同梱モデルが不足または破損しています。アプリを再インストールしてください。"
         case .invalidOutput: "画像を生成できませんでした。内容を変えてお試しください。"
         case .busy: "画像生成が進行中です。完了するまでお待ちください。"
@@ -35,6 +35,9 @@ public enum GenerationResourcePolicy: Sendable {
 
 public actor LocalFluxGenerator {
     public static let warmRetentionSeconds = 30
+    // Six-GB devices report slightly less than six billion physical bytes.
+    // The app also signs with Extended Virtual Addressing for CoreAI loading.
+    public static let minimumPhysicalMemoryBytes: UInt64 = 5_500_000_000
     private let directory: URL?
     private let checker: ImageSafetyChecker
     private let resourcePolicy: GenerationResourcePolicy
@@ -56,7 +59,7 @@ public actor LocalFluxGenerator {
 
     public static var supportsGeneration: Bool {
         #if canImport(CoreAI) && !targetEnvironment(simulator)
-        return ProcessInfo.processInfo.physicalMemory >= 7_500_000_000
+        return ProcessInfo.processInfo.physicalMemory >= minimumPhysicalMemoryBytes
         #else
         return false
         #endif

@@ -1,5 +1,7 @@
 # Memory and six-GB device retest
 
+Historical baseline: the results below compare against the October 14 production source with an eight-GB guard. The current app adopts summary metadata and Extended Virtual Addressing and lowers its minimum to six GB. Current probe scripts inherit that configuration; use [the recorded October 14 source snapshot](https://github.com/lube8163-lab/sdxl-coreml-test/tree/56430e7ce79f278875e0aa2765ec31f66e360928) to reproduce the original baseline. Historical result files and model bytes are preserved.
+
 This experiment reuses the app's generation library and mandatory six-view gate. It does not change the shipping RAM guard, mathematical model, server assets or app UI. Mac results cannot establish six-GB iPhone support: the Mac can swap, and GPU/OS/process limits differ.
 
 `MemorySampler` captures `task_vm_info.phys_footprint`, resident memory, the task ledger's process-lifetime footprint high-water mark and default-device Metal resource allocation on a separate serial queue, every 50 ms. It also records actual maximum sample gaps. It does not rely on the main actor being free during native compilation. The counters overlap; do not add them. Metal counts can omit allocations associated with other device objects. Even 50 ms sampling can miss spikes, and the final lifetime peak cannot be read after a fatal native abort. CSV writes occur throughout the test so an aborted process leaves observations before termination.

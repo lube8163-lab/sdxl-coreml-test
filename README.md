@@ -1,10 +1,16 @@
-# ローカル画像生成 — FLUX.2 on an 8 GB iPhone
+# ローカル画像生成 — FLUX.2 on iPhone
 
 The active `SDXLCoreMLTest` iPhone app runs **FLUX.2 Klein 4B, 512×512, four steps** with Apple's CoreAI GPU runtime. Prompt encoding, generation and mandatory output safety checks run on the device. Physical validation used an **iPhone 17, 8 GB RAM, iOS 27.0.1 / 24A446**, on 2026-10-13/14. This repository preserves the [earlier Stable Diffusion conversion work](docs/legacy-conversion.md).
 
 ![Actual checked output on iPhone 17](measurements/2026-10-14/iphone17-generated-downloaded.png)
 
 [26-second real-device demo](media/iphone17-flux2-demo.mp4) · [15-second download recording](media/iphone17-model-download.mp4) · [JSON / CSV measurements](measurements/2026-10-14/README.md) · [Related work and reporting scope](docs/flux2-ios-report.md)
+
+## Current device requirement
+
+The current source lowers the app guard to **6 GB RAM** (5,500,000,000 reported physical bytes) and keeps iOS 27.0.1 as the minimum. It adopts the successful iPhone 14 experiment's asset-summary metadata lookup and signs both Debug and Release with Apple's [Extended Virtual Addressing entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.kernel.extended-virtual-addressing). This expands address space; it does not increase physical RAM. Four-GB devices remain unsupported. Six-GB generation can take substantially longer than the iPhone 17 measurements below.
+
+The October 13/14 measurements describe the earlier eight-GB production configuration and separate six-GB experiments. Their source provenance, conditions and timings are preserved. Generation model bytes, four steps, input filtering and all six output safety checks are unchanged. The [October 15 production-configuration check](measurements/2026-10-15/sixgb-support/summary.json) completed model verification/installation and two checked images on iPhone 14 / iOS 27.2, without a low-memory test override. App-reported image times were 99.4 seconds (first transformer compilation) and 53.1 seconds (changed prompt), after separate initial preparation. The pending archive was USB seeded; this check did not repeat the network download.
 
 ## First use and app size
 
@@ -41,11 +47,11 @@ Stage-sampled physical footprint reached 1,529–1,570 MiB. This is not a contin
 
 The separate **downloaded-model demo** uses changed prompts: the UI reports 23.0 seconds for the apple and 16.7 seconds for the robot. Those differ from the prepared-prompt benchmark. The robot clip is a trimmed, silent USB recording at 720×1280 / 30 fps, at normal elapsed time. A test-only startup driver supplies prompts and invokes production actions; the rendered app, computation and classifier are real.
 
-An iPhone 14 / iOS 27.2 / 24B5099f reports 5,986,615,296 bytes of RAM. The normal app retains its 7.5-billion-byte guard. Earlier lower-guard probes aborted during transformer specialization. **The later [physical six-GB retest](measurements/2026-10-14/iphone14-retest/README.md) completed five approved 512px/four-step images** after adding asset-summary metadata lookup and Apple's Extended Virtual Addressing entitlement to an isolated development copy. Model files and the six-view safety gate are unchanged. Generation took 43.77–61.56 seconds after the first compiled image (110.70 s), with separate prompt preparation. This is device evidence, not a shipping support change or validation of every six-GB device/OS.
+An iPhone 14 / iOS 27.2 / 24B5099f reports 5,986,615,296 bytes of RAM. The October 13/14 normal app used a 7.5-billion-byte guard. Earlier lower-guard probes aborted during transformer specialization. **The later [physical six-GB retest](measurements/2026-10-14/iphone14-retest/README.md) completed five approved 512px/four-step images** after adding asset-summary metadata lookup and Apple's Extended Virtual Addressing entitlement to an isolated development copy. Model files and the six-view safety gate are unchanged. Generation took 43.77–61.56 seconds after the first compiled image (110.70 s), with separate prompt preparation. This is device evidence, not a shipping support change or validation of every six-GB device/OS.
 
 ## Memory retest and six-GB investigation
 
-The [2026-10-14 Mac retest](measurements/2026-10-14/memory-retest/README.md) measures footprint, RSS, kernel lifetime footprint peak and default-device Metal allocation separately. A metadata-summary/reshape-hint candidate completed checked generation with matching pixels and comparable repeat time, but did not reduce peak Metal allocation. The later [iPhone 14 retest](measurements/2026-10-14/iphone14-retest/README.md) recovered full background CSVs and identified a successful address-space configuration. Its sampled footprint peaked at 1.105 GiB, RSS at 3.390 GiB and default-device Metal allocation at 5.214 GiB; these overlap and must not be added. The production RAM guard and distributed models stay unchanged. [Probe tools and Bonsai comparison conditions](Experiments/FluxMemoryRetest/README.md) describe the remaining matched-app testing.
+The [2026-10-14 Mac retest](measurements/2026-10-14/memory-retest/README.md) measures footprint, RSS, kernel lifetime footprint peak and default-device Metal allocation separately. A metadata-summary/reshape-hint candidate completed checked generation with matching pixels and comparable repeat time, but did not reduce peak Metal allocation. The later [iPhone 14 retest](measurements/2026-10-14/iphone14-retest/README.md) recovered full background CSVs and identified a successful address-space configuration. Its sampled footprint peaked at 1.105 GiB, RSS at 3.390 GiB and default-device Metal allocation at 5.214 GiB; these overlap and must not be added. Those October 14 experiments left the production RAM guard and distributed models unchanged. [Probe tools and Bonsai comparison conditions](Experiments/FluxMemoryRetest/README.md) describe the remaining matched-app testing.
 
 The released Bonsai Studio was also [tested on the same iPhone 14](measurements/2026-10-14/bonsai-iphone14/README.md): Ternary and Binary both completed 512px generation. App-reported times, parameter/result frames and normal-time recordings are published with cache/safety/step-count evidence limits. The observed FLUX reuse cases were faster; a general quality or memory advantage is not established. [The 30-second iPhone 14 FLUX clip](media/iphone14-flux2-demo.mp4) shows a later checked image with a 45.2-second UI time, after separate preparation and previously populated compilation caches.
 
@@ -63,7 +69,7 @@ Input regressions, malformed-score failures, missing-classifier refusal, benign 
 
 ## Build
 
-Use Xcode 27 and a compatible physical iPhone, iOS 27.0.1+, with at least 8 GB RAM. Set your signing team/bundle identifiers. SDK availability does not prove every device works.
+Use Xcode 27 and a compatible physical iPhone, iOS 27.0.1+, with at least 6 GB RAM (8 GB or more recommended for speed). Set your signing team/bundle identifiers. SDK availability does not prove every device works.
 
 ```sh
 python3 scripts/prepare_safety_assets.py

@@ -1,0 +1,3 @@
+case,width,height,steps,seed,app_reported_seconds,driver_observed_seconds_including_safety,safety_view_count
+0,512,512,4,42,99.4,99.62445390224457,6
+1,512,512,4,42,53.1,53.1771479845047,6

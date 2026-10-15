@@ -24,7 +24,7 @@ struct WelcomeView: View {
                         NavigationLink("利用規約") { LegalDocumentView(document: .terms) }
                         NavigationLink("プライバシー") { LegalDocumentView(document: .privacy) }
                     }.font(.footnote).foregroundStyle(AppStyle.muted)
-                    Text("iOS 27.0.1以降・メモリ8GB以上の対応端末が必要です。")
+                    Text("iOS 27.0.1以降・メモリ6GB以上の対応端末が必要です。6GB端末では生成に時間がかかることがあります。")
                         .font(.footnote).foregroundStyle(AppStyle.muted)
                 }.padding(28).padding(.vertical, 28)
             }.background(AppStyle.background).preferredColorScheme(.light)
@@ -110,7 +110,7 @@ struct UnsupportedDeviceView: View {
         ContentUnavailableView {
             Label("この端末では生成できません", systemImage: "iphone.slash")
         } description: {
-            Text("FLUX.2 Kleinの画像生成には、iOS 27.0.1以降・メモリ8GB以上の対応端末が必要です。")
+            Text("FLUX.2 Kleinの画像生成には、iOS 27.0.1以降・メモリ6GB以上の対応端末が必要です。")
         }.background(AppStyle.background).preferredColorScheme(.light)
     }
 }

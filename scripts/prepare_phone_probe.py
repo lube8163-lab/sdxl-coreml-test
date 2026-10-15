@@ -87,22 +87,9 @@ def main():
         shutil.copytree(root / "Vendor/MimCoreAIFlux", runtime,
                         ignore=shutil.ignore_patterns(".git", ".build", "__pycache__", ".DS_Store"))
         model = runtime / "swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift"
-        replace_once(model, '''        let options = SpecializationOptions(preferredComputeUnitKind: .gpu)
-        FluxProbeEvents.emit("metadata_probe_begin", asset: modelURL.lastPathComponent)
-        let probe = try await AIModel(contentsOf: modelURL, options: options)
-        metadataFunctionNames = probe.functionNames
-        FluxProbeEvents.emit("metadata_probe_end", asset: modelURL.lastPathComponent,
-            detail: "\\(probe.functionNames.count) names; no GPU functions retained")
-        return probe.functionNames.contains(name)''', '''        FluxProbeEvents.emit("metadata_summary_begin", asset: modelURL.lastPathComponent)
-        let asset = try AIModelAsset(contentsOf: modelURL)
-        guard let summary = try asset.summary(includingStatistics: false) else {
-            throw CoreAIDiffusionError.notLoaded
-        }
-        let names = summary.functions.map(\\.name)
-        metadataFunctionNames = names
-        FluxProbeEvents.emit("metadata_summary_end", asset: modelURL.lastPathComponent,
-            detail: "\\(names.count) names; no model specialization")
-        return names.contains(name)''')
+        # Summary lookup is now the production default. Preserve it in probe copies.
+        if 'metadata_summary_begin' not in model.read_text():
+            raise RuntimeError("Expected production asset-summary metadata lookup")
         if args.transformer_cpu:
             replace_once(model, "let options = SpecializationOptions(preferredComputeUnitKind: .gpu)",
                          'let options: SpecializationOptions = modelURL.lastPathComponent == "Transformer_512.aimodel" ? .cpuOnly : SpecializationOptions(preferredComputeUnitKind: .gpu)')
@@ -115,6 +102,10 @@ def main():
         (destination / name).symlink_to(root / name, target_is_directory=True)
 
     engine = package / "Sources/LocalImageGeneration/LocalFluxGenerator.swift"
+    minimum_match = re.search(r"minimumPhysicalMemoryBytes:\s*UInt64\s*=\s*([\d_]+)", engine.read_text())
+    if minimum_match is None:
+        raise RuntimeError("Production memory requirement was not found")
+    shipping_minimum = int(minimum_match.group(1).replace("_", ""))
     view_model = app / "SDXLGeneratorViewModel.swift"
     replace_once(view_model, "FluxModelPackage.installationDirectory",
                  'Bundle.main.resourceURL!.appendingPathComponent("BundledResources/flux2-klein-4b-512")')
@@ -185,29 +176,31 @@ struct SDXLCoreMLTestApp: App {
         (destination / "PhoneProbe.entitlements").write_bytes(plistlib.dumps({
             "com.apple.developer.kernel.extended-virtual-addressing": True
         }))
-        text = text.replace("PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";",
-            "PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";\n\t\t\t\tCODE_SIGN_ENTITLEMENTS = PhoneProbe.entitlements;")
+        text = text.replace("CODE_SIGN_ENTITLEMENTS = SDXLCoreMLTest/SDXLCoreMLTest.entitlements;",
+                            "CODE_SIGN_ENTITLEMENTS = PhoneProbe.entitlements;")
     (project / "project.pbxproj").write_text(text)
     baseline_paths = [
         "SDXLCoreMLTest/SDXLGeneratorViewModel.swift", "SDXLCoreMLTest/SDXLCoreMLTestApp.swift",
         "SDXLCoreMLTest/ContentView.swift",
         "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift",
-        "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift"
+        "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift",
+        "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift",
+        "SDXLCoreMLTest/SDXLCoreMLTest.entitlements"
     ]
     (destination / "probe-provenance.json").write_text(json.dumps({
         "shippingSourceSHA256": {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in baseline_paths},
-        "probeMinimumMemoryBytes": 7_500_000_000 if args.shipping_configuration else 5_500_000_000,
-        "shippingMinimumMemoryBytes": 7_500_000_000,
+        "probeMinimumMemoryBytes": shipping_minimum if args.shipping_configuration else 5_500_000_000,
+        "shippingMinimumMemoryBytes": shipping_minimum,
         "shippingConfiguration": args.shipping_configuration, "bundleID": args.bundle_id,
         "resourcePolicy": "keepWarm" if args.shipping_configuration or args.keep_warm else "releaseAfterGeneration",
         "memorySampling": "50 ms background serial queue; footprint, RSS, lifetime footprint maximum, default-device Metal allocation",
         "expectFrequentReshapes": args.frequent_reshapes,
-        "extendedVirtualAddressingRequested": args.extended_virtual_addressing,
+        "extendedVirtualAddressingRequested": True,
         "copiedEngineMatchesShipping": engine.read_bytes() == (root / "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift").read_bytes(),
         "copiedViewModelPrefixMatchesShipping": view_model.read_bytes().startswith((root / "SDXLCoreMLTest/SDXLGeneratorViewModel.swift").read_bytes()),
         "assetLocationOverride": "bundled assets for this legacy generation experiment only",
         "steps": 4, "resolution": [512, 512],
-        "metadataFunctionLookup": "assetSummary" if args.metadata_summary or args.transformer_cpu else "shippingRuntime",
+        "metadataFunctionLookup": "assetSummary",
         "transformerCompute": "cpuOnly" if args.transformer_cpu else "gpuPreferred",
         "safetyLibrary": "unchanged original package", "sourceRoot": str(root)
     }, indent=2) + "\n")

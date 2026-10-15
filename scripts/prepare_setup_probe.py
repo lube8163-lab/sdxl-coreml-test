@@ -49,14 +49,21 @@ def main():
     paths = ["SDXLCoreMLTest/SDXLCoreMLTestApp.swift", "SDXLCoreMLTest/ModelSetupViewModel.swift",
              "SDXLCoreMLTest/SDXLGeneratorViewModel.swift",
              "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift",
-             "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift"]
+             "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift",
+             "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift",
+             "SDXLCoreMLTest/SDXLCoreMLTest.entitlements"]
+    minimum_match = re.search(r"minimumPhysicalMemoryBytes:\s*UInt64\s*=\s*([\d_]+)",
+        (root / "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift").read_text())
+    if minimum_match is None:
+        raise RuntimeError("Production memory requirement was not found")
     (dest / "probe-provenance.json").write_text(json.dumps({
         "scope": "Startup automation calls production setup and generation methods; it is not an XCTest UI run.",
         "bundleID": args.bundle_id,
         "shippingSourceSHA256": {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths},
         "engineAndInstallerUnchanged": True,
         "bundledGenerationModels": False,
-        "minimumMemoryBytes": 7_500_000_000, "steps": 4, "resolution": [512, 512]
+        "minimumMemoryBytes": int(minimum_match.group(1).replace("_", "")),
+        "extendedVirtualAddressingRequested": True, "steps": 4, "resolution": [512, 512]
     }, indent=2) + "\n")
     print(dest)
 
