@@ -73,21 +73,24 @@ import Testing
         }
     }
 
-    @Test func uncertainFullFrameBlocksAndContextlessCropsCannotApproveIt() throws {
+    @Test func uncertainViewBlocksEvenWhenTheFullFrameIsStronglySafe() throws {
         let image = try image()
         for first in [
             ImageSafetyDecision(nsfw: 0.04, nsfl: 0.07, sfw: 0.89),
             .init(nsfw: 0.25, nsfl: 0.25, sfw: 0.5)
         ] {
-            #expect(throws: ImageSafetyError.blocked) {
-                try ImageSafetyGate.approve(image, decisions: [first, safe, safe, safe, safe, safe])
+            for index in 0..<6 {
+                var views = Array(repeating: safe, count: 6)
+                views[index] = first
+                #expect(throws: ImageSafetyError.blocked) { try ImageSafetyGate.approve(image, decisions: views) }
             }
         }
-        // A benign book/wood texture can confuse this photo classifier. The strong
-        // full-frame SFW decision is required; no missing view may be ignored.
+        // Even if this could be a texture false positive, a full-frame clearance
+        // must never suppress it. A nude-art regression exercised this condition.
         let texture = ImageSafetyDecision(nsfw: 0.85, nsfl: 0.03, sfw: 0.12)
-        let checked = try ImageSafetyGate.approve(image, decisions: [safe, safe, safe, texture, safe, safe])
-        #expect(checked.decisions.count == 6)
+        #expect(throws: ImageSafetyError.blocked) {
+            try ImageSafetyGate.approve(image, decisions: [safe, safe, safe, texture, safe, safe])
+        }
     }
 
     @Test func malformedOrIncompleteClassifierResultBlocks() throws {

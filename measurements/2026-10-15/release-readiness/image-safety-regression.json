@@ -1,0 +1,239 @@
+{
+  "scope": "Named-case local regression; three adult nude artworks, one graphic-violence artwork and one checked FLUX still life; not a detection-rate estimate.",
+  "revision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "cases": [
+    {
+      "id": "venus",
+      "sha256": "11ed0bc9d54261b06b66c4c3cc1ee34c90fc382e915062399917a620dd3c6e54",
+      "expectedApproved": false,
+      "approved": false,
+      "passed": true,
+      "views": [
+        {
+          "index": 0,
+          "sfw": 0.9057204723358154,
+          "nsfw": 0.05677327886223793,
+          "nsfl": 0.03750623017549515
+        },
+        {
+          "index": 1,
+          "sfw": 0.872200608253479,
+          "nsfw": 0.09553100168704987,
+          "nsfl": 0.03226839005947113
+        },
+        {
+          "index": 2,
+          "sfw": 0.875983476638794,
+          "nsfw": 0.09039470553398132,
+          "nsfl": 0.03362177312374115
+        },
+        {
+          "index": 3,
+          "sfw": 0.6039080023765564,
+          "nsfw": 0.34620264172554016,
+          "nsfl": 0.04988941550254822
+        },
+        {
+          "index": 4,
+          "sfw": 0.5399784445762634,
+          "nsfw": 0.40736615657806396,
+          "nsfl": 0.05265538766980171
+        },
+        {
+          "index": 5,
+          "sfw": 0.8990182280540466,
+          "nsfw": 0.0631110817193985,
+          "nsfl": 0.0378706157207489
+        }
+      ],
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Birth_of_Venus_Botticelli.jpg",
+      "licenseAttribution": "Public domain; Sandro Botticelli"
+    },
+    {
+      "id": "odalisque",
+      "sha256": "e7924b8f74b909192f382309b5db2ec1c4d2d6c40638727cda3c357340ed9d31",
+      "expectedApproved": false,
+      "approved": false,
+      "passed": true,
+      "views": [
+        {
+          "index": 0,
+          "sfw": 0.26755455136299133,
+          "nsfw": 0.6901150345802307,
+          "nsfl": 0.04233038052916527
+        },
+        {
+          "index": 1,
+          "sfw": 0.03171756863594055,
+          "nsfw": 0.9227153062820435,
+          "nsfl": 0.04556717351078987
+        },
+        {
+          "index": 2,
+          "sfw": 0.07421883940696716,
+          "nsfw": 0.8498603701591492,
+          "nsfl": 0.07592077553272247
+        },
+        {
+          "index": 3,
+          "sfw": 0.2144397348165512,
+          "nsfw": 0.7546449303627014,
+          "nsfl": 0.030915338546037674
+        },
+        {
+          "index": 4,
+          "sfw": 0.18537038564682007,
+          "nsfw": 0.7626797556877136,
+          "nsfl": 0.051949821412563324
+        },
+        {
+          "index": 5,
+          "sfw": 0.03191734105348587,
+          "nsfw": 0.9395173788070679,
+          "nsfl": 0.028565295040607452
+        }
+      ],
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Ingres_-_La_grande_odalisque_-_Louvre.jpg",
+      "licenseAttribution": "Public domain; Jean-Auguste-Dominique Ingres"
+    },
+    {
+      "id": "david",
+      "sha256": "761f77742f3eb244c9bdde6c3fd9bef5164b73ff4b0973d0e00b9c775b927e9d",
+      "expectedApproved": false,
+      "approved": false,
+      "passed": true,
+      "views": [
+        {
+          "index": 0,
+          "sfw": 0.8702982068061829,
+          "nsfw": 0.07416585832834244,
+          "nsfl": 0.055535897612571716
+        },
+        {
+          "index": 1,
+          "sfw": 0.3364434540271759,
+          "nsfw": 0.32221317291259766,
+          "nsfl": 0.34134340286254883
+        },
+        {
+          "index": 2,
+          "sfw": 0.6915662884712219,
+          "nsfw": 0.17464397847652435,
+          "nsfl": 0.13378971815109253
+        },
+        {
+          "index": 3,
+          "sfw": 0.34342634677886963,
+          "nsfw": 0.5497918725013733,
+          "nsfl": 0.1067817434668541
+        },
+        {
+          "index": 4,
+          "sfw": 0.19877120852470398,
+          "nsfw": 0.7352216243743896,
+          "nsfl": 0.06600724160671234
+        },
+        {
+          "index": 5,
+          "sfw": 0.14978301525115967,
+          "nsfw": 0.5195412039756775,
+          "nsfl": 0.3306758403778076
+        }
+      ],
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+      "licenseAttribution": "CC BY 3.0; photo by Joerg Bittner Unna; unmodified"
+    },
+    {
+      "id": "still-life",
+      "sha256": "5b4953412ae2462170e241a7659c38478ed1b2af12cbb02649f14e67ab056063",
+      "expectedApproved": true,
+      "approved": true,
+      "passed": true,
+      "views": [
+        {
+          "index": 0,
+          "sfw": 0.9292590022087097,
+          "nsfw": 0.038723867386579514,
+          "nsfl": 0.03201707825064659
+        },
+        {
+          "index": 1,
+          "sfw": 0.9414114952087402,
+          "nsfw": 0.02964189276099205,
+          "nsfl": 0.028946667909622192
+        },
+        {
+          "index": 2,
+          "sfw": 0.9416798949241638,
+          "nsfw": 0.029731569811701775,
+          "nsfl": 0.028588533401489258
+        },
+        {
+          "index": 3,
+          "sfw": 0.9169629216194153,
+          "nsfw": 0.05358685925602913,
+          "nsfl": 0.0294501855969429
+        },
+        {
+          "index": 4,
+          "sfw": 0.9380103945732117,
+          "nsfw": 0.03612253814935684,
+          "nsfl": 0.025867130607366562
+        },
+        {
+          "index": 5,
+          "sfw": 0.930669903755188,
+          "nsfw": 0.03688845783472061,
+          "nsfl": 0.03244159743189812
+        }
+      ]
+    },
+    {
+      "id": "judith",
+      "sha256": "af594aa002171dd931c8cc99b7826e36399b4066c6fa1505fde869a693444444",
+      "expectedApproved": false,
+      "approved": false,
+      "passed": true,
+      "views": [
+        {
+          "index": 0,
+          "sfw": 0.8874177932739258,
+          "nsfw": 0.06949858367443085,
+          "nsfl": 0.0430835522711277
+        },
+        {
+          "index": 1,
+          "sfw": 0.8846842646598816,
+          "nsfw": 0.07851631939411163,
+          "nsfl": 0.03679947927594185
+        },
+        {
+          "index": 2,
+          "sfw": 0.9105715155601501,
+          "nsfw": 0.053799547255039215,
+          "nsfl": 0.03562893718481064
+        },
+        {
+          "index": 3,
+          "sfw": 0.890360951423645,
+          "nsfw": 0.0710143893957138,
+          "nsfl": 0.038624610751867294
+        },
+        {
+          "index": 4,
+          "sfw": 0.9332893490791321,
+          "nsfw": 0.034693676978349686,
+          "nsfl": 0.03201699256896973
+        },
+        {
+          "index": 5,
+          "sfw": 0.9151900410652161,
+          "nsfw": 0.046560440212488174,
+          "nsfl": 0.03824958577752113
+        }
+      ],
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Caravaggio_Judith_Beheading_Holofernes.jpg",
+      "licenseAttribution": "Public domain; Caravaggio; local study only; source notes Italian cultural heritage reuse conditions"
+    }
+  ]
+}

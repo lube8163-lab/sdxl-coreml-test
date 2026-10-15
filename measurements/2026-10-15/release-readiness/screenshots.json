@@ -1,0 +1,51 @@
+{
+  "source": "iPhone 14, current production UI in isolated development copy; no invented UI or replacement image",
+  "render": "Direct native window render at store export size; RGB PNG encoding only",
+  "files": [
+    {
+      "filename": "01-still-life-v6-store65.png",
+      "pixels": [
+        1284,
+        2778
+      ],
+      "alpha": false,
+      "sha256": "3595d268d5a1b58236941d4d5672b8430e006353a91b8475595c054f2439bb47"
+    },
+    {
+      "filename": "02-input-examples-v6-store65.png",
+      "pixels": [
+        1284,
+        2778
+      ],
+      "alpha": false,
+      "sha256": "5accbc982800bc12d466fdf38d6959feaf71a6c2e587b81eea425fce1b2c1171"
+    },
+    {
+      "filename": "03-watercolor-v6-store65.png",
+      "pixels": [
+        1284,
+        2778
+      ],
+      "alpha": false,
+      "sha256": "bd6de905b97e4483e362791e4967478eb2a04a121a694f5eb0561a4c3b04bd56"
+    },
+    {
+      "filename": "04-landscape-v6-store65.png",
+      "pixels": [
+        1284,
+        2778
+      ],
+      "alpha": false,
+      "sha256": "9d8474ab67a7349212719f30ee462b5f8f9c5e0f3d93dfad999a676ea4afff7c"
+    },
+    {
+      "filename": "06-robot-v6-store65.png",
+      "pixels": [
+        1284,
+        2778
+      ],
+      "alpha": false,
+      "sha256": "dab857f62a1a868798053fc06aed4509d557886502e781a5a022f2c8e549eb6c"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ public enum ImageSafetyError: Error, LocalizedError, Equatable {
 }
 
 public struct ImageSafetyDecision: Sendable {
-    public static let revision = "swiftformer-1d648298-sixviews-sfw90-unsafe90-v1"
+    public static let revision = "swiftformer-1d648298-sixviews-all-sfw90-v2"
     public let nsfw: Double
     public let nsfl: Double
     public let sfw: Double
@@ -56,11 +56,10 @@ enum ImageSafetyGate {
         guard decisions.count == 6, decisions.allSatisfy(\.isValid) else {
             throw ImageSafetyError.invalidResult
         }
-        // Require a strongly SFW full frame. Texture-only crops lack scene context;
-        // use them as vetoes for a strong unsafe result, not six independent photos.
-        // Every view must still return complete, finite classifier probabilities.
-        guard decisions[0].permitsDisplay,
-              decisions.dropFirst().allSatisfy({ $0.nsfw + $0.nsfl < 0.90 }) else {
+        // A safe-looking full frame cannot override an uncertain or unsafe region.
+        // Require positive clearance from every view, accepting benign refusals
+        // when a context-poor crop cannot be confidently cleared.
+        guard decisions.allSatisfy(\.permitsDisplay) else {
             throw ImageSafetyError.blocked
         }
         return SafetyCheckedImage(cgImage: image, decisions: decisions)

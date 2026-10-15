@@ -18,8 +18,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--destination", type=Path, required=True)
     parser.add_argument("--bundle-id", default="com.tasuku.sdxlcoremltest.setupprobe")
-    parser.add_argument("--readiness", action="store_true",
+    driver_options = parser.add_mutually_exclusive_group()
+    driver_options.add_argument("--readiness", action="store_true",
                         help="Append the isolated app usability and result-retention driver.")
+    driver_options.add_argument("--release-validation", action="store_true",
+                        help="Append the isolated, command-driven Photos/lifecycle/screenshot recorder.")
     args = parser.parse_args()
     if not re.fullmatch(r"com\.tasuku\.sdxlcoremltest(?:\.[A-Za-z0-9-]+)?", args.bundle_id):
         parser.error("Use this app's development bundle ID or a probe suffix.")
@@ -48,19 +51,21 @@ def main():
                     } else if welcomeCompleted { setup.inspectInstallation() }
                 }''')
     app.write_text(source + "\n" + (root / "scripts/device-probe/SetupValidation.swift").read_text())
-    if args.readiness:
+    if args.readiness or args.release_validation:
         content = dest / "SDXLCoreMLTest/ContentView.swift"
         source = content.read_text()
         anchor = "        .preferredColorScheme(.light)"
         if anchor not in source:
             raise RuntimeError("Expected ContentView presentation modifier")
+        driver = "ReleaseReadinessValidation" if args.release_validation else "AppReadinessValidation"
+        flag = "--release-validation" if args.release_validation else "--app-readiness"
         source = source.replace(anchor, anchor + '''
         .task {
-            if CommandLine.arguments.contains("--app-readiness") {
-                AppReadinessValidation.start(self)
+            if CommandLine.arguments.contains("FLAG") {
+                DRIVER.start(self)
             }
-        }''', 1)
-        content.write_text(source + "\n" + (root / "scripts/device-probe/AppReadinessValidation.swift").read_text())
+        }'''.replace("FLAG", flag).replace("DRIVER", driver), 1)
+        content.write_text(source + "\n" + (root / ("scripts/device-probe/" + driver + ".swift")).read_text())
     project = dest / "SDXLCoreMLTest.xcodeproj/project.pbxproj"
     project.write_text(project.read_text().replace("PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest;",
                                                   "PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";"))
@@ -81,10 +86,12 @@ def main():
     (dest / "probe-provenance.json").write_text(json.dumps({
         "scope": "Startup automation calls production setup and generation methods; it is not an XCTest UI run.",
         "readinessDriverIncluded": args.readiness,
+        "releaseValidationDriverIncluded": args.release_validation,
         "driverSourceSHA256": {
             p: hashlib.sha256((root / p).read_bytes()).hexdigest()
             for p in ["scripts/device-probe/SetupValidation.swift"]
-            + (["scripts/device-probe/AppReadinessValidation.swift"] if args.readiness else [])
+            + (["scripts/device-probe/ReleaseReadinessValidation.swift"] if args.release_validation else
+               (["scripts/device-probe/AppReadinessValidation.swift"] if args.readiness else []))
         },
         "bundleID": args.bundle_id,
         "shippingSourceSHA256": {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths},

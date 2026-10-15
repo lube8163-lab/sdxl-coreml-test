@@ -1,0 +1,2354 @@
+{
+  "os": "Version 27.2 (Build 24B5099f)",
+  "physicalMemoryBytes": 5986615296,
+  "records": [
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "start",
+      "hasPreloadedResources": false,
+      "isGenerating": false,
+      "isPreparing": true,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像生成の準備中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:06:27Z",
+      "uptime": 319157.759131125
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": false,
+      "isPreparing": true,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像生成の準備中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:06:27Z",
+      "uptime": 319157.7606406667
+    },
+    {
+      "action": "select",
+      "event": "command",
+      "id": "f0d79c31-973c-43ad-9a2d-f18db52888eb",
+      "timestamp": "2026-10-15T16:06:27Z",
+      "uptime": 319157.76166733337
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "準備完了",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:06:36Z",
+      "uptime": 319167.0429195417
+    },
+    {
+      "action": "checkFixtures",
+      "event": "command",
+      "id": "e59e108b-e063-445f-82fd-99877d508395",
+      "timestamp": "2026-10-15T16:07:03Z",
+      "uptime": 319193.94815370836
+    },
+    {
+      "approved": true,
+      "event": "fixture",
+      "file": "benign-still-life.png",
+      "revision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:07:03Z",
+      "uptime": 319194.17399879167
+    },
+    {
+      "approved": false,
+      "blocked": true,
+      "error": "安全性の確認により、この画像は表示・保存できません。内容を変えてお試しください。",
+      "event": "fixture",
+      "file": "botticelli-venus.jpg",
+      "revision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:07:04Z",
+      "uptime": 319194.3108569167
+    },
+    {
+      "approved": false,
+      "blocked": true,
+      "error": "安全性の確認により、この画像は表示・保存できません。内容を変えてお試しください。",
+      "event": "fixture",
+      "file": "caravaggio-judith.jpg",
+      "revision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:07:04Z",
+      "uptime": 319194.377602375
+    },
+    {
+      "approved": false,
+      "blocked": true,
+      "error": "安全性の確認により、この画像は表示・保存できません。内容を変えてお試しください。",
+      "event": "fixture",
+      "file": "ingres-odalisque.jpg",
+      "revision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:07:04Z",
+      "uptime": 319194.45578537503
+    },
+    {
+      "approved": false,
+      "blocked": true,
+      "error": "安全性の確認により、この画像は表示・保存できません。内容を変えてお試しください。",
+      "event": "fixture",
+      "file": "michelangelo-david.jpg",
+      "revision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:07:04Z",
+      "uptime": 319194.68325445836
+    },
+    {
+      "action": "generate",
+      "event": "command",
+      "id": "62425da7-449e-4f73-add8-974862927bf0",
+      "timestamp": "2026-10-15T16:07:21Z",
+      "uptime": 319211.70738800004
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成準備中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:07:22Z",
+      "uptime": 319212.23387
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成準備中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:07:37Z",
+      "uptime": 319227.69563470833
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 1,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:07:40Z",
+      "uptime": 319230.25912629167
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 2,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:07:49Z",
+      "uptime": 319239.5076574167
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 3,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:07:59Z",
+      "uptime": 319249.88205333333
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 4,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "none",
+      "lastUsedSeed": "none",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [],
+      "resultID": "none",
+      "resultPixelSHA256": "none",
+      "safetyRevision": "none",
+      "timestamp": "2026-10-15T16:08:10Z",
+      "uptime": 319261.19032500003
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成完了",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:08:13Z",
+      "uptime": 319263.74170741666
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成完了",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:08:14Z",
+      "uptime": 319264.273291375
+    },
+    {
+      "action": "save",
+      "event": "command",
+      "id": "ca652a44-3526-4314-97b8-6813c6e6f322",
+      "timestamp": "2026-10-15T16:08:51Z",
+      "uptime": 319302.0539837917
+    },
+    {
+      "alert": "写真への追加が許可されていません。「設定」でこのアプリの写真へのアクセスを許可すると保存できます。",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": true,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成完了",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:08:52Z",
+      "uptime": 319302.5908755417
+    },
+    {
+      "action": "capture",
+      "event": "command",
+      "id": "dbc7b0e4-0e19-4a5a-a84a-06f1a73dfd2c",
+      "timestamp": "2026-10-15T16:10:12Z",
+      "uptime": 319382.64719337504
+    },
+    {
+      "event": "capture",
+      "label": "photo-denied",
+      "nativeScale": 3,
+      "storePixels": [
+        1284,
+        2778
+      ],
+      "timestamp": "2026-10-15T16:10:13Z",
+      "uptime": 319383.4191465417,
+      "windowPoints": [
+        390,
+        844
+      ]
+    },
+    {
+      "action": "dismissAlert",
+      "event": "command",
+      "id": "b698c30b-761e-4f30-9605-b2c240d64f9f",
+      "timestamp": "2026-10-15T16:10:50Z",
+      "uptime": 319420.4218477917
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成完了",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:10:50Z",
+      "uptime": 319420.9388351667
+    },
+    {
+      "action": "capture",
+      "event": "command",
+      "id": "50a0e92d-c50f-4cb3-84dd-8b27841653ec",
+      "timestamp": "2026-10-15T16:11:02Z",
+      "uptime": 319432.855105
+    },
+    {
+      "event": "capture",
+      "label": "01-still-life-v6",
+      "nativeScale": 3,
+      "storePixels": [
+        1284,
+        2778
+      ],
+      "timestamp": "2026-10-15T16:11:03Z",
+      "uptime": 319433.404563625,
+      "windowPoints": [
+        390,
+        844
+      ]
+    },
+    {
+      "action": "inputTop",
+      "event": "command",
+      "id": "99d52092-4ff9-4c7b-8d60-92c60e280c97",
+      "timestamp": "2026-10-15T16:11:27Z",
+      "uptime": 319457.2403682083
+    },
+    {
+      "action": "capture",
+      "event": "command",
+      "id": "c5d983df-41af-41ad-a49f-20e575c31700",
+      "timestamp": "2026-10-15T16:11:33Z",
+      "uptime": 319464.0111364167
+    },
+    {
+      "event": "capture",
+      "label": "02-input-examples-v6",
+      "nativeScale": 3,
+      "storePixels": [
+        1284,
+        2778
+      ],
+      "timestamp": "2026-10-15T16:11:34Z",
+      "uptime": 319464.35624220833,
+      "windowPoints": [
+        390,
+        844
+      ]
+    },
+    {
+      "action": "generate",
+      "event": "command",
+      "id": "530df3a1-4323-46e2-a426-e3585696f89c",
+      "timestamp": "2026-10-15T16:12:14Z",
+      "uptime": 319504.490176625
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成準備中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:12:14Z",
+      "uptime": 319505.04060479166
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 1,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:12:36Z",
+      "uptime": 319526.27031708334
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 2,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:12:45Z",
+      "uptime": 319535.641439375
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 3,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:12:55Z",
+      "uptime": 319545.53926025
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 4,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03201707825064659,
+          "nsfw": 0.038723867386579514,
+          "sfw": 0.9292590022087097
+        },
+        {
+          "nsfl": 0.028946630656719208,
+          "nsfw": 0.02964179217815399,
+          "sfw": 0.9414116144180298
+        },
+        {
+          "nsfl": 0.02858811616897583,
+          "nsfw": 0.02973233163356781,
+          "sfw": 0.9416795969009399
+        },
+        {
+          "nsfl": 0.02944977581501007,
+          "nsfw": 0.053584109991788864,
+          "sfw": 0.9169661402702332
+        },
+        {
+          "nsfl": 0.025867026299238205,
+          "nsfw": 0.03612244129180908,
+          "sfw": 0.938010573387146
+        },
+        {
+          "nsfl": 0.03244055435061455,
+          "nsfw": 0.036900829523801804,
+          "sfw": 0.9306586384773254
+        }
+      ],
+      "resultID": "6788CDDE-F11F-4F9A-B72A-DF9328C732C3",
+      "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:13:05Z",
+      "uptime": 319555.4423234167
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成完了",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:13:07Z",
+      "uptime": 319557.5331990417
+    },
+    {
+      "action": "capture",
+      "event": "command",
+      "id": "bd2d576d-fa7f-4b94-a331-aa755530391c",
+      "timestamp": "2026-10-15T16:13:28Z",
+      "uptime": 319578.31065062503
+    },
+    {
+      "event": "capture",
+      "label": "04-landscape-v6",
+      "nativeScale": 3,
+      "storePixels": [
+        1284,
+        2778
+      ],
+      "timestamp": "2026-10-15T16:13:28Z",
+      "uptime": 319578.87296433334,
+      "windowPoints": [
+        390,
+        844
+      ]
+    },
+    {
+      "action": "generate",
+      "event": "command",
+      "id": "d235a087-db3d-4a1d-ac34-8ee5fc53d7ed",
+      "timestamp": "2026-10-15T16:13:33Z",
+      "uptime": 319583.5078427917
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成準備中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:13:33Z",
+      "uptime": 319584.0376785
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 1,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:13:51Z",
+      "uptime": 319601.69968258333
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 1,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:13:55Z",
+      "uptime": 319605.87136004167
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 1,
+      "error": "none",
+      "event": "UIApplicationWillResignActiveNotification",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:00Z",
+      "uptime": 319610.8040305
+    },
+    {
+      "alert": "none",
+      "applicationState": 1,
+      "currentStep": 1,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:00Z",
+      "uptime": 319611.0263680834
+    },
+    {
+      "alert": "none",
+      "applicationState": 1,
+      "currentStep": 2,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:01Z",
+      "uptime": 319611.5731685417
+    },
+    {
+      "alert": "none",
+      "applicationState": 2,
+      "currentStep": 2,
+      "error": "none",
+      "event": "UIApplicationDidEnterBackgroundNotification",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:01Z",
+      "uptime": 319611.6285930417
+    },
+    {
+      "alert": "none",
+      "applicationState": 2,
+      "currentStep": 2,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:01Z",
+      "uptime": 319612.09819370834
+    },
+    {
+      "alert": "none",
+      "applicationState": 2,
+      "currentStep": 2,
+      "error": "none",
+      "event": "UIApplicationWillEnterForegroundNotification",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:22Z",
+      "uptime": 319633.0000211667
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 2,
+      "error": "none",
+      "event": "UIApplicationDidBecomeActiveNotification",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:23Z",
+      "uptime": 319633.45157412504
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 2,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": true,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:23Z",
+      "uptime": 319633.5036421667
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成を中断しました",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:33Z",
+      "uptime": 319643.821640125
+    },
+    {
+      "action": "generate",
+      "event": "command",
+      "id": "685724b8-732e-45a6-8620-b4b45089e362",
+      "timestamp": "2026-10-15T16:14:50Z",
+      "uptime": 319660.5743800417
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成準備中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:14:50Z",
+      "uptime": 319661.1115807917
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 1,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:15:11Z",
+      "uptime": 319681.27012375003
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 2,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:15:21Z",
+      "uptime": 319691.552580625
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 3,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:15:31Z",
+      "uptime": 319701.8889230834
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 4,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": false,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.03056650422513485,
+          "nsfw": 0.04350835829973221,
+          "sfw": 0.9259251952171326
+        },
+        {
+          "nsfl": 0.03180723637342453,
+          "nsfw": 0.044643811881542206,
+          "sfw": 0.9235489368438721
+        },
+        {
+          "nsfl": 0.03330714628100395,
+          "nsfw": 0.0393964946269989,
+          "sfw": 0.9272962808609009
+        },
+        {
+          "nsfl": 0.02990279532968998,
+          "nsfw": 0.040810197591781616,
+          "sfw": 0.9292870163917542
+        },
+        {
+          "nsfl": 0.03264700621366501,
+          "nsfw": 0.040984198451042175,
+          "sfw": 0.9263688325881958
+        },
+        {
+          "nsfl": 0.03145240992307663,
+          "nsfw": 0.04106849431991577,
+          "sfw": 0.927479088306427
+        }
+      ],
+      "resultID": "6C96A177-9C6B-4286-9840-8B1F7FD9D9A5",
+      "resultPixelSHA256": "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:15:43Z",
+      "uptime": 319713.35563558334
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成完了",
+      "resultDecisions": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "resultID": "95BF1EA4-5CD8-42F1-BE14-B66579182E6D",
+      "resultPixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:15:45Z",
+      "uptime": 319715.936641625
+    },
+    {
+      "action": "capture",
+      "event": "command",
+      "id": "265926fc-a750-4985-afd2-73bfce5fcc72",
+      "timestamp": "2026-10-15T16:16:08Z",
+      "uptime": 319738.2959344167
+    },
+    {
+      "event": "capture",
+      "label": "06-robot-v6",
+      "nativeScale": 3,
+      "storePixels": [
+        1284,
+        2778
+      ],
+      "timestamp": "2026-10-15T16:16:08Z",
+      "uptime": 319738.91459320835,
+      "windowPoints": [
+        390,
+        844
+      ]
+    },
+    {
+      "action": "generate",
+      "event": "command",
+      "id": "44dde7b3-5095-46a2-b63f-60c7e3f7a40f",
+      "timestamp": "2026-10-15T16:16:14Z",
+      "uptime": 319744.56756945833
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成準備中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "resultID": "95BF1EA4-5CD8-42F1-BE14-B66579182E6D",
+      "resultPixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:16:14Z",
+      "uptime": 319745.10250383336
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 1,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "resultID": "95BF1EA4-5CD8-42F1-BE14-B66579182E6D",
+      "resultPixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:16:33Z",
+      "uptime": 319763.71389070834
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 2,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "resultID": "95BF1EA4-5CD8-42F1-BE14-B66579182E6D",
+      "resultPixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:16:43Z",
+      "uptime": 319773.59314533335
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 3,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "resultID": "95BF1EA4-5CD8-42F1-BE14-B66579182E6D",
+      "resultPixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:16:55Z",
+      "uptime": 319786.02715954167
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 4,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像を生成中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "resultID": "95BF1EA4-5CD8-42F1-BE14-B66579182E6D",
+      "resultPixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:17:08Z",
+      "uptime": 319798.4421430417
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": true,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "画像の安全性を確認中",
+      "resultDecisions": [
+        {
+          "nsfl": 0.034604668617248535,
+          "nsfw": 0.03435026854276657,
+          "sfw": 0.9310450553894043
+        },
+        {
+          "nsfl": 0.03351689502596855,
+          "nsfw": 0.034541159868240356,
+          "sfw": 0.9319419264793396
+        },
+        {
+          "nsfl": 0.0335347056388855,
+          "nsfw": 0.034003470093011856,
+          "sfw": 0.9324617981910706
+        },
+        {
+          "nsfl": 0.03504541516304016,
+          "nsfw": 0.03686930611729622,
+          "sfw": 0.9280852675437927
+        },
+        {
+          "nsfl": 0.03498149663209915,
+          "nsfw": 0.037038419395685196,
+          "sfw": 0.9279801249504089
+        },
+        {
+          "nsfl": 0.03513999283313751,
+          "nsfw": 0.03825325146317482,
+          "sfw": 0.9266067743301392
+        }
+      ],
+      "resultID": "95BF1EA4-5CD8-42F1-BE14-B66579182E6D",
+      "resultPixelSHA256": "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:17:10Z",
+      "uptime": 319801.0437831667
+    },
+    {
+      "alert": "none",
+      "applicationState": 0,
+      "currentStep": 0,
+      "error": "none",
+      "event": "state",
+      "hasPreloadedResources": true,
+      "isGenerating": false,
+      "isPreparing": false,
+      "isReleasing": false,
+      "isSavingImage": false,
+      "lastResultPrompt": "A watercolor illustration of a small cat sitting beside a window with potted plants, warm afternoon light, gentle colors.",
+      "lastUsedSeed": "42",
+      "needsPhotoSettings": false,
+      "photoAddOnlyStatus": 2,
+      "progressTitle": "生成完了",
+      "resultDecisions": [
+        {
+          "nsfl": 0.036912139505147934,
+          "nsfw": 0.03241228684782982,
+          "sfw": 0.9306755661964417
+        },
+        {
+          "nsfl": 0.033808834850788116,
+          "nsfw": 0.027560079470276833,
+          "sfw": 0.9386311173439026
+        },
+        {
+          "nsfl": 0.03286520019173622,
+          "nsfw": 0.027674347162246704,
+          "sfw": 0.9394604563713074
+        },
+        {
+          "nsfl": 0.030834361910820007,
+          "nsfw": 0.03107406571507454,
+          "sfw": 0.9380915760993958
+        },
+        {
+          "nsfl": 0.03147900849580765,
+          "nsfw": 0.029179353266954422,
+          "sfw": 0.9393416047096252
+        },
+        {
+          "nsfl": 0.03561276197433472,
+          "nsfw": 0.02687755785882473,
+          "sfw": 0.9375097155570984
+        }
+      ],
+      "resultID": "A0D00CCB-C479-448B-8D66-A5A517315838",
+      "resultPixelSHA256": "9657230691faf858cc41cb3dae7598820e8acfc61bfc4cae4da8cf65d54322f3",
+      "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+      "timestamp": "2026-10-15T16:17:11Z",
+      "uptime": 319801.5549754167
+    },
+    {
+      "action": "capture",
+      "event": "command",
+      "id": "fc9b8d2b-65f9-41cc-ad17-52f67f9b36b9",
+      "timestamp": "2026-10-15T16:18:14Z",
+      "uptime": 319864.5170621667
+    },
+    {
+      "event": "capture",
+      "label": "03-watercolor-v6",
+      "nativeScale": 3,
+      "storePixels": [
+        1284,
+        2778
+      ],
+      "timestamp": "2026-10-15T16:18:14Z",
+      "uptime": 319865.0527713334,
+      "windowPoints": [
+        390,
+        844
+      ]
+    }
+  ],
+  "scope": "Isolated development driver calls production view-model and Photos UI handlers. OS notifications are observed, not synthesized. Screenshots render the actual app window; the store export renders it directly at 1284x2778. No engine, model, RAM guard or safety overrides."
+}

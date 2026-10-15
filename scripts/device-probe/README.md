@@ -1,5 +1,11 @@
 # Physical iPhone experiment
 
+## App-data transfer boundary
+
+Never use `devicectl device copy to --remove-existing-content true` with an `appDataContainer` domain. On the tested Xcode/iOS versions it cleared the app data container even when a nested destination was specified. A cleanup attempt during October 15 validation exposed this behavior. Keep transfers additive; remove disposable fixtures only inside a test driver using an exact, constant app-owned path. Installed models, preferences and earlier evidence must be preserved separately before any container operation. The incident and recovery are tracked in the private release audit.
+
+The `--release-validation` copy observes real UIApplication lifecycle notifications and calls production generation/Photos handlers through commands in its own Documents directory. `release_command.py` requires an explicit `--device` and an evidence directory. This is a development driver, not an XCTest tap test. Its window renders are actual app UI; `export_store_screenshots.swift` only encodes the captured pixels into an RGB PNG without changing dimensions. No startup driver is part of the store archive.
+
 `prepare_phone_probe.py` creates a separate source copy outside the repository's iCloud folder. It preserves the shipping files, mandatory input/output safety and four-step 512px model. Its default bundle ID is `com.tasuku.sdxlcoremltest.iphone14probe` and display name is `ローカル画像生成 検証`. `--bundle-id` selects another isolated probe ID; the shipping bundle ID is rejected.
 
 The current production source already uses a six-GB minimum, `AIModelAsset` summary metadata and Extended Virtual Addressing. Probe provenance reads the production threshold instead of hardcoding the historical eight-GB value. `--shipping-configuration` keeps the current guard, GPU runtime, retention and safety; the legacy driver still overrides the asset location to bundled verified files. `--metadata-summary` retains the current production lookup. `--transformer-cpu` selects the public CPU-only specialization in the isolated copy. The October 13/14 reports below describe their original source snapshots and remain unchanged.

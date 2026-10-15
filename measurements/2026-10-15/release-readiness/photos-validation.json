@@ -1,0 +1,65 @@
+{
+  "scope": "Current build, production add-only Photos handler, actual asynchronous write completion. No existing assets fetched.",
+  "saved": true,
+  "state": {
+    "alert": "写真アプリに保存しました。",
+    "applicationState": 0,
+    "currentStep": 0,
+    "error": "none",
+    "event": "state",
+    "hasPreloadedResources": true,
+    "isGenerating": false,
+    "isPreparing": false,
+    "isReleasing": false,
+    "isSavingImage": false,
+    "lastResultPrompt": "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography.",
+    "lastUsedSeed": "42",
+    "needsPhotoSettings": false,
+    "photoAddOnlyStatus": 3,
+    "progressTitle": "生成完了",
+    "resultDecisions": [
+      {
+        "nsfl": 0.03201707825064659,
+        "nsfw": 0.038723867386579514,
+        "sfw": 0.9292590022087097
+      },
+      {
+        "nsfl": 0.028946630656719208,
+        "nsfw": 0.02964179217815399,
+        "sfw": 0.9414116144180298
+      },
+      {
+        "nsfl": 0.02858811616897583,
+        "nsfw": 0.02973233163356781,
+        "sfw": 0.9416795969009399
+      },
+      {
+        "nsfl": 0.02944977581501007,
+        "nsfw": 0.053584109991788864,
+        "sfw": 0.9169661402702332
+      },
+      {
+        "nsfl": 0.025867026299238205,
+        "nsfw": 0.03612244129180908,
+        "sfw": 0.938010573387146
+      },
+      {
+        "nsfl": 0.03244055435061455,
+        "nsfw": 0.036900829523801804,
+        "sfw": 0.9306586384773254
+      }
+    ],
+    "resultID": "33E08FB3-67E6-4570-8E3F-F2772CE1566D",
+    "resultPixelSHA256": "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+    "safetyRevision": "swiftformer-1d648298-sixviews-all-sfw90-v2",
+    "timestamp": "2026-10-15T16:22:01Z",
+    "uptime": 320092.11241125
+  },
+  "resultRetainedAfterSave": {
+    "resultID": true,
+    "resultPixelSHA256": true,
+    "lastResultPrompt": true,
+    "lastUsedSeed": true,
+    "safetyRevision": true
+  }
+}
