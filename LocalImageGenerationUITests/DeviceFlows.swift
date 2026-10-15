@@ -1,6 +1,19 @@
 import XCTest
 
 final class DeviceFlows: XCTestCase {
+    @MainActor func testInputExamples() {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launch()
+        let example = app.buttons["prompt.example.stillLife"]
+        XCTAssertTrue(example.waitForExistence(timeout: 120))
+        if !example.isHittable { app.swipeDown() }
+        example.tap()
+        let prompt = app.textViews["generation.prompt"]
+        XCTAssertTrue((prompt.value as? String)?.contains("red apple next to a blue ceramic mug") == true)
+        attach(app, "selected-input-example")
+    }
+
     @MainActor func testFirstDownload() {
         continueAfterFailure = false
         let app = XCUIApplication()

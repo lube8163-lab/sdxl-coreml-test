@@ -14,7 +14,10 @@ import Testing
         "desnudo", "pornografía", "nudité", "khỏa thân", "gore", "dismembered body",
         "blood-covered decapitated body", "血まみれの死体", "切断死体", "お前を殺してやる",
         "immigrants should all die", "muslims are subhuman",
-        "naked eye landscape and nude portrait", "sex education poster and porn image"
+        "naked eye landscape and nude portrait", "sex education poster and porn image",
+        "ｐ０ｒｎ image", "n\u{200D}u\u{FEFF}de portrait", "P_0_R_N image",
+        "a person sin ropa", "uma pessoa sem roupa", "portrait nu",
+        "服を着ていない大人", "不穿衣服的人", "옷을 벗은 사람"
     ])
     func rejectsExplicitAndObfuscatedGeneration(_ text: String) throws {
         let policy = try ContentSafetyPolicy.bundled()
@@ -27,7 +30,9 @@ import Testing
         "a fully clothed portrait", "naked mole rat in a zoo", "stars visible to the naked eye",
         "no gore, a fantasy castle", "a Middlesex village", "an Essex seaside landscape",
         "朝のカフェにいる猫", "冬のコートを着た大人のポートレート", "山と湖の風景",
-        "beautiful portrait with natural daylight", "kids playing with a dog"
+        "beautiful portrait with natural daylight", "kids playing with a dog",
+        "nuages roses dans le ciel", "una persona con ropa de invierno", "uma pessoa com roupa azul",
+        "a quiet mountain lake at sunrise", "a watercolor cat beside potted plants"
     ])
     func allowsOrdinaryCreativePrompts(_ text: String) throws {
         try ContentSafetyPolicy.bundled().validate(text, context: .generationPrompt)

@@ -1,0 +1,354 @@
+{
+  "complete" : true,
+  "deviceRAMBytes" : 5986615296,
+  "os" : "Version 27.2 (Build 24B5099f)",
+  "records" : [
+    {
+      "phase" : "start"
+    },
+    {
+      "passed" : true,
+      "phase" : "preparation-has-elapsed-time"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "example-select-stillLife"
+    },
+    {
+      "passed" : true,
+      "phase" : "previous-result-retained-during-stillLife"
+    },
+    {
+      "passed" : true,
+      "phase" : "generation-has-elapsed-time-stillLife"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "approved-result-metadata-stillLife"
+    },
+    {
+      "appTiming" : "安全性の確認を含めて 45.6 秒。保存や共有ができます。",
+      "example" : "stillLife",
+      "phase" : "generation-approved",
+      "pixelSHA256" : "2bbad597079ddd21183b68550ad47c24dbc4fe3fb6bf64570d0e8bc63c01af0c",
+      "seconds" : 45.799861073493958,
+      "seed" : 42,
+      "views" : [
+        {
+          "nsfl" : 0.032017078250646591,
+          "nsfw" : 0.038723867386579514,
+          "sfw" : 0.92925900220870972
+        },
+        {
+          "nsfl" : 0.028946630656719208,
+          "nsfw" : 0.029641792178153992,
+          "sfw" : 0.94141161441802979
+        },
+        {
+          "nsfl" : 0.02858811616897583,
+          "nsfw" : 0.02973233163356781,
+          "sfw" : 0.94167959690093994
+        },
+        {
+          "nsfl" : 0.029449775815010071,
+          "nsfw" : 0.053584109991788864,
+          "sfw" : 0.91696614027023315
+        },
+        {
+          "nsfl" : 0.025867026299238205,
+          "nsfw" : 0.036122441291809082,
+          "sfw" : 0.938010573387146
+        },
+        {
+          "nsfl" : 0.032440554350614548,
+          "nsfw" : 0.036900829523801804,
+          "sfw" : 0.93065863847732544
+        }
+      ]
+    },
+    {
+      "passed" : true,
+      "phase" : "example-select-landscape"
+    },
+    {
+      "passed" : true,
+      "phase" : "previous-result-retained-during-landscape"
+    },
+    {
+      "passed" : true,
+      "phase" : "generation-has-elapsed-time-landscape"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "approved-result-metadata-landscape"
+    },
+    {
+      "appTiming" : "安全性の確認を含めて 50.8 秒。保存や共有ができます。",
+      "example" : "landscape",
+      "phase" : "generation-approved",
+      "pixelSHA256" : "918570655b845bda3fc8d85d5055091d854eac1b2d61f3933a006215e50f2e49",
+      "seconds" : 50.995315074920654,
+      "seed" : 42,
+      "views" : [
+        {
+          "nsfl" : 0.03056650422513485,
+          "nsfw" : 0.043508358299732208,
+          "sfw" : 0.92592519521713257
+        },
+        {
+          "nsfl" : 0.03180723637342453,
+          "nsfw" : 0.044643811881542206,
+          "sfw" : 0.92354893684387207
+        },
+        {
+          "nsfl" : 0.033307146281003952,
+          "nsfw" : 0.039396494626998901,
+          "sfw" : 0.92729628086090088
+        },
+        {
+          "nsfl" : 0.02990279532968998,
+          "nsfw" : 0.040810197591781616,
+          "sfw" : 0.92928701639175415
+        },
+        {
+          "nsfl" : 0.032647006213665009,
+          "nsfw" : 0.040984198451042175,
+          "sfw" : 0.9263688325881958
+        },
+        {
+          "nsfl" : 0.03145240992307663,
+          "nsfw" : 0.041068494319915771,
+          "sfw" : 0.927479088306427
+        }
+      ]
+    },
+    {
+      "passed" : true,
+      "phase" : "example-select-robot"
+    },
+    {
+      "passed" : true,
+      "phase" : "previous-result-retained-during-robot"
+    },
+    {
+      "passed" : true,
+      "phase" : "generation-has-elapsed-time-robot"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "approved-result-metadata-robot"
+    },
+    {
+      "appTiming" : "安全性の確認を含めて 55.9 秒。保存や共有ができます。",
+      "example" : "robot",
+      "phase" : "generation-approved",
+      "pixelSHA256" : "1ef3a6e125ae480bd2b136e7796043d62086ef6ce634506275a774654dffcb1a",
+      "seconds" : 56.026713013648987,
+      "seed" : 42,
+      "views" : [
+        {
+          "nsfl" : 0.034604668617248535,
+          "nsfw" : 0.034350268542766571,
+          "sfw" : 0.9310450553894043
+        },
+        {
+          "nsfl" : 0.033516895025968552,
+          "nsfw" : 0.034541159868240356,
+          "sfw" : 0.9319419264793396
+        },
+        {
+          "nsfl" : 0.033534705638885498,
+          "nsfw" : 0.034003470093011856,
+          "sfw" : 0.93246179819107056
+        },
+        {
+          "nsfl" : 0.035045415163040161,
+          "nsfw" : 0.036869306117296219,
+          "sfw" : 0.92808526754379272
+        },
+        {
+          "nsfl" : 0.034981496632099152,
+          "nsfw" : 0.037038419395685196,
+          "sfw" : 0.92798012495040894
+        },
+        {
+          "nsfl" : 0.035139992833137512,
+          "nsfw" : 0.03825325146317482,
+          "sfw" : 0.92660677433013916
+        }
+      ]
+    },
+    {
+      "passed" : true,
+      "phase" : "example-select-illustration"
+    },
+    {
+      "passed" : true,
+      "phase" : "previous-result-retained-during-illustration"
+    },
+    {
+      "passed" : true,
+      "phase" : "generation-has-elapsed-time-illustration"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "approved-result-metadata-illustration"
+    },
+    {
+      "appTiming" : "安全性の確認を含めて 57.3 秒。保存や共有ができます。",
+      "example" : "illustration",
+      "phase" : "generation-approved",
+      "pixelSHA256" : "9657230691faf858cc41cb3dae7598820e8acfc61bfc4cae4da8cf65d54322f3",
+      "seconds" : 57.346184015274048,
+      "seed" : 42,
+      "views" : [
+        {
+          "nsfl" : 0.036912139505147934,
+          "nsfw" : 0.032412286847829819,
+          "sfw" : 0.93067556619644165
+        },
+        {
+          "nsfl" : 0.033808834850788116,
+          "nsfw" : 0.027560079470276833,
+          "sfw" : 0.93863111734390259
+        },
+        {
+          "nsfl" : 0.032865200191736221,
+          "nsfw" : 0.027674347162246704,
+          "sfw" : 0.93946045637130737
+        },
+        {
+          "nsfl" : 0.030834361910820007,
+          "nsfw" : 0.031074065715074539,
+          "sfw" : 0.93809157609939575
+        },
+        {
+          "nsfl" : 0.031479008495807648,
+          "nsfw" : 0.029179353266954422,
+          "sfw" : 0.93934160470962524
+        },
+        {
+          "nsfl" : 0.035612761974334717,
+          "nsfw" : 0.02687755785882473,
+          "sfw" : 0.93750971555709839
+        }
+      ]
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "blocked-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "empty-input-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "invalid-seed-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "cancellation-reached-active-diffusion"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "cancelled-generation-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "cancelled-preparation-keeps-approved-result"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "operation-finished-within-deadline"
+    },
+    {
+      "passed" : true,
+      "phase" : "view-model-background-resume-keeps-approved-result"
+    },
+    {
+      "note" : "Calls production view-model lifecycle methods; this is not an OS suspension test.",
+      "phase" : "lifecycle-scope"
+    },
+    {
+      "passed" : true,
+      "phase" : "share-sheet-presented"
+    },
+    {
+      "passed" : true,
+      "phase" : "share-dismiss-keeps-approved-result"
+    },
+    {
+      "note" : "Permission dialog and actual photo write require a separate explicit test run.",
+      "phase" : "photo-save-not-requested"
+    },
+    {
+      "phase" : "complete"
+    }
+  ],
+  "scope" : "Isolated startup driver invokes production view model, share sheet and photo saver. No model\/RAM\/safety overrides. No messages are sent or share destinations selected."
+}

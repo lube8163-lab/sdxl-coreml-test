@@ -155,9 +155,10 @@ extension SDXLCoreMLTestApp {
                 viewModel.manualSeedText = "42"
                 recorder.screenshot("prompt-\(index)")
                 let start = Date()
+                let previousResultID = viewModel.resultID
                 viewModel.generate()
                 while viewModel.isGenerating { try await Task.sleep(for: .milliseconds(100)) }
-                guard let image = viewModel.result else {
+                guard let image = viewModel.result, viewModel.resultID != previousResultID else {
                     throw NSError(domain: "SetupValidation", code: 3, userInfo: [NSLocalizedDescriptionKey: viewModel.errorMessage ?? viewModel.progressTitle])
                 }
                 let hash = try recorder.save(image, "generated-\(index)")

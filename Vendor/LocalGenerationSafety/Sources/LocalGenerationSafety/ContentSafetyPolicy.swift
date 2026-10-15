@@ -47,7 +47,7 @@ public struct ContentSafetyPolicy: Codable, Sendable {
 
     public static func decode(_ data: Data) throws -> Self {
         let policy = try JSONDecoder().decode(Self.self, from: data)
-        guard policy.version == 1, policy.revision == "local-generation-20261013-v1",
+        guard policy.version == 1, policy.revision == "local-generation-20261015-v2",
               policy.maxUTF16Length == 4000, !policy.rules.isEmpty,
               Set(policy.rules.map(\.id)).count == policy.rules.count else {
             throw ContentSafetyError.unavailable

@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-15",
+  "appVersion": "1.1 (5)",
+  "device": "iPhone 14",
+  "deviceRAMBytes": 5986615296,
+  "os": "Version 27.2 (Build 24B5099f)",
+  "nativeDriver": {
+    "completed": true,
+    "assertionsPassed": 43,
+    "approvedExamples": 4,
+    "blockedInputRetentions": 8,
+    "activeDiffusionCancellation": true,
+    "preparationCancellation": true,
+    "shareSheetPresentationAndDismissal": true,
+    "lifecycleMethodCalls": true,
+    "actualOSSuspensionTested": false,
+    "photoPermissionAndWriteTested": false
+  },
+  "packageTests": {
+    "safetyTestFunctions": 9,
+    "generationOptimizationInstallerTestFunctions": 15,
+    "blockedPromptCases": 54,
+    "allowedPromptCases": 20,
+    "allPassed": true,
+    "initialAdditionalCaseFailures": 6,
+    "policyRevisionAfterFix": "local-generation-20261015-v2"
+  },
+  "normalApp": {
+    "buildSucceeded": true,
+    "signatureVerified": true,
+    "privacyManifestAtAppRoot": true,
+    "testDriverMarkersAbsent": true,
+    "deviceInstallationAndLaunch": "passed"
+  },
+  "shippingSourceSHA256": {
+    "SDXLCoreMLTest/ContentView.swift": "fc74b861646036f99d58f694bded57d2e88f2d742bb176cdd8539048bcd69cd2",
+    "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "ff4dcf2f7b44ee5289f3ac00df399c36d6eb2459740051b559f7287f4fa33574",
+    "SDXLCoreMLTest/PhotoLibrarySaver.swift": "2c052af807486d8961307fa0e42db15cb154a4f26e63c3e33d75cf9b46baf9e2",
+    "SDXLCoreMLTest/PrivacyInfo.xcprivacy": "cb376b7bccd2fddbdf3f3fb69ee526dd48113af15a9bb2f00087483904ea3294",
+    "SDXLCoreMLTest/LegalDocument.swift": "1aa51433812d0d34e862190835c1528b34a6d53ed7746ad002800217fc266f74",
+    "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ContentSafetyPolicy.swift": "d91902f416b11accee49cc3bc5d76b20b0a0c9f61b5ca18e27e09d80b89516fd",
+    "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/Resources/ContentSafetyPolicy.json": "aecab2b84949acfcb161e647fba3c99c4cec202a7a6621ca8eaa5d6c3455105e",
+    "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift": "f713c87cff248fd106fb9c22af61ea973cf9d43225df9d0931b6dc8b32303e2d",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "f22bfacd253da4520f113e60a07f576f460e4627e3b2f1051832f404b8e97304",
+    "scripts/device-probe/AppReadinessValidation.swift": "4f394de7321fd4949e1df59502311cedd24fea43c063907650f509aa6948572f"
+  },
+  "scope": [
+    "The isolated startup driver invoked the production view model and UI presentation methods. This is separate from XCTest tap automation.",
+    "Same production RAM guard, generation models, 512px/four steps and six-view image gate. Existing verified installed assets and compilation caches were reused.",
+    "Per-image time includes output safety and excludes initial preparation. Driver timings also include polling. These four cases are functional checks, not a matched performance comparison.",
+    "Final shipping UI additionally labels the disabled preparation/cancellation/cleanup button; privacy wording additionally clarifies add-only Photos access. Neither change alters inference or the tested result-retention logic.",
+    "No share destination selected or message sent. System sharing suggestions were not captured.",
+    "Classifier adversarial effectiveness and real-image false-negative rate were not measured. No claim of App Review acceptance or submission."
+  ],
+  "xctestTapTest": {
+    "executed": false,
+    "exitCode": 65,
+    "initializationError": "The test runner failed to initialize for UI testing; timed out while enabling automation mode."
+  }
+}

@@ -237,6 +237,7 @@ extension SDXLGeneratorViewModel {
                 "lowPowerMode": ProcessInfo.processInfo.isLowPowerModeEnabled,
                 "thermalState": ProcessInfo.processInfo.thermalState.rawValue])
             let start = Date()
+            let previousResultID = resultID
             generate()
             let activeGeneration = generationTask
             let warningInjection: Task<Void, Never>? = label == "memory-warning" ? Task { @MainActor in
@@ -257,7 +258,7 @@ extension SDXLGeneratorViewModel {
             await activeGeneration?.value
             await warningInjection?.value
             if label == "memory-warning" { await cleanupTask?.value }
-            if let checked = result {
+            if let checked = result, resultID != previousResultID {
                 do {
                     let hash = try recorder.save(checked, label: label)
                     hashes.append(hash)

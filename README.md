@@ -10,7 +10,15 @@ The active `SDXLCoreMLTest` iPhone app runs **FLUX.2 Klein 4B, 512×512, four st
 
 The current source lowers the app guard to **6 GB RAM** (5,500,000,000 reported physical bytes) and keeps iOS 27.0.1 as the minimum. It adopts the successful iPhone 14 experiment's asset-summary metadata lookup and signs both Debug and Release with Apple's [Extended Virtual Addressing entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.kernel.extended-virtual-addressing). This expands address space; it does not increase physical RAM. Four-GB devices remain unsupported. Six-GB generation can take substantially longer than the iPhone 17 measurements below.
 
-The October 13/14 measurements describe the earlier eight-GB production configuration and separate six-GB experiments. Their source provenance, conditions and timings are preserved. Generation model bytes, four steps, input filtering and all six output safety checks are unchanged. The [October 15 production-configuration check](measurements/2026-10-15/sixgb-support/summary.json) completed model verification/installation and two checked images on iPhone 14 / iOS 27.2, without a low-memory test override. App-reported image times were 99.4 seconds (first transformer compilation) and 53.1 seconds (changed prompt), after separate initial preparation. The pending archive was USB seeded; this check did not repeat the network download.
+The October 13/14 measurements describe the earlier eight-GB production configuration and separate six-GB experiments. Their source provenance, conditions and timings are preserved. The six-GB change preserved model bytes, four steps, input filtering and all six output safety checks. The [October 15 production-configuration check](measurements/2026-10-15/sixgb-support/summary.json) completed model verification/installation and two checked images on iPhone 14 / iOS 27.2, without a low-memory test override. App-reported image times were 99.4 seconds (first transformer compilation) and 53.1 seconds (changed prompt), after separate initial preparation. The pending archive was USB seeded; this check did not repeat the network download.
+
+## Using the app
+
+Japanese-labelled examples fill in English prompts for a still life, landscape, robot or watercolor illustration. Selecting an example does not start generation. Preparation and generation show elapsed time and support cancellation; native model work may take time to finish cancelling. Approved images appear with Save and Share actions, with their prompt and seed in a collapsed details section.
+
+The previous approved image, prompt and seed remain available while generating and after refusal, cancellation or failure. Only a newly approved image replaces them. Results are temporary in-memory state, not an image library. Sharing captures the selected checked image; saving requests add-only Photos permission and offers Settings guidance after denial.
+
+The app includes its own `PrivacyInfo.xcprivacy` for preferences, disk-space checks, own-container file metadata and elapsed-time measurement. [Privacy](docs/privacy.html) and [support](docs/support.html) describe local processing, the first model download and result retention.
 
 ## First use and app size
 
@@ -65,7 +73,9 @@ Prompt checks run before inference. Only a typed, checked result reaches display
 
 Foreground memory warnings finish an active checked operation before releasing owned resources, without immediately preloading again. Backgrounding/user cancellation still interrupt. A UIKit notification at step one passed the regression and triggered cleanup; it was not an induced memory-pressure stress test. The original warning-handler cancellation and hashing failure are retained in the reports.
 
-Input regressions, malformed-score failures, missing-classifier refusal, benign device cases and installer validation passed. Adversarial classifier effectiveness, broad prompt coverage, Photos/share permissions, sustained thermal behavior and App Review acceptance remain unverified. XCTest UI-runner initialization timed out; physical flows use isolated startup drivers and real app screens.
+The [October 15 usability and safety check](measurements/2026-10-15/app-readiness/README.md) strengthens multilingual input coverage to 54 refusals and 20 ordinary prompts. All 24 safety/generation/optimization/installer test functions passed. An iPhone 14 startup driver completed four checked examples and 43 assertions covering retained results, active cancellation and sharing-sheet presentation/dismissal. Its timings include safety and exclude initial preparation. The later UI tap test again failed to initialize the device's automation mode and did not execute.
+
+Adversarial classifier effectiveness, broad prompt coverage, actual Photos permission/write flows, OS suspension, sustained thermal behavior and App Review acceptance remain unverified. Startup-driver checks and normal signed builds are distinct from XCTest tap coverage and distribution review.
 
 ## Build
 

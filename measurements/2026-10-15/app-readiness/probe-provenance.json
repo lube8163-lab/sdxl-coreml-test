@@ -1,0 +1,25 @@
+{
+  "scope": "Startup automation calls production setup and generation methods; it is not an XCTest UI run.",
+  "bundleID": "com.tasuku.sdxlcoremltest",
+  "shippingSourceSHA256": {
+    "SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "53016a43af1c46da9bc0ac27654c264193dbac230148b7c2a79cc9f6d77019d2",
+    "SDXLCoreMLTest/ModelSetupViewModel.swift": "75e11d3d7f2376b91c4eaf4c89e8be1c4599e9519795463a7907f2a0d9d4d371",
+    "SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "ff4dcf2f7b44ee5289f3ac00df399c36d6eb2459740051b559f7287f4fa33574",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "f22bfacd253da4520f113e60a07f576f460e4627e3b2f1051832f404b8e97304",
+    "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift": "2d7c37bd239b34cd3d52ee762392462d2a36faa86e0b7a4f500f7d381bb46b81",
+    "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift": "54a190b2583113b4941960295cbd7b9d84666a25b4fa98495cc00a0b658368e3",
+    "SDXLCoreMLTest/SDXLCoreMLTest.entitlements": "1ecc376ec4c7a5e9ca9207b7daced6505b6ba90ef857615dfb68cbbb0553e00e",
+    "SDXLCoreMLTest/ContentView.swift": "548e99be303f32ca16afad08e7e77898af59e377464d421adc63b5961b5f279c",
+    "SDXLCoreMLTest/PhotoLibrarySaver.swift": "2c052af807486d8961307fa0e42db15cb154a4f26e63c3e33d75cf9b46baf9e2",
+    "SDXLCoreMLTest/PrivacyInfo.xcprivacy": "cb376b7bccd2fddbdf3f3fb69ee526dd48113af15a9bb2f00087483904ea3294"
+  },
+  "engineAndInstallerUnchanged": true,
+  "bundledGenerationModels": false,
+  "minimumMemoryBytes": 5500000000,
+  "extendedVirtualAddressingRequested": true,
+  "steps": 4,
+  "resolution": [
+    512,
+    512
+  ]
+}

@@ -18,9 +18,11 @@ enum AppStyle {
 struct ContentView: View {
     @ObservedObject var viewModel: SDXLGeneratorViewModel
     @FocusState private var focusedField: Field?
-    @State private var isShowingShareSheet = false
+    @State private var shareRequest: ImageShareRequest?
     @State private var isShowingSettings = false
     @State private var alertMessage: String?
+    @State private var isSavingImage = false
+    @State private var needsPhotoSettings = false
 
     private enum Field: Hashable {
         case prompt
@@ -47,8 +49,8 @@ struct ContentView: View {
                     .padding(.top, 10)
                     .padding(.bottom, 24)
                 }
-                .onChange(of: viewModel.result != nil) { _, ready in
-                    if ready { withAnimation { scroller.scrollTo("generated-result", anchor: .top) } }
+                .onChange(of: viewModel.resultID) { _, resultID in
+                    if resultID != nil { withAnimation { scroller.scrollTo("generated-result", anchor: .top) } }
                 }
                 }
             }
@@ -81,6 +83,7 @@ struct ContentView: View {
                             .shadow(color: Color.black.opacity(0.08), radius: 8, y: 3)
                     }
                     .accessibilityIdentifier("settings.open")
+                    .accessibilityLabel("設定")
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -91,10 +94,8 @@ struct ContentView: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
-            .sheet(isPresented: $isShowingShareSheet) {
-                if let result = viewModel.result {
-                    ShareSheet(result: result)
-                }
+            .sheet(item: $shareRequest) { request in
+                ShareSheet(result: request.image)
             }
             .sheet(isPresented: $isShowingSettings) {
                 SettingsView(
@@ -104,8 +105,15 @@ struct ContentView: View {
             }
             .alert("お知らせ", isPresented: Binding(
                 get: { alertMessage != nil },
-                set: { if !$0 { alertMessage = nil } }
+                set: { if !$0 { alertMessage = nil; needsPhotoSettings = false } }
             )) {
+                if needsPhotoSettings {
+                    Button("設定を開く") {
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+                }
                 Button("OK", role: .cancel) {
                     alertMessage = nil
                 }
@@ -120,11 +128,11 @@ struct ContentView: View {
         card {
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
-                    Label("プロンプト", systemImage: "text.alignleft")
+                    Label("つくりたい画像", systemImage: "text.alignleft")
                         .font(.headline)
                         .foregroundStyle(AppStyle.ink)
                     Spacer()
-                    Text(viewModel.modelSummaryText)
+                    Text("端末内で生成")
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(AppStyle.slate)
                         .padding(.horizontal, 10)
@@ -163,6 +171,21 @@ struct ContentView: View {
                             .allowsHitTesting(false)
                     }
                 }
+
+                Text("入力例を選ぶ（タップで入力）")
+                    .font(.caption).foregroundStyle(AppStyle.muted)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(PromptExample.allCases) { example in
+                            Button(example.title) {
+                                viewModel.selectExample(example)
+                                hideKeyboard()
+                            }
+                            .buttonStyle(SecondaryActionButtonStyle())
+                            .accessibilityIdentifier("prompt.example." + example.id)
+                        }
+                    }
+                }
             }
         }
     }
@@ -173,14 +196,14 @@ struct ContentView: View {
             viewModel.generate()
         } label: {
             HStack(spacing: 10) {
-                if viewModel.isGenerating {
+                if viewModel.isBusy {
                     ProgressView()
                         .tint(.white)
                 } else {
                     Image(systemName: "sparkles")
                 }
 
-                Text(viewModel.isGenerating ? "生成中..." : "画像を生成する")
+                Text(generateButtonTitle)
                     .font(.headline)
             }
             .frame(maxWidth: .infinity)
@@ -201,15 +224,23 @@ struct ContentView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
             .shadow(color: Color.black.opacity(0.12), radius: 12, y: 6)
         }
-        .disabled(viewModel.isGenerating || viewModel.isPreparing)
+        .disabled(viewModel.isBusy)
         .accessibilityIdentifier("generation.generate")
+    }
+
+    private var generateButtonTitle: String {
+        if viewModel.isCancellationRequested { return "中断処理中..." }
+        if viewModel.isGenerating { return "生成中..." }
+        if viewModel.isPreparing { return "画像生成の準備中..." }
+        if viewModel.isReleasingResources { return "モデルを整理中..." }
+        return "画像を生成する"
     }
 
     private var progressCard: some View {
         card {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Label(viewModel.progressTitle, systemImage: viewModel.isGenerating ? "wand.and.stars" : "checkmark.seal")
+                    Label(viewModel.progressTitle, systemImage: viewModel.errorMessage != nil ? "exclamationmark.triangle" : (viewModel.isGenerating || viewModel.isPreparing ? "wand.and.stars" : "checkmark.seal"))
                         .accessibilityIdentifier("generation.status")
                         .font(.headline)
                         .foregroundStyle(AppStyle.ink)
@@ -227,15 +258,30 @@ struct ContentView: View {
                 if let progressValue = viewModel.progressValue {
                     ProgressView(value: progressValue)
                         .tint(AppStyle.accent)
+                } else if viewModel.isGenerating || viewModel.isPreparing {
+                    ProgressView().tint(AppStyle.slate)
+                }
+
+                if (viewModel.isGenerating || viewModel.isPreparing), let start = viewModel.operationStartedAt {
+                    HStack(spacing: 8) {
+                        Text("経過時間")
+                        Text(start, style: .timer).monospacedDigit()
+                    }
+                    .font(.footnote).foregroundStyle(AppStyle.muted)
+                    .accessibilityIdentifier("generation.elapsed")
                 }
 
                 Text(viewModel.progressDetail)
                     .font(.subheadline)
                     .foregroundStyle(AppStyle.slate)
 
-                if viewModel.isGenerating {
-                    Button("生成を中断", role: .cancel) { viewModel.cancelGeneration() }
+                if viewModel.isGenerating || viewModel.isPreparing {
+                    Button(viewModel.isCancellationRequested ? "中断処理中" : (viewModel.isPreparing ? "準備を中断" : "生成を中断"), role: .cancel) {
+                        viewModel.cancelGeneration()
+                    }
                         .buttonStyle(SecondaryActionButtonStyle())
+                        .disabled(viewModel.isCancellationRequested)
+                        .accessibilityIdentifier("generation.cancel")
                 }
 
                 if let errorMessage = viewModel.errorMessage {
@@ -251,32 +297,15 @@ struct ContentView: View {
     private func resultCard(result: GeneratedImage) -> some View {
         card {
             VStack(alignment: .leading, spacing: 14) {
-                Label("生成結果", systemImage: "photo")
+                Label(viewModel.isGenerating || viewModel.isPreparing ? "前回の生成画像" : "生成画像", systemImage: "photo")
                     .font(.headline)
                     .foregroundStyle(AppStyle.ink)
-
-                HStack(spacing: 8) {
-                    Text("今回のシード値")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(AppStyle.ink)
-                    Spacer()
-                    Text(viewModel.lastUsedSeedText)
-                        .font(.system(.footnote, design: .monospaced))
-                        .foregroundStyle(AppStyle.slate)
-                        .textSelection(.enabled)
-                }
-
-                Button {
-                    UIPasteboard.general.string = viewModel.lastUsedSeedText
-                    alertMessage = "シード値をコピーしました。"
-                } label: {
-                    Label("シード値をコピー", systemImage: "doc.on.doc")
-                }
-                .buttonStyle(SecondaryActionButtonStyle())
 
                 Image(uiImage: UIImage(cgImage: result.cgImage))
                     .resizable()
                     .scaledToFit()
+                    .accessibilityLabel("安全確認済みの生成画像")
+                    .accessibilityIdentifier("result.image")
                     .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8, style: .continuous)
@@ -284,7 +313,7 @@ struct ContentView: View {
                     )
                     .contextMenu {
                         Button("共有") {
-                            isShowingShareSheet = true
+                            shareRequest = ImageShareRequest(image: result)
                         }
                         Button("写真に保存") {
                             saveImageToPhotos(result)
@@ -293,19 +322,40 @@ struct ContentView: View {
 
                 HStack(spacing: 10) {
                     Button {
-                        isShowingShareSheet = true
+                        shareRequest = ImageShareRequest(image: result)
                     } label: {
                         Label("共有", systemImage: "square.and.arrow.up")
                     }
                     .buttonStyle(SecondaryActionButtonStyle())
+                    .accessibilityIdentifier("result.share")
 
                     Button {
                         saveImageToPhotos(result)
                     } label: {
-                        Label("写真に保存", systemImage: "square.and.arrow.down")
+                        Label(isSavingImage ? "保存中…" : "写真に保存", systemImage: "square.and.arrow.down")
                     }
                     .buttonStyle(SecondaryActionButtonStyle())
+                    .disabled(isSavingImage)
+                    .accessibilityIdentifier("result.save")
                 }
+
+                DisclosureGroup("この画像の生成情報") {
+                    VStack(alignment: .leading, spacing: 12) {
+                        if let prompt = viewModel.lastResultPrompt {
+                            Text(prompt).font(.footnote).textSelection(.enabled)
+                        }
+                        LabeledContent("シード値", value: viewModel.lastUsedSeedText)
+                            .font(.footnote.monospacedDigit())
+                        Button {
+                            UIPasteboard.general.string = viewModel.lastUsedSeedText
+                            alertMessage = "シード値をコピーしました。"
+                        } label: {
+                            Label("シード値をコピー", systemImage: "doc.on.doc")
+                        }.buttonStyle(SecondaryActionButtonStyle())
+                    }.padding(.top, 12)
+                }
+                .font(.subheadline).tint(AppStyle.slate)
+                .accessibilityIdentifier("result.details")
             }
         }
     }
@@ -325,12 +375,17 @@ struct ContentView: View {
     }
 
     private func saveImageToPhotos(_ result: GeneratedImage) {
-        PhotoLibrarySaver.save(result) { result in
-            switch result {
-            case .success:
+        guard !isSavingImage else { return }
+        isSavingImage = true
+        Task { @MainActor in
+            defer { isSavingImage = false }
+            do {
+                try await PhotoLibrarySaver.save(result)
+                needsPhotoSettings = false
                 alertMessage = "写真アプリに保存しました。"
-            case .failure(let error):
-                alertMessage = "保存に失敗しました: \(error.localizedDescription)"
+            } catch {
+                needsPhotoSettings = error as? PhotoSaveError == .permissionDenied
+                alertMessage = error.localizedDescription
             }
         }
     }
@@ -642,43 +697,9 @@ private struct ShareSheet: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
 
-private final class PhotoLibrarySaver: NSObject {
-    private var completion: ((Result<Void, Error>) -> Void)?
-
-    static func save(_ result: GeneratedImage, completion: @escaping (Result<Void, Error>) -> Void) {
-        let saver = PhotoLibrarySaver()
-        saver.completion = completion
-        UIImageWriteToSavedPhotosAlbum(
-            UIImage(cgImage: result.cgImage),
-            saver,
-            #selector(PhotoLibrarySaver.image(_:didFinishSavingWithError:contextInfo:)),
-            nil
-        )
-        PhotoLibrarySaverRetainer.shared.retain(saver)
-    }
-
-    @objc
-    private func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeMutableRawPointer?) {
-        defer { PhotoLibrarySaverRetainer.shared.release(self) }
-        if let error {
-            completion?(.failure(error))
-        } else {
-            completion?(.success(()))
-        }
-    }
-}
-
-private final class PhotoLibrarySaverRetainer {
-    static let shared = PhotoLibrarySaverRetainer()
-    private var activeSavers: [ObjectIdentifier: PhotoLibrarySaver] = [:]
-
-    func retain(_ saver: PhotoLibrarySaver) {
-        activeSavers[ObjectIdentifier(saver)] = saver
-    }
-
-    func release(_ saver: PhotoLibrarySaver) {
-        activeSavers.removeValue(forKey: ObjectIdentifier(saver))
-    }
+private struct ImageShareRequest: Identifiable {
+    let id = UUID()
+    let image: GeneratedImage
 }
 
 #Preview {

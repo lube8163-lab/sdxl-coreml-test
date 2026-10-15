@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "local-generation-20261013-v1",
+  "revision": "local-generation-20261015-v2",
   "supportedLanguages": [
     "en",
     "ja",
@@ -155,9 +155,9 @@
       "groups": [
         [
           "(?<![\\p{L}\\p{N}])(?:n[\\s._-]*[uυ][\\s._-]*d[\\s._-]*[e3](?:s|ity)?|n[\\s._-]*[a4][\\s._-]*k[\\s._-]*[e3][\\s._-]*d|p[\\s._-]*[o0][\\s._-]*r[\\s._-]*n(?:ography|ographic|o)?|nsfw|topless|bottomless|undress(?:ed|ing)?|unclothed|explicit(?:ly)?\\s+sexual|sex(?:ual|ualized|ualised|ually|y)?|fetish(?:es)?|bondage|masturbat(?:ion|ing|e)|penetration|intercourse|bare\\s+breasts|exposed\\s+breasts|without\\s+cloth(?:es|ing)|no\\s+cloth(?:es|ing)|blowjob|orgasm|vagina|penis|genitals?|nipples?)(?![\\p{L}\\p{N}])",
-          "裸の|ヌード|裸体|全裸|半裸|露出した胸|裸婦|裸女|服を脱|衣服のない|セクシー|陰茎|陰部|性器|乳首|性交|性行為|エロ|性的|脱衣|強姦|レイプ|オナニー|ポルノ|児童ポルノ|アダルト画像|成人向け画像",
-          "(?<![\\p{L}\\p{N}])(?:desnud[oa]s?|despid[oa]s?|nu[ae]s?|nudite|pornographique|erotique|pornografia|pornografico|sexo|sexuel(?:le)?|erotic[oa]s?|pelad[oa]s?)(?![\\p{L}\\p{N}])",
-          "裸体|裸體|裸露|全裸|性器官|色情|性行为|性行為|나체|음란|누드|포르노|성행위|성적|khoa than|khỏa thân|khoả thân|khiêu dâm|khieu dam"
+          "裸の|ヌード|裸体|全裸|半裸|露出した胸|裸婦|裸女|服を脱|衣服のない|セクシー|陰茎|陰部|性器|乳首|性交|性行為|エロ|性的|脱衣|強姦|レイプ|オナニー|ポルノ|児童ポルノ|アダルト画像|成人向け画像|服を着て(?:いない|ない)",
+          "(?<![\\p{L}\\p{N}])(?:desnud[oa]s?|despid[oa]s?|nu(?:[ae]s?|s)?|sin\\s+ropa|sem\\s+roupas?|nudite|pornographique|erotique|pornografia|pornografico|sexo|sexuel(?:le)?|erotic[oa]s?|pelad[oa]s?)(?![\\p{L}\\p{N}])",
+          "裸体|裸體|裸露|全裸|性器官|色情|性行为|性行為|나체|음란|누드|포르노|성행위|성적|khoa than|khỏa thân|khoả thân|khiêu dâm|khieu dam|不穿衣服|没穿衣服|沒穿衣服|未穿衣服|脱光|脫光|옷을\\s*벗"
         ]
       ],
       "maxSpan": 4000

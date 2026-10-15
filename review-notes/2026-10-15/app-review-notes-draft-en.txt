@@ -1,0 +1,17 @@
+DRAFT — prepared locally, not submitted. Confirm the current removal/review state and remaining distribution checks before use.
+
+App: ローカル画像生成
+Apple ID: 6771029688
+Prepared version: 1.1, build 5
+
+This update replaces the previous iPhone SDXL path with FLUX.2 Klein 4B at 512×512 and four diffusion steps. Generation and safety checks execute on device. Supported devices require iOS 27.0.1 or later and at least 6 GB of physical memory. iPhone 14 and iPhone 17 have separate recorded device checks; this is not a claim that every supported device/OS has been tested.
+
+Onboarding discloses a first model download of approximately 3.54 GB, approximately 4.04 GB of installed generation files and approximately 9 GB of initially required free space. Wi-Fi is the default. Cellular download is opt-in. Downloads can pause/resume and are verified before installation. The app itself excludes the large generation weights. The safety classifier is bundled. Prompts and generated images are not sent to the distribution server.
+
+The safety-disable setting has been removed. A mandatory bundled input policy rejects tested sexual content, sexual exploitation, graphic violence and other prohibited patterns before inference. The bundled image classifier must load before generation. The complete image and five overlapping crops are classified before output. All six valid results are required; the whole image must meet the SFW threshold, and every crop can veto unsafe output. Missing assets, invalid scores, failed checks and cancellation prevent new output. No unchecked intermediate preview or custom model import is available. Photos and sharing accept only the checked-result type.
+
+Version 1.1 (5) also adds four labelled input examples, elapsed preparation/generation time, explicit cancellation status and collapsed prompt/seed details. A previous approved image remains available when the next request is rejected or cancelled; a newly approved image replaces it. Sharing captures the selected checked image. Photos saving requests add-only permission, handles denial and restriction, and offers a Settings link after denial. The app includes its own privacy manifest.
+
+Local package validation: 54 blocked and 20 ordinary input cases passed, including added multilingual and obfuscated cases. Nine safety and fifteen generation/optimization/installer test functions passed. On iPhone 14 / iOS 27.2, an isolated startup driver invoked the production view model and completed four approved examples and 43 assertions, including active generation cancellation, preparation cancellation, previous-result retention and sharing-sheet presentation/dismissal. No sharing destination was selected. The final signed normal build contains no startup driver.
+
+These regressions do not establish the classifier's real-image false-negative rate or broad adversarial effectiveness. Actual Photos permission/write handling, OS suspension and sustained thermal behavior need further physical checks. The separate XCTest tap test did not execute because the device automation mode failed to initialize. The new version has not been uploaded or submitted by this task.

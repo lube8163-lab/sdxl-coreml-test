@@ -18,6 +18,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--destination", type=Path, required=True)
     parser.add_argument("--bundle-id", default="com.tasuku.sdxlcoremltest.setupprobe")
+    parser.add_argument("--readiness", action="store_true",
+                        help="Append the isolated app usability and result-retention driver.")
     args = parser.parse_args()
     if not re.fullmatch(r"com\.tasuku\.sdxlcoremltest(?:\.[A-Za-z0-9-]+)?", args.bundle_id):
         parser.error("Use this app's development bundle ID or a probe suffix.")
@@ -38,11 +40,27 @@ def main():
     if source.count(target) != 1:
         raise RuntimeError("Unexpected shipping bootstrap; inspect before changing the driver.")
     source = source.replace(target, '''.task {
-                    if CommandLine.arguments.contains("--setup-validation") {
+                    if CommandLine.arguments.contains("--app-readiness") {
+                        welcomeCompleted = true
+                        setup.inspectInstallation()
+                    } else if CommandLine.arguments.contains("--setup-validation") {
                         SetupValidation.start(self)
                     } else if welcomeCompleted { setup.inspectInstallation() }
                 }''')
     app.write_text(source + "\n" + (root / "scripts/device-probe/SetupValidation.swift").read_text())
+    if args.readiness:
+        content = dest / "SDXLCoreMLTest/ContentView.swift"
+        source = content.read_text()
+        anchor = "        .preferredColorScheme(.light)"
+        if anchor not in source:
+            raise RuntimeError("Expected ContentView presentation modifier")
+        source = source.replace(anchor, anchor + '''
+        .task {
+            if CommandLine.arguments.contains("--app-readiness") {
+                AppReadinessValidation.start(self)
+            }
+        }''', 1)
+        content.write_text(source + "\n" + (root / "scripts/device-probe/AppReadinessValidation.swift").read_text())
     project = dest / "SDXLCoreMLTest.xcodeproj/project.pbxproj"
     project.write_text(project.read_text().replace("PRODUCT_BUNDLE_IDENTIFIER = com.tasuku.sdxlcoremltest;",
                                                   "PRODUCT_BUNDLE_IDENTIFIER = " + args.bundle_id + ";"))
@@ -51,13 +69,23 @@ def main():
              "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift",
              "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift",
              "Vendor/MimCoreAIFlux/swift/Sources/CoreAIDiffusionPipeline/Components/CoreAIDiffusionModelFunction.swift",
-             "SDXLCoreMLTest/SDXLCoreMLTest.entitlements"]
+             "SDXLCoreMLTest/SDXLCoreMLTest.entitlements", "SDXLCoreMLTest/ContentView.swift",
+             "SDXLCoreMLTest/PhotoLibrarySaver.swift", "SDXLCoreMLTest/PrivacyInfo.xcprivacy",
+             "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ContentSafetyPolicy.swift",
+             "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/Resources/ContentSafetyPolicy.json",
+             "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift"]
     minimum_match = re.search(r"minimumPhysicalMemoryBytes:\s*UInt64\s*=\s*([\d_]+)",
         (root / "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift").read_text())
     if minimum_match is None:
         raise RuntimeError("Production memory requirement was not found")
     (dest / "probe-provenance.json").write_text(json.dumps({
         "scope": "Startup automation calls production setup and generation methods; it is not an XCTest UI run.",
+        "readinessDriverIncluded": args.readiness,
+        "driverSourceSHA256": {
+            p: hashlib.sha256((root / p).read_bytes()).hexdigest()
+            for p in ["scripts/device-probe/SetupValidation.swift"]
+            + (["scripts/device-probe/AppReadinessValidation.swift"] if args.readiness else [])
+        },
         "bundleID": args.bundle_id,
         "shippingSourceSHA256": {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths},
         "engineAndInstallerUnchanged": True,

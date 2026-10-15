@@ -1,5 +1,6 @@
 import Foundation
 import LocalImageGeneration
+import LocalGenerationSafety
 import SwiftUI
 import UIKit
 
@@ -13,14 +14,44 @@ enum SeedMode: String, CaseIterable, Identifiable {
     }
 }
 
+enum PromptExample: String, CaseIterable, Identifiable {
+    case stillLife, landscape, robot, illustration
+    var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .stillLife: "静物写真"
+        case .landscape: "風景"
+        case .robot: "ロボット"
+        case .illustration: "イラスト"
+        }
+    }
+    var prompt: String {
+        switch self {
+        case .stillLife:
+            "A still life photograph of a red apple next to a blue ceramic mug on a wooden table, soft window light, realistic photography."
+        case .landscape:
+            "A landscape photograph of a quiet mountain lake at sunrise, soft golden light, natural colors, detailed."
+        case .robot:
+            "A cinematic photo of a small robot walking in Tokyo at night, neon reflections, detailed."
+        case .illustration:
+            "A watercolor illustration of a small cat sitting beside a window with potted plants, warm afternoon light, gentle colors."
+        }
+    }
+}
+
 @MainActor
 final class SDXLGeneratorViewModel: ObservableObject {
-    @Published var prompt = "cinematic photo of a retro robot walking in Tokyo at night, neon reflections, 35mm film, detailed"
+    @Published var prompt = PromptExample.robot.prompt
     @Published var seedMode: SeedMode = .random
     @Published var manualSeedText = ""
     @Published private(set) var isGenerating = false
     @Published private(set) var isPreparing = false
+    @Published private(set) var isReleasingResources = false
+    @Published private(set) var isCancellationRequested = false
+    @Published private(set) var operationStartedAt: Date?
     @Published private(set) var result: GeneratedImage?
+    @Published private(set) var resultID: UUID?
+    @Published private(set) var lastResultPrompt: String?
     @Published private(set) var errorMessage: String?
     @Published private(set) var hasPreloadedResources = false
     @Published private(set) var lastUsedSeed: UInt32?
@@ -50,16 +81,25 @@ final class SDXLGeneratorViewModel: ObservableObject {
     var progressValue: Double? {
         totalSteps > 0 ? Double(currentStep) / Double(totalSteps) : nil
     }
+    var isBusy: Bool { isGenerating || isPreparing || isReleasingResources }
+
+    func selectExample(_ example: PromptExample) { prompt = example.prompt }
 
     func preloadResourcesIfNeeded() {
         isBackgrounded = false
         guard prepareTask == nil, cleanupTask == nil, !isGenerating, !hasPreloadedResources else { return }
         isPreparing = true
+        errorMessage = nil
+        isCancellationRequested = false
+        operationStartedAt = Date()
+        progressTitle = "画像生成の準備中"
+        progressDetail = "安全機能とモデルを準備しています。初回は数分かかることがあります。画面を開いたままお待ちください。"
+        let preparedPrompt = prompt.trimmingCharacters(in: .whitespacesAndNewlines)
         prepareTask = Task { [weak self] in
             guard let self else { return }
-            defer { isPreparing = false; prepareTask = nil }
+            defer { isPreparing = false; isCancellationRequested = false; operationStartedAt = nil; prepareTask = nil }
             do {
-                try await generator.prepare(prompt: prompt.trimmingCharacters(in: .whitespacesAndNewlines))
+                try await generator.prepare(prompt: preparedPrompt)
                 try Task.checkCancellation()
                 hasPreloadedResources = true
                 errorMessage = nil
@@ -67,6 +107,8 @@ final class SDXLGeneratorViewModel: ObservableObject {
                 progressDetail = "入力と生成画像の安全性を端末内で確認します。"
             } catch is CancellationError {
                 hasPreloadedResources = false
+                progressTitle = "準備を中断しました"
+                progressDetail = "「画像を生成する」を押すと準備から再開します。" + previousResultMessage
             } catch {
                 hasPreloadedResources = false
                 showError(error)
@@ -82,6 +124,7 @@ final class SDXLGeneratorViewModel: ObservableObject {
             generationTask?.cancel()
         }
         guard cleanupTask == nil else { return }
+        isReleasingResources = true
         let preparation = prepareTask, generation = generationTask
         cleanupTask = Task { [weak self] in
             await preparation?.value
@@ -90,11 +133,19 @@ final class SDXLGeneratorViewModel: ObservableObject {
             await generator.unload()
             hasPreloadedResources = false
             cleanupTask = nil
+            isReleasingResources = false
             if !isBackgrounded && allowPreload { preloadResourcesIfNeeded() }
         }
     }
 
-    func cancelGeneration() { generationTask?.cancel() }
+    func cancelGeneration() {
+        guard (isGenerating || isPreparing), !isCancellationRequested else { return }
+        isCancellationRequested = true
+        progressTitle = "中断しています"
+        progressDetail = "実行中の処理を終了しています。少し時間がかかることがあります。" + previousResultMessage
+        prepareTask?.cancel()
+        generationTask?.cancel()
+    }
 
     func resourceConditionsChanged() {
         Task { await generator.releaseWarmResourcesIfNeeded() }
@@ -102,12 +153,11 @@ final class SDXLGeneratorViewModel: ObservableObject {
 
     func generate() {
         guard !isGenerating, !isPreparing, cleanupTask == nil, !isBackgrounded else { return }
-        result = nil
         errorMessage = nil
         let text = prompt.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else {
             progressTitle = "入力待ち"
-            progressDetail = "生成したい内容を書いてください。"
+            progressDetail = "生成したい内容を書いてください。" + previousResultMessage
             return
         }
         let seed: UInt32
@@ -122,46 +172,48 @@ final class SDXLGeneratorViewModel: ObservableObject {
         operationID = id
         checkingOutput = false
         isGenerating = true
+        isCancellationRequested = false
+        operationStartedAt = Date()
         currentStep = 0
         totalSteps = 0
-        lastUsedSeed = seed
         progressTitle = "生成準備中"
-        progressDetail = "モデルを準備しています。"
+        progressDetail = "モデルを準備しています。初回や準備し直す際は時間がかかることがあります。"
         let start = Date()
         generationTask = Task { [weak self] in
             guard let self else { return }
-            defer { isGenerating = false; generationTask = nil }
+            defer { isGenerating = false; isCancellationRequested = false; operationStartedAt = nil; generationTask = nil }
             do {
                 let approved = try await generator.generate(prompt: text, seed: seed) { [weak self] progress in
                     Task { @MainActor in self?.receive(progress, operation: id) }
                 }
                 try Task.checkCancellation()
                 guard !isBackgrounded else { throw CancellationError() }
+                lastUsedSeed = seed
+                lastResultPrompt = text
                 result = approved
+                resultID = id
                 hasPreloadedResources = true
                 progressTitle = "生成完了"
                 progressDetail = String(format: "安全性の確認を含めて %.1f 秒。保存や共有ができます。", Date().timeIntervalSince(start))
                 currentStep = 0
                 totalSteps = 0
             } catch is CancellationError {
-                result = nil
                 progressTitle = "生成を中断しました"
-                progressDetail = "内容を確認して、もう一度生成できます。"
+                progressDetail = "内容を確認して、もう一度生成できます。" + previousResultMessage
                 currentStep = 0
                 totalSteps = 0
             } catch {
-                result = nil
                 showError(error)
             }
         }
     }
 
     private func receive(_ progress: GenerationProgress, operation: UUID) {
-        guard operation == operationID, isGenerating, !isBackgrounded else { return }
+        guard operation == operationID, isGenerating, !isBackgrounded, !isCancellationRequested else { return }
         switch progress {
         case .preparing:
             progressTitle = "生成準備中"
-            progressDetail = "モデルを準備しています。"
+            progressDetail = "モデルを準備しています。初回や準備し直す際は時間がかかることがあります。"
         case .denoising(let step, let total):
             guard !checkingOutput else { return }
             progressTitle = "画像を生成中"
@@ -173,16 +225,31 @@ final class SDXLGeneratorViewModel: ObservableObject {
             currentStep = 0
             totalSteps = 0
             progressTitle = "画像の安全性を確認中"
-            progressDetail = "確認が終わるまで画像は表示されません。"
+            progressDetail = "新しい画像は、安全性の確認が終わるまで表示しません。" + previousResultMessage
         }
     }
 
     private func showError(_ error: Error) {
         errorMessage = error.localizedDescription
-        progressTitle = "処理を停止しました"
-        progressDetail = "内容や端末の対応状況を確認してください。"
+        if let safety = error as? ContentSafetyError {
+            progressTitle = safety == .blocked ? "この内容では生成できません" : "入力を確認してください"
+            progressDetail = "内容を変えて、もう一度お試しください。" + previousResultMessage
+        } else if error is SeedError {
+            progressTitle = "シード値を確認してください"
+            progressDetail = "固定シードには指定範囲の整数を入力してください。" + previousResultMessage
+        } else if error is ImageSafetyError {
+            progressTitle = "新しい画像を表示できませんでした"
+            progressDetail = "今回の画像は安全性を確認できなかったため、表示・保存・共有しません。" + previousResultMessage
+        } else {
+            progressTitle = "処理を完了できませんでした"
+            progressDetail = "入力やモデルの準備状況を確認して、もう一度お試しください。" + previousResultMessage
+        }
         currentStep = 0
         totalSteps = 0
+    }
+
+    private var previousResultMessage: String {
+        result == nil ? "" : " 前回の生成画像は引き続き保存・共有できます。"
     }
 
     private func resolveSeed() throws -> UInt32 {
