@@ -4,7 +4,7 @@ The active `SDXLCoreMLTest` iPhone app runs **FLUX.2 Klein 4B, 512×512, four st
 
 ![Actual checked output on iPhone 17](measurements/2026-10-14/iphone17-generated-downloaded.png)
 
-[日本語の再現手順と測定条件](docs/flux2-iphone-reproduction.md) · [26-second real-device demo](media/iphone17-flux2-demo.mp4) · [15-second download recording](media/iphone17-model-download.mp4) · [JSON / CSV measurements](measurements/2026-10-14/README.md) · [Related work and reporting scope](docs/flux2-ios-report.md)
+[Zenn記事（日本語）](https://zenn.dev/lube8163/articles/e24eda10d2a9be) · [日本語の再現手順と測定条件](docs/flux2-iphone-reproduction.md) · [26-second real-device demo](media/iphone17-flux2-demo.mp4) · [15-second download recording](media/iphone17-model-download.mp4) · [JSON / CSV measurements](measurements/2026-10-14/README.md) · [Related work and reporting scope](docs/flux2-ios-report.md)
 
 ## Current device requirement
 

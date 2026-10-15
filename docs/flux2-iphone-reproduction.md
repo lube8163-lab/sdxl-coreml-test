@@ -1,5 +1,7 @@
 # FLUX.2をiPhoneで再現するための手順
 
+[実装とBonsai比較をまとめたZenn記事](https://zenn.dev/lube8163/articles/e24eda10d2a9be)
+
 更新日: 2026-10-16。対象は、このリポジトリの4bit / CoreAI / 512×512 / 4ステップ構成です。既存のBlack Forest Labsモデル、dushandz氏の変換資産、Appleのランタイムを利用したアプリ統合と実機検証の記録です。
 
 ## 何を再現するか
