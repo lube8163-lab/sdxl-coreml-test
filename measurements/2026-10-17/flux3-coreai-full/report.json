@@ -1,0 +1,170 @@
+{
+  "asset_hashes_verified" : true,
+  "available_process_memory_bytes" : 3286890632,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "coreai_execution" : true,
+  "denoising_seconds" : 117.88304350001272,
+  "diffusion_compute_dtype" : "bfloat16",
+  "expanded_caption" : "A realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering.",
+  "finished_at" : "2026-10-17T15:44:39Z",
+  "free_storage_bytes_at_start" : 19374080000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_saved" : true,
+  "image_sha256" : "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+  "input_safety_passed" : true,
+  "maximum_observed_sample_gap_ms" : 52.984833368100226,
+  "memory_sample_count" : 2753,
+  "model_cache_capacity" : 2,
+  "original_prompt" : "A red apple beside a blue ceramic mug on a wooden table, soft window light.",
+  "os_version" : "27.0.1",
+  "physical_footprint_bytes" : 253101944,
+  "physical_memory_bytes" : 8045641728,
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.034258678555488586,
+      "nsfw" : 0.033962670713663101,
+      "sfw" : 0.93177872896194458
+    },
+    {
+      "nsfl" : 0.030067171901464462,
+      "nsfw" : 0.032942485064268112,
+      "sfw" : 0.93699032068252563
+    },
+    {
+      "nsfl" : 0.030905196443200111,
+      "nsfw" : 0.034768678247928619,
+      "sfw" : 0.93432611227035522
+    },
+    {
+      "nsfl" : 0.030614914372563362,
+      "nsfw" : 0.04076123982667923,
+      "sfw" : 0.92862379550933838
+    },
+    {
+      "nsfl" : 0.030772216618061066,
+      "nsfw" : 0.039600782096385956,
+      "sfw" : 0.92962700128555298
+    },
+    {
+      "nsfl" : 0.032494794577360153,
+      "nsfw" : 0.034272845834493637,
+      "sfw" : 0.93323230743408203
+    }
+  ],
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1117047128,
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 42,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-17T15:42:22Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.5766243934631348,
+      "latent_min" : -4.5589332580566406,
+      "seconds" : 18.153723999974318,
+      "step" : 1
+    },
+    {
+      "latent_max" : 4.526085376739502,
+      "latent_min" : -4.516258716583252,
+      "seconds" : 7.6140476249856874,
+      "step" : 2
+    },
+    {
+      "latent_max" : 4.4654459953308105,
+      "latent_min" : -4.466285228729248,
+      "seconds" : 6.3508057916769758,
+      "step" : 3
+    },
+    {
+      "latent_max" : 4.3993487358093262,
+      "latent_min" : -4.4050397872924805,
+      "seconds" : 6.6171232915949076,
+      "step" : 4
+    },
+    {
+      "latent_max" : 4.3222818374633789,
+      "latent_min" : -4.3334932327270508,
+      "seconds" : 6.5807982500409707,
+      "step" : 5
+    },
+    {
+      "latent_max" : 4.2297520637512207,
+      "latent_min" : -4.2495980262756348,
+      "seconds" : 6.3187986250268295,
+      "step" : 6
+    },
+    {
+      "latent_max" : 4.1217031478881836,
+      "latent_min" : -4.1510982513427734,
+      "seconds" : 6.6268367082811892,
+      "step" : 7
+    },
+    {
+      "latent_max" : 3.9969363212585449,
+      "latent_min" : -4.0332379341125488,
+      "seconds" : 6.5479187082964927,
+      "step" : 8
+    },
+    {
+      "latent_max" : 3.8469281196594238,
+      "latent_min" : -3.8897619247436523,
+      "seconds" : 6.7185474999714643,
+      "step" : 9
+    },
+    {
+      "latent_max" : 3.6652779579162598,
+      "latent_min" : -3.724860668182373,
+      "seconds" : 6.565971624921076,
+      "step" : 10
+    },
+    {
+      "latent_max" : 3.4440202713012695,
+      "latent_min" : -3.5628273487091064,
+      "seconds" : 6.72274454170838,
+      "step" : 11
+    },
+    {
+      "latent_max" : 3.1651132106781006,
+      "latent_min" : -3.3649411201477051,
+      "seconds" : 6.6883539999835193,
+      "step" : 12
+    },
+    {
+      "latent_max" : 3.1581459045410156,
+      "latent_min" : -3.1221778392791748,
+      "seconds" : 6.5234272499801591,
+      "step" : 13
+    },
+    {
+      "latent_max" : 3.3173625469207764,
+      "latent_min" : -2.9587750434875488,
+      "seconds" : 6.5239668332505971,
+      "step" : 14
+    },
+    {
+      "latent_max" : 3.6899557113647461,
+      "latent_min" : -3.558333158493042,
+      "seconds" : 6.6325764582725242,
+      "step" : 15
+    },
+    {
+      "latent_max" : 5.1671762466430664,
+      "latent_min" : -5.0563850402832031,
+      "seconds" : 6.6861591667402536,
+      "step" : 16
+    }
+  ],
+  "steps" : 16,
+  "text_encoding_seconds" : 4.3505856250412762,
+  "text_length" : 160,
+  "uptime" : 596422.00547791668,
+  "vae_seconds" : 5.1884768750751391
+}

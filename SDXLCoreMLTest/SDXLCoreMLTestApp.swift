@@ -17,7 +17,7 @@ struct SDXLCoreMLTestApp: App {
                 } else if !LocalFluxGenerator.supportsGeneration {
                     UnsupportedDeviceView()
                 } else if setup.isReady {
-                    ContentView(viewModel: viewModel)
+                    ContentView(viewModel: viewModel, setup: setup)
                 } else {
                     ModelSetupView(setup: setup)
                 }
@@ -38,8 +38,11 @@ struct SDXLCoreMLTestApp: App {
                 .onChange(of: welcomeCompleted) { _, completed in
                     if completed { setup.inspectInstallation() }
                 }
+                .onChange(of: setup.model) { _, _ in
+                    viewModel.releaseCachedResources(backgrounded: false, allowPreload: false)
+                }
                 .onChange(of: setup.isReady) { _, ready in
-                    if ready { viewModel.preloadResourcesIfNeeded() }
+                    if ready { viewModel.activateModel(setup.model) }
                 }
                 .onChange(of: viewModel.isGenerating || viewModel.isPreparing || setup.isBusy) { _, busy in
                     UIApplication.shared.isIdleTimerDisabled = busy && scenePhase == .active
@@ -48,7 +51,7 @@ struct SDXLCoreMLTestApp: App {
                     switch newPhase {
                     case .active:
                         UIApplication.shared.isIdleTimerDisabled = viewModel.isGenerating || viewModel.isPreparing || setup.isBusy
-                        if setup.isReady { viewModel.preloadResourcesIfNeeded() }
+                        if setup.isReady { viewModel.activateModel(setup.model) }
                         else if welcomeCompleted { setup.inspectInstallation() }
                     case .background:
                         UIApplication.shared.isIdleTimerDisabled = false

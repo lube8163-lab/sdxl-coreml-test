@@ -1,0 +1,62 @@
+{
+  "device": {
+    "hardware_model": "iPhone14,7",
+    "os": "27.2",
+    "physical_memory_bytes": 5986615296
+  },
+  "conditions": "512x512 / 16 steps / seed42 / fixed caption / Release b68 source / grouped8 shared4 cap0",
+  "same_build_warm_runs": {
+    "control": {
+      "runs": [
+        "warm-control-02",
+        "warm-control-03"
+      ],
+      "n": 2,
+      "model_pipeline_seconds": {
+        "mean": 336.43949089583475,
+        "min": 326.4927980416687,
+        "max": 346.3861837500008
+      },
+      "denoising_seconds": {
+        "mean": 327.56305324999266,
+        "min": 317.70120045833755,
+        "max": 337.4249060416478
+      },
+      "sampled_peak_footprint_bytes": {
+        "mean": 1546793080,
+        "min": 1546326112,
+        "max": 1547260048
+      }
+    },
+    "precompute": {
+      "runs": [
+        "precompute-01",
+        "precompute-02"
+      ],
+      "n": 2,
+      "model_pipeline_seconds": {
+        "mean": 275.5460019375023,
+        "min": 259.81394429167267,
+        "max": 291.2780595833319
+      },
+      "denoising_seconds": {
+        "mean": 260.368061354151,
+        "min": 244.72842758329352,
+        "max": 276.00769512500847
+      },
+      "sampled_peak_footprint_bytes": {
+        "mean": 1172041596,
+        "min": 1171787656,
+        "max": 1172295536
+      }
+    }
+  },
+  "pipeline_time_reduction_fraction": 0.18099388034440267,
+  "denoising_time_reduction_fraction": 0.20513605313282746,
+  "sampled_peak_footprint_reduction_fraction": 0.24227641618360485,
+  "all_five_complete_png_sha256": "0650c75aa2c6b5d84e5d20e43c1a452c762165c76bb1ef0488a5f139f7513ab9",
+  "all_step_extrema_identical": true,
+  "six_view_safety_passed_all_runs": true,
+  "excluded_from_warm_comparison": "first-use-control (initial source255, first-use compilation)",
+  "scope": "Physical iPhone14 experiment; no new iPhone17 measurements. Model wall time includes Qwen, precompute if enabled, DiT and VAE; excludes launch, hashes and safety checks."
+}

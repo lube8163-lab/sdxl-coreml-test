@@ -7,16 +7,18 @@ import CoreAIDiffusionPipeline
 public typealias GeneratedImage = SafetyCheckedImage
 public typealias PromptSafetyError = ContentSafetyError
 
-public enum GenerationError: Error, LocalizedError {
-    case unsupportedEnvironment, insufficientMemory, missingAssets, invalidOutput, busy
+public enum GenerationError: Error, LocalizedError, Equatable {
+    case unsupportedEnvironment, insufficientMemory, missingAssets, invalidOutput, busy, invalidSteps, promptTooLong
 
     public var errorDescription: String? {
         switch self {
         case .unsupportedEnvironment: "画像生成には iOS 27.0.1 以降の対応する実機が必要です。"
         case .insufficientMemory: "このモデルにはメモリ6GB以上の端末が必要です。"
-        case .missingAssets: "同梱モデルが不足または破損しています。アプリを再インストールしてください。"
+        case .missingAssets: "モデルが不足または破損しています。モデル管理から準備し直してください。"
         case .invalidOutput: "画像を生成できませんでした。内容を変えてお試しください。"
         case .busy: "画像生成が進行中です。完了するまでお待ちください。"
+        case .invalidSteps: "このモデルでは選択したステップ数を利用できません。設定を選び直してください。"
+        case .promptTooLong: "FLUX.3の入力が長すぎます。文章を短くして、もう一度お試しください。"
         }
     }
 }

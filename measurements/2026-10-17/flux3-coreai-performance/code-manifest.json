@@ -1,0 +1,8 @@
+{
+  "Experiments/Flux3CoreAI/GenerationProbe.swift": "255e1a7096eab8b3c8b427c971eaa3c40c1a2ed5acce0e2ad11496fefa16f597",
+  "Experiments/Flux3CoreAI/compose_blocks.py": "e7889a6d28030ac9798ac3710a23c4da05ce609d0f69459090af17f6c69d6e19",
+  "Experiments/Flux3CoreAI/compose_all_blocks.py": "fe890aee1a736dec33b110e29745d53b8cc247329bc2956219d5a43b97625742",
+  "Experiments/Flux3CoreAI/validate_composition.py": "e54ed45e383d9278f3dbce21d99eb1eb3e462dbb2aa79fb0c6da5e2adc30d1bc",
+  "Experiments/Flux3CoreAI/analyze_performance.py": "bd730d944c23f2441e4f13aa05c89de74a7c25775a6d9f6dbb57c4ae9379ecdc",
+  "Experiments/Flux3CoreAI/windows_v100_probe.py": "2a52675a1e8fdd0549995d213ca3b3e6792d625321634c95f27503e4a24aaccc"
+}

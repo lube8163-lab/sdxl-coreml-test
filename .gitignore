@@ -33,3 +33,8 @@ recipes/*
 # Secrets
 .env
 *.env
+
+# FLUX conversion outputs and split model archives
+*.aimodel/
+*.safetensors
+*.zip.part*

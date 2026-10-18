@@ -1,0 +1,409 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 150,
+    "cache_misses" : 44,
+    "calls" : 194,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 1.645856536924839e-05,
+      "conditioning.function_load" : 1.1640635832445696,
+      "conditioning.inference_await" : 1.2604849584167823,
+      "conditioning.model_load" : 0.0041807916713878512,
+      "conditioning.total" : 2.4292335414793342,
+      "denoising.eviction" : 0.0003237496130168438,
+      "denoising.function_load" : 3.7655125001911074,
+      "denoising.inference_await" : 52.275337500614114,
+      "denoising.model_load" : 0.034068916691467166,
+      "denoising.total" : 56.079694374348037,
+      "text.eviction" : 4.0375161916017532e-05,
+      "text.function_load" : 3.6167308330768719,
+      "text.inference_await" : 0.52931216696742922,
+      "text.model_load" : 0.053340000100433826,
+      "text.total" : 4.1998970416607335,
+      "vae.eviction" : 1.2916279956698418e-06,
+      "vae.function_load" : 0.13496783340815455,
+      "vae.inference_await" : 0.70033012505155057,
+      "vae.model_load" : 0.0058333749184384942,
+      "vae.total" : 0.84117675002198666
+    }
+  },
+  "asset_hashes_verified" : true,
+  "asset_verification_mode" : "background-streamed-sha256-1mib",
+  "asset_verification_seconds" : 3.36092450004071,
+  "available_process_memory_bytes" : 3293460544,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "cached_text_step_count" : 16,
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 150,
+    "cache_misses" : 43,
+    "calls" : 193,
+    "retained_components" : [
+      "image_g00",
+      "input_image",
+      "join",
+      "output",
+      "shared_g00",
+      "shared_g01",
+      "shared_g02",
+      "shared_g03"
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 1.645856536924839e-05,
+      "conditioning.function_load" : 1.1640635832445696,
+      "conditioning.inference_await" : 1.2604849584167823,
+      "conditioning.model_load" : 0.0041807916713878512,
+      "conditioning.total" : 2.4292335414793342,
+      "denoising.eviction" : 0.0003237496130168438,
+      "denoising.function_load" : 3.7655125001911074,
+      "denoising.inference_await" : 52.275337500614114,
+      "denoising.model_load" : 0.034068916691467166,
+      "denoising.total" : 56.079694374348037,
+      "text.eviction" : 4.0375161916017532e-05,
+      "text.function_load" : 3.6167308330768719,
+      "text.inference_await" : 0.52931216696742922,
+      "text.model_load" : 0.053340000100433826,
+      "text.total" : 4.1998970416607335
+    }
+  },
+  "denoising_seconds" : 56.425787541666068,
+  "diffusion_compute_dtype" : "bfloat16",
+  "execution_groups" : [
+    {
+      "component" : "image_g00",
+      "members" : [
+        "image_00",
+        "image_01",
+        "image_02",
+        "image_03",
+        "image_04"
+      ],
+      "mode" : "image"
+    },
+    {
+      "component" : "text_g00",
+      "members" : [
+        "text_00",
+        "text_01",
+        "text_02",
+        "text_03",
+        "text_04"
+      ],
+      "mode" : "text"
+    },
+    {
+      "component" : "shared_g00",
+      "members" : [
+        "shared_00",
+        "shared_01",
+        "shared_02",
+        "shared_03",
+        "shared_04",
+        "shared_05",
+        "shared_06",
+        "shared_07"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g01",
+      "members" : [
+        "shared_08",
+        "shared_09",
+        "shared_10",
+        "shared_11",
+        "shared_12",
+        "shared_13",
+        "shared_14",
+        "shared_15"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g02",
+      "members" : [
+        "shared_16",
+        "shared_17",
+        "shared_18",
+        "shared_19",
+        "shared_20",
+        "shared_21",
+        "shared_22",
+        "shared_23"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g03",
+      "members" : [
+        "shared_24",
+        "shared_25",
+        "shared_26",
+        "shared_27"
+      ],
+      "mode" : "shared"
+    }
+  ],
+  "execution_kind" : "grouped",
+  "execution_profile" : "automatic-groups8-shared-retained",
+  "expanded_caption" : "A realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering.",
+  "experiment_label" : "stepcompare-20261018-still-life-seed1234-s16",
+  "finished_at" : "2026-10-18T04:15:56Z",
+  "fixture_profile" : "still-life-seed1234",
+  "fixture_profile_sha256" : "bf0205a3b3ed2ec6259cddc66a4602bfbb3d0144045e4b93c781e07480be3325",
+  "free_storage_bytes_at_start" : 8683520000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_input_slice_verified" : true,
+  "image_saved" : true,
+  "image_sha256" : "356a828c7ace7ff2d6726172c1162e953e31927157e330bd21e06e2b9d698f65",
+  "input_safety_passed" : true,
+  "input_safety_seconds" : 0.0030729583231732249,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 51.040041609667242,
+  "memory_sample_count" : 1355,
+  "model_cache_capacity" : 0,
+  "original_prompt" : "A red apple beside a blue ceramic mug on a wooden table, soft window light.",
+  "os_version" : "27.0.1",
+  "output_safety_seconds" : 0.13354199996683747,
+  "physical_footprint_bytes" : 246532032,
+  "physical_memory_bytes" : 8045641728,
+  "pinned_components" : [
+    "image_g00",
+    "input_image",
+    "join",
+    "output",
+    "shared_g00",
+    "shared_g01",
+    "shared_g02",
+    "shared_g03"
+  ],
+  "pinned_heavy_block_count" : 33,
+  "pinned_shared_group_count" : 4,
+  "precompute_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 35,
+    "calls" : 65,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 1.645856536924839e-05,
+      "conditioning.function_load" : 1.1640635832445696,
+      "conditioning.inference_await" : 1.2604849584167823,
+      "conditioning.model_load" : 0.0041807916713878512,
+      "conditioning.total" : 2.4292335414793342,
+      "text.eviction" : 4.0375161916017532e-05,
+      "text.function_load" : 3.6167308330768719,
+      "text.inference_await" : 0.52931216696742922,
+      "text.model_load" : 0.053340000100433826,
+      "text.total" : 4.1998970416607335
+    }
+  },
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "run_to_saved_seconds" : 67.748661166639067,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.034291986376047134,
+      "nsfw" : 0.036618616431951523,
+      "sfw" : 0.92908942699432373
+    },
+    {
+      "nsfl" : 0.031105393543839455,
+      "nsfw" : 0.035125989466905594,
+      "sfw" : 0.93376857042312622
+    },
+    {
+      "nsfl" : 0.030363723635673523,
+      "nsfw" : 0.037569459527730942,
+      "sfw" : 0.93206685781478882
+    },
+    {
+      "nsfl" : 0.031545214354991913,
+      "nsfw" : 0.040973041206598282,
+      "sfw" : 0.92748177051544189
+    },
+    {
+      "nsfl" : 0.031902574002742767,
+      "nsfw" : 0.039103604853153229,
+      "sfw" : 0.928993821144104
+    },
+    {
+      "nsfl" : 0.032792828977108002,
+      "nsfw" : 0.033771567046642303,
+      "sfw" : 0.93343555927276611
+    }
+  ],
+  "safety_preparation_seconds" : 0.029053541598841548,
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1181339552,
+  "sampling_schedule" : [
+    1,
+    0.99047166109085083,
+    0.97980207204818726,
+    0.96777313947677612,
+    0.95410740375518799,
+    0.93844640254974365,
+    0.920318603515625,
+    0.89909189939498901,
+    0.87389659881591797,
+    0.84350550174713135,
+    0.80612641572952271,
+    0.75903606414794922,
+    0.69788515567779541,
+    0.61527073383331299,
+    0.49748742580413818,
+    0.31600546836853027,
+    0
+  ],
+  "sampling_schedule_source" : "reference-alpha6.93-linspace-full-1-to-0",
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 1234,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-18T04:14:49Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.1423759460449219,
+      "latent_min" : -4.1477961540222168,
+      "seconds" : 6.2543952916748822,
+      "step" : 1,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.1260151863098145,
+      "latent_min" : -4.0948281288146973,
+      "seconds" : 3.0145721250446513,
+      "step" : 2,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.0962567329406738,
+      "latent_min" : -4.0435380935668945,
+      "seconds" : 3.0431544999592006,
+      "step" : 3,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.055088996887207,
+      "latent_min" : -3.9888513088226318,
+      "seconds" : 3.1850138750160113,
+      "step" : 4,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.0073032379150391,
+      "latent_min" : -3.9289286136627197,
+      "seconds" : 3.2669773333473131,
+      "step" : 5,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.9522194862365723,
+      "latent_min" : -3.8619115352630615,
+      "seconds" : 3.3066937499679625,
+      "step" : 6,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.8887906074523926,
+      "latent_min" : -3.7827332019805908,
+      "seconds" : 3.2735915000084788,
+      "step" : 7,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.8154861927032471,
+      "latent_min" : -3.686002254486084,
+      "seconds" : 3.4546509166248143,
+      "step" : 8,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.7282636165618896,
+      "latent_min" : -3.5661830902099609,
+      "seconds" : 3.4338244999526069,
+      "step" : 9,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.6244080066680908,
+      "latent_min" : -3.4286110401153564,
+      "seconds" : 3.4014486249070615,
+      "step" : 10,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.5040214061737061,
+      "latent_min" : -3.2735104560852051,
+      "seconds" : 3.4924889166140929,
+      "step" : 11,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.3552095890045166,
+      "latent_min" : -3.2198359966278076,
+      "seconds" : 3.3873701250413433,
+      "step" : 12,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.1857748031616211,
+      "latent_min" : -3.1938254833221436,
+      "seconds" : 3.5238740833010525,
+      "step" : 13,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.4050521850585938,
+      "latent_min" : -3.2376019954681396,
+      "seconds" : 3.4173802917357534,
+      "step" : 14,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.0785636901855469,
+      "latent_min" : -3.5833401679992676,
+      "seconds" : 3.4440520833013579,
+      "step" : 15,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.9275836944580078,
+      "latent_min" : -4.7296657562255859,
+      "seconds" : 3.5172259582905099,
+      "step" : 16,
+      "thermal_state" : 1
+    }
+  ],
+  "steps" : 16,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 4.0375161916017532e-05,
+      "text.function_load" : 3.6167308330768719,
+      "text.inference_await" : 0.52931216696742922,
+      "text.model_load" : 0.053340000100433826,
+      "text.total" : 4.1998970416607335
+    }
+  },
+  "text_encoding_seconds" : 4.2833972916705534,
+  "text_length" : 160,
+  "text_precompute_enabled" : true,
+  "text_precompute_seconds" : 2.56645766668953,
+  "thermal_state_at_start" : 1,
+  "uptime" : 635666.71210191667,
+  "vae_seconds" : 0.86525929160416126,
+  "verified_active_component_count" : 43
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "Own Preview Library file sizes after both models were used; compilation caches are combined across models. Not RAM or GPU allocation.",
+  "bytes_by_path": {
+    "Application Support/Models/coreai-512-4bit-a7f65cd-v1": 4043710200,
+    "Application Support/Models/coreai-flux3-512-int4-dd2ae0a-v1": 5764051351,
+    "Caches/com.apple.dyld": 81328,
+    "Caches/com.tasuku.sdxlcoremltest.preview": 94046624,
+    "Caches/coreai-cache": 9790954495,
+    "HTTPStorages/com.tasuku.sdxlcoremltest.preview": 69856,
+    "Preferences/com.tasuku.sdxlcoremltest.preview.plist": 184,
+    "Saved Application State/com.tasuku.sdxlcoremltest.preview.savedState": 5409,
+    "SplashBoard/Snapshots": 3457048
+  }
+}

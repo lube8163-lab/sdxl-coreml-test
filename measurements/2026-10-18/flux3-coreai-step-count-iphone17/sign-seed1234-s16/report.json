@@ -1,0 +1,409 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 150,
+    "cache_misses" : 44,
+    "calls" : 194,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 1.9208411686122417e-05,
+      "conditioning.function_load" : 1.2717348332516849,
+      "conditioning.inference_await" : 1.2765714990673587,
+      "conditioning.model_load" : 0.0033600416500121355,
+      "conditioning.total" : 2.5522043746896088,
+      "denoising.eviction" : 0.00038633262738585472,
+      "denoising.function_load" : 4.4359909584745765,
+      "denoising.inference_await" : 53.705105167464353,
+      "denoising.model_load" : 0.025440499885007739,
+      "denoising.total" : 58.171728333225474,
+      "text.eviction" : 4.1374587453901768e-05,
+      "text.function_load" : 3.8892009584233165,
+      "text.inference_await" : 0.53730349976103753,
+      "text.model_load" : 0.053219249821268022,
+      "text.total" : 4.4802159584360197,
+      "vae.eviction" : 1.250067725777626e-06,
+      "vae.function_load" : 0.1314502083696425,
+      "vae.inference_await" : 0.68436329171527177,
+      "vae.model_load" : 0.0028941667405888438,
+      "vae.total" : 0.81875887501519173
+    }
+  },
+  "asset_hashes_verified" : true,
+  "asset_verification_mode" : "background-streamed-sha256-1mib",
+  "asset_verification_seconds" : 3.4764523332705721,
+  "available_process_memory_bytes" : 3292919848,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "cached_text_step_count" : 16,
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 150,
+    "cache_misses" : 43,
+    "calls" : 193,
+    "retained_components" : [
+      "image_g00",
+      "input_image",
+      "join",
+      "output",
+      "shared_g00",
+      "shared_g01",
+      "shared_g02",
+      "shared_g03"
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 1.9208411686122417e-05,
+      "conditioning.function_load" : 1.2717348332516849,
+      "conditioning.inference_await" : 1.2765714990673587,
+      "conditioning.model_load" : 0.0033600416500121355,
+      "conditioning.total" : 2.5522043746896088,
+      "denoising.eviction" : 0.00038633262738585472,
+      "denoising.function_load" : 4.4359909584745765,
+      "denoising.inference_await" : 53.705105167464353,
+      "denoising.model_load" : 0.025440499885007739,
+      "denoising.total" : 58.171728333225474,
+      "text.eviction" : 4.1374587453901768e-05,
+      "text.function_load" : 3.8892009584233165,
+      "text.inference_await" : 0.53730349976103753,
+      "text.model_load" : 0.053219249821268022,
+      "text.total" : 4.4802159584360197
+    }
+  },
+  "denoising_seconds" : 58.518731541698799,
+  "diffusion_compute_dtype" : "bfloat16",
+  "execution_groups" : [
+    {
+      "component" : "image_g00",
+      "members" : [
+        "image_00",
+        "image_01",
+        "image_02",
+        "image_03",
+        "image_04"
+      ],
+      "mode" : "image"
+    },
+    {
+      "component" : "text_g00",
+      "members" : [
+        "text_00",
+        "text_01",
+        "text_02",
+        "text_03",
+        "text_04"
+      ],
+      "mode" : "text"
+    },
+    {
+      "component" : "shared_g00",
+      "members" : [
+        "shared_00",
+        "shared_01",
+        "shared_02",
+        "shared_03",
+        "shared_04",
+        "shared_05",
+        "shared_06",
+        "shared_07"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g01",
+      "members" : [
+        "shared_08",
+        "shared_09",
+        "shared_10",
+        "shared_11",
+        "shared_12",
+        "shared_13",
+        "shared_14",
+        "shared_15"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g02",
+      "members" : [
+        "shared_16",
+        "shared_17",
+        "shared_18",
+        "shared_19",
+        "shared_20",
+        "shared_21",
+        "shared_22",
+        "shared_23"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g03",
+      "members" : [
+        "shared_24",
+        "shared_25",
+        "shared_26",
+        "shared_27"
+      ],
+      "mode" : "shared"
+    }
+  ],
+  "execution_kind" : "grouped",
+  "execution_profile" : "automatic-groups8-shared-retained",
+  "expanded_caption" : "A straight-on architectural photograph of a small welcoming cafe facade in daylight. The cream plaster wall has one closed blue wooden door in the middle and one simple window on each side. A rectangular white sign above the door clearly reads BLUE CAFE in large dark blue uppercase letters. Two small green plants in terracotta pots stand near the doorway. Show clean typography, distinct door panels, realistic plaster texture, and balanced symmetrical composition. The sidewalk is empty. No people, vehicles, extra signs, or additional text.",
+  "experiment_label" : "stepcompare-20261018-sign-seed1234-s16",
+  "finished_at" : "2026-10-18T04:38:36Z",
+  "fixture_profile" : "sign-seed1234",
+  "fixture_profile_sha256" : "249f952737b0146b3afc9cfd39e543c52874640c1cb5f94fa53c3408fc13f343",
+  "free_storage_bytes_at_start" : 8519680000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_input_slice_verified" : true,
+  "image_saved" : true,
+  "image_sha256" : "3dad60bbe5ba7bde5ee31f59ac6fb591816c78e747d370696612b520469f3362",
+  "input_safety_passed" : true,
+  "input_safety_seconds" : 0.0038155000656843185,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 55.852041696198285,
+  "memory_sample_count" : 1408,
+  "model_cache_capacity" : 0,
+  "original_prompt" : "A small cafe facade with a blue door and a sign reading BLUE CAFE.",
+  "os_version" : "27.0.1",
+  "output_safety_seconds" : 0.12326570833101869,
+  "physical_footprint_bytes" : 247072728,
+  "physical_memory_bytes" : 8045641728,
+  "pinned_components" : [
+    "image_g00",
+    "input_image",
+    "join",
+    "output",
+    "shared_g00",
+    "shared_g01",
+    "shared_g02",
+    "shared_g03"
+  ],
+  "pinned_heavy_block_count" : 33,
+  "pinned_shared_group_count" : 4,
+  "precompute_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 35,
+    "calls" : 65,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 1.9208411686122417e-05,
+      "conditioning.function_load" : 1.2717348332516849,
+      "conditioning.inference_await" : 1.2765714990673587,
+      "conditioning.model_load" : 0.0033600416500121355,
+      "conditioning.total" : 2.5522043746896088,
+      "text.eviction" : 4.1374587453901768e-05,
+      "text.function_load" : 3.8892009584233165,
+      "text.inference_await" : 0.53730349976103753,
+      "text.model_load" : 0.053219249821268022,
+      "text.total" : 4.4802159584360197
+    }
+  },
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "run_to_saved_seconds" : 70.396146249957383,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.031743727624416351,
+      "nsfw" : 0.03909480944275856,
+      "sfw" : 0.9291614294052124
+    },
+    {
+      "nsfl" : 0.032329078763723373,
+      "nsfw" : 0.037082750350236893,
+      "sfw" : 0.93058812618255615
+    },
+    {
+      "nsfl" : 0.031930528581142426,
+      "nsfw" : 0.037247486412525177,
+      "sfw" : 0.93082201480865479
+    },
+    {
+      "nsfl" : 0.032346181571483612,
+      "nsfw" : 0.037447430193424225,
+      "sfw" : 0.93020641803741455
+    },
+    {
+      "nsfl" : 0.032594431191682816,
+      "nsfw" : 0.038144055753946304,
+      "sfw" : 0.92926150560379028
+    },
+    {
+      "nsfl" : 0.033677004277706146,
+      "nsfw" : 0.039261829107999802,
+      "sfw" : 0.92706120014190674
+    }
+  ],
+  "safety_preparation_seconds" : 0.052419291576370597,
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1184354184,
+  "sampling_schedule" : [
+    1,
+    0.99047166109085083,
+    0.97980207204818726,
+    0.96777313947677612,
+    0.95410740375518799,
+    0.93844640254974365,
+    0.920318603515625,
+    0.89909189939498901,
+    0.87389659881591797,
+    0.84350550174713135,
+    0.80612641572952271,
+    0.75903606414794922,
+    0.69788515567779541,
+    0.61527073383331299,
+    0.49748742580413818,
+    0.31600546836853027,
+    0
+  ],
+  "sampling_schedule_source" : "reference-alpha6.93-linspace-full-1-to-0",
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 1234,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-18T04:37:26Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.1351099014282227,
+      "latent_min" : -4.1429610252380371,
+      "seconds" : 6.991528291720897,
+      "step" : 1,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.1133279800415039,
+      "latent_min" : -4.090050220489502,
+      "seconds" : 3.2354191666236147,
+      "step" : 2,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.0839042663574219,
+      "latent_min" : -4.0463194847106934,
+      "seconds" : 3.2346174999838695,
+      "step" : 3,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.0454802513122559,
+      "latent_min" : -4.0003829002380371,
+      "seconds" : 3.3199730416527018,
+      "step" : 4,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.0028553009033203,
+      "latent_min" : -3.9540228843688965,
+      "seconds" : 3.3290400833357126,
+      "step" : 5,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.951472282409668,
+      "latent_min" : -3.897252082824707,
+      "seconds" : 3.4198986666742712,
+      "step" : 6,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.8880763053894043,
+      "latent_min" : -3.8293769359588623,
+      "seconds" : 3.3264775000279769,
+      "step" : 7,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.8108973503112793,
+      "latent_min" : -3.7517004013061523,
+      "seconds" : 3.4671523750294,
+      "step" : 8,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.7182104587554932,
+      "latent_min" : -3.6617677211761475,
+      "seconds" : 3.571569541702047,
+      "step" : 9,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.5995132923126221,
+      "latent_min" : -3.5552935600280762,
+      "seconds" : 3.5500774999381974,
+      "step" : 10,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.4396252632141113,
+      "latent_min" : -3.4212849140167236,
+      "seconds" : 3.5148545833071694,
+      "step" : 11,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.3670406341552734,
+      "latent_min" : -3.2472147941589355,
+      "seconds" : 3.3586032916791737,
+      "step" : 12,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.4109961986541748,
+      "latent_min" : -3.0356574058532715,
+      "seconds" : 3.3779153749346733,
+      "step" : 13,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.6230487823486328,
+      "latent_min" : -3.0435419082641602,
+      "seconds" : 3.3880044165998697,
+      "step" : 14,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.1714043617248535,
+      "latent_min" : -3.2147166728973389,
+      "seconds" : 3.7376945000141859,
+      "step" : 15,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 5.4814662933349609,
+      "latent_min" : -4.1682338714599609,
+      "seconds" : 3.6891712916549295,
+      "step" : 16,
+      "thermal_state" : 1
+    }
+  ],
+  "steps" : 16,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 4.1374587453901768e-05,
+      "text.function_load" : 3.8892009584233165,
+      "text.inference_await" : 0.53730349976103753,
+      "text.model_load" : 0.053219249821268022,
+      "text.total" : 4.4802159584360197
+    }
+  },
+  "text_encoding_seconds" : 4.569175458396785,
+  "text_length" : 160,
+  "text_precompute_enabled" : true,
+  "text_precompute_seconds" : 2.6997940833680332,
+  "thermal_state_at_start" : 1,
+  "uptime" : 637026.81308479165,
+  "vae_seconds" : 0.83631887496449053,
+  "verified_active_component_count" : 43
+}

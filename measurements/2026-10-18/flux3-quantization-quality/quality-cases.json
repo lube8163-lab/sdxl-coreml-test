@@ -1,0 +1,25 @@
+{
+  "width": 512, "height": 512, "steps": 16, "seeds": [42, 1234], "text_length": 160,
+  "cases": [
+    {
+      "id": "still-life",
+      "original_prompt": "A red apple beside a blue ceramic mug on a wooden table, soft window light.",
+      "caption": "A realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering."
+    },
+    {
+      "id": "geometry",
+      "original_prompt": "A red cube on the left, a blue sphere on the right, and a yellow cone behind them.",
+      "caption": "A clean studio product photograph showing exactly three solid geometric objects on a light gray tabletop. A matte red cube stands on the left, a glossy blue sphere rests on the right, and a yellow cone is centered behind the two foreground objects. All three objects are separate and fully visible. Soft lighting from the upper left makes clear contact shadows and a subtle reflection on the blue sphere. Use a plain neutral background, crisp edges, accurate colors, and a straight-on camera angle. No people, decorative objects, or lettering."
+    },
+    {
+      "id": "materials",
+      "original_prompt": "Green grapes in a glass bowl, a metal spoon, and folded linen on dark wood.",
+      "caption": "A close-up still-life photograph of a transparent clear glass bowl containing a small bunch of green grapes on a dark walnut table. A polished stainless steel spoon lies beside the bowl on the right, and a folded cream linen napkin rests on the left. Show the glass rim, refraction through the bowl, small highlights on the grape skins, the reflective spoon, and fine woven threads in the cloth. Gentle daylight comes from a window outside the frame. Keep the arrangement uncluttered and realistic, with natural colors, no people, and no lettering."
+    },
+    {
+      "id": "sign",
+      "original_prompt": "A small cafe facade with a blue door and a sign reading BLUE CAFE.",
+      "caption": "A straight-on architectural photograph of a small welcoming cafe facade in daylight. The cream plaster wall has one closed blue wooden door in the middle and one simple window on each side. A rectangular white sign above the door clearly reads BLUE CAFE in large dark blue uppercase letters. Two small green plants in terracotta pots stand near the doorway. Show clean typography, distinct door panels, realistic plaster texture, and balanced symmetrical composition. The sidewalk is empty. No people, vehicles, extra signs, or additional text."
+    }
+  ]
+}

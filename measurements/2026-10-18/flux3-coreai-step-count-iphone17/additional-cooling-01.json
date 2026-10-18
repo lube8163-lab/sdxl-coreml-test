@@ -1,0 +1,17 @@
+{
+  "harness_pid": 84667,
+  "paused_at_epoch": 1792297380.6480372,
+  "reason": "First serious thermal result geometry-seed1234-s8. Pause only completed or completing benchmark for added cooling; preserve all data and matched-profile exclusion policy.",
+  "last_log_lines": [
+    "{\"run\": \"geometry-seed1234-s8\", \"stage\": \"FLUX.3 1/8 \u753b\u50cf 1/1\", \"completed_steps\": 0}",
+    "{\"run\": \"geometry-seed1234-s8\", \"stage\": \"FLUX.3 3/8 \u7d71\u5408 1/4\", \"completed_steps\": 2}",
+    "{\"run\": \"geometry-seed1234-s8\", \"stage\": \"FLUX.3 6/8 \u7d71\u5408 1/4\", \"completed_steps\": 5}",
+    "{\"run\": \"geometry-seed1234-s8\", \"stage\": \"VAE \u753b\u50cf\u5fa9\u5143\", \"completed_steps\": 8}",
+    "{\"run\": \"geometry-seed1234-s8\", \"stage\": \"\u751f\u6210\u3068\u5b89\u5168\u6027\u78ba\u8a8d\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\", \"completed_steps\": 8}",
+    "{\"run\": \"geometry-seed1234-s8\", \"complete\": true, \"model_seconds\": 37.46634095837362, \"total_seconds\": 41.087980999960564, \"safety_seconds\": 0.1387026250595227, \"thermal_states\": [2]}",
+    "{\"run\": \"geometry-seed1234-s4\", \"launched\": true, \"steps\": 4}",
+    "{\"run\": \"geometry-seed1234-s4\", \"stage\": \"FLUX.3 1/4 \u7d71\u5408 1/4\", \"completed_steps\": 0}"
+  ],
+  "resumed_at_epoch": 1792297478.737395,
+  "harness_pause_seconds": 98.08935785293579
+}

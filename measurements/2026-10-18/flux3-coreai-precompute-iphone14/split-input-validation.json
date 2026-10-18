@@ -1,0 +1,8 @@
+{
+  "scope": "Real BF16 CoreAI input graph vs exact image-output dependency slice on Mac GPU preferred; not phone timing",
+  "exact_equal": true,
+  "relative_rmse": 0.0,
+  "maximum_absolute_error": 0.0,
+  "finite": true,
+  "passed": true
+}

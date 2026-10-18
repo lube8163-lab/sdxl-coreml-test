@@ -1,0 +1,381 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 150,
+    "cache_misses" : 44,
+    "calls" : 194,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 0.00014579197159036994,
+      "conditioning.function_load" : 1.4387669999850914,
+      "conditioning.inference_await" : 4.7375685417209752,
+      "conditioning.model_load" : 0.0057987499749287963,
+      "conditioning.total" : 6.1854235832579434,
+      "denoising.eviction" : 0.0013160835369490087,
+      "denoising.function_load" : 4.5699315416859463,
+      "denoising.inference_await" : 239.32137174962554,
+      "denoising.model_load" : 0.13053249998483807,
+      "denoising.total" : 244.04212420841213,
+      "text.eviction" : 5.5041455198079348e-05,
+      "text.function_load" : 4.6077145002782345,
+      "text.inference_await" : 1.4742588334484026,
+      "text.model_load" : 0.10868220834527165,
+      "text.total" : 6.1913230831269175,
+      "vae.eviction" : 1.8750433810055256e-06,
+      "vae.function_load" : 0.14384787500603124,
+      "vae.inference_await" : 1.8683444582857192,
+      "vae.model_load" : 0.012233999965246767,
+      "vae.total" : 2.0244917083182372
+    }
+  },
+  "asset_hashes_verified" : true,
+  "available_process_memory_bytes" : 3126048856,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "cached_text_step_count" : 16,
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 150,
+    "cache_misses" : 43,
+    "calls" : 193,
+    "retained_components" : [
+      "image_g00",
+      "input_image",
+      "join",
+      "output",
+      "shared_g00",
+      "shared_g01",
+      "shared_g02",
+      "shared_g03"
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 0.00014579197159036994,
+      "conditioning.function_load" : 1.4387669999850914,
+      "conditioning.inference_await" : 4.7375685417209752,
+      "conditioning.model_load" : 0.0057987499749287963,
+      "conditioning.total" : 6.1854235832579434,
+      "denoising.eviction" : 0.0013160835369490087,
+      "denoising.function_load" : 4.5699315416859463,
+      "denoising.inference_await" : 239.32137174962554,
+      "denoising.model_load" : 0.13053249998483807,
+      "denoising.total" : 244.04212420841213,
+      "text.eviction" : 5.5041455198079348e-05,
+      "text.function_load" : 4.6077145002782345,
+      "text.inference_await" : 1.4742588334484026,
+      "text.model_load" : 0.10868220834527165,
+      "text.total" : 6.1913230831269175
+    }
+  },
+  "denoising_seconds" : 244.72842758329352,
+  "diffusion_compute_dtype" : "bfloat16",
+  "execution_groups" : [
+    {
+      "component" : "image_g00",
+      "members" : [
+        "image_00",
+        "image_01",
+        "image_02",
+        "image_03",
+        "image_04"
+      ],
+      "mode" : "image"
+    },
+    {
+      "component" : "text_g00",
+      "members" : [
+        "text_00",
+        "text_01",
+        "text_02",
+        "text_03",
+        "text_04"
+      ],
+      "mode" : "text"
+    },
+    {
+      "component" : "shared_g00",
+      "members" : [
+        "shared_00",
+        "shared_01",
+        "shared_02",
+        "shared_03",
+        "shared_04",
+        "shared_05",
+        "shared_06",
+        "shared_07"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g01",
+      "members" : [
+        "shared_08",
+        "shared_09",
+        "shared_10",
+        "shared_11",
+        "shared_12",
+        "shared_13",
+        "shared_14",
+        "shared_15"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g02",
+      "members" : [
+        "shared_16",
+        "shared_17",
+        "shared_18",
+        "shared_19",
+        "shared_20",
+        "shared_21",
+        "shared_22",
+        "shared_23"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g03",
+      "members" : [
+        "shared_24",
+        "shared_25",
+        "shared_26",
+        "shared_27"
+      ],
+      "mode" : "shared"
+    }
+  ],
+  "execution_kind" : "grouped",
+  "execution_profile" : "automatic-groups8-shared-retained",
+  "expanded_caption" : "A realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering.",
+  "experiment_label" : "iphone14-precompute-01",
+  "finished_at" : "2026-10-17T18:18:34Z",
+  "free_storage_bytes_at_start" : 5775360000,
+  "hardware_model" : "iPhone14,7",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_input_slice_verified" : true,
+  "image_saved" : true,
+  "image_sha256" : "0650c75aa2c6b5d84e5d20e43c1a452c762165c76bb1ef0488a5f139f7513ab9",
+  "input_safety_passed" : true,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 68.181291688233614,
+  "memory_sample_count" : 5449,
+  "model_cache_capacity" : 0,
+  "original_prompt" : "A red apple beside a blue ceramic mug on a wooden table, soft window light.",
+  "os_version" : "27.2",
+  "physical_footprint_bytes" : 95176616,
+  "physical_memory_bytes" : 5986615296,
+  "pinned_components" : [
+    "image_g00",
+    "input_image",
+    "join",
+    "output",
+    "shared_g00",
+    "shared_g01",
+    "shared_g02",
+    "shared_g03"
+  ],
+  "pinned_heavy_block_count" : 33,
+  "pinned_shared_group_count" : 4,
+  "precompute_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 35,
+    "calls" : 65,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 0.00014579197159036994,
+      "conditioning.function_load" : 1.4387669999850914,
+      "conditioning.inference_await" : 4.7375685417209752,
+      "conditioning.model_load" : 0.0057987499749287963,
+      "conditioning.total" : 6.1854235832579434,
+      "text.eviction" : 5.5041455198079348e-05,
+      "text.function_load" : 4.6077145002782345,
+      "text.inference_await" : 1.4742588334484026,
+      "text.model_load" : 0.10868220834527165,
+      "text.total" : 6.1913230831269175
+    }
+  },
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.034177742898464203,
+      "nsfw" : 0.033976823091506958,
+      "sfw" : 0.93184548616409302
+    },
+    {
+      "nsfl" : 0.030032265931367874,
+      "nsfw" : 0.032931212335824966,
+      "sfw" : 0.93703657388687134
+    },
+    {
+      "nsfl" : 0.030972586944699287,
+      "nsfw" : 0.034855499863624573,
+      "sfw" : 0.93417191505432129
+    },
+    {
+      "nsfl" : 0.030567558482289314,
+      "nsfw" : 0.040511425584554672,
+      "sfw" : 0.92892098426818848
+    },
+    {
+      "nsfl" : 0.030802061781287193,
+      "nsfw" : 0.039652280509471893,
+      "sfw" : 0.92954570055007935
+    },
+    {
+      "nsfl" : 0.032572504132986069,
+      "nsfw" : 0.034102924168109894,
+      "sfw" : 0.93332451581954956
+    }
+  ],
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1172295536,
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 42,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-17T18:14:02Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.5766754150390625,
+      "latent_min" : -4.5589232444763184,
+      "seconds" : 14.876547166670207,
+      "step" : 1,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.5263080596923828,
+      "latent_min" : -4.5162720680236816,
+      "seconds" : 11.727644999977201,
+      "step" : 2,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.4657115936279297,
+      "latent_min" : -4.4662432670593262,
+      "seconds" : 12.233677833282854,
+      "step" : 3,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.3994626998901367,
+      "latent_min" : -4.4049463272094727,
+      "seconds" : 17.357453125005122,
+      "step" : 4,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.3224267959594727,
+      "latent_min" : -4.3333640098571777,
+      "seconds" : 14.339860708336346,
+      "step" : 5,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.2296380996704102,
+      "latent_min" : -4.2495732307434082,
+      "seconds" : 12.210357250005472,
+      "step" : 6,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.1220016479492188,
+      "latent_min" : -4.1510171890258789,
+      "seconds" : 14.877658375015017,
+      "step" : 7,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.9968292713165283,
+      "latent_min" : -4.0333967208862305,
+      "seconds" : 16.487903916684445,
+      "step" : 8,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.8468341827392578,
+      "latent_min" : -3.8897802829742432,
+      "seconds" : 20.399249416659586,
+      "step" : 9,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.6650834083557129,
+      "latent_min" : -3.7250881195068359,
+      "seconds" : 19.820897500030696,
+      "step" : 10,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.4436633586883545,
+      "latent_min" : -3.5623023509979248,
+      "seconds" : 14.539524874999188,
+      "step" : 11,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.1643450260162354,
+      "latent_min" : -3.3638944625854492,
+      "seconds" : 14.963001875032205,
+      "step" : 12,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.1602184772491455,
+      "latent_min" : -3.1208531856536865,
+      "seconds" : 14.701546208292712,
+      "step" : 13,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.3187134265899658,
+      "latent_min" : -2.9582118988037109,
+      "seconds" : 14.87180924997665,
+      "step" : 14,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.6812067031860352,
+      "latent_min" : -3.5528676509857178,
+      "seconds" : 15.39423325000098,
+      "step" : 15,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 5.164337158203125,
+      "latent_min" : -5.0523762702941895,
+      "seconds" : 15.91771837498527,
+      "step" : 16,
+      "thermal_state" : 0
+    }
+  ],
+  "steps" : 16,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 5.5041455198079348e-05,
+      "text.function_load" : 4.6077145002782345,
+      "text.inference_await" : 1.4742588334484026,
+      "text.model_load" : 0.10868220834527165,
+      "text.total" : 6.1913230831269175
+    }
+  },
+  "text_encoding_seconds" : 6.3385514583787881,
+  "text_length" : 160,
+  "text_precompute_enabled" : true,
+  "text_precompute_seconds" : 6.6777353333309293,
+  "thermal_state_at_start" : 0,
+  "uptime" : 499886.8038727917,
+  "vae_seconds" : 2.0692299166694283,
+  "verified_active_component_count" : 43
+}

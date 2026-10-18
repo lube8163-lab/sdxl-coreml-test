@@ -1,0 +1,15 @@
+{
+  "source_sha256": "b68cc17d5041a1a9fcc6ebbcc7b904dd4d8510d2410c2d0564de899006716472",
+  "configuration": "Release",
+  "xcode": "27.0 (27A266a)",
+  "build_succeeded": true,
+  "candidate_arguments": [
+    "--precompute-text"
+  ],
+  "image_input_slice_sha256": {
+    "main.hash": "d94d9949a69698ff80188802f5e3345ba02ecbb3fadedcb0b411fb9233827308",
+    "main.mlirb": "173842537b91e80b18829e8f6734258a7697bc59553bdf080a8b67f1efedf01a",
+    "metadata.json": "2e63695075384139165dea63f18fc6849d414588e241813b14404e6c0bce775d"
+  },
+  "scope": "iPhone14 physical test candidate; iPhone17 not connected for new validation"
+}

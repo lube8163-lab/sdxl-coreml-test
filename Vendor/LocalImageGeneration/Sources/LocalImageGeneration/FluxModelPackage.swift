@@ -8,7 +8,7 @@ public enum ModelInstallationError: Error, LocalizedError, Equatable {
         switch self {
         case .invalidPackage: "モデルを確認できませんでした。ダウンロードをやり直してください。"
         case .corruptedDownload: "ダウンロード内容を確認できませんでした。もう一度お試しください。"
-        case .insufficientStorage: "モデルの準備と実行用キャッシュには約9GBの空き容量が必要です。空き容量を増やしてからお試しください。"
+        case .insufficientStorage: "モデルの準備に必要な空き容量が足りません。画面に表示された容量を確認して、空き容量を増やしてください。"
         case .invalidResponse: "配布サーバーからダウンロードできませんでした。通信状況を確認して再開してください。"
         }
     }

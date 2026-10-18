@@ -1,0 +1,313 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 44,
+    "calls" : 74,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.7083088904619217e-06,
+      "conditioning.function_load" : 1.2442203749669716,
+      "conditioning.inference_await" : 0.35065387515351176,
+      "conditioning.model_load" : 0.003853416652418673,
+      "conditioning.total" : 1.5988609999185428,
+      "denoising.eviction" : 7.5125251896679401e-05,
+      "denoising.function_load" : 3.7803317083744332,
+      "denoising.inference_await" : 12.054715875186957,
+      "denoising.model_load" : 0.03237375000026077,
+      "denoising.total" : 15.869031208683737,
+      "text.eviction" : 4.0333368815481663e-05,
+      "text.function_load" : 3.7734672919614241,
+      "text.inference_await" : 0.53069262520875782,
+      "text.model_load" : 0.054078208282589912,
+      "text.total" : 4.3587822079425678,
+      "vae.eviction" : 1.3749813660979271e-06,
+      "vae.function_load" : 0.13177354168146849,
+      "vae.inference_await" : 0.64900804159697145,
+      "vae.model_load" : 0.005553208407945931,
+      "vae.total" : 0.78638041671365499
+    }
+  },
+  "asset_hashes_verified" : true,
+  "asset_verification_mode" : "background-streamed-sha256-1mib",
+  "asset_verification_seconds" : 3.4242086249869317,
+  "available_process_memory_bytes" : 3292952712,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "cached_text_step_count" : 4,
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 43,
+    "calls" : 73,
+    "retained_components" : [
+      "image_g00",
+      "input_image",
+      "join",
+      "output",
+      "shared_g00",
+      "shared_g01",
+      "shared_g02",
+      "shared_g03"
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.7083088904619217e-06,
+      "conditioning.function_load" : 1.2442203749669716,
+      "conditioning.inference_await" : 0.35065387515351176,
+      "conditioning.model_load" : 0.003853416652418673,
+      "conditioning.total" : 1.5988609999185428,
+      "denoising.eviction" : 7.5125251896679401e-05,
+      "denoising.function_load" : 3.7803317083744332,
+      "denoising.inference_await" : 12.054715875186957,
+      "denoising.model_load" : 0.03237375000026077,
+      "denoising.total" : 15.869031208683737,
+      "text.eviction" : 4.0333368815481663e-05,
+      "text.function_load" : 3.7734672919614241,
+      "text.inference_await" : 0.53069262520875782,
+      "text.model_load" : 0.054078208282589912,
+      "text.total" : 4.3587822079425678
+    }
+  },
+  "denoising_seconds" : 15.949176375055686,
+  "diffusion_compute_dtype" : "bfloat16",
+  "execution_groups" : [
+    {
+      "component" : "image_g00",
+      "members" : [
+        "image_00",
+        "image_01",
+        "image_02",
+        "image_03",
+        "image_04"
+      ],
+      "mode" : "image"
+    },
+    {
+      "component" : "text_g00",
+      "members" : [
+        "text_00",
+        "text_01",
+        "text_02",
+        "text_03",
+        "text_04"
+      ],
+      "mode" : "text"
+    },
+    {
+      "component" : "shared_g00",
+      "members" : [
+        "shared_00",
+        "shared_01",
+        "shared_02",
+        "shared_03",
+        "shared_04",
+        "shared_05",
+        "shared_06",
+        "shared_07"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g01",
+      "members" : [
+        "shared_08",
+        "shared_09",
+        "shared_10",
+        "shared_11",
+        "shared_12",
+        "shared_13",
+        "shared_14",
+        "shared_15"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g02",
+      "members" : [
+        "shared_16",
+        "shared_17",
+        "shared_18",
+        "shared_19",
+        "shared_20",
+        "shared_21",
+        "shared_22",
+        "shared_23"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g03",
+      "members" : [
+        "shared_24",
+        "shared_25",
+        "shared_26",
+        "shared_27"
+      ],
+      "mode" : "shared"
+    }
+  ],
+  "execution_kind" : "grouped",
+  "execution_profile" : "automatic-groups8-shared-retained",
+  "expanded_caption" : "A clean studio product photograph showing exactly three solid geometric objects on a light gray tabletop. A matte red cube stands on the left, a glossy blue sphere rests on the right, and a yellow cone is centered behind the two foreground objects. All three objects are separate and fully visible. Soft lighting from the upper left makes clear contact shadows and a subtle reflection on the blue sphere. Use a plain neutral background, crisp edges, accurate colors, and a straight-on camera angle. No people, decorative objects, or lettering.",
+  "experiment_label" : "stepcompare-20261018-geometry-seed42-s4",
+  "finished_at" : "2026-10-18T04:16:47Z",
+  "fixture_profile" : "geometry-seed42",
+  "fixture_profile_sha256" : "e628948981c07bdc3ccf015eeb0ba7cdaf0f458bd4466353dc71bc21b41d1cda",
+  "free_storage_bytes_at_start" : 8683520000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_input_slice_verified" : true,
+  "image_saved" : true,
+  "image_sha256" : "e6193c2e7b89cfb4da25b93870b1ceebecdc36977df0b8a3d1eaee66e4a236e0",
+  "input_safety_passed" : true,
+  "input_safety_seconds" : 0.0033062082948163152,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 56.259791716001928,
+  "memory_sample_count" : 530,
+  "model_cache_capacity" : 0,
+  "original_prompt" : "A red cube on the left, a blue sphere on the right, and a yellow cone behind them.",
+  "os_version" : "27.0.1",
+  "output_safety_seconds" : 0.12439137499313802,
+  "physical_footprint_bytes" : 247039864,
+  "physical_memory_bytes" : 8045641728,
+  "pinned_components" : [
+    "image_g00",
+    "input_image",
+    "join",
+    "output",
+    "shared_g00",
+    "shared_g01",
+    "shared_g02",
+    "shared_g03"
+  ],
+  "pinned_heavy_block_count" : 33,
+  "pinned_shared_group_count" : 4,
+  "precompute_component_metrics" : {
+    "cache_hits" : 6,
+    "cache_misses" : 35,
+    "calls" : 41,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.7083088904619217e-06,
+      "conditioning.function_load" : 1.2442203749669716,
+      "conditioning.inference_await" : 0.35065387515351176,
+      "conditioning.model_load" : 0.003853416652418673,
+      "conditioning.total" : 1.5988609999185428,
+      "text.eviction" : 4.0333368815481663e-05,
+      "text.function_load" : 3.7734672919614241,
+      "text.inference_await" : 0.53069262520875782,
+      "text.model_load" : 0.054078208282589912,
+      "text.total" : 4.3587822079425678
+    }
+  },
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "run_to_saved_seconds" : 26.498690375010483,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.033129658550024033,
+      "nsfw" : 0.035570792853832245,
+      "sfw" : 0.93129956722259521
+    },
+    {
+      "nsfl" : 0.036388363689184189,
+      "nsfw" : 0.037612903863191605,
+      "sfw" : 0.9259987473487854
+    },
+    {
+      "nsfl" : 0.034235678613185883,
+      "nsfw" : 0.038381069898605347,
+      "sfw" : 0.92738324403762817
+    },
+    {
+      "nsfl" : 0.030073652043938637,
+      "nsfw" : 0.039931304752826691,
+      "sfw" : 0.92999500036239624
+    },
+    {
+      "nsfl" : 0.030332090333104134,
+      "nsfw" : 0.033259525895118713,
+      "sfw" : 0.93640846014022827
+    },
+    {
+      "nsfl" : 0.031066188588738441,
+      "nsfw" : 0.039500925689935684,
+      "sfw" : 0.92943292856216431
+    }
+  ],
+  "safety_preparation_seconds" : 0.029109208262525499,
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1171361600,
+  "sampling_schedule" : [
+    1,
+    0.95410740375518799,
+    0.87389659881591797,
+    0.69788515567779541,
+    0
+  ],
+  "sampling_schedule_source" : "reference-alpha6.93-linspace-full-1-to-0",
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 42,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-18T04:16:21Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.4616880416870117,
+      "latent_min" : -4.4692249298095703,
+      "seconds" : 6.3096617499832064,
+      "step" : 1,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.1247930526733398,
+      "latent_min" : -4.2062315940856934,
+      "seconds" : 3.1007046666927636,
+      "step" : 2,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.426783561706543,
+      "latent_min" : -3.6590261459350586,
+      "seconds" : 3.195432125008665,
+      "step" : 3,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.8806605339050293,
+      "latent_min" : -5.1803665161132812,
+      "seconds" : 3.3418106249300763,
+      "step" : 4,
+      "thermal_state" : 1
+    }
+  ],
+  "steps" : 4,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 4.0333368815481663e-05,
+      "text.function_load" : 3.7734672919614241,
+      "text.inference_await" : 0.53069262520875782,
+      "text.model_load" : 0.054078208282589912,
+      "text.total" : 4.3587822079425678
+    }
+  },
+  "text_encoding_seconds" : 4.4430362083949149,
+  "text_length" : 160,
+  "text_precompute_enabled" : true,
+  "text_precompute_seconds" : 1.6331051250454038,
+  "thermal_state_at_start" : 1,
+  "uptime" : 635717.84646608343,
+  "vae_seconds" : 0.80828804161865264,
+  "verified_active_component_count" : 43
+}

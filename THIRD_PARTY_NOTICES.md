@@ -42,6 +42,22 @@ assets were omitted. This is a modified derivative, not a new quantization or
 retraining. The app ships attribution, change notices and Apache-2.0 terms in
 `Resources/ModelLicenseNotices.txt`. No generation weights are committed here.
 
+## Downloaded FLUX.3 assets
+
+[FLUX.3 Image Klein](https://huggingface.co/black-forest-labs/flux-3-image-klein)
+is by Black Forest Labs and is governed by the
+[FLUX Kommunity License](https://huggingface.co/black-forest-labs/flux-3-image-klein/blob/main/LICENSE.md).
+Its commercial-use conditions differ from FLUX.2 Klein 4B's Apache-2.0 terms.
+Check the original license before commercial distribution or use; this repository's
+MIT license does not grant additional model rights.
+
+Our modified conversion uses CoreAI INT4 Linear weights, BF16 DiT computation,
+512px text-to-image graphs, grouped blocks and a sliced image-input projection.
+It is not an official or endorsed Black Forest Labs conversion. Full FLUX terms,
+attribution, modification notices and the Qwen3-VL Apache-2.0 license are included
+in each model package and in `SDXLCoreMLTest/Resources/Flux3LicenseNotices.txt`.
+No generation weights are committed here.
+
 ## Safety classifier
 
 The compiled classifier comes from

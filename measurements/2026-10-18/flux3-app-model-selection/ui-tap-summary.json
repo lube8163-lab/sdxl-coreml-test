@@ -1,0 +1,15 @@
+{
+  "scope": "Partial XCTest tap run on iPhone17. All device UI cases are not claimed passing.",
+  "flux2_public_download_and_resume_completed": true,
+  "flux2_approved_image_app_seconds": 31.5,
+  "seed": 42,
+  "model": "FLUX.2 Klein 4B",
+  "steps": 4,
+  "suite_failure": "Metadata lookup used an accessibility identifier overwritten by its parent DisclosureGroup; lookup was corrected.",
+  "later_automation_failure": "Timed out while enabling automation mode before starting test cases.",
+  "fallback": "Native startup driver; see device-report.json.",
+  "screenshots": [
+    "model-library.png",
+    "flux2-download-screen.png"
+  ]
+}

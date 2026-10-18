@@ -1,0 +1,43 @@
+{
+  "component": "input",
+  "scope": "Real weight constants retained verbatim, BF16 CoreAI math vs FP32 CoreAI math; not an image-quality metric. Input case uses actual captured phone features; shared case uses random synthetic activations.",
+  "outputs": {
+    "image_h": {
+      "finite": true,
+      "relative_rmse": 0.0016602858668193221,
+      "minimum": -59.25,
+      "maximum": 50.25
+    },
+    "text_h": {
+      "finite": true,
+      "relative_rmse": 0.001714581623673439,
+      "minimum": -111104.0,
+      "maximum": 78336.0
+    },
+    "early_image": {
+      "finite": true,
+      "relative_rmse": 0.0045080301351845264,
+      "minimum": -3.171875,
+      "maximum": 4.59375
+    },
+    "early_text": {
+      "finite": true,
+      "relative_rmse": 0.005670610349625349,
+      "minimum": -12.625,
+      "maximum": 16.0
+    },
+    "shared_mods": {
+      "finite": true,
+      "relative_rmse": 0.004897131584584713,
+      "minimum": -26.375,
+      "maximum": 21.625
+    },
+    "image_vec": {
+      "finite": true,
+      "relative_rmse": 0.034907612949609756,
+      "minimum": -0.546875,
+      "maximum": 0.65625
+    }
+  },
+  "passed": true
+}

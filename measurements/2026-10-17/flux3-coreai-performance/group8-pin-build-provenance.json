@@ -1,0 +1,15 @@
+{
+  "native_source_sha256": "e73e8e53f7fe0b5a7ee235d19c99e1ce96453f233490cc5ccd0fe1139ad8585b",
+  "source_snapshot": "GenerationProbe-group-pin.swift",
+  "release_build_log": "build-grouped-pin.log",
+  "build_succeeded": true,
+  "groups8_manifest_sha256": "1d6af8ef439600463a49986d5a47f8ef5d5c7a506bd7fcab4850aa9f32281422",
+  "device": "iPhone17 / iPhone18,3 / iOS27.0.1",
+  "bundle_id": "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "planned_arguments": [
+    "--groups=Groups8",
+    "--cache-capacity=0",
+    "--pin-count=0",
+    "--pin-shared-groups=4"
+  ]
+}

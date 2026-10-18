@@ -1,0 +1,77 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.17 (main, Oct 14 2026, 01:04:22) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.8.0+cu126",
+    "safetensors": "0.6.2",
+    "transformers": null,
+    "accelerate": null,
+    "coreai-torch": null,
+    "coreai-core": null
+  },
+  "nvidia_smi_found": true,
+  "nvidia_smi": {
+    "returncode": 0,
+    "gpu_rows": [
+      "NVIDIA GeForce RTX 5070, 12227, 581.80",
+      "Tesla V100-PCIE-32GB, 32768, 581.80"
+    ],
+    "error": ""
+  },
+  "torch_cuda_version": "12.6",
+  "cuda_available": true,
+  "pytorch_compiled_arches": [
+    "sm_61",
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90"
+  ],
+  "gpus": [
+    {
+      "name": "Tesla V100-PCIE-32GB",
+      "capability": [
+        7,
+        0
+      ],
+      "memory_bytes": 34210971648
+    }
+  ],
+  "small_fp16_matmul_finite": true
+}
+anyio==4.15.1
+certifi==2026.7.22
+click==8.5.0
+colorama==0.4.6
+filelock==3.32.3
+fsspec==2026.7.0
+h11==0.16.0
+hf-xet==1.7.0
+httpcore==1.0.9
+httpcore2==2.13.1
+httpx==0.28.1
+httpx2==2.13.1
+huggingface-hub==1.33.0
+idna==3.20
+imageio==2.38.1
+jinja2==3.1.6
+lazy-loader==0.6
+markupsafe==3.0.3
+mpmath==1.3.0
+networkx==3.6.1
+numpy==2.2.6
+packaging==26.3
+pillow==11.3.0
+pyyaml==6.0.3
+safetensors==0.6.2
+scikit-image==0.26.0
+scipy==1.17.1
+sympy==1.14.0
+tifffile==2026.3.3
+tokenizers==0.22.1
+torch==2.8.0+cu126
+tqdm==4.70.1
+truststore==0.10.5
+typing-extensions==4.16.0
+Using Python 3.11.17 environment at: D:\Codex\flux3-quality-20261018\.venv-v100

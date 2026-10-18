@@ -1,0 +1,7 @@
+{
+  "cuda_quality_reference.py": "8615d6d12e69f4ef54e269abd823054059f007ea0d21de259ef2891fa991923b",
+  "quantized_reference.py": "7b047da3267a93634493d5a0fe803962d2cb8c0c11c9f2d7c574bf578c1922c0",
+  "models.py": "3a428657b8060e51adf67cd2bb0b13955c4ecd019f167c6b7db09d3c60843888",
+  "model-spec.json": "54483d01d01375b856d6bc1c46d0c33959fa208a85ebc21d6c5f2d676795153f",
+  "quality-cases.json": "5f0348fbc2ae6eeb95a03d34b259c13f8d8ebb010a32e42fe696625a0f65fd17"
+}

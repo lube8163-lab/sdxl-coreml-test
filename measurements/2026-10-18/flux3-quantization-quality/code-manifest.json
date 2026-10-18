@@ -1,0 +1,20 @@
+{
+  "Experiments/Flux3CoreAI/cuda_quality_reference.py": "8615d6d12e69f4ef54e269abd823054059f007ea0d21de259ef2891fa991923b",
+  "Experiments/Flux3CoreAI/quantized_reference.py": "7b047da3267a93634493d5a0fe803962d2cb8c0c11c9f2d7c574bf578c1922c0",
+  "Experiments/Flux3CoreAI/models.py": "3a428657b8060e51adf67cd2bb0b13955c4ecd019f167c6b7db09d3c60843888",
+  "Experiments/Flux3CoreAI/extract_quantized_weights.py": "555b0a348a5da9f9e572ba85a1690872d70a171db3fdbc55df4c5dd281644353",
+  "Experiments/Flux3CoreAI/validate_extracted_weights.py": "08933fb368962643137a95358aa5530281f6c9fe8b60093a1251325ea09b9590",
+  "Experiments/Flux3CoreAI/validate_extracted_text.py": "85465452675a826042172f61fc2cf6bfc0aa63796c25cc130613961decb7efcd",
+  "Experiments/Flux3CoreAI/run_cuda_quality.py": "049f308633ff96965f9591dfffed82d16dc62fc06945521a62f10055eb7e9492",
+  "Experiments/Flux3CoreAI/analyze_quality.py": "b1a0c10fe7cbbbecc7b6545634aaf018f7a26c18bcab212f1529b8ad015c1602",
+  "Experiments/Flux3CoreAI/fetch_weights_parallel.py": "7c8a3079263950967f30b12e78a2746520b900ade3637d85eb2efb605f43383c",
+  "Experiments/Flux3CoreAI/verify_quality_inputs.py": "306e55526388029a1b8c9ea77bcf5a7496305cf76c3653e622a8640a0e25dd65",
+  "Experiments/Flux3CoreAI/quality-cases.json": "5f0348fbc2ae6eeb95a03d34b259c13f8d8ebb010a32e42fe696625a0f65fd17",
+  "Experiments/Flux3CoreAI/model-spec.json": "54483d01d01375b856d6bc1c46d0c33959fa208a85ebc21d6c5f2d676795153f",
+  "Experiments/Flux3CoreAI/SafetyGate/Package.swift": "ccd0d27563d80ae6f59f3788a5929741a356233b52a746f16750e095fe4a55aa",
+  "Experiments/Flux3CoreAI/SafetyGate/Sources/SafetyGate/Gate.swift": "fdec657368265c6cea1cb94f3bfd8a0828927a6831adfc3015d61a52b4234da8",
+  "Vendor/LocalGenerationSafety/Package.swift": "e856b2169a41b1b01824cb43aa7bbde62f405b15f47d930ad76bcfe0f41db1ca",
+  "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ContentSafetyPolicy.swift": "d91902f416b11accee49cc3bc5d76b20b0a0c9f61b5ca18e27e09d80b89516fd",
+  "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/ImageSafetyChecker.swift": "20884eacb874857a048615e17f497f6e066c0b72dbac5e2c5b7343b0399ff03d",
+  "Vendor/LocalGenerationSafety/Sources/LocalGenerationSafety/Resources/ContentSafetyPolicy.json": "aecab2b84949acfcb161e647fba3c99c4cec202a7a6621ca8eaa5d6c3455105e"
+}

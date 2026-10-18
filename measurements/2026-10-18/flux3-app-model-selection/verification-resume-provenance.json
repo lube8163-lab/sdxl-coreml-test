@@ -1,0 +1,15 @@
+{
+  "scope": "Updated setup verification-resume guard and a warm four-step checked image after process relaunch; native startup driver, not tap automation.",
+  "binary_sha256": "a9e24b96d77826c72d7c97d92dc992cbafa9250013cd2e27a66bf3af50083c8c",
+  "app_source_sha256": {
+    "LegalDocument.swift": "81882dc6d0c5cd2ecfe64645f2566761718e451543bdebf59bd730af248c2317",
+    "ModelLibraryView.swift": "38a3aaae715ea2cd027f14062ee7bf7c7ceca75698e16957a1b9f9602cc8cc90",
+    "ModelSetupView.swift": "bb2266b4c01dfd0889f372d921df889fd274db73d961a6c945bd23939b2f9432",
+    "PhotoLibrarySaver.swift": "2c052af807486d8961307fa0e42db15cb154a4f26e63c3e33d75cf9b46baf9e2",
+    "ModelSetupViewModel.swift": "31dbfa8652d702ba6399cc4e05e013b0e2739a5e260ea898bb59ba4796d4ecfe",
+    "ContentView.swift": "8f25ed89a29b9af888d7c510fda4f41d8bd17f78be211f5129e8d98680c844fc",
+    "SDXLGeneratorViewModel.swift": "c74717bd0aa8416ab02855e3fc18725bc7c56926f8c2a7a5f2cc1a30b85daa21",
+    "SDXLCoreMLTestApp.swift": "513bac742450737348fb124d867bc9859d122f7f56cdb94d05b872cc25505e51"
+  },
+  "driver_sha256": "aafee4807e88547c93e3fc6f444dc278700a37a88172b91849d45e8d350688ec"
+}

@@ -1,0 +1,19 @@
+{
+  "component": "shared_00",
+  "scope": "Real INT4 weights, random synthetic activations; Mac CoreAI GPU preferred; timings are not iPhone benchmark",
+  "relative_rmse": 0.0,
+  "max_absolute_error": 0.0,
+  "finite": true,
+  "exact_equal": true,
+  "baseline_timing": {
+    "model_load": 0.021335291006835178,
+    "function_load": 0.2879417499934789,
+    "inference_and_read": 0.2281627919874154
+  },
+  "candidate_timing": {
+    "model_load": 0.26207162500941195,
+    "function_load": 0.15441983300843276,
+    "inference_and_read": 0.5740787499817088
+  },
+  "passed": true
+}

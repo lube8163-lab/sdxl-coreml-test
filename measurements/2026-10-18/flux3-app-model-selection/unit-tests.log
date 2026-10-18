@@ -1,0 +1,84 @@
+Building for debugging...
+[Computing dependencies]
+[Provisioning 4 / 28]
+[1 / 4] InternalCollectionsUtilities
+[1 / 3] LocalImageGenerationTests-product
+Build complete! (1.02秒)
+Test Suite 'All tests' started at 2026-10-18 12:33:21.819.
+Test Suite 'All tests' passed at 2026-10-18 12:33:21.821.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite Flux3TokenizerContractTests started.
+◇ Suite ModelSelectionTests started.
+◇ Suite OptimizationTests started.
+◇ Suite GenerationTests started.
+◇ Suite ModelInstallationTests started.
+◇ Test conditioningMemoryIsBoundedAndOversizeCannotDisplaceValidEntries() started.
+◇ Test unsafePromptCannotEnterEitherRuntime(_:) started.
+◇ Test highTemperatureAndLowPowerDisableRetention() started.
+◇ Test eachModelHasItsOwnVerifiedPackageAndStorage() started.
+◇ Test flux3CannotGenerateWithoutClassifier() started.
+◇ Test resumesBeyondFourGigabytesWithoutMixingModelParts() started.
+◇ Test warmupRequiresImageClassifier() started.
+◇ Test cancelledWarmupCannotLoadModels() started.
+◇ Test zip64ReaderExtractsRecordsOnBothSidesOfFourGigabytes() started.
+◇ Test swiftTokenizerMatchesPinnedPythonReference() started.
+◇ Test repeatedPromptRemainsCachedWhileLeastRecentlyUsedIsEvicted() started.
+◇ Test unsafeWarmupIsRejectedBeforeLoadingModels(_:) started.
+◇ Test unsupportedStepsFailBeforeModelLoading(_:) started.
+◇ Test case passing 1 argument model → .flux2 to unsafePromptCannotEnterEitherRuntime(_:) started.
+◇ Test case passing 1 argument model → .flux3 to unsafePromptCannotEnterEitherRuntime(_:) started.
+◇ Test blockedPromptStopsBeforeModelLoading(_:) started.
+◇ Test missingModelAssetsAreRejected() started.
+◇ Test sameSizeCorruptionAndSymlinksAreRejected() started.
+◇ Test cancelledGenerationCannotStartInference() started.
+◇ Test missingClassifierPreventsGeneration() started.
+◇ Test rejectsIncorrectPartialHTTPResponses() started.
+◇ Test resumesAcrossFragmentBoundaries() started.
+◇ Test cancelledVerificationStops() started.
+◇ Test archivePathCannotEscape(_:) started.
+◇ Test case passing 1 argument prompt → "nude adult portrait" to unsafeWarmupIsRejectedBeforeLoadingModels(_:) started.
+◇ Test case passing 1 argument prompt → "全裸の人物" to unsafeWarmupIsRejectedBeforeLoadingModels(_:) started.
+◇ Test case passing 1 argument prompt → "p.o.r.n" to unsafeWarmupIsRejectedBeforeLoadingModels(_:) started.
+◇ Test case passing 1 argument prompt → "gore" to unsafeWarmupIsRejectedBeforeLoadingModels(_:) started.
+◇ Test case passing 1 argument input → (LocalImageGeneration.GenerationModel.flux2, 8) to unsupportedStepsFailBeforeModelLoading(_:) started.
+✔ Test highTemperatureAndLowPowerDisableRetention() passed after 0.013 seconds.
+◇ Test case passing 1 argument input → (LocalImageGeneration.GenerationModel.flux3, 2) to unsupportedStepsFailBeforeModelLoading(_:) started.
+◇ Test case passing 1 argument prompt → "nude adult portrait" to blockedPromptStopsBeforeModelLoading(_:) started.
+◇ Test case passing 1 argument prompt → "全裸の人物" to blockedPromptStopsBeforeModelLoading(_:) started.
+◇ Test case passing 1 argument input → (LocalImageGeneration.GenerationModel.flux3, 32) to unsupportedStepsFailBeforeModelLoading(_:) started.
+◇ Test case passing 1 argument prompt → "p.o.r.n" to blockedPromptStopsBeforeModelLoading(_:) started.
+◇ Test case passing 1 argument prompt → "gore" to blockedPromptStopsBeforeModelLoading(_:) started.
+◇ Test case passing 1 argument path → "../weight" to archivePathCannotEscape(_:) started.
+◇ Test case passing 1 argument path → "/weight" to archivePathCannotEscape(_:) started.
+◇ Test case passing 1 argument path → "folder/../../weight" to archivePathCannotEscape(_:) started.
+◇ Test case passing 1 argument path → "folder\weight" to archivePathCannotEscape(_:) started.
+✔ Test conditioningMemoryIsBoundedAndOversizeCannotDisplaceValidEntries() passed after 0.017 seconds.
+✔ Test repeatedPromptRemainsCachedWhileLeastRecentlyUsedIsEvicted() passed after 0.017 seconds.
+✔ Test resumesBeyondFourGigabytesWithoutMixingModelParts() passed after 0.017 seconds.
+✔ Test eachModelHasItsOwnVerifiedPackageAndStorage() passed after 0.017 seconds.
+✔ Test unsafeWarmupIsRejectedBeforeLoadingModels(_:) with 4 test cases passed after 0.017 seconds.
+✔ Test unsafePromptCannotEnterEitherRuntime(_:) with 2 test cases passed after 0.017 seconds.
+✔ Test zip64ReaderExtractsRecordsOnBothSidesOfFourGigabytes() passed after 0.017 seconds.
+✔ Test warmupRequiresImageClassifier() passed after 0.017 seconds.
+✔ Test missingModelAssetsAreRejected() passed after 0.017 seconds.
+✔ Test rejectsIncorrectPartialHTTPResponses() passed after 0.017 seconds.
+✔ Test archivePathCannotEscape(_:) with 4 test cases passed after 0.017 seconds.
+✔ Test resumesAcrossFragmentBoundaries() passed after 0.018 seconds.
+✔ Test blockedPromptStopsBeforeModelLoading(_:) with 4 test cases passed after 0.018 seconds.
+✔ Test unsupportedStepsFailBeforeModelLoading(_:) with 3 test cases passed after 0.018 seconds.
+✔ Test cancelledVerificationStops() passed after 0.018 seconds.
+✔ Test sameSizeCorruptionAndSymlinksAreRejected() passed after 0.019 seconds.
+✔ Suite ModelInstallationTests passed after 0.019 seconds.
+✔ Test cancelledWarmupCannotLoadModels() passed after 0.020 seconds.
+✔ Suite OptimizationTests passed after 0.020 seconds.
+✔ Test missingClassifierPreventsGeneration() passed after 0.020 seconds.
+✔ Test flux3CannotGenerateWithoutClassifier() passed after 0.020 seconds.
+✔ Suite ModelSelectionTests passed after 0.021 seconds.
+✔ Test cancelledGenerationCannotStartInference() passed after 0.020 seconds.
+✔ Suite GenerationTests passed after 0.021 seconds.
+✔ Test swiftTokenizerMatchesPinnedPythonReference() passed after 2.556 seconds.
+✔ Suite Flux3TokenizerContractTests passed after 2.557 seconds.
+✔ Test run with 22 tests in 5 suites passed after 2.557 seconds.

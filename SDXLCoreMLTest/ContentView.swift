@@ -17,9 +17,11 @@ enum AppStyle {
 
 struct ContentView: View {
     @ObservedObject var viewModel: SDXLGeneratorViewModel
+    @ObservedObject var setup: ModelSetupViewModel
     @FocusState private var focusedField: Field?
     @State private var shareRequest: ImageShareRequest?
     @State private var isShowingSettings = false
+    @State private var isShowingModels = false
     @State private var alertMessage: String?
     @State private var isSavingImage = false
     @State private var needsPhotoSettings = false
@@ -37,6 +39,7 @@ struct ContentView: View {
                 ScrollViewReader { scroller in
                 ScrollView {
                     VStack(spacing: 14) {
+                        modelCard
                         promptCard
                         generateButton
                         progressCard
@@ -97,6 +100,9 @@ struct ContentView: View {
             .sheet(item: $shareRequest) { request in
                 ShareSheet(result: request.image)
             }
+            .sheet(isPresented: $isShowingModels) {
+                ModelLibraryView(setup: setup, isGenerationBusy: viewModel.isBusy)
+            }
             .sheet(isPresented: $isShowingSettings) {
                 SettingsView(
                     viewModel: viewModel,
@@ -122,6 +128,36 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(.light)
+    }
+
+    private var modelCard: some View {
+        card {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(viewModel.selectedModel.title).font(.headline).foregroundStyle(AppStyle.ink)
+                            .accessibilityIdentifier("model.current")
+                        Text(viewModel.selectedModel.subtitle).font(.caption).foregroundStyle(AppStyle.muted)
+                    }
+                    Spacer()
+                    Button("変更") { hideKeyboard(); isShowingModels = true }
+                        .buttonStyle(SecondaryActionButtonStyle()).disabled(viewModel.isBusy || setup.isBusy)
+                        .accessibilityIdentifier("model.manage")
+                }
+                if viewModel.selectedModel == .flux3 {
+                    Picker("生成ステップ", selection: $viewModel.selectedSteps) {
+                        ForEach(viewModel.selectedModel.availableSteps, id: \.self) { steps in
+                            Text(GenerationSteps.title(steps) + " \(steps)").tag(steps)
+                        }
+                    }.pickerStyle(.segmented).tint(AppStyle.slate).disabled(viewModel.isBusy)
+                        .accessibilityIdentifier("generation.steps")
+                    Text("ステップ数を増やすと時間がかかります。細部や構図も変わることがあります。")
+                        .font(.caption).foregroundStyle(AppStyle.muted)
+                } else {
+                    Text("512×512 ・ 4ステップ").font(.caption).foregroundStyle(AppStyle.muted)
+                }
+            }
+        }
     }
 
     private var promptCard: some View {
@@ -341,6 +377,7 @@ struct ContentView: View {
 
                 DisclosureGroup("この画像の生成情報") {
                     VStack(alignment: .leading, spacing: 12) {
+                        Text(viewModel.lastResultSummaryText).font(.footnote).foregroundStyle(AppStyle.muted)
                         if let prompt = viewModel.lastResultPrompt {
                             Text(prompt).font(.footnote).textSelection(.enabled)
                         }
@@ -522,13 +559,14 @@ private struct SettingsView: View {
 
                     SettingSection(title: "モデル", systemImage: "cpu") {
                         labeledValue("使用モデル", value: viewModel.modelSummaryText)
-                        helperText("初回にダウンロードしたモデルを端末内で使います。モデルの保存容量は約4.04GBです。")
+                        helperText("ダウンロードしたモデルを端末内で使います。モデル本体は" + ModelByteText.format(viewModel.selectedModel.package.installedBytes) + "です。モデルの変更は生成画面の「変更」から行えます。")
                     }
 
                     SettingSection(title: "ライセンス", systemImage: "doc.plaintext") {
                         NavigationLink("画像生成モデル") {
                             NoticeView(title: "画像生成モデル", resource: "ModelLicenseNotices")
                         }
+                        NavigationLink("FLUX.3の利用条件") { ModelLicenseView() }
                         NavigationLink("推論ライブラリ") {
                             NoticeView(title: "推論ライブラリ", resource: "CoreAIRuntimeNotices")
                         }
@@ -543,9 +581,9 @@ private struct SettingsView: View {
                     }
 
                     SettingSection(title: "生成設定", systemImage: "slider.horizontal.3") {
-                        labeledValue("ステップ数", value: "4")
+                        labeledValue("ステップ数", value: String(viewModel.selectedSteps))
                         labeledValue("画像サイズ", value: "512×512")
-                        helperText("FLUX.2 Kleinに適した設定で生成します。メモリ6GB以上・iOS 27.0.1以降の対応端末が必要です。6GB端末では生成に時間がかかることがあります。")
+                        helperText("メモリ6GB以上・iOS 27.0.1以降の対応端末が必要です。FLUX.3のステップ数は生成画面で選べます。6GB端末では生成に時間がかかることがあります。")
                     }
 
                     SettingSection(title: "シード値", systemImage: "number") {
@@ -703,5 +741,5 @@ private struct ImageShareRequest: Identifiable {
 }
 
 #Preview {
-    ContentView(viewModel: SDXLGeneratorViewModel())
+    ContentView(viewModel: SDXLGeneratorViewModel(), setup: ModelSetupViewModel())
 }

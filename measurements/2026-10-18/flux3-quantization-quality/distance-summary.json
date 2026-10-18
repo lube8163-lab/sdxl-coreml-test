@@ -1,0 +1,62 @@
+{
+  "scope": "Common FP32 math on V100; real extracted CoreAI effective INT4 vs original weights. iPhone native BF16 quality/speed is separate.",
+  "expected_images": 24,
+  "approved_images": 24,
+  "comparisons_per_quantized_mode": 8,
+  "pixel_metric_pairs_rechecked_on_saved_pngs": 16,
+  "distance_aggregates": {
+    "dit-int4": {
+      "pixel_mae_0_to_1": {
+        "mean": 0.03788115759380162,
+        "median": 0.037001315504312515,
+        "min": 0.016455015167593956,
+        "max": 0.06323747336864471
+      },
+      "psnr_db": {
+        "mean": 23.788319589572875,
+        "median": 23.019453395734192,
+        "min": 18.318562680011883,
+        "max": 30.21700295956954
+      },
+      "ssim": {
+        "mean": 0.8652881011366844,
+        "median": 0.8775533437728882,
+        "min": 0.74223393201828,
+        "max": 0.96265709400177
+      },
+      "latent_relative_rmse": {
+        "mean": 0.33085930719971657,
+        "median": 0.3143266290426254,
+        "min": 0.21788948774337769,
+        "max": 0.459586501121521
+      }
+    },
+    "all-int4": {
+      "pixel_mae_0_to_1": {
+        "mean": 0.04390707006677985,
+        "median": 0.03624992724508047,
+        "min": 0.021041227504611015,
+        "max": 0.08074187487363815
+      },
+      "psnr_db": {
+        "mean": 23.143369770646345,
+        "median": 23.342429370485185,
+        "min": 16.499092987880996,
+        "max": 29.56503532648666
+      },
+      "ssim": {
+        "mean": 0.8453167751431465,
+        "median": 0.8800403773784637,
+        "min": 0.6411924362182617,
+        "max": 0.9656596183776855
+      },
+      "latent_relative_rmse": {
+        "mean": 0.3567092642188072,
+        "median": 0.3196446895599365,
+        "min": 0.2133275717496872,
+        "max": 0.5469632744789124
+      }
+    }
+  },
+  "interpretation": "Distances from matching original-weight images; not quality percentages or human preference scores."
+}

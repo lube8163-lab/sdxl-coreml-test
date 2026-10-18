@@ -1,0 +1,172 @@
+{"run": "warmup", "launched": true, "steps": 16}
+{"run": "warmup", "stage": "16ステップの文章条件を準備中 9/16", "completed_steps": 0}
+{"run": "warmup", "stage": "FLUX.3 3/16 統合 1/4", "completed_steps": 2}
+{"run": "warmup", "stage": "FLUX.3 6/16 統合 3/4", "completed_steps": 5}
+{"run": "warmup", "stage": "FLUX.3 10/16 画像 1/1", "completed_steps": 9}
+{"run": "warmup", "stage": "FLUX.3 13/16 統合 1/4", "completed_steps": 12}
+{"run": "warmup", "stage": "FLUX.3 16/16 統合 2/4", "completed_steps": 15}
+{"run": "warmup", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "warmup", "complete": true, "model_seconds": 60.3036332083866, "total_seconds": 64.17641475005075, "safety_seconds": 0.18897162505891174, "thermal_states": [0]}
+{"run": "still-life-seed42-s16", "launched": true, "steps": 16}
+{"run": "still-life-seed42-s16", "stage": "16ステップの文章条件を準備中 9/16", "completed_steps": 0}
+{"run": "still-life-seed42-s16", "stage": "FLUX.3 3/16 画像 1/1", "completed_steps": 2}
+{"run": "still-life-seed42-s16", "stage": "FLUX.3 6/16 統合 1/4", "completed_steps": 5}
+{"run": "still-life-seed42-s16", "stage": "FLUX.3 9/16 統合 2/4", "completed_steps": 8}
+{"run": "still-life-seed42-s16", "stage": "FLUX.3 12/16 統合 2/4", "completed_steps": 11}
+{"run": "still-life-seed42-s16", "stage": "FLUX.3 15/16 統合 2/4", "completed_steps": 14}
+{"run": "still-life-seed42-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "still-life-seed42-s16", "complete": true, "model_seconds": 64.01400370826013, "total_seconds": 67.82781575003173, "safety_seconds": 0.16500520834233612, "thermal_states": [0, 1]}
+{"run": "still-life-seed42-s8", "launched": true, "steps": 8}
+{"run": "still-life-seed42-s8", "stage": "FLUX.3 1/8 画像 1/1", "completed_steps": 0}
+{"run": "still-life-seed42-s8", "stage": "FLUX.3 3/8 統合 1/4", "completed_steps": 2}
+{"run": "still-life-seed42-s8", "stage": "FLUX.3 6/8 統合 1/4", "completed_steps": 5}
+{"run": "still-life-seed42-s8", "stage": "VAE 画像復元", "completed_steps": 8}
+{"run": "still-life-seed42-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "still-life-seed42-s8", "complete": true, "model_seconds": 37.45688412489835, "total_seconds": 41.128110375022516, "safety_seconds": 0.15138416667468846, "thermal_states": [1]}
+{"run": "still-life-seed42-s4", "launched": true, "steps": 4}
+{"run": "still-life-seed42-s4", "stage": "FLUX.3 1/4 画像 1/1", "completed_steps": 0}
+{"run": "still-life-seed42-s4", "stage": "FLUX.3 3/4 統合 1/4", "completed_steps": 2}
+{"run": "still-life-seed42-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "still-life-seed42-s4", "complete": true, "model_seconds": 23.461850958294235, "total_seconds": 27.179587416700087, "safety_seconds": 0.12852016661781818, "thermal_states": [1]}
+{"run": "still-life-seed1234-s8", "launched": true, "steps": 8}
+{"run": "still-life-seed1234-s8", "stage": "FLUX.3 1/8 画像 1/1", "completed_steps": 0}
+{"run": "still-life-seed1234-s8", "stage": "FLUX.3 3/8 統合 1/4", "completed_steps": 2}
+{"run": "still-life-seed1234-s8", "stage": "FLUX.3 6/8 統合 2/4", "completed_steps": 5}
+{"run": "still-life-seed1234-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "still-life-seed1234-s8", "complete": true, "model_seconds": 36.133193833520636, "total_seconds": 39.83140245836694, "safety_seconds": 0.1283006250159815, "thermal_states": [1]}
+{"run": "still-life-seed1234-s4", "launched": true, "steps": 4}
+{"run": "still-life-seed1234-s4", "stage": "FLUX.3 1/4 統合 1/4", "completed_steps": 0}
+{"run": "still-life-seed1234-s4", "stage": "FLUX.3 3/4 統合 2/4", "completed_steps": 2}
+{"run": "still-life-seed1234-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "still-life-seed1234-s4", "complete": true, "model_seconds": 22.8774752082536, "total_seconds": 26.466091208392754, "safety_seconds": 0.13122270826715976, "thermal_states": [1]}
+{"run": "still-life-seed1234-s16", "launched": true, "steps": 16}
+{"run": "still-life-seed1234-s16", "stage": "16ステップの文章条件を準備中 15/16", "completed_steps": 0}
+{"run": "still-life-seed1234-s16", "stage": "FLUX.3 3/16 統合 1/4", "completed_steps": 2}
+{"run": "still-life-seed1234-s16", "stage": "FLUX.3 6/16 統合 2/4", "completed_steps": 5}
+{"run": "still-life-seed1234-s16", "stage": "FLUX.3 9/16 統合 2/4", "completed_steps": 8}
+{"run": "still-life-seed1234-s16", "stage": "FLUX.3 12/16 統合 2/4", "completed_steps": 11}
+{"run": "still-life-seed1234-s16", "stage": "FLUX.3 15/16 統合 2/4", "completed_steps": 14}
+{"run": "still-life-seed1234-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "still-life-seed1234-s16", "complete": true, "model_seconds": 64.14090179163031, "total_seconds": 67.74866116663907, "safety_seconds": 0.13354199996683747, "thermal_states": [1]}
+{"run": "geometry-seed42-s4", "launched": true, "steps": 4}
+{"run": "geometry-seed42-s4", "stage": "FLUX.3 1/4 画像 1/1", "completed_steps": 0}
+{"run": "geometry-seed42-s4", "stage": "FLUX.3 3/4 統合 2/4", "completed_steps": 2}
+{"run": "geometry-seed42-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "geometry-seed42-s4", "complete": true, "model_seconds": 22.833605750114657, "total_seconds": 26.498690375010483, "safety_seconds": 0.12439137499313802, "thermal_states": [1]}
+{"run": "geometry-seed42-s16", "launched": true, "steps": 16}
+{"run": "geometry-seed42-s16", "stage": "16ステップの文章条件を準備中 14/16", "completed_steps": 0}
+{"run": "geometry-seed42-s16", "stage": "FLUX.3 3/16 統合 1/4", "completed_steps": 2}
+{"run": "geometry-seed42-s16", "stage": "FLUX.3 6/16 統合 2/4", "completed_steps": 5}
+{"run": "geometry-seed42-s16", "stage": "FLUX.3 9/16 統合 2/4", "completed_steps": 8}
+{"run": "geometry-seed42-s16", "stage": "FLUX.3 12/16 統合 1/4", "completed_steps": 11}
+{"run": "geometry-seed42-s16", "stage": "FLUX.3 15/16 画像 1/1", "completed_steps": 14}
+{"run": "geometry-seed42-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "geometry-seed42-s16", "complete": true, "model_seconds": 65.86858633346856, "total_seconds": 69.48253124998882, "safety_seconds": 0.13387820834759623, "thermal_states": [1]}
+{"run": "geometry-seed42-s8", "launched": true, "steps": 8}
+{"run": "geometry-seed42-s8", "stage": "FLUX.3 1/8 画像 1/1", "completed_steps": 0}
+{"run": "geometry-seed42-s8", "stage": "FLUX.3 3/8 統合 1/4", "completed_steps": 2}
+{"run": "geometry-seed42-s8", "stage": "FLUX.3 6/8 統合 2/4", "completed_steps": 5}
+{"run": "geometry-seed42-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "geometry-seed42-s8", "complete": true, "model_seconds": 36.61765779159032, "total_seconds": 40.26896820834372, "safety_seconds": 0.12997370830271393, "thermal_states": [1]}
+{"run": "geometry-seed1234-s16", "launched": true, "steps": 16}
+{"run": "geometry-seed1234-s16", "stage": "16ステップの文章条件を準備中 15/16", "completed_steps": 0}
+{"run": "geometry-seed1234-s16", "stage": "FLUX.3 3/16 画像 1/1", "completed_steps": 2}
+{"run": "geometry-seed1234-s16", "stage": "FLUX.3 6/16 画像 1/1", "completed_steps": 5}
+{"run": "geometry-seed1234-s16", "stage": "FLUX.3 9/16 画像 1/1", "completed_steps": 8}
+{"run": "geometry-seed1234-s16", "stage": "FLUX.3 11/16 統合 4/4", "completed_steps": 10}
+{"run": "geometry-seed1234-s16", "stage": "FLUX.3 14/16 統合 3/4", "completed_steps": 13}
+{"run": "geometry-seed1234-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "geometry-seed1234-s16", "complete": true, "model_seconds": 67.09181504161097, "total_seconds": 70.72528016660362, "safety_seconds": 0.13316129171289504, "thermal_states": [1]}
+{"run": "geometry-seed1234-s8", "launched": true, "steps": 8}
+{"run": "geometry-seed1234-s8", "stage": "FLUX.3 1/8 画像 1/1", "completed_steps": 0}
+{"run": "geometry-seed1234-s8", "stage": "FLUX.3 3/8 統合 1/4", "completed_steps": 2}
+{"run": "geometry-seed1234-s8", "stage": "FLUX.3 6/8 統合 1/4", "completed_steps": 5}
+{"run": "geometry-seed1234-s8", "stage": "VAE 画像復元", "completed_steps": 8}
+{"run": "geometry-seed1234-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "geometry-seed1234-s8", "complete": true, "model_seconds": 37.46634095837362, "total_seconds": 41.087980999960564, "safety_seconds": 0.1387026250595227, "thermal_states": [2]}
+{"run": "geometry-seed1234-s4", "launched": true, "steps": 4}
+{"run": "geometry-seed1234-s4", "stage": "FLUX.3 1/4 統合 1/4", "completed_steps": 0}
+{"run": "geometry-seed1234-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "geometry-seed1234-s4", "complete": true, "model_seconds": 22.312619000091217, "total_seconds": 25.940542541677132, "safety_seconds": 0.13067145831882954, "thermal_states": [2]}
+{"run": "materials-seed42-s8", "launched": true, "steps": 8}
+{"run": "materials-seed42-s8", "stage": "FLUX.3 1/8 画像 1/1", "completed_steps": 0}
+{"run": "materials-seed42-s8", "stage": "FLUX.3 3/8 統合 2/4", "completed_steps": 2}
+{"run": "materials-seed42-s8", "stage": "FLUX.3 6/8 統合 4/4", "completed_steps": 5}
+{"run": "materials-seed42-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "materials-seed42-s8", "complete": true, "model_seconds": 34.86534612486139, "total_seconds": 38.526063375058584, "safety_seconds": 0.13739104161504656, "thermal_states": [0]}
+{"run": "materials-seed42-s4", "launched": true, "steps": 4}
+{"run": "materials-seed42-s4", "stage": "FLUX.3 1/4 画像 1/1", "completed_steps": 0}
+{"run": "materials-seed42-s4", "stage": "FLUX.3 3/4 統合 3/4", "completed_steps": 2}
+{"run": "materials-seed42-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "materials-seed42-s4", "complete": true, "model_seconds": 21.79424691677559, "total_seconds": 25.39039170835167, "safety_seconds": 0.1226909999968484, "thermal_states": [0]}
+{"run": "materials-seed42-s16", "launched": true, "steps": 16}
+{"run": "materials-seed42-s16", "stage": "16ステップの文章条件を準備中 16/16", "completed_steps": 0}
+{"run": "materials-seed42-s16", "stage": "FLUX.3 3/16 統合 1/4", "completed_steps": 2}
+{"run": "materials-seed42-s16", "stage": "FLUX.3 6/16 統合 2/4", "completed_steps": 5}
+{"run": "materials-seed42-s16", "stage": "FLUX.3 9/16 統合 2/4", "completed_steps": 8}
+{"run": "materials-seed42-s16", "stage": "FLUX.3 12/16 統合 3/4", "completed_steps": 11}
+{"run": "materials-seed42-s16", "stage": "FLUX.3 15/16 統合 3/4", "completed_steps": 14}
+{"run": "materials-seed42-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "materials-seed42-s16", "complete": true, "model_seconds": 63.11213704163674, "total_seconds": 66.72470145835541, "safety_seconds": 0.13150483334902674, "thermal_states": [0, 1]}
+{"run": "materials-seed1234-s4", "launched": true, "steps": 4}
+{"run": "materials-seed1234-s4", "stage": "FLUX.3 1/4 画像 1/1", "completed_steps": 0}
+{"run": "materials-seed1234-s4", "stage": "FLUX.3 3/4 統合 1/4", "completed_steps": 2}
+{"run": "materials-seed1234-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "materials-seed1234-s4", "complete": true, "model_seconds": 23.20527250005398, "total_seconds": 26.88307062489912, "safety_seconds": 0.12391154165379703, "thermal_states": [1]}
+{"run": "materials-seed1234-s16", "launched": true, "steps": 16}
+{"run": "materials-seed1234-s16", "stage": "16ステップの文章条件を準備中 10/16", "completed_steps": 0}
+{"run": "materials-seed1234-s16", "stage": "FLUX.3 3/16 統合 1/4", "completed_steps": 2}
+{"run": "materials-seed1234-s16", "stage": "FLUX.3 6/16 統合 2/4", "completed_steps": 5}
+{"run": "materials-seed1234-s16", "stage": "FLUX.3 9/16 統合 2/4", "completed_steps": 8}
+{"run": "materials-seed1234-s16", "stage": "FLUX.3 12/16 統合 2/4", "completed_steps": 11}
+{"run": "materials-seed1234-s16", "stage": "FLUX.3 15/16 統合 2/4", "completed_steps": 14}
+{"run": "materials-seed1234-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "materials-seed1234-s16", "complete": true, "model_seconds": 64.16434324986767, "total_seconds": 67.92798712500371, "safety_seconds": 0.1339742917334661, "thermal_states": [1]}
+{"run": "materials-seed1234-s8", "launched": true, "steps": 8}
+{"run": "materials-seed1234-s8", "stage": "FLUX.3 1/8 画像 1/1", "completed_steps": 0}
+{"run": "materials-seed1234-s8", "stage": "FLUX.3 3/8 統合 1/4", "completed_steps": 2}
+{"run": "materials-seed1234-s8", "stage": "FLUX.3 6/8 統合 2/4", "completed_steps": 5}
+{"run": "materials-seed1234-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "materials-seed1234-s8", "complete": true, "model_seconds": 37.02221970818937, "total_seconds": 40.66880095843226, "safety_seconds": 0.16180737502872944, "thermal_states": [1]}
+{"run": "sign-seed42-s16", "launched": true, "steps": 16}
+{"run": "sign-seed42-s16", "stage": "16ステップの文章条件を準備中 13/16", "completed_steps": 0}
+{"run": "sign-seed42-s16", "stage": "FLUX.3 2/16 統合 4/4", "completed_steps": 1}
+{"run": "sign-seed42-s16", "stage": "FLUX.3 6/16 画像 1/1", "completed_steps": 5}
+{"run": "sign-seed42-s16", "stage": "FLUX.3 9/16 画像 1/1", "completed_steps": 8}
+{"run": "sign-seed42-s16", "stage": "FLUX.3 12/16 画像 1/1", "completed_steps": 11}
+{"run": "sign-seed42-s16", "stage": "FLUX.3 14/16 統合 4/4", "completed_steps": 13}
+{"run": "sign-seed42-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "sign-seed42-s16", "complete": true, "model_seconds": 66.25535149988718, "total_seconds": 69.95375724998303, "safety_seconds": 0.12312345835380256, "thermal_states": [1]}
+{"run": "sign-seed42-s8", "launched": true, "steps": 8}
+{"run": "sign-seed42-s8", "stage": "FLUX.3 1/8 画像 1/1", "completed_steps": 0}
+{"run": "sign-seed42-s8", "stage": "FLUX.3 3/8 画像 1/1", "completed_steps": 2}
+{"run": "sign-seed42-s8", "stage": "FLUX.3 6/8 統合 1/4", "completed_steps": 5}
+{"run": "sign-seed42-s8", "stage": "6画面の安全性を確認中", "completed_steps": 8}
+{"run": "sign-seed42-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "sign-seed42-s8", "complete": true, "model_seconds": 37.24863574991468, "total_seconds": 40.84919195831753, "safety_seconds": 0.1282608750043437, "thermal_states": [1]}
+{"run": "sign-seed42-s4", "launched": true, "steps": 4}
+{"run": "sign-seed42-s4", "stage": "FLUX.3 1/4 統合 1/4", "completed_steps": 0}
+{"run": "sign-seed42-s4", "stage": "FLUX.3 3/4 統合 3/4", "completed_steps": 2}
+{"run": "sign-seed42-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "sign-seed42-s4", "complete": true, "model_seconds": 21.75080745818559, "total_seconds": 25.341652083327062, "safety_seconds": 0.13219862501136959, "thermal_states": [1]}
+{"run": "sign-seed1234-s8", "launched": true, "steps": 8}
+{"run": "sign-seed1234-s8", "stage": "8ステップの文章条件を準備中 5/8", "completed_steps": 0}
+{"run": "sign-seed1234-s8", "stage": "FLUX.3 3/8 統合 1/4", "completed_steps": 2}
+{"run": "sign-seed1234-s8", "stage": "FLUX.3 6/8 統合 3/4", "completed_steps": 5}
+{"run": "sign-seed1234-s8", "stage": "生成と安全性確認が完了しました", "completed_steps": 8}
+{"run": "sign-seed1234-s8", "complete": true, "model_seconds": 35.44468141673133, "total_seconds": 39.375341916573234, "safety_seconds": 0.206671875086613, "thermal_states": [1]}
+{"run": "sign-seed1234-s4", "launched": true, "steps": 4}
+{"run": "sign-seed1234-s4", "stage": "FLUX.3 1/4 画像 1/1", "completed_steps": 0}
+{"run": "sign-seed1234-s4", "stage": "FLUX.3 3/4 統合 1/4", "completed_steps": 2}
+{"run": "sign-seed1234-s4", "stage": "生成と安全性確認が完了しました", "completed_steps": 4}
+{"run": "sign-seed1234-s4", "complete": true, "model_seconds": 23.758432208327577, "total_seconds": 27.38873012503609, "safety_seconds": 0.1315777082927525, "thermal_states": [1]}
+{"run": "sign-seed1234-s16", "launched": true, "steps": 16}
+{"run": "sign-seed1234-s16", "stage": "16ステップの文章条件を準備中 9/16", "completed_steps": 0}
+{"run": "sign-seed1234-s16", "stage": "FLUX.3 2/16 統合 3/4", "completed_steps": 1}
+{"run": "sign-seed1234-s16", "stage": "FLUX.3 5/16 統合 4/4", "completed_steps": 4}
+{"run": "sign-seed1234-s16", "stage": "FLUX.3 8/16 統合 4/4", "completed_steps": 7}
+{"run": "sign-seed1234-s16", "stage": "FLUX.3 11/16 統合 3/4", "completed_steps": 10}
+{"run": "sign-seed1234-s16", "stage": "FLUX.3 14/16 統合 3/4", "completed_steps": 13}
+{"run": "sign-seed1234-s16", "stage": "生成と安全性確認が完了しました", "completed_steps": 16}
+{"run": "sign-seed1234-s16", "complete": true, "model_seconds": 66.62401995842811, "total_seconds": 70.39614624995738, "safety_seconds": 0.12326570833101869, "thermal_states": [1]}
+{"complete": true, "completed_runs": 25}

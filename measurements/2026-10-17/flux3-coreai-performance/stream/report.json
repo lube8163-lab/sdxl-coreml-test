@@ -1,0 +1,259 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 45,
+    "cache_misses" : 645,
+    "calls" : 690,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "denoising.eviction" : 1.2672302507562563,
+      "denoising.function_load" : 55.158861751668155,
+      "denoising.inference_await" : 48.511453874176368,
+      "denoising.model_load" : 1.6960595009149984,
+      "denoising.total" : 106.64506945840549,
+      "text.eviction" : 0.046693500713445246,
+      "text.function_load" : 3.8170594999101013,
+      "text.inference_await" : 0.52299299952574074,
+      "text.model_load" : 0.046880207839421928,
+      "text.total" : 4.4340934577630833,
+      "vae.eviction" : 7.0827081799507141e-07,
+      "vae.function_load" : 0.12970658333506435,
+      "vae.inference_await" : 0.64544941671192646,
+      "vae.model_load" : 0.0067378332605585456,
+      "vae.total" : 0.78193454165011644
+    }
+  },
+  "asset_hashes_verified" : true,
+  "available_process_memory_bytes" : 3288381624,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 45,
+    "cache_misses" : 644,
+    "calls" : 689,
+    "retained_components" : [
+      "input",
+      "join",
+      "output",
+      "shared_26",
+      "shared_27"
+    ],
+    "seconds" : {
+      "denoising.eviction" : 1.2672302507562563,
+      "denoising.function_load" : 55.158861751668155,
+      "denoising.inference_await" : 48.511453874176368,
+      "denoising.model_load" : 1.6960595009149984,
+      "denoising.total" : 106.64506945840549,
+      "text.eviction" : 0.046693500713445246,
+      "text.function_load" : 3.8170594999101013,
+      "text.inference_await" : 0.52299299952574074,
+      "text.model_load" : 0.046880207839421928,
+      "text.total" : 4.4340934577630833
+    }
+  },
+  "denoising_seconds" : 107.15829166665208,
+  "diffusion_compute_dtype" : "bfloat16",
+  "expanded_caption" : "A realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering.",
+  "experiment_label" : "profile-stream-01",
+  "finished_at" : "2026-10-17T16:24:37Z",
+  "free_storage_bytes_at_start" : 16547840000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_saved" : true,
+  "image_sha256" : "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+  "input_safety_passed" : true,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 51.085708313621581,
+  "memory_sample_count" : 2461,
+  "model_cache_capacity" : 2,
+  "original_prompt" : "A red apple beside a blue ceramic mug on a wooden table, soft window light.",
+  "os_version" : "27.0.1",
+  "physical_footprint_bytes" : 251610952,
+  "physical_memory_bytes" : 8045641728,
+  "pinned_components" : [
+    "input",
+    "join",
+    "output"
+  ],
+  "pinned_heavy_block_count" : 0,
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.034258678555488586,
+      "nsfw" : 0.033962670713663101,
+      "sfw" : 0.93177872896194458
+    },
+    {
+      "nsfl" : 0.030067171901464462,
+      "nsfw" : 0.032942485064268112,
+      "sfw" : 0.93699032068252563
+    },
+    {
+      "nsfl" : 0.030905196443200111,
+      "nsfw" : 0.034768678247928619,
+      "sfw" : 0.93432611227035522
+    },
+    {
+      "nsfl" : 0.030614914372563362,
+      "nsfw" : 0.04076123982667923,
+      "sfw" : 0.92862379550933838
+    },
+    {
+      "nsfl" : 0.030772216618061066,
+      "nsfw" : 0.039600782096385956,
+      "sfw" : 0.92962700128555298
+    },
+    {
+      "nsfl" : 0.032494794577360153,
+      "nsfw" : 0.034272845834493637,
+      "sfw" : 0.93323230743408203
+    }
+  ],
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1121143176,
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 42,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-17T16:22:34Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.5766243934631348,
+      "latent_min" : -4.5589332580566406,
+      "seconds" : 6.8561469999840483,
+      "step" : 1,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.526085376739502,
+      "latent_min" : -4.516258716583252,
+      "seconds" : 8.2349636666476727,
+      "step" : 2,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.4654459953308105,
+      "latent_min" : -4.466285228729248,
+      "seconds" : 6.8318742500850931,
+      "step" : 3,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.3993487358093262,
+      "latent_min" : -4.4050397872924805,
+      "seconds" : 6.3006317917024717,
+      "step" : 4,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.3222818374633789,
+      "latent_min" : -4.3334932327270508,
+      "seconds" : 6.4832356249680743,
+      "step" : 5,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.2297520637512207,
+      "latent_min" : -4.2495980262756348,
+      "seconds" : 6.3804168333299458,
+      "step" : 6,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 4.1217031478881836,
+      "latent_min" : -4.1510982513427734,
+      "seconds" : 6.6588583749253303,
+      "step" : 7,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.9969363212585449,
+      "latent_min" : -4.0332379341125488,
+      "seconds" : 6.7356064583873376,
+      "step" : 8,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.8469281196594238,
+      "latent_min" : -3.8897619247436523,
+      "seconds" : 6.9476644583046436,
+      "step" : 9,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.6652779579162598,
+      "latent_min" : -3.724860668182373,
+      "seconds" : 6.6070860000327229,
+      "step" : 10,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.4440202713012695,
+      "latent_min" : -3.5628273487091064,
+      "seconds" : 6.4855929166078568,
+      "step" : 11,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.1651132106781006,
+      "latent_min" : -3.3649411201477051,
+      "seconds" : 6.4499079999513924,
+      "step" : 12,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.1581459045410156,
+      "latent_min" : -3.1221778392791748,
+      "seconds" : 6.4606558749219403,
+      "step" : 13,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.3173625469207764,
+      "latent_min" : -2.9587750434875488,
+      "seconds" : 6.5914932501036674,
+      "step" : 14,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 3.6899557113647461,
+      "latent_min" : -3.558333158493042,
+      "seconds" : 6.6876285416074097,
+      "step" : 15,
+      "thermal_state" : 0
+    },
+    {
+      "latent_max" : 5.1671762466430664,
+      "latent_min" : -5.0563850402832031,
+      "seconds" : 6.4412761667044833,
+      "step" : 16,
+      "thermal_state" : 0
+    }
+  ],
+  "steps" : 16,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 0.046693500713445246,
+      "text.function_load" : 3.8170594999101013,
+      "text.inference_await" : 0.52299299952574074,
+      "text.model_load" : 0.046880207839421928,
+      "text.total" : 4.4340934577630833
+    }
+  },
+  "text_encoding_seconds" : 4.4837714999448508,
+  "text_length" : 160,
+  "thermal_state_at_start" : 0,
+  "uptime" : 598819.92118937499,
+  "vae_seconds" : 0.80198641668539494
+}

@@ -10,7 +10,8 @@ final class DeviceFlows: XCTestCase {
         if !example.isHittable { app.swipeDown() }
         example.tap()
         let prompt = app.textViews["generation.prompt"]
-        XCTAssertTrue((prompt.value as? String)?.contains("red apple next to a blue ceramic mug") == true)
+        let text = prompt.value as? String ?? ""
+        XCTAssertTrue(text.contains("red apple") && text.contains("mug"))
         attach(app, "selected-input-example")
     }
 

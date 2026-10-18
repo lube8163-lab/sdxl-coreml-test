@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "geometry-seed1234": "thermal_transition_before_airflow",
+    "geometry-seed42": "before_airflow",
+    "materials-seed1234": "user_reported_airflow",
+    "materials-seed42": "user_reported_airflow",
+    "sign-seed1234": "user_reported_airflow",
+    "sign-seed42": "user_reported_airflow",
+    "still-life-seed1234": "before_airflow",
+    "still-life-seed42": "before_airflow"
+  },
+  "source": "airflow-user-report.json"
+}

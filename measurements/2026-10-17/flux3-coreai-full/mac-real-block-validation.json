@@ -1,0 +1,19 @@
+{
+  "component": "shared_00",
+  "scope": "One full-width real-weight block, random synthetic activations, Mac OS CoreAI GPU preferred; not an image-quality evaluation",
+  "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+  "input_shape": [
+    1184,
+    3072
+  ],
+  "output_shape": [
+    1184,
+    3072
+  ],
+  "compression": "INT4 symmetric group32 linear-only",
+  "coreai_vs_quantized_pytorch_max_absolute_error": 2.0,
+  "coreai_vs_quantized_pytorch_relative_rmse": 0.0008767963736318052,
+  "unquantized_vs_quantized_pytorch_relative_rmse": 0.1485154926776886,
+  "finite": true,
+  "passed": true
+}

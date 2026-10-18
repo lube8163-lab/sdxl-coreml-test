@@ -1,0 +1,20 @@
+{
+  "source_sha256": "0cb86282cf7f5a3fa5e790864948eb80763bedd8e512b78176620b35d69acc1d",
+  "release_executable_sha256": "aee0bbec7b97e8c95564bed8ff74441a784062ad01afb9cfa1c88e55998e64a5",
+  "project_yml_sha256": "90105f48b1047be4a27d804dd4a10611cf0c596c388a6319a66fdb8dbc786483",
+  "git_head": "337bdaae365c3ad0a4cf5f0eadb06ff5db2d7f11",
+  "dirty_worktree": true,
+  "hardware_model": "iPhone18,3",
+  "os": "27.0.1 (24A446)",
+  "configuration": "Release",
+  "build_succeeded": true,
+  "changed_scope": "Independent FLUX3 experiment: step option, hash-checked fixed fixtures and safety timers. Existing model weights and main app unchanged.",
+  "reference_sampling_source": "https://github.com/black-forest-labs/flux-3-image-klein/blob/main/src/flux3/sampling.py",
+  "reference_schedule_exact_match": true,
+  "script_sha256": {
+    "prepare_step_fixtures.py": "d1e3889ad7b9291e8af2c9a349ed770cf4a68af858e03a47cb9700bfbd2aee40",
+    "run_step_comparison.py": "3f04f6852e1fa0b20b78e200e9394f8097850ab8a631c3ef2f120db897558139",
+    "analyze_step_comparison.py": "8ba032cb5d45ac701a5f27f61489b65163db05ed8cc94708977929892e831b19",
+    "analyze_performance.py": "bec2426e18b82d1a017416dae30cdbf0cc33e036c28356eaf91025340b22e7e3"
+  }
+}

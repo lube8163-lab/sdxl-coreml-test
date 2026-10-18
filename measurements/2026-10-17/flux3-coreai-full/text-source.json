@@ -1,0 +1,8 @@
+{
+  "component": "text",
+  "source_url": "https://huggingface.co/ml-resources/flux-3-image-klein-comfy/resolve/3ba0f7064cbb1666a71e2820d3cc5c2273bb6cd0/text_encoders/qwen3vl_4b_bf16.safetensors",
+  "bytes": 8875719408,
+  "sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+  "verified": true,
+  "elapsed_seconds": 818.2874866249913
+}

@@ -1,0 +1,16 @@
+{
+  "scope": "Sparse compatibility fixture: actual central directory, reconstructed local headers/descriptors, and two complete original compressed records. Not a complete archive.",
+  "archive_bytes": 4925833766,
+  "files": [
+    {
+      "path": "flux3-klein-512-v1/licenses/FLUX3-LICENSE.md",
+      "bytes": 19593,
+      "sha256": "100a3a5af8f1a2943dca0d127671bcaa93ad894a63330825219f1a0a44451f22"
+    },
+    {
+      "path": "flux3-klein-512-v1/te_embed.aimodel/metadata.json",
+      "bytes": 105,
+      "sha256": "e810b323e52c35780a920e1d27e7aee4b83c40a3eb9d69580a750455eed15a32"
+    }
+  ]
+}

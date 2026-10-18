@@ -1,0 +1,7 @@
+{
+  "scope": "One real full-width shared block; reconstructed actual packed weights vs retained CoreAI-opt PyTorch FP16 output; not image quality",
+  "relative_rmse": 0.0,
+  "maximum_absolute_error": 0.0,
+  "finite": true,
+  "passed": true
+}
