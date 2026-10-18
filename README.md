@@ -1,5 +1,9 @@
 # ローカル画像生成 — FLUX on iPhone
 
+The repository's current purpose is **Local Image Generation for iPhone**. The
+historical `sdxl-coreml-test` URL is retained because its GitHub Pages privacy and
+support URLs are used by the app. See [repository maintenance and source scope](docs/repository-status.md).
+
 The development source now offers **FLUX.2 Klein 4B (four steps)** and **FLUX.3 Image Klein (4 / 8 / 16 steps)** as separately downloaded 512px models. FLUX.2 remains the default. See [the FLUX.3 integration notes](docs/flux3-app-integration.md) for the download package, native prompt encoding, model management, license and validation scope. This development change does not update the released App Store app or MiM.
 
 [FLUX.3 implementation and evidence](docs/flux3-ios-report.md) · [FLUX.3 日本語の再現手順](docs/flux3-iphone-reproduction.md)
