@@ -1,0 +1,363 @@
+{
+  "label": "profile-pin6-01",
+  "stage": "\u751f\u6210\u3068\u5b89\u5168\u6027\u78ba\u8a8d\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f",
+  "complete_image": true,
+  "pin_count": 6,
+  "pinned_shared_groups": 0,
+  "cache_capacity": 2,
+  "execution_kind": null,
+  "sampled_peak_footprint_bytes": 2065976312,
+  "phases": {
+    "text": {
+      "calls": 33,
+      "cache_hits": 0,
+      "seconds": {
+        "model_load": 0.06989320856519043,
+        "function_load": 3.8466250001220033,
+        "eviction": 0.04741208371706307,
+        "inference_await": 0.5579022916499525,
+        "total": 4.522307458799332
+      },
+      "thermal_state_counts": {
+        "0": 33
+      }
+    },
+    "denoising": {
+      "calls": 656,
+      "cache_hits": 135,
+      "seconds": {
+        "model_load": 1.2213248782791197,
+        "function_load": 53.289366749697365,
+        "eviction": 1.2770455806748942,
+        "inference_await": 56.64518933347426,
+        "total": 112.447611499927
+      },
+      "thermal_state_counts": {
+        "0": 441,
+        "1": 215
+      }
+    },
+    "vae": {
+      "calls": 1,
+      "cache_hits": 0,
+      "seconds": {
+        "model_load": 0.005214125034399331,
+        "function_load": 0.13448279164731503,
+        "eviction": 7.50063918530941e-07,
+        "inference_await": 0.746835874975659,
+        "total": 0.8865855833282694
+      },
+      "thermal_state_counts": {
+        "1": 1
+      }
+    }
+  },
+  "denoising_component_means_seconds": {
+    "image_00": {
+      "model_load": 0.0020011640881421044,
+      "function_load": 0.12465727083326783,
+      "eviction": 0.002434374990116339,
+      "inference_await": 0.07720894271915313,
+      "total": 0.20632513280725107
+    },
+    "image_01": {
+      "model_load": 0.0021091327944304794,
+      "function_load": 0.08366958333499497,
+      "eviction": 0.002571708340838086,
+      "inference_await": 0.0766490702808369,
+      "total": 0.16502101826336002
+    },
+    "image_02": {
+      "model_load": 0.0019719244664884172,
+      "function_load": 0.08727083854319062,
+      "eviction": 0.0021514401014428586,
+      "inference_await": 0.0776236354286084,
+      "total": 0.16903821874439018
+    },
+    "image_03": {
+      "model_load": 0.0022663515774183907,
+      "function_load": 0.09270306250255089,
+      "eviction": 0.0026038228897959925,
+      "inference_await": 0.07798887760873185,
+      "total": 0.17558432292571524
+    },
+    "image_04": {
+      "model_load": 0.0023030468728393316,
+      "function_load": 0.09561903124995297,
+      "eviction": 0.002289406256750226,
+      "inference_await": 0.07751200520579005,
+      "total": 0.17774449739954434
+    },
+    "input": {
+      "model_load": 0.00010782031313283369,
+      "function_load": 0.038580458334763534,
+      "eviction": 1.7109268810600042e-06,
+      "inference_await": 0.24130268751468975,
+      "total": 0.28003230208560126
+    },
+    "join": {
+      "model_load": 0.00029495832859538496,
+      "function_load": 0.00015412760694744065,
+      "eviction": 1.3932367437519133e-06,
+      "inference_await": 0.003470401046797633,
+      "total": 0.003931653656763956
+    },
+    "output": {
+      "model_load": 0.00037059374881209806,
+      "function_load": 0.0034315364609938115,
+      "eviction": 1.6093763406388462e-06,
+      "inference_await": 0.024766351569269318,
+      "total": 0.028589072928298265
+    },
+    "shared_00": {
+      "model_load": 0.0001139765590778552,
+      "function_load": 0.00611163281428162,
+      "eviction": 1.166648871731013e-06,
+      "inference_await": 0.11076334114477504,
+      "total": 0.11700299478980014
+    },
+    "shared_01": {
+      "model_load": 0.00043048697989434004,
+      "function_load": 0.008906177085009404,
+      "eviction": 1.2682212400250137e-06,
+      "inference_await": 0.12574235936335754,
+      "total": 0.13509706511104014
+    },
+    "shared_02": {
+      "model_load": 0.0006396875032805838,
+      "function_load": 0.00817958854167955,
+      "eviction": 1.3359167496673763e-06,
+      "inference_await": 0.12784774741885485,
+      "total": 0.13668493228033185
+    },
+    "shared_03": {
+      "model_load": 9.727344149723649e-05,
+      "function_load": 0.008939596358686686,
+      "eviction": 1.23697827802971e-06,
+      "inference_await": 0.1274069583232631,
+      "total": 0.13646178906492423
+    },
+    "shared_04": {
+      "model_load": 0.0001118984364438802,
+      "function_load": 0.011061124998377636,
+      "eviction": 1.4817414921708405e-06,
+      "inference_await": 0.1360566354196635,
+      "total": 0.14724830468185246
+    },
+    "shared_05": {
+      "model_load": 0.0002205911514465697,
+      "function_load": 0.007201161453849636,
+      "eviction": 1.2942618923261762e-06,
+      "inference_await": 0.13745428646507207,
+      "total": 0.14489377603604225
+    },
+    "shared_06": {
+      "model_load": 0.0025174713737214915,
+      "function_load": 0.16828986457403516,
+      "eviction": 0.0021752369721070863,
+      "inference_await": 0.0912348958227085,
+      "total": 0.2642374791466864
+    },
+    "shared_07": {
+      "model_load": 0.0024099895963445306,
+      "function_load": 0.1085195807099808,
+      "eviction": 0.0023242057213792577,
+      "inference_await": 0.09150088020396652,
+      "total": 0.20477629165543476
+    },
+    "shared_08": {
+      "model_load": 0.0025325572860310785,
+      "function_load": 0.11710095313173952,
+      "eviction": 0.0025279687470174395,
+      "inference_await": 0.0910165807363228,
+      "total": 0.21320175000437303
+    },
+    "shared_09": {
+      "model_load": 0.0023170781423687004,
+      "function_load": 0.09345770571235335,
+      "eviction": 0.00269785678392509,
+      "inference_await": 0.09175746613618685,
+      "total": 0.1902516822956386
+    },
+    "shared_10": {
+      "model_load": 0.0020120156259508803,
+      "function_load": 0.09742414063657634,
+      "eviction": 0.0030269062481238507,
+      "inference_await": 0.09107885157573037,
+      "total": 0.19357206771383062
+    },
+    "shared_11": {
+      "model_load": 0.002111638015776407,
+      "function_load": 0.10417075779696461,
+      "eviction": 0.0028388515565893613,
+      "inference_await": 0.09145921355229802,
+      "total": 0.20060797136102337
+    },
+    "shared_12": {
+      "model_load": 0.002212580722698476,
+      "function_load": 0.10768014322093222,
+      "eviction": 0.0027971458330284804,
+      "inference_await": 0.09094644272408914,
+      "total": 0.2036601119907573
+    },
+    "shared_13": {
+      "model_load": 0.002313682300155051,
+      "function_load": 0.1139908411714714,
+      "eviction": 0.003061434894334525,
+      "inference_await": 0.09286071353562875,
+      "total": 0.21225031250651227
+    },
+    "shared_14": {
+      "model_load": 0.0024670703132869676,
+      "function_load": 0.13332063022971852,
+      "eviction": 0.0031028776065795682,
+      "inference_await": 0.09019380728568649,
+      "total": 0.22910981511085993
+    },
+    "shared_15": {
+      "model_load": 0.0021792708430439234,
+      "function_load": 0.12259723956958624,
+      "eviction": 0.0028911119588883594,
+      "inference_await": 0.09019764843105804,
+      "total": 0.21789491404342698
+    },
+    "shared_16": {
+      "model_load": 0.002398205717327073,
+      "function_load": 0.10738234376185574,
+      "eviction": 0.0027046510367654264,
+      "inference_await": 0.09077665104268817,
+      "total": 0.2032895494630793
+    },
+    "shared_17": {
+      "model_load": 0.0025081771018449217,
+      "function_load": 0.10424409635743359,
+      "eviction": 0.0025902057386701927,
+      "inference_await": 0.091026401038107,
+      "total": 0.2003937552071875
+    },
+    "shared_18": {
+      "model_load": 0.00211409116309369,
+      "function_load": 0.09464676040079212,
+      "eviction": 0.002465515623043757,
+      "inference_await": 0.09167142448131926,
+      "total": 0.19092932811327046
+    },
+    "shared_19": {
+      "model_load": 0.0023222760719363578,
+      "function_load": 0.09618083851091797,
+      "eviction": 0.0023103749990696087,
+      "inference_await": 0.09080287760298233,
+      "total": 0.19164038800954586
+    },
+    "shared_20": {
+      "model_load": 0.0019154062538291328,
+      "function_load": 0.09483071092836326,
+      "eviction": 0.0024852734350133687,
+      "inference_await": 0.0920572864706628,
+      "total": 0.1913092682370916
+    },
+    "shared_21": {
+      "model_load": 0.002752947933913674,
+      "function_load": 0.09743184114631731,
+      "eviction": 0.0023882916721049696,
+      "inference_await": 0.0919041744855349,
+      "total": 0.19449908333626809
+    },
+    "shared_22": {
+      "model_load": 0.0026772317723953165,
+      "function_load": 0.10100643488112837,
+      "eviction": 0.0024265364700113423,
+      "inference_await": 0.09209281510993605,
+      "total": 0.198234687493823
+    },
+    "shared_23": {
+      "model_load": 0.0026347500024712645,
+      "function_load": 0.09949859636253677,
+      "eviction": 0.0024490494615747593,
+      "inference_await": 0.09207238019735087,
+      "total": 0.19667548437428195
+    },
+    "shared_24": {
+      "model_load": 0.002281140630657319,
+      "function_load": 0.09782882031868212,
+      "eviction": 0.0023414036259055138,
+      "inference_await": 0.09207507812971016,
+      "total": 0.19455171614390565
+    },
+    "shared_25": {
+      "model_load": 0.002816101594362408,
+      "function_load": 0.09580774219648447,
+      "eviction": 0.0023041822933009826,
+      "inference_await": 0.09186514061002526,
+      "total": 0.1928244817754603
+    },
+    "shared_26": {
+      "model_load": 0.002500684895494487,
+      "function_load": 0.09883196614100598,
+      "eviction": 0.0028374062458169647,
+      "inference_await": 0.0936980676924577,
+      "total": 0.19789020311873173
+    },
+    "shared_27": {
+      "model_load": 0.0024235677046817727,
+      "function_load": 0.09296111200092128,
+      "eviction": 0.0025157291747746058,
+      "inference_await": 0.09232221092679538,
+      "total": 0.19025254166626837
+    },
+    "text_00": {
+      "model_load": 0.002618153659568634,
+      "function_load": 0.07609258854063228,
+      "eviction": 0.002146466140402481,
+      "inference_await": 0.021215393237071112,
+      "total": 0.10208937503193738
+    },
+    "text_01": {
+      "model_load": 0.0016791015659691766,
+      "function_load": 0.07711976042628521,
+      "eviction": 0.0019709453190444037,
+      "inference_await": 0.020832617170526646,
+      "total": 0.10161989321204601
+    },
+    "text_02": {
+      "model_load": 0.0019772395899053663,
+      "function_load": 0.07409392968838802,
+      "eviction": 0.0017696171853458509,
+      "inference_await": 0.019522338545357343,
+      "total": 0.09738257029675879
+    },
+    "text_03": {
+      "model_load": 0.002278624990140088,
+      "function_load": 0.08367445833573584,
+      "eviction": 0.002742640623182524,
+      "inference_await": 0.021378065102908295,
+      "total": 0.11008974739525001
+    },
+    "text_04": {
+      "model_load": 0.002322843763977289,
+      "function_load": 0.09591637498670025,
+      "eviction": 0.0018602135387482122,
+      "inference_await": 0.02097161198616959,
+      "total": 0.12108616926707327
+    }
+  },
+  "completed_steps": 16,
+  "steps_2_onward_median_seconds": 6.925079874927178,
+  "steps_2_onward_mean_seconds": 7.023327477749747,
+  "text_encoding_seconds": 4.573911291663535,
+  "denoising_seconds": 113.05895212502219,
+  "vae_seconds": 0.9024289583321661,
+  "image_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+  "steps": 16,
+  "seed": 42,
+  "three_stage_seconds": 118.53529237501789,
+  "model_pipeline_seconds": 118.53529237501789,
+  "six_view_safety_verified": true,
+  "baseline_label": "profile-stream-control-final-02",
+  "baseline_denoising_seconds": 89.27781520830467,
+  "baseline_image_sha256_match": true,
+  "denoising_speedup": 0.7896571968010105,
+  "baseline_model_pipeline_seconds": 94.59775391651783,
+  "model_pipeline_speedup": 0.7980556003289949,
+  "measurement_scope": "Wall time inside model constructor, function load and awaited function.run. run may include runtime scheduling and synchronization; it is not isolated GPU kernel time."
+}

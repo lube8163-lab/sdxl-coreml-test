@@ -1,0 +1,363 @@
+{
+  "label": "profile-stream-control-final-02",
+  "stage": "\u751f\u6210\u3068\u5b89\u5168\u6027\u78ba\u8a8d\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f",
+  "complete_image": true,
+  "pin_count": 0,
+  "pinned_shared_groups": 0,
+  "cache_capacity": 2,
+  "execution_kind": "individual",
+  "sampled_peak_footprint_bytes": 1158760792,
+  "phases": {
+    "text": {
+      "calls": 33,
+      "cache_hits": 0,
+      "seconds": {
+        "model_load": 0.05414504185318947,
+        "function_load": 3.747070041485131,
+        "eviction": 0.044227958540432155,
+        "inference_await": 0.5679212504765019,
+        "total": 4.413854749524035
+      },
+      "thermal_state_counts": {
+        "0": 33
+      }
+    },
+    "denoising": {
+      "calls": 656,
+      "cache_hits": 45,
+      "seconds": {
+        "model_load": 1.18340208416339,
+        "function_load": 34.396936085424386,
+        "eviction": 1.1999587072059512,
+        "inference_await": 51.84997483459301,
+        "total": 88.64254858496133
+      },
+      "thermal_state_counts": {
+        "0": 433,
+        "1": 223
+      }
+    },
+    "vae": {
+      "calls": 1,
+      "cache_hits": 0,
+      "seconds": {
+        "model_load": 0.004733624984510243,
+        "function_load": 0.13029212492983788,
+        "eviction": 8.333008736371994e-07,
+        "inference_await": 0.7062140416819602,
+        "total": 0.8412809165893123
+      },
+      "thermal_state_counts": {
+        "1": 1
+      }
+    }
+  },
+  "denoising_component_means_seconds": {
+    "image_00": {
+      "model_load": 0.0016987604176392779,
+      "function_load": 0.06842833854898345,
+      "eviction": 0.0022052369677112438,
+      "inference_await": 0.07617832030518912,
+      "total": 0.14852897918171948
+    },
+    "image_01": {
+      "model_load": 0.0017708723826217465,
+      "function_load": 0.05920714321837295,
+      "eviction": 0.002153059896954801,
+      "inference_await": 0.07805677082797047,
+      "total": 0.14120463281142293
+    },
+    "image_02": {
+      "model_load": 0.0019251406338298693,
+      "function_load": 0.055533872386149596,
+      "eviction": 0.0019685755323735066,
+      "inference_await": 0.07901641668286175,
+      "total": 0.13846263283630833
+    },
+    "image_03": {
+      "model_load": 0.0018097057254635729,
+      "function_load": 0.05474759374919813,
+      "eviction": 0.0021530156300286762,
+      "inference_await": 0.08075327864207793,
+      "total": 0.13948210677335737
+    },
+    "image_04": {
+      "model_load": 0.0019633203046396375,
+      "function_load": 0.05395251042500604,
+      "eviction": 0.002224648436822463,
+      "inference_await": 0.0787172578056925,
+      "total": 0.1368771275956533
+    },
+    "input": {
+      "model_load": 8.97083300515078e-05,
+      "function_load": 0.035587385420512874,
+      "eviction": 1.2343880371190608e-06,
+      "inference_await": 0.125382968748454,
+      "total": 0.16108244011411443
+    },
+    "join": {
+      "model_load": 8.30755234346725e-05,
+      "function_load": 0.00014967969036661088,
+      "eviction": 1.2395830708555877e-06,
+      "inference_await": 0.003068270845687948,
+      "total": 0.0033103671885328367
+    },
+    "output": {
+      "model_load": 0.00010148437286261469,
+      "function_load": 0.00277151041518664,
+      "eviction": 1.2317686923779547e-06,
+      "inference_await": 0.01519317967176903,
+      "total": 0.01808186979178572
+    },
+    "shared_00": {
+      "model_load": 0.0015822213536011986,
+      "function_load": 0.05316025001229718,
+      "eviction": 0.0017562031134730205,
+      "inference_await": 0.08620197916752659,
+      "total": 0.14271973956783768
+    },
+    "shared_01": {
+      "model_load": 0.0018719765939749777,
+      "function_load": 0.06240819789672969,
+      "eviction": 0.001777013014361728,
+      "inference_await": 0.0984811718808487,
+      "total": 0.16455680469516665
+    },
+    "shared_02": {
+      "model_load": 0.0019858749947161414,
+      "function_load": 0.06975717969908146,
+      "eviction": 0.002052768242720049,
+      "inference_await": 0.09030909376451746,
+      "total": 0.1641246067956672
+    },
+    "shared_03": {
+      "model_load": 0.002032236981904134,
+      "function_load": 0.056661010428797454,
+      "eviction": 0.002131687491782941,
+      "inference_await": 0.09328384634864051,
+      "total": 0.15412959375680657
+    },
+    "shared_04": {
+      "model_load": 0.0017470026068622246,
+      "function_load": 0.05614612500357907,
+      "eviction": 0.002157979157345835,
+      "inference_await": 0.09340239844459575,
+      "total": 0.15348253125557676
+    },
+    "shared_05": {
+      "model_load": 0.0019685338775161654,
+      "function_load": 0.05617448960401816,
+      "eviction": 0.0019048463582294062,
+      "inference_await": 0.09650001041882206,
+      "total": 0.15656814321846468
+    },
+    "shared_06": {
+      "model_load": 0.0018666588657652028,
+      "function_load": 0.05726285677519627,
+      "eviction": 0.0020420260188984685,
+      "inference_await": 0.09352298438170692,
+      "total": 0.1547143620045972
+    },
+    "shared_07": {
+      "model_load": 0.002405799488769844,
+      "function_load": 0.06339316406956641,
+      "eviction": 0.001957632804987952,
+      "inference_await": 0.09332633072335739,
+      "total": 0.16110093749739463
+    },
+    "shared_08": {
+      "model_load": 0.002150002575945109,
+      "function_load": 0.056831010420864914,
+      "eviction": 0.001976789048057981,
+      "inference_await": 0.09575315623078495,
+      "total": 0.15673084372247104
+    },
+    "shared_09": {
+      "model_load": 0.0026783697903738357,
+      "function_load": 0.06332247398677282,
+      "eviction": 0.001923085939779412,
+      "inference_await": 0.0920218828250654,
+      "total": 0.15996712760534137
+    },
+    "shared_10": {
+      "model_load": 0.0017581015636096708,
+      "function_load": 0.06011931768443901,
+      "eviction": 0.0019406093706493266,
+      "inference_await": 0.0921800963478745,
+      "total": 0.15601479425822617
+    },
+    "shared_11": {
+      "model_load": 0.0017336302116746083,
+      "function_load": 0.055510661455627996,
+      "eviction": 0.0019373854156583548,
+      "inference_await": 0.09222451562527567,
+      "total": 0.1514226588769816
+    },
+    "shared_12": {
+      "model_load": 0.0016972343728411943,
+      "function_load": 0.05747735418844968,
+      "eviction": 0.002006192720727995,
+      "inference_await": 0.10454534635209711,
+      "total": 0.1657456952962093
+    },
+    "shared_13": {
+      "model_load": 0.0025228072845493443,
+      "function_load": 0.05645578384428518,
+      "eviction": 0.0019263671783846803,
+      "inference_await": 0.09351053907448659,
+      "total": 0.15443661719473312
+    },
+    "shared_14": {
+      "model_load": 0.0021387083324952982,
+      "function_load": 0.056342593758017756,
+      "eviction": 0.0021486327968887053,
+      "inference_await": 0.09303644792089472,
+      "total": 0.15368407813366503
+    },
+    "shared_15": {
+      "model_load": 0.0020349895930849016,
+      "function_load": 0.05868017970351502,
+      "eviction": 0.0018342395705985837,
+      "inference_await": 0.09500050782662584,
+      "total": 0.15757372396910796
+    },
+    "shared_16": {
+      "model_load": 0.002003640627663117,
+      "function_load": 0.05722006771247834,
+      "eviction": 0.001943690120242536,
+      "inference_await": 0.0923780390585307,
+      "total": 0.15356536720355507
+    },
+    "shared_17": {
+      "model_load": 0.002001614593609702,
+      "function_load": 0.053810453129699454,
+      "eviction": 0.0018520546800573356,
+      "inference_await": 0.09221092709776713,
+      "total": 0.14989334895653883
+    },
+    "shared_18": {
+      "model_load": 0.002082484381389804,
+      "function_load": 0.0513733854459133,
+      "eviction": 0.002047421869065147,
+      "inference_await": 0.10260096874844749,
+      "total": 0.15812775521044387
+    },
+    "shared_19": {
+      "model_load": 0.0024524895634385757,
+      "function_load": 0.05696164845721796,
+      "eviction": 0.0020518203091342,
+      "inference_await": 0.09117832553602057,
+      "total": 0.1526644427285646
+    },
+    "shared_20": {
+      "model_load": 0.0016062942740973085,
+      "function_load": 0.056426458329951856,
+      "eviction": 0.001955937492311932,
+      "inference_await": 0.09240508854418295,
+      "total": 0.15241131771472283
+    },
+    "shared_21": {
+      "model_load": 0.0019269296753918752,
+      "function_load": 0.05781533596018562,
+      "eviction": 0.001983825510251336,
+      "inference_await": 0.09440487762913108,
+      "total": 0.15614921093947487
+    },
+    "shared_22": {
+      "model_load": 0.001889723956992384,
+      "function_load": 0.05619549478433328,
+      "eviction": 0.0018530781235313043,
+      "inference_await": 0.09069551560969558,
+      "total": 0.15065180468809558
+    },
+    "shared_23": {
+      "model_load": 0.0019695026203407906,
+      "function_load": 0.056442510402121115,
+      "eviction": 0.0021215390734141693,
+      "inference_await": 0.09567199218145106,
+      "total": 0.15622643491224153
+    },
+    "shared_24": {
+      "model_load": 0.0023621640793862753,
+      "function_load": 0.05838590626080986,
+      "eviction": 0.002028776034421753,
+      "inference_await": 0.0904472031397745,
+      "total": 0.15324377604702022
+    },
+    "shared_25": {
+      "model_load": 0.00212072395515861,
+      "function_load": 0.052403960944502614,
+      "eviction": 0.0020532239504973404,
+      "inference_await": 0.09214150518528186,
+      "total": 0.14873853385506663
+    },
+    "shared_26": {
+      "model_load": 0.002298929692187812,
+      "function_load": 0.051346177082450595,
+      "eviction": 0.0019306249887449667,
+      "inference_await": 0.0895972213766072,
+      "total": 0.14518980728462338
+    },
+    "shared_27": {
+      "model_load": 0.001632846353459172,
+      "function_load": 0.055122388002928346,
+      "eviction": 0.0019489921833155677,
+      "inference_await": 0.09236383854295127,
+      "total": 0.1510838281174074
+    },
+    "text_00": {
+      "model_load": 0.0018142656117561273,
+      "function_load": 0.04593230208411114,
+      "eviction": 0.0019510468846419826,
+      "inference_await": 0.017550992197357118,
+      "total": 0.06726649738993729
+    },
+    "text_01": {
+      "model_load": 0.0015070937442942522,
+      "function_load": 0.0446107552270405,
+      "eviction": 0.0019062682404182851,
+      "inference_await": 0.017504718751297332,
+      "total": 0.06554488020628924
+    },
+    "text_02": {
+      "model_load": 0.001572635410411749,
+      "function_load": 0.04320707551960368,
+      "eviction": 0.001675820334639866,
+      "inference_await": 0.017116794268076774,
+      "total": 0.06358890626142966
+    },
+    "text_03": {
+      "model_load": 0.0016212994887609966,
+      "function_load": 0.03973843227868201,
+      "eviction": 0.001701388020592276,
+      "inference_await": 0.016827682287839707,
+      "total": 0.05990444268536521
+    },
+    "text_04": {
+      "model_load": 0.0014837760536465794,
+      "function_load": 0.04273547133198008,
+      "eviction": 0.0018102109388564713,
+      "inference_await": 0.015860966144828126,
+      "total": 0.06190651821816573
+    }
+  },
+  "completed_steps": 16,
+  "steps_2_onward_median_seconds": 5.313001583330333,
+  "steps_2_onward_mean_seconds": 5.48380111666241,
+  "text_encoding_seconds": 4.465004208264872,
+  "denoising_seconds": 89.27781520830467,
+  "vae_seconds": 0.8549344999482855,
+  "image_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+  "steps": 16,
+  "seed": 42,
+  "three_stage_seconds": 94.59775391651783,
+  "model_pipeline_seconds": 94.59775391651783,
+  "six_view_safety_verified": true,
+  "baseline_label": "profile-stream-control-final-02",
+  "baseline_denoising_seconds": 89.27781520830467,
+  "baseline_image_sha256_match": true,
+  "denoising_speedup": 1.0,
+  "baseline_model_pipeline_seconds": 94.59775391651783,
+  "model_pipeline_speedup": 1.0,
+  "measurement_scope": "Wall time inside model constructor, function load and awaited function.run. run may include runtime scheduling and synchronization; it is not isolated GPU kernel time."
+}

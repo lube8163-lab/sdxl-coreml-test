@@ -1,0 +1,16 @@
+{
+  "component": "image_g00",
+  "members": [
+    "image_00",
+    "image_01",
+    "image_02",
+    "image_03",
+    "image_04"
+  ],
+  "scope": "Real checkpoint constants; random BF16 activations; grouped vs sequential CoreAI calls on Mac; not image-quality evaluation",
+  "relative_rmse": 0.0,
+  "max_absolute_error": 0.0,
+  "finite": true,
+  "exact_equal": true,
+  "passed": true
+}

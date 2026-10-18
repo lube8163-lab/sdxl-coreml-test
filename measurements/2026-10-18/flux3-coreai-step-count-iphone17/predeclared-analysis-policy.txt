@@ -1,0 +1,1 @@
+Set before the first 8/4-step run completed: retain every completed run; exclude the initial warmup from all headline timing means; matched timing comparison uses only profiles for which all 16/8/4 runs have no serious or critical thermal steps. Publish all-run values and thermal counts alongside it.

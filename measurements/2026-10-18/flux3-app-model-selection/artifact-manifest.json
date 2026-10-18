@@ -1,0 +1,166 @@
+{
+  "README.md": {
+    "bytes": 6392,
+    "sha256": "d65003a35783c3b066c00e730700230999c54b8b0bb72a2ca44c6dd8ceef1db3"
+  },
+  "archive-validation.json": {
+    "bytes": 85,
+    "sha256": "296f9b8946ad83eaa092e81921b552c119677531c3ed29d8470f16455211ca82"
+  },
+  "device-report.json": {
+    "bytes": 6288,
+    "sha256": "57a6e03147ee56d8c72e01497f18fbfcdbe83d136be8cfc4d60595238fabfa12"
+  },
+  "flux2-download-screen.png": {
+    "bytes": 320102,
+    "sha256": "e2390dcb8a753a632726094ecbb9b5bd6fff883d94698686ec509fd1e6c2e7ab"
+  },
+  "flux3-16-steps-result.png": {
+    "bytes": 6384632,
+    "sha256": "4dc3715feedda6e0d51e83f3198adf70ffcc63ff2496fa33e6acb1f3c7945d28"
+  },
+  "flux3-16-steps-seed42-approved.png": {
+    "bytes": 713034,
+    "sha256": "806bbbe8d0e2749bc9ddd96a749c6b02fd587f919c0f4072aded2c118782172a"
+  },
+  "flux3-4-steps-result.png": {
+    "bytes": 6258743,
+    "sha256": "d06e6980108cb3a1e9ec30b587044e9d7f431918d74aaec61ba020e85a55fbf2"
+  },
+  "flux3-4-steps-seed42-approved.png": {
+    "bytes": 689531,
+    "sha256": "a64226107d67275df1c2c03a86968e47b0bfec381b025a6eba49801bd93e69e4"
+  },
+  "flux3-4-steps-warm-seed42-approved.png": {
+    "bytes": 689531,
+    "sha256": "a64226107d67275df1c2c03a86968e47b0bfec381b025a6eba49801bd93e69e4"
+  },
+  "flux3-8-steps-result.png": {
+    "bytes": 6303708,
+    "sha256": "525711d042d9dc1673b5e94943d4bf7bfdb87186d8e3257bac25d11c5e880c16"
+  },
+  "flux3-8-steps-seed42-approved.png": {
+    "bytes": 701191,
+    "sha256": "9e8ea48ee86633830b8283e43b0e67c4f3540814d87a3f54cb7d372f63557b02"
+  },
+  "flux3-catalog-manifest.json": {
+    "bytes": 23414,
+    "sha256": "a74f362b88f101840ba00861711eaf442f6b3e25eeddbe53b9e27d5d5281e395"
+  },
+  "flux3-controls.png": {
+    "bytes": 869074,
+    "sha256": "e436059b6308af7a8c02af8c1ab96e808829cd943727749eb69a5a058aeff1b0"
+  },
+  "flux3-download-manifest.json": {
+    "bytes": 7239,
+    "sha256": "7f4fcd3321b140b46664daca76ed156a18c4d6a07c3a409198708315b23cce51"
+  },
+  "flux3-download-paused.png": {
+    "bytes": 789014,
+    "sha256": "cb1fbd4e4c077604c9f6fc90674d74b8901b7e649e6c7056a72cd8b468fccdb8"
+  },
+  "model-library.png": {
+    "bytes": 333653,
+    "sha256": "2a650d201e59f6d1c44518bf7a5791db2da184977825a455e8860275ddda8168"
+  },
+  "native-core-provenance.json": {
+    "bytes": 3071,
+    "sha256": "9bfb05374dc3cba1b9802ddd65db0251057b49628f2b6be2bfc3d2a4ac92aab5"
+  },
+  "native-core-report.json": {
+    "bytes": 5123,
+    "sha256": "645f3714a97611f4fe127c3ed689b28827f3c7d3ebb88f121d5d848da4db89f4"
+  },
+  "native-core-storage-summary.json": {
+    "bytes": 706,
+    "sha256": "1216051fbd63fbb41d0a23012a4c60e0005685a12e888f24b2bca634f13f497e"
+  },
+  "r2-upload.json": {
+    "bytes": 9529,
+    "sha256": "d980f789353fa2d641df21f80e91e03321d785d4a8900f1407b7758fe1b2ef38"
+  },
+  "source-code/native-core-app-source/ContentView.swift": {
+    "bytes": 31122,
+    "sha256": "8f25ed89a29b9af888d7c510fda4f41d8bd17f78be211f5129e8d98680c844fc"
+  },
+  "source-code/native-core-app-source/LegalDocument.swift": {
+    "bytes": 10333,
+    "sha256": "81882dc6d0c5cd2ecfe64645f2566761718e451543bdebf59bd730af248c2317"
+  },
+  "source-code/native-core-app-source/ModelLibraryView.swift": {
+    "bytes": 6839,
+    "sha256": "38a3aaae715ea2cd027f14062ee7bf7c7ceca75698e16957a1b9f9602cc8cc90"
+  },
+  "source-code/native-core-app-source/ModelSetupView.swift": {
+    "bytes": 9673,
+    "sha256": "683bb678e9adbcd8be05e23533b10c6cb0ed354760bfb1344f619706055ebef6"
+  },
+  "source-code/native-core-app-source/ModelSetupViewModel.swift": {
+    "bytes": 10329,
+    "sha256": "691bf98782d8ad93ba0f557da9ca0763a599e3281e59b9501730db62bcff61f0"
+  },
+  "source-code/native-core-app-source/PhotoLibrarySaver.swift": {
+    "bytes": 1297,
+    "sha256": "2c052af807486d8961307fa0e42db15cb154a4f26e63c3e33d75cf9b46baf9e2"
+  },
+  "source-code/native-core-app-source/SDXLCoreMLTestApp.swift": {
+    "bytes": 13635,
+    "sha256": "6c6855e66f867136c925ca09721806ee7d9b8a348232db1fd3694075a923b8ed"
+  },
+  "source-code/native-core-app-source/SDXLGeneratorViewModel.swift": {
+    "bytes": 16514,
+    "sha256": "c74717bd0aa8416ab02855e3fc18725bc7c56926f8c2a7a5f2cc1a30b85daa21"
+  },
+  "source-code/verification-app-source/ContentView.swift": {
+    "bytes": 31122,
+    "sha256": "8f25ed89a29b9af888d7c510fda4f41d8bd17f78be211f5129e8d98680c844fc"
+  },
+  "source-code/verification-app-source/LegalDocument.swift": {
+    "bytes": 10333,
+    "sha256": "81882dc6d0c5cd2ecfe64645f2566761718e451543bdebf59bd730af248c2317"
+  },
+  "source-code/verification-app-source/ModelLibraryView.swift": {
+    "bytes": 6839,
+    "sha256": "38a3aaae715ea2cd027f14062ee7bf7c7ceca75698e16957a1b9f9602cc8cc90"
+  },
+  "source-code/verification-app-source/ModelSetupView.swift": {
+    "bytes": 10197,
+    "sha256": "bb2266b4c01dfd0889f372d921df889fd274db73d961a6c945bd23939b2f9432"
+  },
+  "source-code/verification-app-source/ModelSetupViewModel.swift": {
+    "bytes": 10437,
+    "sha256": "31dbfa8652d702ba6399cc4e05e013b0e2739a5e260ea898bb59ba4796d4ecfe"
+  },
+  "source-code/verification-app-source/PhotoLibrarySaver.swift": {
+    "bytes": 1297,
+    "sha256": "2c052af807486d8961307fa0e42db15cb154a4f26e63c3e33d75cf9b46baf9e2"
+  },
+  "source-code/verification-app-source/SDXLCoreMLTestApp.swift": {
+    "bytes": 16255,
+    "sha256": "513bac742450737348fb124d867bc9859d122f7f56cdb94d05b872cc25505e51"
+  },
+  "source-code/verification-app-source/SDXLGeneratorViewModel.swift": {
+    "bytes": 16514,
+    "sha256": "c74717bd0aa8416ab02855e3fc18725bc7c56926f8c2a7a5f2cc1a30b85daa21"
+  },
+  "source-provenance.json": {
+    "bytes": 2930,
+    "sha256": "f23c00748c2cd5a6074f21b026688e1d1098a08f2fada734e9d81ee33a183a90"
+  },
+  "ui-tap-summary.json": {
+    "bytes": 637,
+    "sha256": "770b9cd358c17a00241302c5ec26d8e146c592754b9bc3281d724d13d22072bd"
+  },
+  "unit-tests.log": {
+    "bytes": 6152,
+    "sha256": "278ce0230d8ea344d00c3604e202c2527bc3184503b98677456d546da4b3f2fa"
+  },
+  "verification-resume-provenance.json": {
+    "bytes": 1147,
+    "sha256": "74dddf19c9b7a08d962f3531d5264adedee7f7746ce2a8132cd6e582c33e91db"
+  },
+  "zip64-preflight-fixture.json": {
+    "bytes": 595,
+    "sha256": "55a05703e290a94898d6df461f9f3af4161e1d0172d56eba3f0a0d8461fcdfc5"
+  }
+}

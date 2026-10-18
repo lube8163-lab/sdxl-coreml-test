@@ -1,0 +1,313 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 44,
+    "calls" : 74,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.2086543291807175e-06,
+      "conditioning.function_load" : 1.2063789165113121,
+      "conditioning.inference_await" : 0.34827166656032205,
+      "conditioning.model_load" : 0.021329583367332816,
+      "conditioning.total" : 1.5760950415860862,
+      "denoising.eviction" : 6.9542089477181435e-05,
+      "denoising.function_load" : 4.1438055833568797,
+      "denoising.inference_await" : 12.381764791207388,
+      "denoising.model_load" : 0.044130083406344056,
+      "denoising.total" : 16.571102499496192,
+      "text.eviction" : 4.0124985389411449e-05,
+      "text.function_load" : 3.843003457877785,
+      "text.inference_await" : 0.56434524990618229,
+      "text.model_load" : 0.19518745841924101,
+      "text.total" : 4.6030643335543573,
+      "vae.eviction" : 1.5416881069540977e-06,
+      "vae.function_load" : 0.13278216670732945,
+      "vae.inference_await" : 0.67955825000535697,
+      "vae.model_load" : 0.0051381250377744436,
+      "vae.total" : 0.81751512491609901
+    }
+  },
+  "asset_hashes_verified" : true,
+  "asset_verification_mode" : "background-streamed-sha256-1mib",
+  "asset_verification_seconds" : 3.376889833365567,
+  "available_process_memory_bytes" : 3292412064,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "cached_text_step_count" : 4,
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 43,
+    "calls" : 73,
+    "retained_components" : [
+      "image_g00",
+      "input_image",
+      "join",
+      "output",
+      "shared_g00",
+      "shared_g01",
+      "shared_g02",
+      "shared_g03"
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.2086543291807175e-06,
+      "conditioning.function_load" : 1.2063789165113121,
+      "conditioning.inference_await" : 0.34827166656032205,
+      "conditioning.model_load" : 0.021329583367332816,
+      "conditioning.total" : 1.5760950415860862,
+      "denoising.eviction" : 6.9542089477181435e-05,
+      "denoising.function_load" : 4.1438055833568797,
+      "denoising.inference_await" : 12.381764791207388,
+      "denoising.model_load" : 0.044130083406344056,
+      "denoising.total" : 16.571102499496192,
+      "text.eviction" : 4.0124985389411449e-05,
+      "text.function_load" : 3.843003457877785,
+      "text.inference_await" : 0.56434524990618229,
+      "text.model_load" : 0.19518745841924101,
+      "text.total" : 4.6030643335543573
+    }
+  },
+  "denoising_seconds" : 16.628751333337277,
+  "diffusion_compute_dtype" : "bfloat16",
+  "execution_groups" : [
+    {
+      "component" : "image_g00",
+      "members" : [
+        "image_00",
+        "image_01",
+        "image_02",
+        "image_03",
+        "image_04"
+      ],
+      "mode" : "image"
+    },
+    {
+      "component" : "text_g00",
+      "members" : [
+        "text_00",
+        "text_01",
+        "text_02",
+        "text_03",
+        "text_04"
+      ],
+      "mode" : "text"
+    },
+    {
+      "component" : "shared_g00",
+      "members" : [
+        "shared_00",
+        "shared_01",
+        "shared_02",
+        "shared_03",
+        "shared_04",
+        "shared_05",
+        "shared_06",
+        "shared_07"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g01",
+      "members" : [
+        "shared_08",
+        "shared_09",
+        "shared_10",
+        "shared_11",
+        "shared_12",
+        "shared_13",
+        "shared_14",
+        "shared_15"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g02",
+      "members" : [
+        "shared_16",
+        "shared_17",
+        "shared_18",
+        "shared_19",
+        "shared_20",
+        "shared_21",
+        "shared_22",
+        "shared_23"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g03",
+      "members" : [
+        "shared_24",
+        "shared_25",
+        "shared_26",
+        "shared_27"
+      ],
+      "mode" : "shared"
+    }
+  ],
+  "execution_kind" : "grouped",
+  "execution_profile" : "automatic-groups8-shared-retained",
+  "expanded_caption" : "A straight-on architectural photograph of a small welcoming cafe facade in daylight. The cream plaster wall has one closed blue wooden door in the middle and one simple window on each side. A rectangular white sign above the door clearly reads BLUE CAFE in large dark blue uppercase letters. Two small green plants in terracotta pots stand near the doorway. Show clean typography, distinct door panels, realistic plaster texture, and balanced symmetrical composition. The sidewalk is empty. No people, vehicles, extra signs, or additional text.",
+  "experiment_label" : "stepcompare-20261018-sign-seed1234-s4",
+  "finished_at" : "2026-10-18T04:37:02Z",
+  "fixture_profile" : "sign-seed1234",
+  "fixture_profile_sha256" : "249f952737b0146b3afc9cfd39e543c52874640c1cb5f94fa53c3408fc13f343",
+  "free_storage_bytes_at_start" : 8519680000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_input_slice_verified" : true,
+  "image_saved" : true,
+  "image_sha256" : "c62e4afc80b2cd4d2abc9a2eaa08483352329ce1fb3c4854652b716e81c74af8",
+  "input_safety_passed" : true,
+  "input_safety_seconds" : 0.003206874942407012,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 52.754208329133689,
+  "memory_sample_count" : 548,
+  "model_cache_capacity" : 0,
+  "original_prompt" : "A small cafe facade with a blue door and a sign reading BLUE CAFE.",
+  "os_version" : "27.0.1",
+  "output_safety_seconds" : 0.1315777082927525,
+  "physical_footprint_bytes" : 247580512,
+  "physical_memory_bytes" : 8045641728,
+  "pinned_components" : [
+    "image_g00",
+    "input_image",
+    "join",
+    "output",
+    "shared_g00",
+    "shared_g01",
+    "shared_g02",
+    "shared_g03"
+  ],
+  "pinned_heavy_block_count" : 33,
+  "pinned_shared_group_count" : 4,
+  "precompute_component_metrics" : {
+    "cache_hits" : 6,
+    "cache_misses" : 35,
+    "calls" : 41,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.2086543291807175e-06,
+      "conditioning.function_load" : 1.2063789165113121,
+      "conditioning.inference_await" : 0.34827166656032205,
+      "conditioning.model_load" : 0.021329583367332816,
+      "conditioning.total" : 1.5760950415860862,
+      "text.eviction" : 4.0124985389411449e-05,
+      "text.function_load" : 3.843003457877785,
+      "text.inference_await" : 0.56434524990618229,
+      "text.model_load" : 0.19518745841924101,
+      "text.total" : 4.6030643335543573
+    }
+  },
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "run_to_saved_seconds" : 27.388730125036091,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.031216865405440331,
+      "nsfw" : 0.037326827645301819,
+      "sfw" : 0.93145632743835449
+    },
+    {
+      "nsfl" : 0.031827636063098907,
+      "nsfw" : 0.036188244819641113,
+      "sfw" : 0.9319840669631958
+    },
+    {
+      "nsfl" : 0.031627431511878967,
+      "nsfw" : 0.035559788346290588,
+      "sfw" : 0.93281275033950806
+    },
+    {
+      "nsfl" : 0.032353624701499939,
+      "nsfw" : 0.036525096744298935,
+      "sfw" : 0.9311213493347168
+    },
+    {
+      "nsfl" : 0.031863640993833542,
+      "nsfw" : 0.038014240562915802,
+      "sfw" : 0.93012213706970215
+    },
+    {
+      "nsfl" : 0.032762836664915085,
+      "nsfw" : 0.039403274655342102,
+      "sfw" : 0.92783385515213013
+    }
+  ],
+  "safety_preparation_seconds" : 0.030412625055760145,
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1171230576,
+  "sampling_schedule" : [
+    1,
+    0.95410740375518799,
+    0.87389659881591797,
+    0.69788515567779541,
+    0
+  ],
+  "sampling_schedule_source" : "reference-alpha6.93-linspace-full-1-to-0",
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 1234,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-18T04:36:34Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.022679328918457,
+      "latent_min" : -4.0243096351623535,
+      "seconds" : 6.6598838332574815,
+      "step" : 1,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.7539627552032471,
+      "latent_min" : -3.8182508945465088,
+      "seconds" : 3.2177554999943823,
+      "step" : 2,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.3439261913299561,
+      "latent_min" : -3.3814735412597656,
+      "seconds" : 3.3102528750896454,
+      "step" : 3,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.5464448928833008,
+      "latent_min" : -4.1527500152587891,
+      "seconds" : 3.4398395416792482,
+      "step" : 4,
+      "thermal_state" : 1
+    }
+  ],
+  "steps" : 4,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 4.0124985389411449e-05,
+      "text.function_load" : 3.843003457877785,
+      "text.inference_await" : 0.56434524990618229,
+      "text.model_load" : 0.19518745841924101,
+      "text.total" : 4.6030643335543573
+    }
+  },
+  "text_encoding_seconds" : 4.6901166667230427,
+  "text_length" : 160,
+  "text_precompute_enabled" : true,
+  "text_precompute_seconds" : 1.6031085000140592,
+  "thermal_state_at_start" : 1,
+  "uptime" : 636932.17724583333,
+  "vae_seconds" : 0.83645570825319737,
+  "verified_active_component_count" : 43
+}

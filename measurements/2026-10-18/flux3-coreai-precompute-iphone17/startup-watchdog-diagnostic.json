@@ -1,0 +1,50 @@
+{
+  "captureTime": "2026-10-18 10:29:19.2428 +0700",
+  "procName": "Flux3GenerationProbe",
+  "procRole": "Foreground",
+  "exception": {
+    "codes": "0x0000000000000000, 0x0000000000000000",
+    "rawCodes": [
+      0,
+      0
+    ],
+    "type": "EXC_CRASH",
+    "signal": "SIGKILL"
+  },
+  "termination": {
+    "code": 2343432205,
+    "flags": 6,
+    "namespace": "FRONTBOARD",
+    "reasons": [
+      "<RBSTerminateContext| domain:10 code:0x8BADF00D explanation:scene-create watchdog transgression: app<com.tasuku.sdxlcoremltest.flux3generationprobe(FEEDEEEE-DDDD-CCCC-BBBB-0000000001F5)>:48035 exhausted real (wall clock) time allowance of 10.00 seconds",
+      "ProcessVisibility: Foreground",
+      "ProcessState: Running",
+      "WatchdogEvent: scene-create",
+      "WatchdogVisibility: Foreground",
+      "WatchdogCPUStatistics: (",
+      "\"Elapsed total CPU time (seconds): 20.970 (user 9.320, system 11.650), 34% CPU\",",
+      "\"Elapsed application CPU time (seconds): 3.285, 5% CPU\"",
+      ")",
+      "ThermalInfo: (",
+      "\"Thermal Level:   0\",",
+      "\"Thermal State:   nominal\"",
+      ") reportType:CrashLog maxTerminationResistance:Interactive>"
+    ]
+  },
+  "triggered_stack_symbols": [
+    "AccelerateCrypto_SHA256_compress",
+    "ccdigest_update_internal",
+    "ccdigest_update",
+    "specialized HashFunction.update<A>(data:)",
+    "specialized static HashFunction.hash<A>(data:)",
+    "GenerationRun.run()",
+    "closure #2 in closure #1 in Flux3GenerationProbeApp.body.getter",
+    "partial apply for closure #2 in closure #1 in Flux3GenerationProbeApp.body.getter",
+    "<deduplicated_symbol>",
+    "<deduplicated_symbol>",
+    "specialized thunk for @escaping @isolated(any) @callee_guaranteed @async () -> (@out A)",
+    "<deduplicated_symbol>",
+    "completeTaskWithClosure(swift::AsyncContext*, swift::SwiftError*)"
+  ],
+  "failed_source_sha256": "b68cc17d5041a1a9fcc6ebbcc7b904dd4d8510d2410c2d0564de899006716472"
+}

@@ -107,8 +107,21 @@ def main():
         raise RuntimeError("Production memory requirement was not found")
     shipping_minimum = int(minimum_match.group(1).replace("_", ""))
     view_model = app / "SDXLGeneratorViewModel.swift"
-    replace_once(view_model, "FluxModelPackage.installationDirectory",
-                 'Bundle.main.resourceURL!.appendingPathComponent("BundledResources/flux2-klein-4b-512")')
+    # This historical benchmark deliberately remains a single-model FLUX.2
+    # experiment. Adapt only its copied VM; the app's multi-model flow is tested
+    # separately through ModelSelectionFlows and the ordinary download installer.
+    text = view_model.read_text()
+    constructor = "LocalImageGenerator(model: model, modelDirectory: model.package.installationDirectory,"
+    assert text.count(constructor) == 2
+    text = text.replace(constructor,
+        'LocalFluxGenerator(modelDirectory: Bundle.main.resourceURL!.appendingPathComponent("BundledResources/flux2-klein-4b-512"),')
+    text = text.replace("private var generator: LocalImageGenerator", "private var generator: LocalFluxGenerator")
+    text, count = re.subn(r'        let model = GenerationModel\(rawValue: UserDefaults[^\n]+\n',
+                         '        let model: GenerationModel = .flux2\n', text)
+    assert count == 1
+    text = text.replace("generator.generate(prompt: text, seed: seed, steps: usedSteps)",
+                        "generator.generate(prompt: text, seed: seed)")
+    view_model.write_text(text)
     smoke_source = (root / "scripts/device-probe/PhoneSmoke.swift").read_text()
     if not args.shipping_configuration:
         replace_once(engine, "private let resourcePolicy: GenerationResourcePolicy",
@@ -119,9 +132,11 @@ def main():
                      "self.resourcePolicy = resourcePolicy\n        self.allowsLowMemoryProbe = allowsLowMemoryProbe")
         replace_once(engine, "guard Self.supportsGeneration else { throw GenerationError.insufficientMemory }",
                      "guard Self.supportsGeneration || (allowsLowMemoryProbe && ProcessInfo.processInfo.physicalMemory >= 5_500_000_000) else { throw GenerationError.insufficientMemory }")
-        replace_once(view_model,
-            'safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"))',
-            'safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"), resourcePolicy: ' + ('.keepWarm' if args.keep_warm else '.releaseAfterGeneration') + ', allowsLowMemoryProbe: true)')
+        text = view_model.read_text()
+        original = 'safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"))'
+        assert text.count(original) == 2
+        view_model.write_text(text.replace(original,
+            'safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"), resourcePolicy: ' + ('.keepWarm' if args.keep_warm else '.releaseAfterGeneration') + ', allowsLowMemoryProbe: true)'))
         smoke_source = smoke_source.replace("private let phoneProbeUsesShippingConfiguration = true",
                                             "private let phoneProbeUsesShippingConfiguration = false")
         if not args.keep_warm:
@@ -140,9 +155,10 @@ import UIKit
 struct SDXLCoreMLTestApp: App {
     @Environment(\\.scenePhase) private var scenePhase
     @StateObject private var viewModel = SDXLGeneratorViewModel()
+    @StateObject private var setup = ModelSetupViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            ContentView(viewModel: viewModel, setup: setup)
                 .task {
                     if CommandLine.arguments.contains("--device-smoke") { await viewModel.runDeviceSmoke() }
                     else { viewModel.preloadResourcesIfNeeded() }
@@ -199,6 +215,7 @@ struct SDXLCoreMLTestApp: App {
         "copiedEngineMatchesShipping": engine.read_bytes() == (root / "Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift").read_bytes(),
         "copiedViewModelPrefixMatchesShipping": view_model.read_bytes().startswith((root / "SDXLCoreMLTest/SDXLGeneratorViewModel.swift").read_bytes()),
         "assetLocationOverride": "bundled assets for this legacy generation experiment only",
+        "modelSelectionScope": "FLUX.2-only legacy driver; not validation of multi-model UI/downloads",
         "steps": 4, "resolution": [512, 512],
         "metadataFunctionLookup": "assetSummary",
         "transformerCompute": "cpuOnly" if args.transformer_cpu else "gpuPreferred",

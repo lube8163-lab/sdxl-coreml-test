@@ -1,0 +1,64 @@
+{
+  "scope": "Diagnostic evidence preceding BF16 fix; no image output",
+  "first_nonfinite_component": {
+    "component": "input",
+    "outputs": {
+      "early_image": {
+        "maximum_finite": 4.6015625,
+        "minimum_finite": -3.171875,
+        "nonfinite_count": 0,
+        "shape": [
+          3,
+          3072
+        ]
+      },
+      "early_text": {
+        "maximum_finite": 15.921875,
+        "minimum_finite": -12.59375,
+        "nonfinite_count": 0,
+        "shape": [
+          3,
+          3072
+        ]
+      },
+      "image_h": {
+        "maximum_finite": 50.25,
+        "minimum_finite": -59.28125,
+        "nonfinite_count": 0,
+        "shape": [
+          1024,
+          3072
+        ]
+      },
+      "image_vec": {
+        "maximum_finite": 0.65380859375,
+        "minimum_finite": -0.5478515625,
+        "nonfinite_count": 0,
+        "shape": [
+          1,
+          3072
+        ]
+      },
+      "shared_mods": {
+        "maximum_finite": 21.5,
+        "minimum_finite": -26.3125,
+        "nonfinite_count": 0,
+        "shape": [
+          2,
+          3,
+          3072
+        ]
+      },
+      "text_h": {
+        "maximum_finite": 65024,
+        "minimum_finite": -55424,
+        "nonfinite_count": 4,
+        "shape": [
+          160,
+          3072
+        ]
+      }
+    }
+  },
+  "note": "All preceding 32 text layers were finite. Promoted BF16 input output minimum -111104 exceeds FP16 range; INT4 data remains unchanged."
+}

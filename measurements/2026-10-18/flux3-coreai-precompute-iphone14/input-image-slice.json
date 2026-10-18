@@ -1,0 +1,24 @@
+{
+  "component": "input_image",
+  "completed": true,
+  "compute_dtype": "bfloat16",
+  "source_asset_files_sha256": {
+    "main.hash": "37caca62253a86415440fac85ad23a00fe15b68b28fb32d45abbf09fd350a29f",
+    "main.mlirb": "a7684c72506316774743ba77d73f8004481b1c5428512303716aed441bb0746b",
+    "metadata.json": "e5aceb5ee8f484ce65608954e501da13154828b50fafc66efc3be019c0f548b4"
+  },
+  "derivation": "Exact dependency closure of input.main image_h; original constants/ops retained",
+  "input_names": [
+    "image"
+  ],
+  "output_names": [
+    "image_h"
+  ],
+  "asset_files_sha256": {
+    "main.hash": "d94d9949a69698ff80188802f5e3345ba02ecbb3fadedcb0b411fb9233827308",
+    "main.mlirb": "173842537b91e80b18829e8f6734258a7697bc59553bdf080a8b67f1efedf01a",
+    "metadata.json": "2e63695075384139165dea63f18fc6849d414588e241813b14404e6c0bce775d"
+  },
+  "asset_bytes": 787537,
+  "script_sha256": "3651475b1c7489779ff89c54fc3d04111a563fcbc4e9f2674d4a74b53a72e78e"
+}

@@ -1,0 +1,4509 @@
+{
+  "caption": {
+    "format_version": 1,
+    "model": "FLUX 3 Image Klein distilled",
+    "width": 512,
+    "height": 512,
+    "seed": 42,
+    "steps": 16,
+    "alpha": 6.93,
+    "schedule": [
+      1.0,
+      0.9904716610908508,
+      0.9798020720481873,
+      0.9677731394767761,
+      0.954107403755188,
+      0.9384464025497437,
+      0.920318603515625,
+      0.899091899394989,
+      0.873896598815918,
+      0.8435055017471313,
+      0.8061264157295227,
+      0.7590360641479492,
+      0.6978851556777954,
+      0.615270733833313,
+      0.4974874258041382,
+      0.3160054683685303,
+      0.0
+    ],
+    "original_prompt": "A red apple beside a blue ceramic mug on a wooden table, soft window light.",
+    "expanded_caption": "A realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering.",
+    "caption_expander": "Codex supplied this fixed full-scene caption before the offline device test",
+    "exact_tokenizer_input": "<|im_start|>user\nA realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering.<|im_end|>\n<|im_start|>assistant\n",
+    "text_length": 160,
+    "real_tokens": 117,
+    "token_ids": [
+      151644,
+      872,
+      198,
+      32,
+      25489,
+      2058,
+      25843,
+      10300,
+      389,
+      264,
+      8205,
+      37871,
+      1965,
+      29388,
+      264,
+      3241,
+      13,
+      362,
+      3175,
+      56696,
+      2518,
+      23268,
+      23011,
+      389,
+      279,
+      2115,
+      11,
+      448,
+      264,
+      2613,
+      6303,
+      92186,
+      42024,
+      51489,
+      389,
+      279,
+      1290,
+      13,
+      576,
+      51489,
+      702,
+      825,
+      9355,
+      9434,
+      3705,
+      12880,
+      1290,
+      13,
+      24079,
+      5810,
+      3241,
+      3100,
+      28833,
+      504,
+      279,
+      2115,
+      323,
+      18644,
+      21700,
+      34512,
+      3941,
+      279,
+      7579,
+      23925,
+      13,
+      576,
+      4004,
+      374,
+      458,
+      650,
+      564,
+      6207,
+      291,
+      11,
+      56050,
+      72400,
+      12644,
+      57722,
+      7002,
+      13,
+      11733,
+      6171,
+      525,
+      7225,
+      9434,
+      3143,
+      279,
+      4126,
+      315,
+      279,
+      4034,
+      13,
+      5443,
+      5810,
+      7987,
+      11,
+      11682,
+      7236,
+      11,
+      323,
+      264,
+      19300,
+      69064,
+      18037,
+      11,
+      448,
+      902,
+      1251,
+      476,
+      6524,
+      287,
+      13,
+      151645,
+      198,
+      151644,
+      77091,
+      198,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643,
+      151643
+    ],
+    "tokenizer_sha256": {
+      "tokenizer.json": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+      "tokenizer_config.json": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+      "chat_template.json": "6f8a6a55027e3da5160105556cda5dd69f6423f1c32645f6730d32de7773d0c4",
+      "config.json": "5d012a1c2bbb87e26a5d2683b5daa969f6a40ca3e024c74a945bed7590d36309"
+    },
+    "text_feature_layers": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32
+    ],
+    "text_feature_width": 20480,
+    "noise_dtype_roundtrip": "PyTorch seed42 float32 -> BF16 -> float32",
+    "fixture_file_hashes": {
+      "cos.f32": "2b69bdb398bcacef5dbc85be7329e76c5e2a5d0150baa80afd616ebf0b011398",
+      "mask.f32": "5eb8ed4e7ac654c7e751bfb11e68b7285af976bae7d52eb10a1d4d7aa3a26888",
+      "noise.f32": "2a887895df52e3d085d21407f0a6f8c27846192ec0f63db56536aec5963b987a",
+      "sin.f32": "d40235bb2b47c02fed11a08d32d236fa70d5e5d5e6aec1f2c9a31b9486fba8e4",
+      "token_ids.i32": "828e7a8c766d9ec4832837b6386a569ef15332714854cdf5e4730ddc9a2b618c"
+    }
+  },
+  "components": [
+    {
+      "completed": true,
+      "component": "input",
+      "text_length": 160,
+      "parameter_count": 197001216,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "none",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "image",
+        "text",
+        "current_t",
+        "target_t"
+      ],
+      "input_shapes": [
+        [
+          1024,
+          128
+        ],
+        [
+          160,
+          20480
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "image_h",
+        "text_h",
+        "early_image",
+        "early_text",
+        "shared_mods",
+        "image_vec"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "37caca62253a86415440fac85ad23a00fe15b68b28fb32d45abbf09fd350a29f",
+        "main.mlirb": "a7684c72506316774743ba77d73f8004481b1c5428512303716aed441bb0746b",
+        "metadata.json": "e5aceb5ee8f484ce65608954e501da13154828b50fafc66efc3be019c0f548b4"
+      },
+      "asset_bytes": 394010903,
+      "elapsed_seconds": 1.6618472500122152,
+      "max_rss_bytes": 1685405696,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 0,
+      "source_asset_files_sha256": {
+        "main.hash": "7e9d40fb57f22825d45b80e96f0c6ca8f7bb00924cd0943db315edcb4e716e57",
+        "main.mlirb": "844140ed49c74a76b6872a7bce0d5af1fc7f0bfedefb333392e9a3063555151f",
+        "metadata.json": "e0e7834103a9383144c3747a551daeda7e4ca74fd14e4023d64e6d24b6c16644"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "join",
+      "text_length": 160,
+      "parameter_count": 0,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "none",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "image_hidden",
+        "text_hidden"
+      ],
+      "input_shapes": [
+        [
+          1024,
+          3072
+        ],
+        [
+          160,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "211cc4c17ed48d2a85c35f0e0d3658d04ef76327d8ec581ef172a4cbc057402b",
+        "main.mlirb": "e1fdf6546d845c3f05542b525f1d464be20d9e2d3043a468c0aa26554c5460b4",
+        "metadata.json": "9ad36b7964fdfba7d96396e7616ee1ea37f7610cf7874ff654758921db6db274"
+      },
+      "asset_bytes": 738,
+      "elapsed_seconds": 0.00871908399858512,
+      "max_rss_bytes": 63864832,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 0,
+      "source_asset_files_sha256": {
+        "main.hash": "6de400960ae259af6c6e4f9aeb222a7e5ed888babd00c5afd83228ac3bea903d",
+        "main.mlirb": "ca239b0bf8d9822666a35e9a37263d4602d8383c2fd9b2a532f3a48c38d3ef1f",
+        "metadata.json": "a292781b1140154998f1eedf8ada1c40736e8d9674ffc4a78dc570e3146e206f"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "image_00",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1024,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "37dad7d09ec508681af672e446ce6e511dfd8a01b9ded8e2f10a1c2f8bf7cec0",
+        "main.mlirb": "f82606608a25102b4acfc04613385785579780e6796e53567b7026d2fd8f0012",
+        "metadata.json": "76ae46acfe0a351de9a6b75190cdb4050ae87184e6ef5cd20c562d3209b93f27"
+      },
+      "asset_bytes": 70072767,
+      "elapsed_seconds": 0.256640832987614,
+      "max_rss_bytes": 455655424,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "f15f86fa63af649120386f90cbd6265e831e53cc730a8f90ed1f80ec2914a7b0",
+        "main.mlirb": "1a6479234cb399a6b8af7a10563ea9bba678e89163338a4e9da252f70bdcdae7",
+        "metadata.json": "516a03da748a34fb19e6c5f5d59c5fbfc8fcc2b187f0b9f2a4e04d4763467bc0"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "image_01",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1024,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "6921ed667be03f2b426627064c01755a5ba666d4c46054388f649f895575c855",
+        "main.mlirb": "12c517193cb2b3e2f9bc6c2fa0f331ecdb37bc693102d16acd3840e617e295c0",
+        "metadata.json": "61c10624c2dff674d1f05d25f31b482587357b932868ae18cb27c5f9ed57ce88"
+      },
+      "asset_bytes": 70072766,
+      "elapsed_seconds": 0.2590203330037184,
+      "max_rss_bytes": 455491584,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "4606be6eda49c0f7a730e4db280ddf238a6c5fd930a06f963d41c331817fdfac",
+        "main.mlirb": "3a4c27b2216d573e1ee7d6916454306cb5bb98cab2edcbe4b1f406922ba2abdc",
+        "metadata.json": "a12545ef64af7cbaa879806e87bdb5418a0a82f3a8fa7299e66cb201632e2fb2"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "image_02",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1024,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "d2b4bdceb654738ca1394dfb84d7d168f92387a26dd165a96433cf58e193cd9a",
+        "main.mlirb": "4b5caafaef025a74ecd7adea78566a9a7ebdec32aed2d6b9dbf03454e679636e",
+        "metadata.json": "b0354c3ee610c918ccb85aca484eede0f3f62b40524de1d9583d55e95dd678dd"
+      },
+      "asset_bytes": 70072769,
+      "elapsed_seconds": 0.2669550410064403,
+      "max_rss_bytes": 455393280,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "9d5603f8216344f2a92182d17882651834397b39274ddf41f484d0fcb7c723ef",
+        "main.mlirb": "53d5e635452ff03d920aa84a20588b5c7c4182731ef95e55c267275587bb3a01",
+        "metadata.json": "4f99f017ddef9c4dc5846f10e5c4b33baf64d31eaab130aa906071ab719ef47c"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "image_03",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1024,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "601e57dddfa87cf0cc972c90d8e0966e15aab56671df880d9886dbc39faeb4f7",
+        "main.mlirb": "0b5dcbb2dc42054c102eea12cbfa52c272033231fa0fda59e99726268aa8fda2",
+        "metadata.json": "d7b62bdb6ab8bfb0d53aeb9d1583c15382c36a3e19f7e37706fae3208033d386"
+      },
+      "asset_bytes": 70072768,
+      "elapsed_seconds": 0.2564550410024822,
+      "max_rss_bytes": 455491584,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "065365e3781e3b05b3ec61d214751c5b9ad2943ddee350aba85cad5d22a3576e",
+        "main.mlirb": "9de6506c582d59429e6e2708772333628544c32b11aa41fc66509b5e179cdb66",
+        "metadata.json": "cbf4ba9634309c64257c390a81e26f1cd8370a055b2661dc8775952c31fa33b2"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "image_04",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1024,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "8f92623c5321d9e716693dd79cfd0a4733627b600bd192f6d6422182ba6a2d8f",
+        "main.mlirb": "6014589fbefcb3c0ebb62687d965f20b66bcaa43f93c9f9547cbee842719a56c",
+        "metadata.json": "7a96e3974a67540e904d15af51697041bd4d8cc92948f18799c114c311b59970"
+      },
+      "asset_bytes": 70072770,
+      "elapsed_seconds": 0.3106222919886932,
+      "max_rss_bytes": 455606272,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "30721e698f01572d8b7db34a3f859ed28231624e81b40d757746c4a2668ccbc3",
+        "main.mlirb": "845f98c8af4eb3b4c97fbdce42b4f100816944f714e6c6c1711325cbe22cfebc",
+        "metadata.json": "2b1f958e73869fc6aada4c1470e02f4fa0d7090b66fea7b77e93d09c52fda1f7"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "text_00",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          160,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "3d751bdecbb22d95166adcb7514215db21465cf335ec58d3539e87702c9210f5",
+        "main.mlirb": "af52e25de790ac4eb74a241dc68f27f36460ca6586c3233ef4683b8edcf7c66f",
+        "metadata.json": "9a0759789a6126b9959f7a1365eff0dd6df72091c6f544d481bbffb8c5815733"
+      },
+      "asset_bytes": 69188032,
+      "elapsed_seconds": 0.2633058330102358,
+      "max_rss_bytes": 466354176,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "11f62e2afa8f4c36976f5db1d9fe17e69d2348f7b2708f9ac987a0bcc55c06f5",
+        "main.mlirb": "e2485ec5cefea6807c227531846e5fdbe564f6770c4b65da3ec38af1a17096d8",
+        "metadata.json": "a0872bcb279b84c5f239e31a451aeae73ce53aadec08fcec51df70ef0904d205"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "text_01",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          160,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "2bf9d6fa283f9292cd3ff183e73e722e8bb73e6e3fd2bb6998d3fe9fa23f0f45",
+        "main.mlirb": "32977ef446b301fd1f2a11b29a47a71530c904979627842f42528521f82f52d9",
+        "metadata.json": "68253846b88746451a68cf816ba9ea2d26210a0025b564e89d6690d4d91d011f"
+      },
+      "asset_bytes": 69188031,
+      "elapsed_seconds": 0.2773719999822788,
+      "max_rss_bytes": 422674432,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "b498cd8661547ac2b9603a55f495a27cca606dd54f0c711cec4b5464d9f37619",
+        "main.mlirb": "91802230d8b8e156aaa16604cd6706c09742ec507fb3e3fabb80c3ea3234e268",
+        "metadata.json": "d42f6089e8fa162c5b988d0f6f4021018dc3a2186c51fa102ba60ebb86c2d57f"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "text_02",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          160,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "b9a40c679448e754049ca043c5049a1d2448cd921aca015b3a315ae2c8a923c8",
+        "main.mlirb": "7cc7269fc3dab4b9353e4a9b190c051e49e3402bc6a3f91912fcf83e208d5e4f",
+        "metadata.json": "cced5b890cbe1c8788f431aac058f7a71fb702c9dd616acb5857a2035ad4eef9"
+      },
+      "asset_bytes": 69188030,
+      "elapsed_seconds": 0.2659079169970937,
+      "max_rss_bytes": 466436096,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "9e4813398befadb36ba9e4fd2a159437d17736c77137633d71023e47f3ceff2a",
+        "main.mlirb": "4d07917ee7d27911fe6a0cda6d59f26c02c2cb5479fe63968bde44259b47945e",
+        "metadata.json": "4a901ab5c6b4a9e8f9ac8845a6a5a02c7da20f2d7a4d82945fcc10d7703b1246"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "text_03",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          160,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "7c121d817c3d815ae2696540eec34f4d1aa36e5c6984cb9546c7f4e7a20ee454",
+        "main.mlirb": "d9f9d700979a6b33ac69574c4d47022cd7b29894a555da400aff62c1fa29f8ad",
+        "metadata.json": "2f21827f65bb66c9353f867da8ccf6c3dc82413be01260863d2b3cb6559d839a"
+      },
+      "asset_bytes": 69188032,
+      "elapsed_seconds": 0.27587054201285355,
+      "max_rss_bytes": 466452480,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "b6ee2a4a4db3ca7362c0ae69adba29c8869659b19643e94ab2fcc8ad0a449a6a",
+        "main.mlirb": "e13210925f8f868484f6a2dcaffc4af1cc5b58d671c233541c1d8b9ebb808f28",
+        "metadata.json": "ffb6521b88dd6bb8e35fed51a9ba355cf061819b30c9d9be80fb98fda0be3746"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "text_04",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          160,
+          3072
+        ],
+        [
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "985d12a848734439ea4a0ed8289486fbfdcfc3d31dd5f54e5366c6e94b47e2f3",
+        "main.mlirb": "4d77a37afa355f7a2be1e7bfb641cfdf9ee23488a2a0dc08ae5421cc0316262b",
+        "metadata.json": "e9deb0256803fbb11af6ceb4f199a44fe660703f6487e8fe244d0fa7d482411f"
+      },
+      "asset_bytes": 69188032,
+      "elapsed_seconds": 0.2719936250068713,
+      "max_rss_bytes": 466599936,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "ab9b9a10ff6e64bb19e27876a6b84a6a2e6a944ba8d43a97a7463dfdf77c04aa",
+        "main.mlirb": "c1e0ea9cd8147e0a9dd3d33a8624140f9a1d33b0b2961ba02688b74bebfa90df",
+        "metadata.json": "b6e60eaec68851351752f9481a843285b1d1e3fcc4448ec6417c999fece6b128"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_00",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "b3931fd01dbbf21cf740d19495ac6fd30411e1c15174a6239ce77ada6d61d445",
+        "main.mlirb": "a998e1fda0a05794ae8b41354b23d1ff016a92db2a52c8b1b0e0b586feb9935c",
+        "metadata.json": "e7f3b95635e095e876c732ff5b09527ce8c5f21fa939cce69c91d24bad34edb4"
+      },
+      "asset_bytes": 70237862,
+      "elapsed_seconds": 0.2746516249899287,
+      "max_rss_bytes": 456310784,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "3f392329dd5ab8baacbe2688fd298aa344ab9c7f06da67d17f551166e0a0a946",
+        "main.mlirb": "f6e6123488d9327ffc45290d469fb3f3d720dc584b57c7b3338bf2ca09176bdc",
+        "metadata.json": "afe114f330e12a44c0bf74b2089abb7eedd15961af283106667c7b723e742f0d"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_01",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "fa70fb6661777bdc6bc8233a96d32877412e09ace9503defb81e47a20d9ecc02",
+        "main.mlirb": "e20aada40d927e44da15818177fde41d4f90048e8f90e00d097d1de9ff4c2454",
+        "metadata.json": "263c10258471021f0b8b6056acb58bff8cb44befb2ccf9e18cb9335317536c7d"
+      },
+      "asset_bytes": 70237866,
+      "elapsed_seconds": 0.31837204200564884,
+      "max_rss_bytes": 455753728,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "188cffbb045a848d22eecc53095cec01d521df914e1f87c5e344096098b3a70b",
+        "main.mlirb": "bc8ef56c0e068c25c4232bea3c617a64c0f3fd044c17791fe26e51168bd67612",
+        "metadata.json": "e7e2fed5bcae2ef6ccaf81b931ba948b12812499297ffaa2b571a4929c7b5514"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_02",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "82d66f1df4a039610e3cc6df525393e96cf038f7c6819cae8567f0454570a2fc",
+        "main.mlirb": "a8fd7edf31892b516040f51aa402d3d283e1c9efb8eefafa0fa2f87112599519",
+        "metadata.json": "8259399a6cf72a5deaf4b3f701cf57221b2b07ba4bcc5368e5e78cdbd97d7c14"
+      },
+      "asset_bytes": 70237865,
+      "elapsed_seconds": 0.29597512498730794,
+      "max_rss_bytes": 456228864,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "04313ced032be123b6878fc111da09e0753665e323588ca91ce5ad2d536939d8",
+        "main.mlirb": "b8bed68a103002bd194f8610623524c46a16c7dd404c270a73477eca2db739e5",
+        "metadata.json": "817f4de8bf8789f9baf5645e2f96f3416a59738f101ae5b8b656b2bf43d98dd3"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_03",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "8a8f1ca6a05c24c7b08fa5773e3dc2c97fb5faae3bf943c274369a915cc054e2",
+        "main.mlirb": "beb7a74ddd1bb5f3bee10eef737383ce631c287bafa2889e37c34a78f87fff5f",
+        "metadata.json": "94b6a7ceac3f7d9b4b4118b007e5fd581900f6dd0e905c68cdf7875408d83628"
+      },
+      "asset_bytes": 70237863,
+      "elapsed_seconds": 0.2768203750019893,
+      "max_rss_bytes": 456097792,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "068fcd6fe6b457c6b119a7a881741ab23f0111bce13e0b4151db7fa850b5f63f",
+        "main.mlirb": "4eea9ae2e0a40a79406b58168954d6c97c394e2fbb6d916e2714bfcee1d985dc",
+        "metadata.json": "f34cbfd82a2b34a56289e934bb23e499ad6183c785e53a5b4a66e512392f2b18"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_04",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "e003a25e28555dba32b850f004ed850532609bd901bd00bd1970eae8cc8d3116",
+        "main.mlirb": "e021d449d763334f5eb6d31056fa77a364ef745324a83f1a8d4d6a597ac5f427",
+        "metadata.json": "2400e99060d77d060eff463188031a32d71350e1066dcee43710ba605c58be1b"
+      },
+      "asset_bytes": 70237861,
+      "elapsed_seconds": 0.2808709579985589,
+      "max_rss_bytes": 452657152,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "0051151558a604e959dca55750bf3c6480395513d48097f9d591d1eb7d39dd46",
+        "main.mlirb": "569e37eec7a72fbad94bd86d5fa41e797efca616a9b9d9fc7a193c81ddf6d21a",
+        "metadata.json": "f84fe47704177edfdf0c883c182328c17cb77f38907d1899b28e4d28b00c80ba"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_05",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "6e2a073c3558521fe84349c1b6096e933734317330684757c599f5a19b95d5f8",
+        "main.mlirb": "7740e9eed5d1a58b1650b0ca92715546fd90d3003e8bf0ab24370285e68d1e12",
+        "metadata.json": "7098be471135510b257892580dd7829fb46f191532d82e998ec024c77e2aed98"
+      },
+      "asset_bytes": 70237859,
+      "elapsed_seconds": 0.29120095798862167,
+      "max_rss_bytes": 377012224,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "bf29d4b123648a282a59939da3d4857cced5d69b163b43659f35335b006c3afa",
+        "main.mlirb": "86f57e01846569cf116379cda38670b7f0e188174b705d26dcb002d243dc6e04",
+        "metadata.json": "a22400138c6bcdf8ce596807ee0a2000a571b9e06d1a838b38ccd2d98abcef6b"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_06",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "0d51aae6ee4ae73696e52cedb06b5f3d7df71164a7298118442d27dab9d701d2",
+        "main.mlirb": "e7f82f5dca6a8fd35b06c153f16fc9dbaf4d4a857f12397c7884e55ae143d6ad",
+        "metadata.json": "68876e29b0acabebb971f6508efadef212b164cfbd2d63313bb3ad90b79b6d77"
+      },
+      "asset_bytes": 70237861,
+      "elapsed_seconds": 0.2883108749811072,
+      "max_rss_bytes": 385990656,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "cedaf8a3511623716780cdbe6e1272efed37e4133640668b0de978555775ae5d",
+        "main.mlirb": "c71473d721fd3aaef0fd92a320ac0960687aa263f6c9b06c1c78599d792bbd71",
+        "metadata.json": "ffcaa8b7b6e27853a5c4a55c18a6d0610e56d3546a9a6f13b87f5e945250fbc2"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_07",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "c6f958f3278425afdf0d0feb5bbba6b5130c676c360f730e23879f2d446fff56",
+        "main.mlirb": "50e0a19a9d1928d76283efb1416e320356d34ca091a3c812c4b581ba2327d4c8",
+        "metadata.json": "68876e29b0acabebb971f6508efadef212b164cfbd2d63313bb3ad90b79b6d77"
+      },
+      "asset_bytes": 70237862,
+      "elapsed_seconds": 0.2793436669744551,
+      "max_rss_bytes": 446480384,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "132f1be62db1c17c0ea7af8db03d1e7eccb8efb62e85a7c278637b2bbf516371",
+        "main.mlirb": "de8e74eca6117526d2870a7745c567b6841cc4a90c5cc0ebf9e10ebbc10ef34d",
+        "metadata.json": "59a18b7ce83dcfb036030434812b0c83ed82338073b198f677c4d00b82bb1f30"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_08",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "bb5ee0b6846489de6012b3a5601e8b8ccbaa73f6cc254da72187e944bbd070c1",
+        "main.mlirb": "2fc1bca315159279b99c6b9f2ff7c90c33d62891bbe83c8ab6b8d3d6ee046d30",
+        "metadata.json": "da97b664ca3dc40b22f75b88820b4cb51785c6689ebe1985fe7af785b3e27da6"
+      },
+      "asset_bytes": 70237861,
+      "elapsed_seconds": 0.40060954200453125,
+      "max_rss_bytes": 445661184,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "5b3f0f30a1101036f7805ce23d5028490d86f76c4718dde49c13d29632d92560",
+        "main.mlirb": "7bf6f9690fd373849d019fa52f3585aa25a7ebc5190fd235a7749af337dc1eb5",
+        "metadata.json": "e7888ac65d82e90ca5fa84283f6fdc2371851f5ae590fd34e21633643a7c6720"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_09",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "31652013a52e6decb034e30b7d7c898b17071549e2d5e546cc0b5df33693b7e1",
+        "main.mlirb": "a6e6420f820a317b2044deda143b7ac9255ce16335eba967724ec3e28ae68d9b",
+        "metadata.json": "e2626a6c0394ae33223acf34f167943347d2ea5f61c775dda1ab99d6b5e5d945"
+      },
+      "asset_bytes": 70237860,
+      "elapsed_seconds": 0.2799189589859452,
+      "max_rss_bytes": 386023424,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "5d19809f4d665174a5244285fac0523e7ae97bb1e4e2dae449c8d9ffdd29d89c",
+        "main.mlirb": "e275b6ec226ba19a5529c196e8cf86b69440c3528e2cfe8dcccce3793f552e38",
+        "metadata.json": "d586ae573fb61856db01623c306941078511e873126bc24cab635b6bbf3b5ef1"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_10",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "b47774c5122cbbfca32eb128f465db3742534b578da89ff64bf00efcd030ceb9",
+        "main.mlirb": "ced9fc35e72c1e7e657cf53f01d1ff6a72c0a17a3894b8b9ad8027f0de1c266d",
+        "metadata.json": "e2626a6c0394ae33223acf34f167943347d2ea5f61c775dda1ab99d6b5e5d945"
+      },
+      "asset_bytes": 70237862,
+      "elapsed_seconds": 0.2686390409944579,
+      "max_rss_bytes": 456228864,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "fd863c39bbdb8ce436c53028c0080fd745914c9bd4cad591440dc130f07147aa",
+        "main.mlirb": "55509ded3d518fc63bdc27486425ff8ec56ef813a8154a3b5df1d08742b8b92d",
+        "metadata.json": "ee2910dfd6817551b01a975940ab59ff3bad643d3ffbda2bbb46be90291bf4c3"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_11",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "51884d8904a8befbb8b2891301dcc47aa47429ff87e276ff13a59aaa830cef3e",
+        "main.mlirb": "12c7389846d4047aa30b6e67742a3a650f3ffd5c1391f57893eacbd1bed0898a",
+        "metadata.json": "051fcf36274ba582342d91cc6703f53a0dc9d681ece3d8799420bedf5a25146d"
+      },
+      "asset_bytes": 70237864,
+      "elapsed_seconds": 0.3363495410012547,
+      "max_rss_bytes": 456294400,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "3f215c9a97f4ce25cde106e9309c8d7499f68879f7feca196bd1ff2f2d5a1d55",
+        "main.mlirb": "14c3cc0b200ab34be9db3afd708ed45ed2e3a5dee7c4554d62e79e4348ae6de8",
+        "metadata.json": "49353642ecae5bbc35f0a4fdd1bbadddd7391fbc216968be52080781d33443d6"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_12",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "116bc1987207a4653c17dd0bd959d211e61761287fa532ec53642d8530862ed2",
+        "main.mlirb": "aca9f0f4c3d9a4b618529d3079add7b239eec9dea16c3930d2e53527ef398e63",
+        "metadata.json": "9da08dba6ba6b32fb3e4c36bf91bbc61e3c4a6d35de3f6f677071d9b792c5e6b"
+      },
+      "asset_bytes": 70237862,
+      "elapsed_seconds": 0.3066721250070259,
+      "max_rss_bytes": 430456832,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "b010c25380017a7a8b8751b7abffcaed8afa2260b2ca941aea5d533809626ebd",
+        "main.mlirb": "179d43d74e0009bd9c998cce737ac1814b52cd02a06bdadcf81459cf73ba5b8c",
+        "metadata.json": "b9420a3f7967472e800f0423d97d7702d9b3ae66b0a9b2368d68ac41c1da1ded"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_13",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "37ac9a4317bf5c87fefc48a721cfe08af84a27157a56485a65aa2f4bbe3baa82",
+        "main.mlirb": "550e8fbaca942925fbd030dd455aaa6d40520b3fd4a25fc8ccb6f72a5e857624",
+        "metadata.json": "1030db9cce7533b5627c65c0644ad7b8cd47415534be69fe6a3cdbb982e8e99f"
+      },
+      "asset_bytes": 70237864,
+      "elapsed_seconds": 0.27781558301649056,
+      "max_rss_bytes": 456146944,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "6d0ea38145ef1c366f8583dcbe5b220dcde2f65e32b216622d6658d409ed7297",
+        "main.mlirb": "fae8213affdebb235b3716408861b7eba471d509b55d938ce77af55b9c9c352a",
+        "metadata.json": "0facba76d975a170216fbc37cf9b7e70fadb9ec4e7f09cb241c2ced8ff499f4b"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_14",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "d8d54268055e8d6ebd4017a7abcd2c9bd59fb1b43eb0272ff6af9bff1805321d",
+        "main.mlirb": "67e195790c22b6e260a7945da276f39458bb0440b5bd4573554ee9debf499e3f",
+        "metadata.json": "1030db9cce7533b5627c65c0644ad7b8cd47415534be69fe6a3cdbb982e8e99f"
+      },
+      "asset_bytes": 70237868,
+      "elapsed_seconds": 0.29952425000374205,
+      "max_rss_bytes": 386859008,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "5f4e9bc4e51db5bd440050da2ae958ff1125ef9196b03871426bb925bb7123e7",
+        "main.mlirb": "921469a3b982ff602cdf31e1ada26a6a128e16f6b2e6394b275b46fc43f93276",
+        "metadata.json": "e9a62e018a6c40458dbb345e516db94fb83e3cc2466612d4cd26f67e761b297f"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_15",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "535b746651a7170eb9d950774d3b73e4845d93f281df48cdb61eec5930186d6c",
+        "main.mlirb": "6849d5ce2d8aa9943dee7e57da69272baf9dc6f1d7aefb74749e42a995506a22",
+        "metadata.json": "be817ab43a5d4852046a459b70498b690a38e7a244bcb87a7846332d0250f272"
+      },
+      "asset_bytes": 70237860,
+      "elapsed_seconds": 0.2935797500249464,
+      "max_rss_bytes": 391036928,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "02bb73474c39b96355afa0ee7249d886a4df6f1f5602566c51621e11ab61b83d",
+        "main.mlirb": "606701e1c905fb722152b9fca479974474d1b6eef94b313214a184143b49273d",
+        "metadata.json": "a0ea025da0e06d2b670b314a5ce43ae9a6c8129efd656b580f2453892b4663ec"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_16",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "045abd79bafd8c44353b91f868e24c276a4843a30698590a3b8afc3f5a27bb1b",
+        "main.mlirb": "8f85e59f5091e915e7c4ff95c1c1c4dd7a3c60dc3480773423bd03073e849e75",
+        "metadata.json": "b718a1e740bab0f268c6d0e57190adb8060a30cae17613af006559f38760fde7"
+      },
+      "asset_bytes": 70237863,
+      "elapsed_seconds": 0.2816185829869937,
+      "max_rss_bytes": 414973952,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "35af42cd29bf2976bf18234e068d9328c3228d073a0f6c5486934238e995b006",
+        "main.mlirb": "9cb197ef6c56b53365a4a0a3beee76ae2ecced04e26fd652443cb4b665380281",
+        "metadata.json": "596d7474010b85ec1f4972f732ff5f24b60aea84a5bb1609f8f08f21777e66b9"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_17",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "2fe7899a2de01831f5da4a0bcd0115800d677d47fd5f8f9ed691248633c53db5",
+        "main.mlirb": "580edc90e1393d1299cce3e823bcfc24687f661d0f2be6cf4393080326069335",
+        "metadata.json": "9f396307b331a29186bf95ee37fd0827d6529fae65fba24965d7897cdfbe9f57"
+      },
+      "asset_bytes": 70237862,
+      "elapsed_seconds": 0.3249570829793811,
+      "max_rss_bytes": 385400832,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "a6d83a7bff3dc59ff5c7e5293ca9a3c7d850bdb7f25067a748f7e4a7d50a52f6",
+        "main.mlirb": "9b8f59aa84e5e6c3290d452a0f1465f51d94dcb9dc14440a4c0a694c75ac9097",
+        "metadata.json": "b3acf3174a3dea5685bc546f79254072fddedd5bd4cab7c267501932ec877be2"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_18",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "b523c69f80b0bba4029567c7969c80dae0e8d9082f46f378de70946aa5f902a5",
+        "main.mlirb": "be0da76c74760bd9c816f726a6dbabf26e2582c8cef43584ce8d33da11248ea6",
+        "metadata.json": "cedf078adbf42a3938c074ff26bc6e354db1136b379271670d9248ac918b80bf"
+      },
+      "asset_bytes": 70237861,
+      "elapsed_seconds": 0.3111673340026755,
+      "max_rss_bytes": 448790528,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "f6282ebd8df9530d73806155300a2232ec1f025ae08fda4dca99f5f4f0185f30",
+        "main.mlirb": "e4908e3766dee4d5314000e641dd8e3697b88979dd7bc22d8511fdba77886c78",
+        "metadata.json": "2550fd1f766dcc10a6850298ef0e3e8b66ad79ed0d9e00358ffa40fb83aa42aa"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_19",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "c7419cc388b673cbc709ee380e85871e9244e91836116ebd3749bcc970e1d933",
+        "main.mlirb": "4da66fd651c6061b65c34d3918cfa07699db863bba36455ec51a9f3356c7082f",
+        "metadata.json": "b445d6d9c43c8d24ac06466ef8cab4bea3c0841e8c5e9a37b85c80345e0813b9"
+      },
+      "asset_bytes": 70237860,
+      "elapsed_seconds": 0.30732525000348687,
+      "max_rss_bytes": 456409088,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "db4273b8a1588accc9e128652717457a155991499383b85752efd44c39fd0cd2",
+        "main.mlirb": "7770a8247582d3ccbdfb7027165c47280a81299c6dd43bee0d8f3129afd4d979",
+        "metadata.json": "be5a31700ce00961fe09c7ac2a7f4ff5c2ea848985198e753716979fc8962a84"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_20",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "807c1849b913d7970e69ce28fe45f92d275f0ffe22bb83d0b8cfdd973e82da09",
+        "main.mlirb": "23f8ce87b0e2a83580d61a5ff09ecf0d7a202ba940de74981057a8b00aeebafe",
+        "metadata.json": "1889bba18456809a5a2e3e755a1f0c51f80390f68ac829a3d66dc983b668444b"
+      },
+      "asset_bytes": 70237867,
+      "elapsed_seconds": 0.2952274999988731,
+      "max_rss_bytes": 377896960,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "55751166bd949338312e0aac92c712da1dc2743de9e020292d788b7ffaf9cc8c",
+        "main.mlirb": "7b7c61fa24b090c77ebd5c26163790f6a13cd76d30599ba4077b82d189141e47",
+        "metadata.json": "f99888227ca7a026ab8a89dd3f106d1a0a97271323b22ceeef42644caff8e8eb"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_21",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "2212618b2f12f89a6f52276570bbb906cbb1cca02798ff0e3915adcb3283bf75",
+        "main.mlirb": "b84ff2bea40976ebb588df4466ce966e8bf774486632f088a00f43c42280aecc",
+        "metadata.json": "32db57af533de5ac3783ad17dced3232c63b2ba1812efa093ac5037f5c3d2ee2"
+      },
+      "asset_bytes": 70237865,
+      "elapsed_seconds": 0.2829325000056997,
+      "max_rss_bytes": 455065600,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "c45b457064bfe6d6d07066a8ba9599937e8b6b443592ae71e7140d4e86245fc3",
+        "main.mlirb": "cb1816118735231e0900c427c15ed395c87a29b48008c7eb30b2ad5824e8a291",
+        "metadata.json": "396fe55cb92c90e3e827238b0edbdc3229db24cff31cf3844fd718cd29b9d765"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_22",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "f56c0d71498fbdef56d080543857a5a6492d80dc5e08602252f6b39ca24017ed",
+        "main.mlirb": "d391249c1fb46059270b56e57b857cb47947eceeae4408ce8d1bdc6cae64d52a",
+        "metadata.json": "6df7a59f91339875228d219cba2087cbafbc5f81d35e10fd7f94973f0507d3a5"
+      },
+      "asset_bytes": 70237868,
+      "elapsed_seconds": 0.292600458022207,
+      "max_rss_bytes": 456359936,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "336ee2341f248168888c02045e6ada9c527314cbad932fa7e9064fc82756d18d",
+        "main.mlirb": "08870c6a53d8a6f74c2a5235d8633e5e8fda74935c10d00d66d37e43415db6d1",
+        "metadata.json": "cb05cbe27bdf629001cd12c572b49a645594f8367d588e1bf857e155d09a433e"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_23",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "f27bc1f117ebbbbeb58b7114413b0b25fa29b4fa408f463dda0eea1f4d4028c8",
+        "main.mlirb": "8d5e1dc41b24fa0568b702ddd864a820e570c29fbc34749c23fce143815636ba",
+        "metadata.json": "68c08ca8025dab36739d38ccecf4bc1a4f66a84e7fd743001a8fceed10a1b44c"
+      },
+      "asset_bytes": 70237863,
+      "elapsed_seconds": 0.29630170899326913,
+      "max_rss_bytes": 456425472,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "937f3f00c3b0aef67c2831fcdd5d666f46a17799b8f67882917599f9e55bf4ca",
+        "main.mlirb": "4fff7aa5db68b56a18745992da6a725ba04055f259e2ccfc1d89affaf283b7b9",
+        "metadata.json": "3ee67f7dfa06b7b3bd0311f9ebb8d4e92b0a7eb15541902a44ba2a83d1b34b78"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_24",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "a403edd0ced80c85a4a39816ba8b71ca56def53d2aede27990350d2cc4a2416c",
+        "main.mlirb": "107b6f7228827488ce33c8350b5d9c2acda39d79c6a9def16e2d584a16369a3d",
+        "metadata.json": "ca7787e678bc41aac3b767b335fb52850c8511f9c11119ffa0a47a6ca2946a80"
+      },
+      "asset_bytes": 70237864,
+      "elapsed_seconds": 0.3022550829919055,
+      "max_rss_bytes": 373637120,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "025f31c7c761f05511955c5632aa74aa818b78d4227a8c8068d8d9505c7025c3",
+        "main.mlirb": "324befdd2d11ec54f1000676e51a6a41a1aaac80887cabfeac3ac7e777e51b18",
+        "metadata.json": "2d18f812820c4ef501356d5e9388b809a00244ca932e0bfa97dc4b1c36d7fd50"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_25",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "d6b3a1f95036fbbf25f82440a82d5389fbd3cbfe75d677d06ec0ab7e4b8782eb",
+        "main.mlirb": "d551cb7d00fbe55baad80e51ce44a81e08c239781c61502ab3e54e8fd7d38071",
+        "metadata.json": "fd91ada4a87ebd40c9f44a8970eb364ef7c03e2d8920beed562d29c00a863584"
+      },
+      "asset_bytes": 70237861,
+      "elapsed_seconds": 0.2886492499965243,
+      "max_rss_bytes": 456261632,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "43862506e621733910360bbaa7c4d2f66845a3c3735cffd9b45c6da97cf2e62f",
+        "main.mlirb": "bf782d3267a9877a5e6e2f0675b73d8cf3a168a8e39ae6df6b24ded5f8d265b8",
+        "metadata.json": "2fe0412283f0a701b65900ac173e0dffb72c62e5080859f9e265c4da0464ac90"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_26",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "8f2826e8b4469ac9ab4a2b41beaa88deca5a98a1601232cb0b5fe6a7e87ccdfd",
+        "main.mlirb": "1004d861cac3426eba3added5746990b83094b8d2b610ab43236ddc068eeb5f5",
+        "metadata.json": "fd91ada4a87ebd40c9f44a8970eb364ef7c03e2d8920beed562d29c00a863584"
+      },
+      "asset_bytes": 70237862,
+      "elapsed_seconds": 0.3116456249845214,
+      "max_rss_bytes": 376963072,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "f0879138f8c026bf44ed0ce4450bcdf5e1c6d076bcb52cb50d6941a2da1e34c9",
+        "main.mlirb": "95a3f989a09551facc375d8e13f5ec4b6d37668a39c9390cd8f3eda7d9e4de42",
+        "metadata.json": "c89829949dbd0185e848f8a47ef96553c005396f8109cecb2f6d06af8c411aa2"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "shared_27",
+      "text_length": 160,
+      "parameter_count": 122683648,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "mods"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          2,
+          3,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "de52f5787556a3e590a0e7d366237f8205cbc6d5a8d92954ba80c9c7f795d330",
+        "main.mlirb": "9acdd15904df7cb3e75241e1d06fccdd161183bf397103b76b27a65a6c68af5a",
+        "metadata.json": "c0fcf4a4e194a492050ecb930311502fc415a1acce0188d8842a5275c98643e0"
+      },
+      "asset_bytes": 70237864,
+      "elapsed_seconds": 0.29479479099973105,
+      "max_rss_bytes": 456540160,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 9,
+      "source_asset_files_sha256": {
+        "main.hash": "63a118939bb16832f11bcc62078244259df515075793fa30db1939c3d16fffb9",
+        "main.mlirb": "e82a7b4895e4d4fa8d33063ababecb975368cf37c18a720218286aa52b443384",
+        "metadata.json": "3e94ed168f88b79caabb7c1c76bfd744484e2dc9bd8b2a06668c0eb58af2708d"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "output",
+      "text_length": 160,
+      "parameter_count": 19267584,
+      "source_weight_file": "dit",
+      "source_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "compression": "none",
+      "compute_dtype": "bfloat16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "image_hidden",
+        "image_vec"
+      ],
+      "input_shapes": [
+        [
+          1184,
+          3072
+        ],
+        [
+          1,
+          3072
+        ]
+      ],
+      "input_dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "output_names": [
+        "velocity"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "f1e25e46d76ad9f6fbd6eb7c28cff3cbbd2b04ddc83fee29df004315da092502",
+        "main.mlirb": "7e7c6c7b53e40ef16db066f7976aed5346638d6812273163220f02fe45c91dd3",
+        "metadata.json": "1cf67d4f99c1f14003f0063eca85993735c75e4c6b1278454bf5c0251158f934"
+      },
+      "asset_bytes": 38540204,
+      "elapsed_seconds": 0.23723475000588223,
+      "max_rss_bytes": 283066368,
+      "floating_point_constant_storage": "original FP16 constants, explicitly cast to bfloat16 for math",
+      "int4_constants_unchanged": true,
+      "int4_constant_count": 0,
+      "source_asset_files_sha256": {
+        "main.hash": "8c4752155d62ee9107809f02a834417e0d1840566046788c8d9b1e4098ba515e",
+        "main.mlirb": "7abd739c245572fb4d0c2c1a8a91550472a06039890d185cef2659cf86bce34f",
+        "metadata.json": "93cfe9f7e49cfb352793a01aff78e6b103ea66854cc340558463d4a3535f8a0e"
+      },
+      "precision_transformation": "Preserve original constants, FP16 graph values -> bfloat16; retain pre-existing FP32 operations",
+      "precision_transform_script_sha256": "c52b2bf711b718e7493cec9de8f0c88b38319f2dd45498ef18c1fc12c99156aa"
+    },
+    {
+      "completed": true,
+      "component": "te_embed",
+      "text_length": 160,
+      "parameter_count": 388956160,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "none",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "token_ids"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.int32"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "d5bfc6a6959e67d04db0803820454ba37dc673f1c604d2e228352824669ba54d",
+        "main.mlirb": "48cad779f2899a0e84dcbc3274df8816d4b01638f145541415528d7aef8a9ec2",
+        "metadata.json": "e810b323e52c35780a920e1d27e7aee4b83c40a3eb9d69580a750455eed15a32"
+      },
+      "asset_bytes": 777913216,
+      "elapsed_seconds": 13.297841040999629,
+      "max_rss_bytes": 2316206080
+    },
+    {
+      "completed": true,
+      "component": "te_00",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "64026dc409b10b39394f44230a84022740a662b6fea978b7bd7f2b4c17f9ec83",
+        "main.mlirb": "a369f73628c66887b4f82b53788e3ec26283e2554980c293f52f2e7aa92c8016",
+        "metadata.json": "4044dc655866bbf6be201f54cd85885b9a6b28a1a19a98fcd6605087bd065759"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.5553105410072021,
+      "max_rss_bytes": 1346256896
+    },
+    {
+      "completed": true,
+      "component": "te_01",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "7f0a830f2fad001e08f6425af2c604edb3d88922058c379a68f634c340924a20",
+        "main.mlirb": "905cdc4b94862f27bc352448f21401664c61e3f84e81cd7cd79a17f05cca9d6f",
+        "metadata.json": "f2d3b000bd7d924c9a441de4c4e2de0637e3ba71c3c772e7284b1a44f60a3435"
+      },
+      "asset_bytes": 56795926,
+      "elapsed_seconds": 1.4833173749793787,
+      "max_rss_bytes": 1346371584
+    },
+    {
+      "completed": true,
+      "component": "te_02",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "0134cafc939c4de7aac020d821455fd6fd00451c0b1afc4b14001d869c4cc883",
+        "main.mlirb": "3fcae5a3bd261fb15aff0a30e44302f19611b351261f2d416176d86f533b4358",
+        "metadata.json": "bc4696d6842758f9d0dfe43ac2cc585c50533094ea181afe7050dafc9dde0ecc"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.4718571249977686,
+      "max_rss_bytes": 1345978368
+    },
+    {
+      "completed": true,
+      "component": "te_03",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "7e22e72a86c43479c64974a4c54905e439b3691d8ada178590a6949db307c669",
+        "main.mlirb": "edbca3d667c9845a86e09699e9ee6c45ae731eb3c3208053997e62f290757cee",
+        "metadata.json": "eee10d7da8caae2f4a26d227bc1ab1859d2813b19b97bc584d864250a4c1b9de"
+      },
+      "asset_bytes": 56795924,
+      "elapsed_seconds": 1.451987917011138,
+      "max_rss_bytes": 1281032192
+    },
+    {
+      "completed": true,
+      "component": "te_04",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "b262aa95d880fd6554ca72cb124acfaf291ecd1c1d70ee8ddc5ce217103268be",
+        "main.mlirb": "601a56737fc558e1ca67d5322d16c0ae12590ca137c497a1233b54f1324de4b3",
+        "metadata.json": "965f96b722fa00af6c760164dba4e867065b8c67ad08478cf0cad070e1300afc"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.6115593340073247,
+      "max_rss_bytes": 1161674752
+    },
+    {
+      "completed": true,
+      "component": "te_05",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "1be4ecfc8106e624597f74b3d2488581718852948f2eaaaae8676cf6b6e9d1f8",
+        "main.mlirb": "14aadd60b9d6bcb4c5b1c36e72e13c4ff667120493dbf200bed4eb44bd89ee70",
+        "metadata.json": "d655f41f36ebafcc2469d2454f69a920206d1cbd7fea2fe4c5004cc2539b0ebd"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 2.000183666998055,
+      "max_rss_bytes": 1229209600
+    },
+    {
+      "completed": true,
+      "component": "te_06",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "30d58a0ac63635610c3c55c6d44a927c30d13f6a299fa30968f430c6e9398f50",
+        "main.mlirb": "28859a89019f63598d33a391435239d4da1a07e82ca1b26a6e4c6b7e36e8f7b1",
+        "metadata.json": "b9a46091417384a911137b5f5472795b04c6f21986041bade63a7a5c7f37b918"
+      },
+      "asset_bytes": 56795923,
+      "elapsed_seconds": 1.545503750006901,
+      "max_rss_bytes": 1243873280
+    },
+    {
+      "completed": true,
+      "component": "te_07",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "d9538250577209792bbd687d15cf7a560740961dfd7df32878e5d5acc7139255",
+        "main.mlirb": "f35a4da0f5a202a22d9e0161c47fa41962c604c330576602d5ad085aa885b81a",
+        "metadata.json": "c21d7b997ea6c03313b152a2ecbf9444b99084e217175fcf6091bf750e601517"
+      },
+      "asset_bytes": 56795926,
+      "elapsed_seconds": 1.6811483750061598,
+      "max_rss_bytes": 1287634944
+    },
+    {
+      "completed": true,
+      "component": "te_08",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "a80a484fe19071c464efe9cd59e55568b063814c28cf6f7331e5df86545f44d2",
+        "main.mlirb": "31cbf9bbfa6cc3928dd0086698798674c349cb826dbd14bbbe3234f1df7ea293",
+        "metadata.json": "bd73c81c7b62a5e2348a20a4c20f9874c95f8bced179b3cf8fe6717aa50d50fa"
+      },
+      "asset_bytes": 56795926,
+      "elapsed_seconds": 1.5613730829791166,
+      "max_rss_bytes": 1283637248
+    },
+    {
+      "completed": true,
+      "component": "te_09",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "6be01935ecd56371f70bc4ab9714583f95b312110f43c8cde9a6bd7155177081",
+        "main.mlirb": "e030c7bd9e2735e6dc50f09a91d192c806f8573d4c89b609106619416a19908b",
+        "metadata.json": "16fbd9e280fe83d3157cc97533bd8d1bedd56e44cd07b9a9acd73e24edc6cbf6"
+      },
+      "asset_bytes": 56795927,
+      "elapsed_seconds": 1.4235352920077275,
+      "max_rss_bytes": 1312473088
+    },
+    {
+      "completed": true,
+      "component": "te_10",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "d783c88f90551b0e87a72cc281a75e51819f5c99e961ca29a29c4658590dff80",
+        "main.mlirb": "a30b0c428ccd6a7f55a091e9c87bea8df82f04f296810da3e71ba7f748947840",
+        "metadata.json": "4ce0ab87012a6a0168e0bba1a06fe5c2c84b5f871889595bc585dd103d97d248"
+      },
+      "asset_bytes": 56795923,
+      "elapsed_seconds": 1.618030000012368,
+      "max_rss_bytes": 1117241344
+    },
+    {
+      "completed": true,
+      "component": "te_11",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "f8afc09f19efcea452a8b808c75571888d878fe491ea2b54381221f2c25d8794",
+        "main.mlirb": "f18650788d556aea564dd7134d3347005594b5155892e7ea591ae26c608d11c3",
+        "metadata.json": "e19155efc37bda5384fc98bf98677e78df5f6efb89c08977d7b30e80232b9678"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.5675551669846755,
+      "max_rss_bytes": 1253392384
+    },
+    {
+      "completed": true,
+      "component": "te_12",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "69b2bb51b2dcf29c5b1a545c268ba376f48389159941b0d94ea35b226c6562b9",
+        "main.mlirb": "35ef4d14d1d08c49f3889d93456d20622d7d894ccc8afaa3e21ed08fbea9ba23",
+        "metadata.json": "7aa7616ceaa3369892adfeb18b5a427e7d1339d5c1d3b89a1d16478e8f0f4c0a"
+      },
+      "asset_bytes": 56795924,
+      "elapsed_seconds": 2.807009082986042,
+      "max_rss_bytes": 1159561216
+    },
+    {
+      "completed": true,
+      "component": "te_13",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "0921acdbcfe5d2d14f0ab9894ee9210d5b759be5a92d75d352a4d9c17cae608c",
+        "main.mlirb": "8937675f17cae5d2f40ed11783507221924b5fa219ff5f377022ccb7b63ccb8a",
+        "metadata.json": "ff51198c95b8111d917a0ff868766162b0c88a9b12a68f9c382a3171fdaba1e6"
+      },
+      "asset_bytes": 56795931,
+      "elapsed_seconds": 1.6419994999887422,
+      "max_rss_bytes": 1309573120
+    },
+    {
+      "completed": true,
+      "component": "te_14",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "c23381888ccefc6bf00f047c45d1f462a60a8f83bd541eee04a098f3a0592556",
+        "main.mlirb": "228a2f0f6c815f8bd7eea6e219a8f1928dcc27decf27ffe9e70a6dcb892d1db7",
+        "metadata.json": "624a86e138cecfaa53917e9432e3426844769778fb5b398483fa1c050c9dd4aa"
+      },
+      "asset_bytes": 56795926,
+      "elapsed_seconds": 1.4972742499958258,
+      "max_rss_bytes": 1282523136
+    },
+    {
+      "completed": true,
+      "component": "te_15",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "ba2b48e79a169fa9978eb3af62c8209a6627282fe6919962eab65575a5b9b932",
+        "main.mlirb": "28f8f163f321b3e964de3e06a6e3c2548f2246698d739a2516a6f02af7d54479",
+        "metadata.json": "94009155826d0ecd82bf73c4e50cab7a35e4d6ba03067005dcbb8c8d053d33df"
+      },
+      "asset_bytes": 56795921,
+      "elapsed_seconds": 1.4527096670062747,
+      "max_rss_bytes": 1346748416
+    },
+    {
+      "completed": true,
+      "component": "te_16",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "41947944a0e87d8eb171046fb4bbada55465a06602caa0d15d771be1941ae655",
+        "main.mlirb": "5bf89abc0963d783cdac145c7098ec4ccebd02b593f2770b3c5430c6d66572ed",
+        "metadata.json": "9d6f124c3cbe89f95173124613103a9214fc556c06339ff3afa064a0af5bf412"
+      },
+      "asset_bytes": 56795926,
+      "elapsed_seconds": 1.4713899999915157,
+      "max_rss_bytes": 1346256896
+    },
+    {
+      "completed": true,
+      "component": "te_17",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "c8f044c9a163b4e01e11eecc21188549193fc1c6858ab4ab64ee6070bc1e8f7e",
+        "main.mlirb": "57990f6a62b76b4d62083eb439e6729091c9fde7454f010019baa162bbd586c5",
+        "metadata.json": "b7f649b63b90835ecdc92aabd1b01e97d100e11b0a0fc9b643ab7b364204dde1"
+      },
+      "asset_bytes": 56795923,
+      "elapsed_seconds": 1.4982890840037726,
+      "max_rss_bytes": 1314373632
+    },
+    {
+      "completed": true,
+      "component": "te_18",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "5cd8b3188fdc1c3babbb682e92017799e8a9d56dd687c2f9b7edcd16d4e0dbdc",
+        "main.mlirb": "11c10e80a2fcc5a7c34d1303f0b0391f9e568928336c24566cabd3c8dea45c95",
+        "metadata.json": "2d9f66ced04d448e67b347d82a2bba077ce49e989a7552bbe29b6109d32e1357"
+      },
+      "asset_bytes": 56795930,
+      "elapsed_seconds": 1.5116983329935465,
+      "max_rss_bytes": 1342570496
+    },
+    {
+      "completed": true,
+      "component": "te_19",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "2938f8d7c4a26bc85ae8c97c98d3f789a82341b8ea83a764f62d7f28e6209e6c",
+        "main.mlirb": "bc9e0c7eee0dae1d59ced93726f1ad7441d77a6c71365c6d785ce0c7947d335c",
+        "metadata.json": "9db72a1f1280444e9b6ad5bdc6463ec11382c24859cb29f62e3f9ee1b47b0877"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.6340384589857422,
+      "max_rss_bytes": 1241300992
+    },
+    {
+      "completed": true,
+      "component": "te_20",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "5a4623a87f80cc12d08bd13a7690818d031899faef31e74e6321b993c1c79c45",
+        "main.mlirb": "49ccc8b6f84bbd2483fc8ab5040132b2af139328e56f0dc1f4acdde8b9fbf7e5",
+        "metadata.json": "b13e24cdf674d0051f295c27259265409923987969e5902db69a9cf99f9c3731"
+      },
+      "asset_bytes": 56795926,
+      "elapsed_seconds": 1.4742883750004694,
+      "max_rss_bytes": 1214857216
+    },
+    {
+      "completed": true,
+      "component": "te_21",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "eb1030f2a9c85d6263a5cd0fdade7d673ca58c9c2d2ce9fb7bdb520fd3c033c4",
+        "main.mlirb": "a4ef3b2aabbdc7e0b5d9de0f57e853c8ad35acdfa4cb5a8438a7c2d54128d26b",
+        "metadata.json": "27042833d2eb549e9ce3c7443ec733a62f25c2a5202cacbe760cd6ba360c1357"
+      },
+      "asset_bytes": 56795926,
+      "elapsed_seconds": 1.3973234159930144,
+      "max_rss_bytes": 1344946176
+    },
+    {
+      "completed": true,
+      "component": "te_22",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "40d04f86c20f3903193ed19aed4152d337789e9a92e82241f446ed568fcbfca4",
+        "main.mlirb": "eecc216f8a9cdf0ba07bcfbe0d91141835f7f32aadf019a8620344f7a7e881ea",
+        "metadata.json": "4f07b1b3d7c897f8dc6ef7daaf42e44cb971a4068cb46a13e23f51b30d71b6b0"
+      },
+      "asset_bytes": 56795922,
+      "elapsed_seconds": 1.4481439999944996,
+      "max_rss_bytes": 1279852544
+    },
+    {
+      "completed": true,
+      "component": "te_23",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "7662deae9a811e8e36e1eed6fc3dca9edbcefb0ef195886a54a38ace92b021c7",
+        "main.mlirb": "01e2c967acd6fe88c6dcdb34bb4feea796b85595d4b79471c12f1f35f369280a",
+        "metadata.json": "1da1bf8967a163cfc3e7bddcb452f6361b77cae1d204795bf3e61e8aeaffe8b5"
+      },
+      "asset_bytes": 56795928,
+      "elapsed_seconds": 1.5298073329904582,
+      "max_rss_bytes": 1240645632
+    },
+    {
+      "completed": true,
+      "component": "te_24",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "d435afe7e2a9e79222da3cf4e830aed5124664b5f36deaa51794fd94117fe1d9",
+        "main.mlirb": "c8703621237ab8cdbc2490f2c0c895e4bc943ef3abe8ae618195d8fbbfd9fde9",
+        "metadata.json": "52657c7ed0ce2ddba8ff7af36c30aa1bdae462eafdc99e7ac37bb5918732600d"
+      },
+      "asset_bytes": 56795923,
+      "elapsed_seconds": 1.6876553749898449,
+      "max_rss_bytes": 1186545664
+    },
+    {
+      "completed": true,
+      "component": "te_25",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "47793ea03eb80085a629b1c25a8e61c8bfbee916431aa01b90d67c99c19b28f9",
+        "main.mlirb": "4ec8cac6f1de8d109c17120ad84f712166a3ebb8720e90410e04a6f5ca140ac0",
+        "metadata.json": "ff501f1123a7757a6acd78e19bdd71d16fd029017f8cc3746e930602ec015da9"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.5856007499969564,
+      "max_rss_bytes": 1264320512
+    },
+    {
+      "completed": true,
+      "component": "te_26",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "52c1e933e0d80d689e45cca65acf873ebb5ff7ccb202f06096dc647fa559b55f",
+        "main.mlirb": "cee606483abbe0e18de10f7620397f71e406500424e0ee113f2caba0f8653c8a",
+        "metadata.json": "ce101170da5a10bf6069a4b3f8844279c51de54a84d770e57f6fdf750db23161"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.4713792919937987,
+      "max_rss_bytes": 1333428224
+    },
+    {
+      "completed": true,
+      "component": "te_27",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "b1ed90259c214ce5d6e8542045ba6eed709590aebeba60cbe0b04c9d08d9c0ce",
+        "main.mlirb": "7f7084734f94f4b3af995035af62856f65655b78e5fa0d5245b0aea9731e80a4",
+        "metadata.json": "f88a12e2a98250d8e2b14ed38549a075366fdcb5659dfa6e8e30c038dcdae984"
+      },
+      "asset_bytes": 56795923,
+      "elapsed_seconds": 1.4973444999777712,
+      "max_rss_bytes": 1288044544
+    },
+    {
+      "completed": true,
+      "component": "te_28",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "5c39d2fafa12a40d82c396d91f54055efa93f3d6a6af9841ea88df92ae10aef2",
+        "main.mlirb": "077d7311f27f70481a9bd4cb3b649ea7c03601b3e4060d1820a3cbe3340a44d9",
+        "metadata.json": "11834806019494739546c072b9e1576458e603e75651471363fd5a9864657d06"
+      },
+      "asset_bytes": 56795924,
+      "elapsed_seconds": 1.4872507080144715,
+      "max_rss_bytes": 1297055744
+    },
+    {
+      "completed": true,
+      "component": "te_29",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "101e9873812bbebbcffca9bc04bc28c90ff25cb3fe68a0e894249756f601bd47",
+        "main.mlirb": "2e1a3fc0315666e525f68a31a9249e6e797ef79646fdbe603772a89306e58a74",
+        "metadata.json": "d527c7bede68b850ea01b60c7236f02a30b306be2daae72166643b0745ea7182"
+      },
+      "asset_bytes": 56795925,
+      "elapsed_seconds": 1.6210644589737058,
+      "max_rss_bytes": 1265008640
+    },
+    {
+      "completed": true,
+      "component": "te_30",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "b58b677c3c0222363e015072a9a5f3071ad86fe5811b849087a8915536583cc0",
+        "main.mlirb": "8e0edeb488ec5aaa09ea2755176d256fc4ff9cb9c88903d8a2f238ef60b1d148",
+        "metadata.json": "ec0273cff370f5fc604c709d989ccc923680bd010864d6d48369fe05df7f1c15"
+      },
+      "asset_bytes": 56795927,
+      "elapsed_seconds": 1.4465226670145057,
+      "max_rss_bytes": 1247461376
+    },
+    {
+      "completed": true,
+      "component": "te_31",
+      "text_length": 160,
+      "parameter_count": 100930816,
+      "source_weight_file": "text",
+      "source_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "compression": "int4-symmetric-g32-linear-only",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "hidden",
+        "cos",
+        "sin",
+        "mask"
+      ],
+      "input_shapes": [
+        [
+          1,
+          160,
+          2560
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          160,
+          128
+        ],
+        [
+          1,
+          1,
+          160,
+          160
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "output_names": [
+        "hidden"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "e25554fac12615e8c3ca078665d2c97fe9db8d4337f8d65728a019bb4cfbfc2a",
+        "main.mlirb": "0cca18c3856c277f2062e8e3226649bbe71d0686895f4e9f6f42cd4ec8f8ddc7",
+        "metadata.json": "de67838e9deba4b44f245607c0492dedd08d41833acf767a68ce130f3180bc01"
+      },
+      "asset_bytes": 56795924,
+      "elapsed_seconds": 1.4845769999956246,
+      "max_rss_bytes": 1263091712
+    },
+    {
+      "completed": true,
+      "component": "vae",
+      "text_length": 160,
+      "parameter_count": 49620259,
+      "source_weight_file": "vae",
+      "source_sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+      "compression": "none",
+      "compute_dtype": "float16",
+      "reference_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+      "input_names": [
+        "spatial_latents"
+      ],
+      "input_shapes": [
+        [
+          1,
+          32,
+          64,
+          64
+        ]
+      ],
+      "input_dtypes": [
+        "torch.float16"
+      ],
+      "output_names": [
+        "pixels"
+      ],
+      "asset_files_sha256": {
+        "main.hash": "18274ae775ead9114750ba41ffa60237f94903de097fe27bc3f91c5c97369a72",
+        "main.mlirb": "356f62ecce170236305384db67607e193a9c88688e0e1c5e90ed621ece60ec06",
+        "metadata.json": "f15a74707aa56162aa239f79f7725406605ee5291ecb01378cf512cbe37d8e1a"
+      },
+      "asset_bytes": 99290945,
+      "elapsed_seconds": 3.504796916997293,
+      "max_rss_bytes": 724484096
+    }
+  ],
+  "bn_mean": [
+    -0.06761776655912399,
+    -0.07152235507965088,
+    -0.07534133642911911,
+    -0.07449393719434738,
+    0.022278539836406708,
+    0.017995379865169525,
+    0.014197370037436485,
+    0.01836133562028408,
+    -6.275518535403535e-05,
+    -0.006251443177461624,
+    -0.00021015340462327003,
+    -0.0031394739635288715,
+    -0.027202727273106575,
+    -0.02810601517558098,
+    -0.027645578607916832,
+    -0.029033277183771133,
+    -0.0768895298242569,
+    -0.06717019528150558,
+    -0.09018829464912415,
+    -0.08921381831169128,
+    0.016836659982800484,
+    0.015206480398774147,
+    0.00790204294025898,
+    0.008579261600971222,
+    0.008347982540726662,
+    0.0015409095212817192,
+    0.0002583497844170779,
+    -0.004281752277165651,
+    -0.043877143412828445,
+    -0.04189559817314148,
+    -0.04378034919500351,
+    -0.043148837983608246,
+    -0.010246668942272663,
+    -0.013186423107981682,
+    -0.006620197091251612,
+    -0.004766239318996668,
+    -0.031062893569469452,
+    -0.03055436909198761,
+    -0.027904054149985313,
+    -0.01795399747788906,
+    0.0030211929697543383,
+    0.001502539962530136,
+    0.012592565268278122,
+    0.0144742326810956,
+    0.034720875322818756,
+    0.03376586362719536,
+    0.033663298934698105,
+    0.02829528972506523,
+    0.0019797170534729958,
+    0.004728920292109251,
+    0.004654144402593374,
+    0.004963618237525225,
+    0.012272646650671959,
+    0.008096166886389256,
+    0.00805679615586996,
+    0.014576919376850128,
+    0.06810732930898666,
+    0.06790295243263245,
+    0.07665354013442993,
+    0.07318653911352158,
+    -0.04621443152427673,
+    -0.04739413782954216,
+    -0.03918757662177086,
+    -0.05109340697526932,
+    -0.05277586728334427,
+    -0.04773825407028198,
+    -0.047003958374261856,
+    -0.0517151840031147,
+    -0.03170523792505264,
+    -0.03163386881351471,
+    -0.03446723148226738,
+    -0.02825590781867504,
+    0.050968676805496216,
+    0.04450491443276405,
+    0.057813018560409546,
+    0.04580356180667877,
+    -0.0411602221429348,
+    -0.04582904279232025,
+    -0.048741210252046585,
+    -0.04673927649855614,
+    -0.008838738314807415,
+    -0.010627646930515766,
+    -0.008805501274764538,
+    -0.004613492637872696,
+    -0.03758484125137329,
+    -0.043219830840826035,
+    -0.043574366718530655,
+    -0.049890533089637756,
+    0.011846445500850677,
+    0.016636915504932404,
+    0.020284568890929222,
+    0.027899663895368576,
+    0.011271224357187748,
+    0.01290129590779543,
+    0.0015593513380736113,
+    0.007155619561672211,
+    -0.01180021371692419,
+    -0.0018362690461799502,
+    -0.014141527935862541,
+    -0.005370706785470247,
+    -0.009097136557102203,
+    -0.013795508071780205,
+    -0.014467928558588028,
+    -0.01869881898164749,
+    0.03225415572524071,
+    0.030501458793878555,
+    0.02587026357650757,
+    0.02995659038424492,
+    0.05399540066719055,
+    0.06144390255212784,
+    0.049539074301719666,
+    0.05898929387331009,
+    -0.051080696284770966,
+    -0.06032619997859001,
+    -0.047775182873010635,
+    -0.052397292107343674,
+    -0.022676242515444756,
+    -0.027419250458478928,
+    -0.015365149825811386,
+    -0.025462470948696136,
+    -0.05720777437090874,
+    -0.056476689875125885,
+    -0.05176353082060814,
+    -0.049556463956832886,
+    0.011585467495024204,
+    0.0054222596809268,
+    0.01630038022994995,
+    0.010384724475443363
+  ],
+  "bn_var": [
+    3.2502119541168213,
+    3.163407325744629,
+    3.192434072494507,
+    3.1813714504241943,
+    3.1389076709747314,
+    3.0941381454467773,
+    3.1011831760406494,
+    3.0550901889801025,
+    3.0051753520965576,
+    3.0179455280303955,
+    3.0067572593688965,
+    3.0076351165771484,
+    3.4690163135528564,
+    3.432523727416992,
+    3.470231533050537,
+    3.45538592338562,
+    3.0949840545654297,
+    3.071377754211426,
+    3.0819239616394043,
+    3.091344118118286,
+    3.014709711074829,
+    3.027461051940918,
+    3.01198673248291,
+    3.0252928733825684,
+    3.0074563026428223,
+    2.9741339683532715,
+    3.024878978729248,
+    2.9940483570098877,
+    3.080418586730957,
+    3.0669093132019043,
+    3.0831477642059326,
+    3.058147430419922,
+    3.403618097305298,
+    3.4055330753326416,
+    3.44087290763855,
+    3.435497283935547,
+    3.326714277267456,
+    3.1730010509490967,
+    3.1874520778656006,
+    3.22017240524292,
+    3.2569847106933594,
+    3.1953234672546387,
+    3.130955457687378,
+    3.124211549758911,
+    3.1620266437530518,
+    3.1209557056427,
+    3.2129595279693604,
+    3.185375690460205,
+    3.090271472930908,
+    3.030029058456421,
+    3.0565788745880127,
+    3.0162465572357178,
+    3.225846767425537,
+    3.2391276359558105,
+    3.211076259613037,
+    3.21309494972229,
+    3.161032199859619,
+    3.149500846862793,
+    3.142376184463501,
+    3.150174379348755,
+    3.071641206741333,
+    3.0439963340759277,
+    3.1177477836608887,
+    3.0607917308807373,
+    3.1593689918518066,
+    3.139946222305298,
+    3.1729917526245117,
+    3.1730189323425293,
+    3.2984564304351807,
+    3.244508981704712,
+    3.248305559158325,
+    3.251725673675537,
+    3.0720319747924805,
+    3.00360369682312,
+    3.084465742111206,
+    3.056194543838501,
+    3.100954532623291,
+    3.064960479736328,
+    3.1261374950408936,
+    3.102006435394287,
+    3.120508909225464,
+    3.0782599449157715,
+    3.178100109100342,
+    3.141893148422241,
+    3.2024238109588623,
+    3.2396669387817383,
+    3.1909685134887695,
+    3.1540026664733887,
+    3.102187395095825,
+    3.106377601623535,
+    3.08341121673584,
+    3.0892975330352783,
+    3.1621134281158447,
+    3.1226611137390137,
+    3.1719861030578613,
+    3.168121337890625,
+    2.958735942840576,
+    2.9129180908203125,
+    2.980844497680664,
+    2.9209375381469727,
+    3.165689706802368,
+    3.08971905708313,
+    3.0632121562957764,
+    3.0465474128723145,
+    3.0928444862365723,
+    3.0622732639312744,
+    3.0709831714630127,
+    3.014193534851074,
+    3.103145122528076,
+    3.087780714035034,
+    3.042872667312622,
+    3.0380074977874756,
+    3.065497875213623,
+    3.10084867477417,
+    3.109544038772583,
+    3.101743698120117,
+    2.976869583129883,
+    2.935845136642456,
+    2.999986171722412,
+    2.9673469066619873,
+    3.1200692653656006,
+    3.105872631072998,
+    3.139338493347168,
+    3.12007999420166,
+    3.0474750995635986,
+    3.0419390201568604,
+    3.086534261703491,
+    3.072920083999634
+  ],
+  "bn_eps": 0.0001,
+  "fixture_files_sha256": {
+    "caption.json": "1db6386ddf8ae1526b97bc69022163bff207fb28232d82328867d4f06fb12c70",
+    "cos.f32": "2b69bdb398bcacef5dbc85be7329e76c5e2a5d0150baa80afd616ebf0b011398",
+    "mask.f32": "5eb8ed4e7ac654c7e751bfb11e68b7285af976bae7d52eb10a1d4d7aa3a26888",
+    "noise.f32": "2a887895df52e3d085d21407f0a6f8c27846192ec0f63db56536aec5963b987a",
+    "sin.f32": "d40235bb2b47c02fed11a08d32d236fa70d5e5d5e6aec1f2c9a31b9486fba8e4",
+    "token_ids.i32": "828e7a8c766d9ec4832837b6386a569ef15332714854cdf5e4730ddc9a2b618c"
+  },
+  "asset_bytes": 5790189767,
+  "source_spec": {
+    "official_repository": "black-forest-labs/flux-3-image-klein",
+    "official_revision": "337337621b8526e120f2275d250242f4a6bedd75",
+    "reference_code_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+    "public_bf16_repository": "ml-resources/flux-3-image-klein-comfy",
+    "public_bf16_revision": "3ba0f7064cbb1666a71e2820d3cc5c2273bb6cd0",
+    "weights": {
+      "dit": {
+        "file": "diffusion_models/flux3-image-klein-bf16.safetensors",
+        "size": 11097404512,
+        "sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+        "official_byte_identical_file": "model.safetensors"
+      },
+      "text": {
+        "file": "text_encoders/qwen3vl_4b_bf16.safetensors",
+        "size": 8875719408,
+        "sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+        "official_comfy_revision": "feef60b0aaf63a4773ace96636ebbcf43b881312"
+      },
+      "vae": {
+        "file": "vae/flux2-vae.safetensors",
+        "size": 336211292,
+        "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+        "official_byte_identical_file": "ae.safetensors"
+      }
+    }
+  }
+}

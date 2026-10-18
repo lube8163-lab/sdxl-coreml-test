@@ -1,0 +1,7 @@
+{
+  "recorded_at_epoch": 1792297448.4450822,
+  "user_report": "端末に風を当てておきます",
+  "cooling_condition": "External airflow reported by user; fan setup not instrumented",
+  "phase_boundary": "After geometry-seed1234-s4 generated, before materials profiles; harness paused for cooling",
+  "analysis_policy": "Separate no-airflow early profiles from user-airflow materials/sign profiles. Compare step counts within the same caption/seed and cooling cohort."
+}

@@ -1,0 +1,337 @@
+{
+  "scope": "Physical iPhone 17 / iPhone18,3 / iOS27.0.1 Release probe, fixed 512x512 caption, seed42, 16 steps. Same original INT4 constants and BF16 DiT math. Separate from the submitted FLUX2 application.",
+  "measurement_dates": "2026-10-17 to 2026-10-18 UTC+07; raw report timestamps are UTC. Folder groups the series started on October17.",
+  "primary_baseline": "same-build-stream-control",
+  "selected_run": "optimized-default-repeat",
+  "selected_profile": {
+    "automatic_group_directory": "Groups8",
+    "cache_capacity": 0,
+    "pin_shared_groups": 4,
+    "fallback_flag": "--individual"
+  },
+  "primary_denoising_reduction_percent": 21.84682326125742,
+  "primary_denoising_speedup": 1.2795385187513098,
+  "primary_three_stage_reduction_percent": 20.24363942633405,
+  "cases": [
+    {
+      "id": "stream",
+      "title": "元の方式・最初の計測",
+      "source_sha256": null,
+      "source_caveat": "The exact initial instrumented source snapshot was not captured; see the final same-build control for the primary comparison.",
+      "native_experiment_label": "profile-stream-01",
+      "profile": "individual",
+      "cache_capacity": 2,
+      "pinned_heavy_blocks": 0,
+      "pinned_shared_groups": 0,
+      "denoising_seconds": 107.15829166665208,
+      "three_stage_seconds": 112.44404958328232,
+      "probe_start_to_saved_rounded_seconds": 123.0,
+      "sampled_peak_footprint_bytes": 1121143176,
+      "maximum_observed_sample_gap_ms": 51.08570831362158,
+      "denoising_metrics": {
+        "calls": 656,
+        "cache_hits": 45,
+        "seconds": {
+          "model_load": 1.6960595009149984,
+          "function_load": 55.158861751668155,
+          "eviction": 1.2672302507562563,
+          "inference_await": 48.51145387417637,
+          "total": 106.64506945840549
+        },
+        "thermal_state_counts": {
+          "0": 656
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "stream/report.json",
+      "summary": "stream/summary.json"
+    },
+    {
+      "id": "pin6",
+      "title": "個別の統合6ブロックを保持",
+      "source_sha256": null,
+      "source_caveat": "The exact initial instrumented source snapshot was not captured; see the final same-build control for the primary comparison.",
+      "native_experiment_label": "profile-pin6-01",
+      "profile": "individual",
+      "cache_capacity": 2,
+      "pinned_heavy_blocks": 6,
+      "pinned_shared_groups": 0,
+      "denoising_seconds": 113.05895212502219,
+      "three_stage_seconds": 118.53529237501789,
+      "probe_start_to_saved_rounded_seconds": 129.0,
+      "sampled_peak_footprint_bytes": 2065976312,
+      "maximum_observed_sample_gap_ms": 54.06350002158433,
+      "denoising_metrics": {
+        "calls": 656,
+        "cache_hits": 135,
+        "seconds": {
+          "model_load": 1.2213248782791197,
+          "function_load": 53.289366749697365,
+          "eviction": 1.2770455806748942,
+          "inference_await": 56.64518933347426,
+          "total": 112.447611499927
+        },
+        "thermal_state_counts": {
+          "0": 441,
+          "1": 215
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "pin6/report.json",
+      "summary": "pin6/summary.json"
+    },
+    {
+      "id": "groups4-first",
+      "title": "4ブロック結合・初回",
+      "source_sha256": "c2a7fc2d89433652c84e798b125829d82d7131e72a58c117fc87ff783199404e",
+      "source_caveat": null,
+      "native_experiment_label": "profile-groups4-01",
+      "profile": "grouped",
+      "cache_capacity": 0,
+      "pinned_heavy_blocks": 0,
+      "pinned_shared_groups": 0,
+      "denoising_seconds": 98.6059686250519,
+      "three_stage_seconds": 104.1263888750691,
+      "probe_start_to_saved_rounded_seconds": 115.0,
+      "sampled_peak_footprint_bytes": 953092008,
+      "maximum_observed_sample_gap_ms": 55.48462504521012,
+      "denoising_metrics": {
+        "calls": 192,
+        "cache_hits": 45,
+        "seconds": {
+          "model_load": 11.579475958831608,
+          "function_load": 39.51016699965112,
+          "eviction": 0.0005617095157504082,
+          "inference_await": 45.455515416455455,
+          "total": 96.55279174994212
+        },
+        "thermal_state_counts": {
+          "0": 192
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "groups4-first/report.json",
+      "summary": "groups4-first/summary.json"
+    },
+    {
+      "id": "groups4-repeat",
+      "title": "4ブロック結合・再実行",
+      "source_sha256": "c2a7fc2d89433652c84e798b125829d82d7131e72a58c117fc87ff783199404e",
+      "source_caveat": null,
+      "native_experiment_label": "profile-groups4-02",
+      "profile": "grouped",
+      "cache_capacity": 0,
+      "pinned_heavy_blocks": 0,
+      "pinned_shared_groups": 0,
+      "denoising_seconds": 101.58531279163435,
+      "three_stage_seconds": 107.20895812497474,
+      "probe_start_to_saved_rounded_seconds": 117.0,
+      "sampled_peak_footprint_bytes": 948258728,
+      "maximum_observed_sample_gap_ms": 56.74120830371976,
+      "denoising_metrics": {
+        "calls": 192,
+        "cache_hits": 45,
+        "seconds": {
+          "model_load": 0.29687100020237267,
+          "function_load": 53.294470416614786,
+          "eviction": 0.0004359997110441327,
+          "inference_await": 45.98533800023142,
+          "total": 99.58355375018436
+        },
+        "thermal_state_counts": {
+          "0": 192
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "groups4-repeat/report.json",
+      "summary": "groups4-repeat/summary.json"
+    },
+    {
+      "id": "groups8-unretained",
+      "title": "8ブロック結合・保持なし",
+      "source_sha256": "c2a7fc2d89433652c84e798b125829d82d7131e72a58c117fc87ff783199404e",
+      "source_caveat": null,
+      "native_experiment_label": "profile-groups8-01",
+      "profile": "grouped",
+      "cache_capacity": 0,
+      "pinned_heavy_blocks": 0,
+      "pinned_shared_groups": 0,
+      "denoising_seconds": 111.14745612500701,
+      "three_stage_seconds": 116.51676925003994,
+      "probe_start_to_saved_rounded_seconds": 126.0,
+      "sampled_peak_footprint_bytes": 978536936,
+      "maximum_observed_sample_gap_ms": 54.54987508710474,
+      "denoising_metrics": {
+        "calls": 144,
+        "cache_hits": 45,
+        "seconds": {
+          "model_load": 4.984404958318919,
+          "function_load": 57.92173875099979,
+          "eviction": 0.0003142076311632991,
+          "inference_await": 46.812748041935265,
+          "total": 109.72487037349492
+        },
+        "thermal_state_counts": {
+          "0": 144
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "groups8-unretained/report.json",
+      "summary": "groups8-unretained/summary.json"
+    },
+    {
+      "id": "groups8-shared-retained",
+      "title": "8ブロック結合・統合側を保持",
+      "source_sha256": "e73e8e53f7fe0b5a7ee235d19c99e1ce96453f233490cc5ccd0fe1139ad8585b",
+      "source_caveat": null,
+      "native_experiment_label": "profile-groups8-pin4-01",
+      "profile": "grouped",
+      "cache_capacity": 0,
+      "pinned_heavy_blocks": 28,
+      "pinned_shared_groups": 4,
+      "denoising_seconds": 70.44717154162936,
+      "three_stage_seconds": 75.87104733334854,
+      "probe_start_to_saved_rounded_seconds": 85.0,
+      "sampled_peak_footprint_bytes": 1651970288,
+      "maximum_observed_sample_gap_ms": 54.42045826930553,
+      "denoising_metrics": {
+        "calls": 144,
+        "cache_hits": 105,
+        "seconds": {
+          "model_load": 0.15931637526955456,
+          "function_load": 13.829111625207588,
+          "eviction": 0.00046687410213053226,
+          "inference_await": 55.79077129124198,
+          "total": 69.78668737504631
+        },
+        "thermal_state_counts": {
+          "0": 95,
+          "1": 49
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "groups8-shared-retained/report.json",
+      "summary": "groups8-shared-retained/summary.json"
+    },
+    {
+      "id": "groups8-all-retained",
+      "title": "8ブロック結合・全関数を保持",
+      "source_sha256": "e73e8e53f7fe0b5a7ee235d19c99e1ce96453f233490cc5ccd0fe1139ad8585b",
+      "source_caveat": null,
+      "native_experiment_label": "profile-groups8-fullcache-01",
+      "profile": "grouped",
+      "cache_capacity": 2,
+      "pinned_heavy_blocks": 28,
+      "pinned_shared_groups": 4,
+      "denoising_seconds": 104.79612512502354,
+      "three_stage_seconds": 110.43590029177722,
+      "probe_start_to_saved_rounded_seconds": 120.0,
+      "sampled_peak_footprint_bytes": 1759334784,
+      "maximum_observed_sample_gap_ms": 563.82925005164,
+      "denoising_metrics": {
+        "calls": 144,
+        "cache_hits": 135,
+        "seconds": {
+          "model_load": 0.04927933344151825,
+          "function_load": 5.58486750011798,
+          "eviction": 0.0006151249399408698,
+          "inference_await": 97.38080374966376,
+          "total": 103.04005408252124
+        },
+        "thermal_state_counts": {
+          "0": 92,
+          "1": 52
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "groups8-all-retained/report.json",
+      "summary": "groups8-all-retained/summary.json"
+    },
+    {
+      "id": "optimized-default-repeat",
+      "title": "採用設定・通常起動で再実行",
+      "source_sha256": "255e1a7096eab8b3c8b427c971eaa3c40c1a2ed5acce0e2ad11496fefa16f597",
+      "source_caveat": null,
+      "native_experiment_label": "profile-optimized-default-01",
+      "profile": "automatic-groups8-shared-retained",
+      "cache_capacity": 0,
+      "pinned_heavy_blocks": 28,
+      "pinned_shared_groups": 4,
+      "denoising_seconds": 69.77344870823435,
+      "three_stage_seconds": 75.44772570824716,
+      "probe_start_to_saved_rounded_seconds": 85.0,
+      "sampled_peak_footprint_bytes": 1651806400,
+      "maximum_observed_sample_gap_ms": 55.81179168075323,
+      "denoising_metrics": {
+        "calls": 144,
+        "cache_hits": 105,
+        "seconds": {
+          "model_load": 0.15548166655935347,
+          "function_load": 15.527230124687776,
+          "eviction": 0.0004162502009421587,
+          "inference_await": 53.439667958184145,
+          "total": 69.12937841715757
+        },
+        "thermal_state_counts": {
+          "0": 127,
+          "1": 17
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "optimized-default-repeat/report.json",
+      "summary": "optimized-default-repeat/summary.json"
+    },
+    {
+      "id": "same-build-stream-control",
+      "title": "同一ビルド・元の方式",
+      "source_sha256": "255e1a7096eab8b3c8b427c971eaa3c40c1a2ed5acce0e2ad11496fefa16f597",
+      "source_caveat": null,
+      "native_experiment_label": "profile-stream-control-final-02",
+      "profile": "individual",
+      "cache_capacity": 2,
+      "pinned_heavy_blocks": 0,
+      "pinned_shared_groups": 0,
+      "denoising_seconds": 89.27781520830467,
+      "three_stage_seconds": 94.59775391651783,
+      "probe_start_to_saved_rounded_seconds": 103.0,
+      "sampled_peak_footprint_bytes": 1158760792,
+      "maximum_observed_sample_gap_ms": 52.52708331681788,
+      "denoising_metrics": {
+        "calls": 656,
+        "cache_hits": 45,
+        "seconds": {
+          "model_load": 1.18340208416339,
+          "function_load": 34.396936085424386,
+          "eviction": 1.1999587072059512,
+          "inference_await": 51.84997483459301,
+          "total": 88.64254858496133
+        },
+        "thermal_state_counts": {
+          "0": 433,
+          "1": 223
+        }
+      },
+      "png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+      "six_view_safety_verified": true,
+      "report": "same-build-stream-control/report.json",
+      "summary": "same-build-stream-control/summary.json"
+    }
+  ],
+  "limitations": [
+    "Single caption and seed; two successful runs of the selected retention policy. Not a quality benchmark against unquantized weights.",
+    "Thermal states are recorded per call. The same coarse thermal state does not prove equal GPU clocks or external load.",
+    "OS and runtime cache state were not reset; first use and later runs differ. Do not attribute the entire initial107-to70 second difference solely to this policy.",
+    "Model/function/run values are wall time, not isolated GPU kernel timing.",
+    "Physical footprint sampled at a requested50ms; not total device or Metal allocation and not a guaranteed instantaneous peak.",
+    "All-function retention reduced load time but increased awaited inference in one trial; the reason is not isolated.",
+    "Windows V100 is user-reported32GB, SSH unconfigured; no Windows job was executed."
+  ]
+}

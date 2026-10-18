@@ -1,0 +1,38 @@
+[
+  {
+    "run": "warmup",
+    "csv_samples": 2108,
+    "csv_peak_matches_report": true,
+    "maximum_sample_gap_ms": 107.52620839048177
+  },
+  {
+    "run": "precompute-01",
+    "csv_samples": 1458,
+    "csv_peak_matches_report": true,
+    "maximum_sample_gap_ms": 66.09500001650304
+  },
+  {
+    "run": "control-02",
+    "csv_samples": 2050,
+    "csv_peak_matches_report": true,
+    "maximum_sample_gap_ms": 56.41920829657465
+  },
+  {
+    "run": "precompute-02",
+    "csv_samples": 1435,
+    "csv_peak_matches_report": true,
+    "maximum_sample_gap_ms": 65.27020840439945
+  },
+  {
+    "run": "control-03",
+    "csv_samples": 2652,
+    "csv_peak_matches_report": true,
+    "maximum_sample_gap_ms": 126.81637494824827
+  },
+  {
+    "run": "control-04",
+    "csv_samples": 2035,
+    "csv_peak_matches_report": true,
+    "maximum_sample_gap_ms": 440.02900004852563
+  }
+]

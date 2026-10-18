@@ -1,0 +1,9 @@
+{
+  "component": "dit",
+  "source_url": "https://huggingface.co/ml-resources/flux-3-image-klein-comfy/resolve/3ba0f7064cbb1666a71e2820d3cc5c2273bb6cd0/diffusion_models/flux3-image-klein-bf16.safetensors",
+  "bytes": 11097404512,
+  "sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+  "verified": true,
+  "elapsed_seconds": 1759.7970000000205,
+  "parallel_workers": 8
+}

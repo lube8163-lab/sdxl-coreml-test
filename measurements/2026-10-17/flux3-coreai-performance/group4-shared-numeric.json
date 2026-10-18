@@ -1,0 +1,15 @@
+{
+  "component": "shared_g00",
+  "members": [
+    "shared_00",
+    "shared_01",
+    "shared_02",
+    "shared_03"
+  ],
+  "scope": "Real checkpoint constants; random BF16 activations; grouped vs sequential CoreAI calls on Mac; not image-quality evaluation",
+  "relative_rmse": 0.0,
+  "max_absolute_error": 0.0,
+  "finite": true,
+  "exact_equal": true,
+  "passed": true
+}

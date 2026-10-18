@@ -1,0 +1,179 @@
+{
+  "both_models_installed" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.preview",
+  "cancel_preserved_result" : true,
+  "cases" : [
+    {
+      "app_timing" : "安全性の確認を含めて 60.0 秒。保存や共有ができます。",
+      "file" : "flux3-4-steps-seed42-approved.png",
+      "pixel_sha256" : "f25201360a3d00d4a6dc29141ca3c42ffe9dba79d63ce99bd76d3a334c03fcab",
+      "prompt" : "A watercolor painting of a red lighthouse standing on a grassy cliff above a calm blue sea. A small white sailboat is visible on the right. Warm afternoon sunlight comes from the left. Soft textured paper, delicate brush strokes, clear simple composition, no people, no text.",
+      "safety" : [
+        {
+          "nsfl" : 0.032318629324436188,
+          "nsfw" : 0.03750871866941452,
+          "sfw" : 0.93017268180847168
+        },
+        {
+          "nsfl" : 0.031163373962044716,
+          "nsfw" : 0.035145185887813568,
+          "sfw" : 0.93369144201278687
+        },
+        {
+          "nsfl" : 0.031784854829311371,
+          "nsfw" : 0.03333575651049614,
+          "sfw" : 0.9348793625831604
+        },
+        {
+          "nsfl" : 0.032088782638311386,
+          "nsfw" : 0.03806048259139061,
+          "sfw" : 0.92985069751739502
+        },
+        {
+          "nsfl" : 0.033429846167564392,
+          "nsfw" : 0.035830184817314148,
+          "sfw" : 0.93073999881744385
+        },
+        {
+          "nsfl" : 0.032882269471883774,
+          "nsfw" : 0.033916424959897995,
+          "sfw" : 0.93320131301879883
+        }
+      ],
+      "seconds_including_safety" : 60.450122952461243,
+      "seed" : 42,
+      "steps" : 4
+    },
+    {
+      "app_timing" : "安全性の確認を含めて 40.0 秒。保存や共有ができます。",
+      "file" : "flux3-8-steps-seed42-approved.png",
+      "pixel_sha256" : "9f715926cf2f2a2c5d3fbfd5729b70fdb5cac242ab2abf14fa625e0196bd533d",
+      "prompt" : "A watercolor painting of a red lighthouse standing on a grassy cliff above a calm blue sea. A small white sailboat is visible on the right. Warm afternoon sunlight comes from the left. Soft textured paper, delicate brush strokes, clear simple composition, no people, no text.",
+      "safety" : [
+        {
+          "nsfl" : 0.03261074423789978,
+          "nsfw" : 0.03878113254904747,
+          "sfw" : 0.92860805988311768
+        },
+        {
+          "nsfl" : 0.031756661832332611,
+          "nsfw" : 0.034031160175800323,
+          "sfw" : 0.93421220779418945
+        },
+        {
+          "nsfl" : 0.03053002618253231,
+          "nsfw" : 0.03456447646021843,
+          "sfw" : 0.9349055290222168
+        },
+        {
+          "nsfl" : 0.032982222735881805,
+          "nsfw" : 0.036061391234397888,
+          "sfw" : 0.93095642328262329
+        },
+        {
+          "nsfl" : 0.033563364297151566,
+          "nsfw" : 0.035050846636295319,
+          "sfw" : 0.93138575553894043
+        },
+        {
+          "nsfl" : 0.032614085823297501,
+          "nsfw" : 0.034538440406322479,
+          "sfw" : 0.93284749984741211
+        }
+      ],
+      "seconds_including_safety" : 40.410158038139343,
+      "seed" : 42,
+      "steps" : 8
+    },
+    {
+      "app_timing" : "安全性の確認を含めて 78.5 秒。保存や共有ができます。",
+      "file" : "flux3-16-steps-seed42-approved.png",
+      "pixel_sha256" : "9f516da9b0c94f2627b359a354096f8f7ac342cfdc31411cc7bd80cb14208b67",
+      "prompt" : "A watercolor painting of a red lighthouse standing on a grassy cliff above a calm blue sea. A small white sailboat is visible on the right. Warm afternoon sunlight comes from the left. Soft textured paper, delicate brush strokes, clear simple composition, no people, no text.",
+      "safety" : [
+        {
+          "nsfl" : 0.032361887395381927,
+          "nsfw" : 0.037362050265073776,
+          "sfw" : 0.93027603626251221
+        },
+        {
+          "nsfl" : 0.032273869961500168,
+          "nsfw" : 0.032283350825309753,
+          "sfw" : 0.93544286489486694
+        },
+        {
+          "nsfl" : 0.031621977686882019,
+          "nsfw" : 0.033495008945465088,
+          "sfw" : 0.9348829984664917
+        },
+        {
+          "nsfl" : 0.034183207899332047,
+          "nsfw" : 0.035281479358673096,
+          "sfw" : 0.93053525686264038
+        },
+        {
+          "nsfl" : 0.035079929977655411,
+          "nsfw" : 0.035027522593736649,
+          "sfw" : 0.92989253997802734
+        },
+        {
+          "nsfl" : 0.033301237970590591,
+          "nsfw" : 0.033767741173505783,
+          "sfw" : 0.93293100595474243
+        }
+      ],
+      "seconds_including_safety" : 79.125419974327087,
+      "seed" : 42,
+      "steps" : 16
+    }
+  ],
+  "complete" : true,
+  "os_version" : "27.0.1",
+  "paused_bytes" : 14274150,
+  "phase" : "complete",
+  "physical_memory_bytes" : 8045641728,
+  "resumed_bytes" : 14274150,
+  "scope" : "Test-only startup driver calls unchanged main app setup, VM, native runtime and compulsory safety. Not an XCTest tap run.",
+  "switch_back_preserved_provenance" : true,
+  "unsafe_prompt_preserved_result" : true,
+  "updated_at" : "2026-10-18T06:03:26Z",
+  "verification_resume_without_download" : true,
+  "warm_4_after_relaunch" : {
+    "app_timing" : "安全性の確認を含めて 23.9 秒。保存や共有ができます。",
+    "matches_first_4_pixels" : true,
+    "pixel_sha256" : "f25201360a3d00d4a6dc29141ca3c42ffe9dba79d63ce99bd76d3a334c03fcab",
+    "safety" : [
+      {
+        "nsfl" : 0.032318629324436188,
+        "nsfw" : 0.03750871866941452,
+        "sfw" : 0.93017268180847168
+      },
+      {
+        "nsfl" : 0.031163373962044716,
+        "nsfw" : 0.035145185887813568,
+        "sfw" : 0.93369144201278687
+      },
+      {
+        "nsfl" : 0.031784854829311371,
+        "nsfw" : 0.03333575651049614,
+        "sfw" : 0.9348793625831604
+      },
+      {
+        "nsfl" : 0.032088782638311386,
+        "nsfw" : 0.03806048259139061,
+        "sfw" : 0.92985069751739502
+      },
+      {
+        "nsfl" : 0.033429846167564392,
+        "nsfw" : 0.035830184817314148,
+        "sfw" : 0.93073999881744385
+      },
+      {
+        "nsfl" : 0.032882269471883774,
+        "nsfw" : 0.033916424959897995,
+        "sfw" : 0.93320131301879883
+      }
+    ],
+    "seconds_including_safety" : 24.507115006446838
+  }
+}

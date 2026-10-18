@@ -1,0 +1,15 @@
+{
+  "native_source_sha256": "255e1a7096eab8b3c8b427c971eaa3c40c1a2ed5acce0e2ad11496fefa16f597",
+  "configuration": "Release",
+  "xcode": "27.0 (27A266a)",
+  "build_succeeded": true,
+  "groups8_manifest_sha256": "1d6af8ef439600463a49986d5a47f8ef5d5c7a506bd7fcab4850aa9f32281422",
+  "source_model_plan_sha256": "90c8b69f8f6419a82445ef37f208404597d15be29f2afa5cfcd7e8a732f3e52f",
+  "automatic_profile": {
+    "condition": "Groups8/groups.json exists, no --individual and no explicit --groups",
+    "group_directory": "Groups8",
+    "cache_capacity": 0,
+    "pinned_shared_groups": 4
+  },
+  "source_snapshot": "GenerationProbe-optimized-default.swift"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "run": "first-use-control",
+    "csv_samples": 8780,
+    "reported_samples": 8779,
+    "csv_peak_matches_report": true,
+    "max_gap_ms": 448.6691667116247
+  },
+  {
+    "run": "precompute-01",
+    "csv_samples": 5450,
+    "reported_samples": 5449,
+    "csv_peak_matches_report": true,
+    "max_gap_ms": 68.18129168823361
+  },
+  {
+    "run": "precompute-02",
+    "csv_samples": 6046,
+    "reported_samples": 6046,
+    "csv_peak_matches_report": true,
+    "max_gap_ms": 80.63854166539386
+  },
+  {
+    "run": "warm-control-02",
+    "csv_samples": 7175,
+    "reported_samples": 7173,
+    "csv_peak_matches_report": true,
+    "max_gap_ms": 84.41445836797357
+  },
+  {
+    "run": "warm-control-03",
+    "csv_samples": 6783,
+    "reported_samples": 6781,
+    "csv_peak_matches_report": true,
+    "max_gap_ms": 100.63000000081956
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "component": "image_00",
+  "completed": true,
+  "source_asset_files_sha256": {
+    "main.hash": "f15f86fa63af649120386f90cbd6265e831e53cc730a8f90ed1f80ec2914a7b0",
+    "main.mlirb": "1a6479234cb399a6b8af7a10563ea9bba678e89163338a4e9da252f70bdcdae7",
+    "metadata.json": "516a03da748a34fb19e6c5f5d59c5fbfc8fcc2b187f0b9f2a4e04d4763467bc0"
+  },
+  "source_checkpoint_sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+  "matrices": [
+    {
+      "name": "q_proj.weight",
+      "shape": [
+        3072,
+        3072
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "k_proj.weight",
+      "shape": [
+        3072,
+        3072
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "v_proj.weight",
+      "shape": [
+        3072,
+        3072
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "mlp_in.weight",
+      "shape": [
+        18432,
+        3072
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "attn_out.weight",
+      "shape": [
+        3072,
+        3072
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "mlp_out.weight",
+      "shape": [
+        3072,
+        9216
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    }
+  ],
+  "packed_nibble_order": "low then high; signed two complement",
+  "validation_norm_count": 2,
+  "sha256": "8f002372d27a227074973fdf480c3dd4935d42d0807decf85fed646136f2b915",
+  "bytes": 69011776,
+  "extractor_sha256": "555b0a348a5da9f9e572ba85a1690872d70a171db3fdbc55df4c5dd281644353"
+}

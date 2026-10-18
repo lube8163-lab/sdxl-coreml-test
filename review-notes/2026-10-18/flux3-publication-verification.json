@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-18",
+  "scope": "Publication preparation; existing device runs retained; no new physical generation or App Store actions",
+  "isolated_release_build_succeeded": true,
+  "swift_tests": {
+    "result": "passed",
+    "tests": 22,
+    "suites": 5,
+    "optional_fixture_tests": "Environment-dependent; see original integration run for ZIP64/tokenizer contracts"
+  },
+  "tested_probe_source_sha256": "0cb86282cf7f5a3fa5e790864948eb80763bedd8e512b78176620b35d69acc1d",
+  "remote_windows_source_hash_matches": 5,
+  "native_run_png_hash_checks": 46,
+  "quality_image_safety_receipts": 24,
+  "relative_document_links_valid": true,
+  "weights_committed": false,
+  "source_packages_revisions_changed": false
+}

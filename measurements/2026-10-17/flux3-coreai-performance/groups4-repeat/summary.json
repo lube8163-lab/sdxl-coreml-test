@@ -1,0 +1,159 @@
+{
+  "label": "profile-groups4-02",
+  "stage": "\u751f\u6210\u3068\u5b89\u5168\u6027\u78ba\u8a8d\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f",
+  "complete_image": true,
+  "pin_count": 0,
+  "pinned_shared_groups": 0,
+  "cache_capacity": 0,
+  "execution_kind": "grouped",
+  "sampled_peak_footprint_bytes": 948258728,
+  "phases": {
+    "text": {
+      "calls": 33,
+      "cache_hits": 0,
+      "seconds": {
+        "model_load": 0.2274826248176396,
+        "function_load": 3.8932340831961483,
+        "eviction": 4.458299372345209e-05,
+        "inference_await": 0.5938591674203053,
+        "total": 4.7151078335009515
+      },
+      "thermal_state_counts": {
+        "0": 33
+      }
+    },
+    "denoising": {
+      "calls": 192,
+      "cache_hits": 45,
+      "seconds": {
+        "model_load": 0.29687100020237267,
+        "function_load": 53.294470416614786,
+        "eviction": 0.0004359997110441327,
+        "inference_await": 45.98533800023142,
+        "total": 99.58355375018436
+      },
+      "thermal_state_counts": {
+        "0": 192
+      }
+    },
+    "vae": {
+      "calls": 1,
+      "cache_hits": 0,
+      "seconds": {
+        "model_load": 0.006781875039450824,
+        "function_load": 0.12918904167599976,
+        "eviction": 1.6249250620603561e-06,
+        "inference_await": 0.6606355833355337,
+        "total": 0.7966461250325665
+      },
+      "thermal_state_counts": {
+        "0": 1
+      }
+    }
+  },
+  "denoising_component_means_seconds": {
+    "image_g00": {
+      "model_load": 0.0017387369807693176,
+      "function_load": 0.4838905234064441,
+      "eviction": 3.700530214700848e-06,
+      "inference_await": 0.3443469713529339,
+      "total": 0.830017296873848
+    },
+    "input": {
+      "model_load": 0.00010470312554389238,
+      "function_load": 0.03963526042207377,
+      "eviction": 9.400973794981837e-07,
+      "inference_await": 0.17227222916699247,
+      "total": 0.21203644270281075
+    },
+    "join": {
+      "model_load": 0.00045653386041522026,
+      "function_load": 0.00035492447204887867,
+      "eviction": 1.0937583283521235e-06,
+      "inference_await": 0.004494682303629816,
+      "total": 0.005326085956767201
+    },
+    "output": {
+      "model_load": 0.00015795051876921207,
+      "function_load": 0.0027619010434136726,
+      "eviction": 1.1666634236462414e-06,
+      "inference_await": 0.016836065115057863,
+      "total": 0.019775611988734454
+    },
+    "shared_g00": {
+      "model_load": 0.0016800234370748512,
+      "function_load": 0.3571020234521711,
+      "eviction": 2.2291424102149904e-06,
+      "inference_await": 0.3166882656150847,
+      "total": 0.6755114270781633
+    },
+    "shared_g01": {
+      "model_load": 0.002113690097758081,
+      "function_load": 0.3729473020794103,
+      "eviction": 5.276029696688056e-06,
+      "inference_await": 0.32165552602964453,
+      "total": 0.6967638020869344
+    },
+    "shared_g02": {
+      "model_load": 0.002126687490090262,
+      "function_load": 0.3280240885433159,
+      "eviction": 2.169275830965489e-06,
+      "inference_await": 0.3250252864600043,
+      "total": 0.6552148177142954
+    },
+    "shared_g03": {
+      "model_load": 0.002025192734436132,
+      "function_load": 0.32639554166962625,
+      "eviction": 2.2551976144313812e-06,
+      "inference_await": 0.32577096354361856,
+      "total": 0.6542334531113738
+    },
+    "shared_g04": {
+      "model_load": 0.002151914050045889,
+      "function_load": 0.32276866666506976,
+      "eviction": 2.117194526363164e-06,
+      "inference_await": 0.32678586456313496,
+      "total": 0.6517458437447203
+    },
+    "shared_g05": {
+      "model_load": 0.0018865182282752357,
+      "function_load": 0.345347666683665,
+      "eviction": 2.322907675988972e-06,
+      "inference_await": 0.32849227604310727,
+      "total": 0.6757796953170327
+    },
+    "shared_g06": {
+      "model_load": 0.002195020832004957,
+      "function_load": 0.3293690260325093,
+      "eviction": 1.875021553132683e-06,
+      "inference_await": 0.3285982994857477,
+      "total": 0.6602082395838806
+    },
+    "text_g00": {
+      "model_load": 0.0019174661574652418,
+      "function_load": 0.42230747656867607,
+      "eviction": 2.1041632862761617e-06,
+      "inference_await": 0.06311719533550786,
+      "total": 0.48735939322796185
+    }
+  },
+  "completed_steps": 16,
+  "steps_2_onward_median_seconds": 6.412012416752987,
+  "steps_2_onward_mean_seconds": 6.321246050018817,
+  "text_encoding_seconds": 4.803873291704804,
+  "denoising_seconds": 101.58531279163435,
+  "vae_seconds": 0.8197720416355878,
+  "image_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+  "steps": 16,
+  "seed": 42,
+  "three_stage_seconds": 107.20895812497474,
+  "model_pipeline_seconds": 107.20895812497474,
+  "six_view_safety_verified": true,
+  "baseline_label": "profile-stream-control-final-02",
+  "baseline_denoising_seconds": 89.27781520830467,
+  "baseline_image_sha256_match": true,
+  "denoising_speedup": 0.8788456988012227,
+  "baseline_model_pipeline_seconds": 94.59775391651783,
+  "model_pipeline_speedup": 0.8823679995681342,
+  "measurement_scope": "Wall time inside model constructor, function load and awaited function.run. run may include runtime scheduling and synchronization; it is not isolated GPU kernel time."
+}

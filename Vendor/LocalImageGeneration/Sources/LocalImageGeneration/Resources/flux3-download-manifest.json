@@ -1,0 +1,135 @@
+{
+  "revision": "coreai-flux3-512-int4-dd2ae0a-v1",
+  "modelID": "flux3-klein",
+  "archiveBytes": 4925833766,
+  "installedBytes": 5764051319,
+  "archiveSHA256": "15608f44e7e41c0d1e3aafbb972de7a973986aed58d462a340c33b2afdb99638",
+  "manifestSHA256": "a74f362b88f101840ba00861711eaf442f6b3e25eeddbe53b9e27d5d5281e395",
+  "fragments": [
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part001",
+      "bytes": 200000000,
+      "sha256": "6cec2ae97fea206b3b4ed8ad83764761dcd60ebd6d70e13a4e5edc00cbd2f248"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part002",
+      "bytes": 200000000,
+      "sha256": "f5ac529345608d95a2328f69b27ab2e67dd2444a5665d527699a060a19238ffe"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part003",
+      "bytes": 200000000,
+      "sha256": "6bb38e9a3d7591e59b1049174c096c6703cb17d6f8f33cae718fe46086f46924"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part004",
+      "bytes": 200000000,
+      "sha256": "901944e2fa6b6203dd7071ef5a786624147bb66f1bb376cd20ff1c295c834833"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part005",
+      "bytes": 200000000,
+      "sha256": "96a40b001f9bfee4206d523e20fc6e465e7fa824d58135d6b88868fb60a8cc24"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part006",
+      "bytes": 200000000,
+      "sha256": "f42de0aa1c82a34db04d7f6c288f503496e6eb20af413fc1dfd9829da81a5d4e"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part007",
+      "bytes": 200000000,
+      "sha256": "adc1d9b9e8941c1fd9a499f6e0d3f30176d57af0749c39affd3e81f24b58de4a"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part008",
+      "bytes": 200000000,
+      "sha256": "94c240cc0b64a552c14ac7abb701f12ef4ebb3bde818d77570147c1ae63ff1b1"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part009",
+      "bytes": 200000000,
+      "sha256": "4de2968cdd25bf499fd91f6cf316aa875b16b5af000ea7f028a8290bf039de1d"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part010",
+      "bytes": 200000000,
+      "sha256": "81e475debcb2316c7ab1b706dd82e36e843b6f407b12429e3ab06ad011028d05"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part011",
+      "bytes": 200000000,
+      "sha256": "fdd8617da7a82ba71b96020042b15e3e9f97c29ec35b007416f5627798b65937"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part012",
+      "bytes": 200000000,
+      "sha256": "b82fc62d636b9b06db861713896fcfc05d7103b791003dfe60a1a290f317f59f"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part013",
+      "bytes": 200000000,
+      "sha256": "1d5378a37d7c9ae427886f0ee8d3b76cad841c2143dafade3ab2148d1429fe54"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part014",
+      "bytes": 200000000,
+      "sha256": "a69c22bf87e97592a7450dc89b821e849d5abcedf384bb18f65870d9172ea63b"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part015",
+      "bytes": 200000000,
+      "sha256": "2e4908eac4fe4d4a54b187d1067febf47592dbb5de4592e2c2669d2df54ff541"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part016",
+      "bytes": 200000000,
+      "sha256": "ff2313f1dd0f9b7395e5957212f05c16a631ec1b4f0bea3bb7cf17e6232e7c95"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part017",
+      "bytes": 200000000,
+      "sha256": "a957713c6dd608f240b73c8cc255e57c7f040c4f02114f4a5d1c66ac90061ab6"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part018",
+      "bytes": 200000000,
+      "sha256": "63eba9a3fa302076dd06b3ff6497ad35134924dc764cb2444c50be0b206ea71f"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part019",
+      "bytes": 200000000,
+      "sha256": "d4e4035c99e501947a69ffd3bc89397fc9d3400597da8ede64f263c778361148"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part020",
+      "bytes": 200000000,
+      "sha256": "3673a21b8e0f6591372a747661b2d29eac3f3386651daac13b8f9879a142f61d"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part021",
+      "bytes": 200000000,
+      "sha256": "b14bebc18c6431cd3c3b6c5ba3c875886be8fdc2e4969fbde43d80eefc880e5f"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part022",
+      "bytes": 200000000,
+      "sha256": "9a4fe1aeea03a4fe96d0ddb8293795cde5cc83a4667409239b178332fb3e6117"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part023",
+      "bytes": 200000000,
+      "sha256": "9aea97a7638316b12a5d9ad7dccd31b0cea4786068e646050044b73cb0041f37"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part024",
+      "bytes": 200000000,
+      "sha256": "f5cb22d138aa81a40a7469288f0657be06e7ffa4c578620a41e5122b83bc3c2f"
+    },
+    {
+      "url": "https://pub-41a85dcbeaae42d58c317781ea160d68.r2.dev/CoreAI/generation/flux3-klein-512-int4-dd2ae0a-v1/flux3_klein_512_int4_v1.zip.part025",
+      "bytes": 125833766,
+      "sha256": "b9153eb46858a68ba18bdad853b461e7d63cc3d321143f996179c4eca3136927"
+    }
+  ]
+}

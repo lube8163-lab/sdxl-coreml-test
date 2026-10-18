@@ -1,0 +1,87 @@
+{
+  "component": "te_03",
+  "completed": true,
+  "source_asset_files_sha256": {
+    "main.hash": "7e22e72a86c43479c64974a4c54905e439b3691d8ada178590a6949db307c669",
+    "main.mlirb": "edbca3d667c9845a86e09699e9ee6c45ae731eb3c3208053997e62f290757cee",
+    "metadata.json": "eee10d7da8caae2f4a26d227bc1ab1859d2813b19b97bc584d864250a4c1b9de"
+  },
+  "source_checkpoint_sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+  "matrices": [
+    {
+      "name": "self_attn.q_proj.weight",
+      "shape": [
+        4096,
+        2560
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "self_attn.k_proj.weight",
+      "shape": [
+        1024,
+        2560
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "self_attn.v_proj.weight",
+      "shape": [
+        1024,
+        2560
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "self_attn.o_proj.weight",
+      "shape": [
+        2560,
+        4096
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "mlp.gate_proj.weight",
+      "shape": [
+        9728,
+        2560
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "mlp.up_proj.weight",
+      "shape": [
+        9728,
+        2560
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    },
+    {
+      "name": "mlp.down_proj.weight",
+      "shape": [
+        2560,
+        9728
+      ],
+      "block_size": 32,
+      "source_scale_dtype": "float16",
+      "zero_shift_and_bias_verified": true
+    }
+  ],
+  "packed_nibble_order": "low then high; signed two complement",
+  "validation_norm_count": 2,
+  "sha256": "44bbd80a8f2a26aa853baca727c811646cf0432bbee53b1dee6840b0e35fd035",
+  "bytes": 56772720,
+  "extractor_sha256": "555b0a348a5da9f9e572ba85a1690872d70a171db3fdbc55df4c5dd281644353"
+}

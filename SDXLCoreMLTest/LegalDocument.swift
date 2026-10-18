@@ -21,7 +21,7 @@ enum LegalDocument: String, CaseIterable, Identifiable {
     }
 
     var lastUpdatedText: String {
-        "最終更新日: 2026年10月15日"
+        "最終更新日: 2026年10月18日"
     }
 
     var sections: [LegalSection] {
@@ -73,7 +73,7 @@ enum LegalDocument: String, CaseIterable, Identifiable {
                 ),
                 .init(
                     title: "3. 端末内での処理",
-                    body: "画像生成は、ダウンロード済みのFLUX.2 Klein 4Bモデルを利用して端末内で実行されます。入力と生成画像の安全性の確認も端末内で行います。本アプリは、プロンプトや生成画像を開発者のサーバーへ送信しません。初回のモデル準備ではCloudflare上の配布サーバーに接続し、IPアドレスなど通常の通信情報が配布事業者に伝わります。画像生成時にこの通信は必要ありません。現在の実装では、広告SDK、アクセス解析SDK、外部トラッキングSDKも組み込んでいません。"
+                    body: "画像生成は、ダウンロード済みのFLUX.2 Klein 4BまたはFLUX.3 Image Kleinモデルを利用して端末内で実行されます。入力と生成画像の安全性の確認も端末内で行います。本アプリは、プロンプトや生成画像を開発者のサーバーへ送信しません。初回のモデル準備ではCloudflare上の配布サーバーに接続し、IPアドレスなど通常の通信情報が配布事業者に伝わります。画像生成時にこの通信は必要ありません。現在の実装では、広告SDK、アクセス解析SDK、外部トラッキングSDKも組み込んでいません。"
                 ),
                 .init(
                     title: "4. 写真ライブラリと共有",

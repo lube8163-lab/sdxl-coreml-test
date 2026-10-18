@@ -1,0 +1,313 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 44,
+    "calls" : 74,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 6.1249593272805214e-06,
+      "conditioning.function_load" : 1.2063619582913816,
+      "conditioning.inference_await" : 0.3478500418132171,
+      "conditioning.model_load" : 0.0040161251090466976,
+      "conditioning.total" : 1.558329458348453,
+      "denoising.eviction" : 0.00011054170317947865,
+      "denoising.function_load" : 4.5628719166852534,
+      "denoising.inference_await" : 12.059031166601926,
+      "denoising.model_load" : 0.038245500181801617,
+      "denoising.total" : 16.661927208304405,
+      "text.eviction" : 4.1124760173261166e-05,
+      "text.function_load" : 3.6931330834049731,
+      "text.inference_await" : 0.51295795838814229,
+      "text.model_load" : 0.05387216666713357,
+      "text.total" : 4.2604740413371474,
+      "vae.eviction" : 1.250067725777626e-06,
+      "vae.function_load" : 0.14138587506022304,
+      "vae.inference_await" : 0.6357329583261162,
+      "vae.model_load" : 0.0061122083570808172,
+      "vae.total" : 0.78327374998480082
+    }
+  },
+  "asset_hashes_verified" : true,
+  "asset_verification_mode" : "background-streamed-sha256-1mib",
+  "asset_verification_seconds" : 3.4316729584243149,
+  "available_process_memory_bytes" : 3292231720,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "cached_text_step_count" : 4,
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 43,
+    "calls" : 73,
+    "retained_components" : [
+      "image_g00",
+      "input_image",
+      "join",
+      "output",
+      "shared_g00",
+      "shared_g01",
+      "shared_g02",
+      "shared_g03"
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 6.1249593272805214e-06,
+      "conditioning.function_load" : 1.2063619582913816,
+      "conditioning.inference_await" : 0.3478500418132171,
+      "conditioning.model_load" : 0.0040161251090466976,
+      "conditioning.total" : 1.558329458348453,
+      "denoising.eviction" : 0.00011054170317947865,
+      "denoising.function_load" : 4.5628719166852534,
+      "denoising.inference_await" : 12.059031166601926,
+      "denoising.model_load" : 0.038245500181801617,
+      "denoising.total" : 16.661927208304405,
+      "text.eviction" : 4.1124760173261166e-05,
+      "text.function_load" : 3.6931330834049731,
+      "text.inference_await" : 0.51295795838814229,
+      "text.model_load" : 0.05387216666713357,
+      "text.total" : 4.2604740413371474
+    }
+  },
+  "denoising_seconds" : 16.733888958347961,
+  "diffusion_compute_dtype" : "bfloat16",
+  "execution_groups" : [
+    {
+      "component" : "image_g00",
+      "members" : [
+        "image_00",
+        "image_01",
+        "image_02",
+        "image_03",
+        "image_04"
+      ],
+      "mode" : "image"
+    },
+    {
+      "component" : "text_g00",
+      "members" : [
+        "text_00",
+        "text_01",
+        "text_02",
+        "text_03",
+        "text_04"
+      ],
+      "mode" : "text"
+    },
+    {
+      "component" : "shared_g00",
+      "members" : [
+        "shared_00",
+        "shared_01",
+        "shared_02",
+        "shared_03",
+        "shared_04",
+        "shared_05",
+        "shared_06",
+        "shared_07"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g01",
+      "members" : [
+        "shared_08",
+        "shared_09",
+        "shared_10",
+        "shared_11",
+        "shared_12",
+        "shared_13",
+        "shared_14",
+        "shared_15"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g02",
+      "members" : [
+        "shared_16",
+        "shared_17",
+        "shared_18",
+        "shared_19",
+        "shared_20",
+        "shared_21",
+        "shared_22",
+        "shared_23"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g03",
+      "members" : [
+        "shared_24",
+        "shared_25",
+        "shared_26",
+        "shared_27"
+      ],
+      "mode" : "shared"
+    }
+  ],
+  "execution_kind" : "grouped",
+  "execution_profile" : "automatic-groups8-shared-retained",
+  "expanded_caption" : "A realistic still-life photograph on a warm oak table beside a window. A single ripe red apple sits on the left, with a small blue glazed ceramic mug on the right. The mug has one clearly visible handle facing right. Soft natural window light enters from the left and produces gentle shadows across the wood grain. The background is an uncluttered, softly blurred cream-colored wall. Both objects are fully visible near the center of the frame. Use natural colors, detailed materials, and a calm photographic composition, with no people or lettering.",
+  "experiment_label" : "stepcompare-20261018-still-life-seed42-s4",
+  "finished_at" : "2026-10-18T04:12:27Z",
+  "fixture_profile" : "still-life-seed42",
+  "fixture_profile_sha256" : "4a1dffe33ed31cde3dbc854e0c7895f596d67dd3f64289e7dc1edc9b2d658ee7",
+  "free_storage_bytes_at_start" : 8683520000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_input_slice_verified" : true,
+  "image_saved" : true,
+  "image_sha256" : "3fedd3b5974ed7a20d605258a7efbea602546ca705145f29e30081406c735e8a",
+  "input_safety_passed" : true,
+  "input_safety_seconds" : 0.0031628332799300551,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 51.046874956227839,
+  "memory_sample_count" : 544,
+  "model_cache_capacity" : 0,
+  "original_prompt" : "A red apple beside a blue ceramic mug on a wooden table, soft window light.",
+  "os_version" : "27.0.1",
+  "output_safety_seconds" : 0.12852016661781818,
+  "physical_footprint_bytes" : 247760856,
+  "physical_memory_bytes" : 8045641728,
+  "pinned_components" : [
+    "image_g00",
+    "input_image",
+    "join",
+    "output",
+    "shared_g00",
+    "shared_g01",
+    "shared_g02",
+    "shared_g03"
+  ],
+  "pinned_heavy_block_count" : 33,
+  "pinned_shared_group_count" : 4,
+  "precompute_component_metrics" : {
+    "cache_hits" : 6,
+    "cache_misses" : 35,
+    "calls" : 41,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 6.1249593272805214e-06,
+      "conditioning.function_load" : 1.2063619582913816,
+      "conditioning.inference_await" : 0.3478500418132171,
+      "conditioning.model_load" : 0.0040161251090466976,
+      "conditioning.total" : 1.558329458348453,
+      "text.eviction" : 4.1124760173261166e-05,
+      "text.function_load" : 3.6931330834049731,
+      "text.inference_await" : 0.51295795838814229,
+      "text.model_load" : 0.05387216666713357,
+      "text.total" : 4.2604740413371474
+    }
+  },
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "run_to_saved_seconds" : 27.179587416700087,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.033149078488349915,
+      "nsfw" : 0.038470793515443802,
+      "sfw" : 0.92838013172149658
+    },
+    {
+      "nsfl" : 0.030110443010926247,
+      "nsfw" : 0.033392950892448425,
+      "sfw" : 0.9364965558052063
+    },
+    {
+      "nsfl" : 0.029917938634753227,
+      "nsfw" : 0.034532852470874786,
+      "sfw" : 0.93554925918579102
+    },
+    {
+      "nsfl" : 0.029882177710533142,
+      "nsfw" : 0.045977596193552017,
+      "sfw" : 0.92414015531539917
+    },
+    {
+      "nsfl" : 0.030499652028083801,
+      "nsfw" : 0.040333516895771027,
+      "sfw" : 0.92916679382324219
+    },
+    {
+      "nsfl" : 0.033290252089500427,
+      "nsfw" : 0.0378246009349823,
+      "sfw" : 0.92888522148132324
+    }
+  ],
+  "safety_preparation_seconds" : 0.05757595831528306,
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1172459352,
+  "sampling_schedule" : [
+    1,
+    0.95410740375518799,
+    0.87389659881591797,
+    0.69788515567779541,
+    0
+  ],
+  "sampling_schedule_source" : "reference-alpha6.93-linspace-full-1-to-0",
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 42,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-18T04:12:00Z",
+  "step_records" : [
+    {
+      "latent_max" : 4.4212298393249512,
+      "latent_min" : -4.4129137992858887,
+      "seconds" : 7.0177815000060946,
+      "step" : 1,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.0389313697814941,
+      "latent_min" : -4.0465984344482422,
+      "seconds" : 3.3608675834257156,
+      "step" : 2,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.2049605846405029,
+      "latent_min" : -3.335345983505249,
+      "seconds" : 3.0787204166408628,
+      "step" : 3,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.5416779518127441,
+      "latent_min" : -4.8732967376708984,
+      "seconds" : 3.2755030416883528,
+      "step" : 4,
+      "thermal_state" : 1
+    }
+  ],
+  "steps" : 4,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 4.1124760173261166e-05,
+      "text.function_load" : 3.6931330834049731,
+      "text.inference_await" : 0.51295795838814229,
+      "text.model_load" : 0.05387216666713357,
+      "text.total" : 4.2604740413371474
+    }
+  },
+  "text_encoding_seconds" : 4.3437580416211858,
+  "text_length" : 160,
+  "text_precompute_enabled" : true,
+  "text_precompute_seconds" : 1.5837641666876152,
+  "thermal_state_at_start" : 1,
+  "uptime" : 635457.23982195836,
+  "vae_seconds" : 0.80043979163747281,
+  "verified_active_component_count" : 43
+}

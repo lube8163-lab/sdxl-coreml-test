@@ -1,0 +1,18 @@
+{
+  "source_sha256": "17609b254eb05b841761f43196d1f88963e125a06307cb75316ce0bdbc4753f6",
+  "executable_sha256": "eff7b8f9c89f3a3925c085c2389b2d1f91723b9b18cfb2d3dd97523a1414b8f7",
+  "configuration": "Release",
+  "build_succeeded": true,
+  "same_binary_runs": [
+    "warmup",
+    "precompute-01",
+    "control-02",
+    "precompute-02",
+    "control-03",
+    "control-04"
+  ],
+  "hardware": "iPhone18,3",
+  "os": "27.0.1 (24A446)",
+  "change_from_iphone14_build": "Move complete asset/group/slice/fixture SHA verification off main actor, stream1MiB; no generation math change",
+  "scope": "iPhone17 real-device validation; initial b68 startup failure excluded"
+}

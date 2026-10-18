@@ -1,0 +1,21 @@
+{
+  "scope": "Native device core run: copied main app with startup driver only in App bootstrap. UI/setup/VM/runtime used real download and safety.",
+  "binary_sha256": "903b58e4c3a26c5d4017f253d3e31257ce3128665eb7f0eb141a402ad06b9f65",
+  "source_sha256": {
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/LegalDocument.swift": "81882dc6d0c5cd2ecfe64645f2566761718e451543bdebf59bd730af248c2317",
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/ModelLibraryView.swift": "38a3aaae715ea2cd027f14062ee7bf7c7ceca75698e16957a1b9f9602cc8cc90",
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/ModelSetupView.swift": "683bb678e9adbcd8be05e23533b10c6cb0ed354760bfb1344f619706055ebef6",
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/PhotoLibrarySaver.swift": "2c052af807486d8961307fa0e42db15cb154a4f26e63c3e33d75cf9b46baf9e2",
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/ModelSetupViewModel.swift": "691bf98782d8ad93ba0f557da9ca0763a599e3281e59b9501730db62bcff61f0",
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/ContentView.swift": "8f25ed89a29b9af888d7c510fda4f41d8bd17f78be211f5129e8d98680c844fc",
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/SDXLGeneratorViewModel.swift": "c74717bd0aa8416ab02855e3fc18725bc7c56926f8c2a7a5f2cc1a30b85daa21",
+    "/Users/REDACTED/.codex/tmp/local-image-flux3-20261018/validation-preview/SDXLCoreMLTest/SDXLCoreMLTestApp.swift": "6c6855e66f867136c925ca09721806ee7d9b8a348232db1fd3694075a923b8ed",
+    "/Users/REDACTED/Desktop/XcodeProjects/SDXL_test/Vendor/LocalImageGeneration/Sources/LocalImageGeneration/GenerationModelPackage.swift": "502f7832e73a09fe39a5b00c1512b1544c7fd5237ab9e58fce999acb37133fa0",
+    "/Users/REDACTED/Desktop/XcodeProjects/SDXL_test/Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFluxGenerator.swift": "706b9bd64f635eed709ff4120982e01907479936d835395d23f31f93e492591c",
+    "/Users/REDACTED/Desktop/XcodeProjects/SDXL_test/Vendor/LocalImageGeneration/Sources/LocalImageGeneration/GenerationModel.swift": "079721562e4f934002a3cae179b7759fe349a7396029f886b2a55351a7a126e7",
+    "/Users/REDACTED/Desktop/XcodeProjects/SDXL_test/Vendor/LocalImageGeneration/Sources/LocalImageGeneration/LocalFlux3Generator.swift": "a4b943e17b86ae4aa40d3b4aab3b9f596cb04902631f62e0bca4e69e7858b9f3",
+    "/Users/REDACTED/Desktop/XcodeProjects/SDXL_test/Vendor/LocalImageGeneration/Sources/LocalImageGeneration/FluxModelPackage.swift": "cfbab9569092ee3e4bd494acd640486bc61077b615875f20d881efebd28ed738",
+    "/Users/REDACTED/Desktop/XcodeProjects/SDXL_test/Vendor/LocalImageGeneration/Sources/LocalImageGeneration/Flux3Runtime.swift": "e448c17a787d06a129e9a9743f283968817fe40c42c252815cc42086c9524588"
+  },
+  "startup_driver_sha256": "33ece9025ffa2d22d7762f979971e4ccdbb785c6b48ec58ce423bc8a13a91f8a"
+}

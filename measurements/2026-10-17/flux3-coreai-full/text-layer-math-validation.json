@@ -1,0 +1,8 @@
+{
+  "scope": "Random-weight FP32 Qwen3-VL layer inference-math comparison; 117 valid / 160 padded tokens",
+  "reference_tag": "transformers v4.57.1",
+  "reference_source_sha256": "dd63ed3b124232735b3dca1bfa28f9d6b0d3f7182afcb75dde8f3e724b2b22da",
+  "max_absolute_error": 1.0132789611816406e-06,
+  "relative_rmse": 4.4526566966851533e-07,
+  "passed": true
+}

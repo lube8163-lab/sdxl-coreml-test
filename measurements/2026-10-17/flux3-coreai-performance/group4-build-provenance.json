@@ -1,0 +1,8 @@
+{
+  "source_sha256": "c2a7fc2d89433652c84e798b125829d82d7131e72a58c117fc87ff783199404e",
+  "xcode": "27.0 (27A266a)",
+  "configuration": "Release",
+  "group_plan_sha256": "eec93cc207a00da1ad966b9861ad43ead616a15a2299ac1f8f1e917c5995eadd",
+  "source_model_plan_sha256": "90c8b69f8f6419a82445ef37f208404597d15be29f2afa5cfcd7e8a732f3e52f",
+  "case": "Profile grouped graph candidate; original BF16 weights and math retained"
+}

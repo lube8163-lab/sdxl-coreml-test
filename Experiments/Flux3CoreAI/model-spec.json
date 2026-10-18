@@ -1,0 +1,27 @@
+{
+  "official_repository": "black-forest-labs/flux-3-image-klein",
+  "official_revision": "337337621b8526e120f2275d250242f4a6bedd75",
+  "reference_code_revision": "dd2ae0a545abd569a87111a3a02b83e2424b1ecb",
+  "public_bf16_repository": "ml-resources/flux-3-image-klein-comfy",
+  "public_bf16_revision": "3ba0f7064cbb1666a71e2820d3cc5c2273bb6cd0",
+  "weights": {
+    "dit": {
+      "file": "diffusion_models/flux3-image-klein-bf16.safetensors",
+      "size": 11097404512,
+      "sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "official_byte_identical_file": "model.safetensors"
+    },
+    "text": {
+      "file": "text_encoders/qwen3vl_4b_bf16.safetensors",
+      "size": 8875719408,
+      "sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "official_comfy_revision": "feef60b0aaf63a4773ace96636ebbcf43b881312"
+    },
+    "vae": {
+      "file": "vae/flux2-vae.safetensors",
+      "size": 336211292,
+      "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+      "official_byte_identical_file": "ae.safetensors"
+    }
+  }
+}

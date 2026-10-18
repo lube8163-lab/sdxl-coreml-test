@@ -1,0 +1,8 @@
+{
+  "component": "vae",
+  "source_url": "https://huggingface.co/ml-resources/flux-3-image-klein-comfy/resolve/3ba0f7064cbb1666a71e2820d3cc5c2273bb6cd0/vae/flux2-vae.safetensors",
+  "bytes": 336211292,
+  "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+  "verified": true,
+  "elapsed_seconds": 102.43699999997625
+}

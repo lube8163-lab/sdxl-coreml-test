@@ -1,0 +1,114 @@
+[
+  {
+    "profile": "still-life-seed42",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.016762861862681274,
+    "psnr_db": 31.26737103973561,
+    "ssim_7x7": 0.9279370333530564
+  },
+  {
+    "profile": "still-life-seed42",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.03231480417687909,
+    "psnr_db": 26.44094701228784,
+    "ssim_7x7": 0.8344286637371682
+  },
+  {
+    "profile": "still-life-seed1234",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.018843442630144504,
+    "psnr_db": 29.59949307793307,
+    "ssim_7x7": 0.92590095145279
+  },
+  {
+    "profile": "still-life-seed1234",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.0354085735246247,
+    "psnr_db": 25.340519128510223,
+    "ssim_7x7": 0.8360088344183588
+  },
+  {
+    "profile": "geometry-seed42",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.02605977276571436,
+    "psnr_db": 27.555700197085393,
+    "ssim_7x7": 0.9479526422763673
+  },
+  {
+    "profile": "geometry-seed42",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.05205622654335171,
+    "psnr_db": 21.553379696811042,
+    "ssim_7x7": 0.8699990584532017
+  },
+  {
+    "profile": "geometry-seed1234",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.014112320444942301,
+    "psnr_db": 33.31054407492955,
+    "ssim_7x7": 0.9663271396768991
+  },
+  {
+    "profile": "geometry-seed1234",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.02746407003963695,
+    "psnr_db": 26.70233253608448,
+    "ssim_7x7": 0.918622656049163
+  },
+  {
+    "profile": "materials-seed42",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.05872030819163602,
+    "psnr_db": 19.352178851172358,
+    "ssim_7x7": 0.7583883643492685
+  },
+  {
+    "profile": "materials-seed42",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.07670253678864124,
+    "psnr_db": 18.154744656091587,
+    "ssim_7x7": 0.6410612974723081
+  },
+  {
+    "profile": "materials-seed1234",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.19118461858213334,
+    "psnr_db": 12.019584646636606,
+    "ssim_7x7": 0.5134725460993667
+  },
+  {
+    "profile": "materials-seed1234",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.18469660141888786,
+    "psnr_db": 12.263700310254338,
+    "ssim_7x7": 0.46583744760246915
+  },
+  {
+    "profile": "sign-seed42",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.0362147611730239,
+    "psnr_db": 23.608376880648095,
+    "ssim_7x7": 0.824696097030327
+  },
+  {
+    "profile": "sign-seed42",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.08769266465130975,
+    "psnr_db": 16.678744403841282,
+    "ssim_7x7": 0.5365108235117823
+  },
+  {
+    "profile": "sign-seed1234",
+    "steps": 8,
+    "pixel_mae_0_to_1": 0.06345841152216096,
+    "psnr_db": 18.433702430231293,
+    "ssim_7x7": 0.691893901223799
+  },
+  {
+    "profile": "sign-seed1234",
+    "steps": 4,
+    "pixel_mae_0_to_1": 0.10568395876416974,
+    "psnr_db": 15.317105122313333,
+    "ssim_7x7": 0.500256860387131
+  }
+]

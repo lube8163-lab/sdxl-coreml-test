@@ -1,0 +1,7 @@
+{
+  "scope": "One real FP16 Qwen layer, actual extracted INT4 vs CoreAI, random input; not image quality",
+  "relative_rmse": 0.00040501324110664427,
+  "max_absolute_error": 0.001953125,
+  "finite": true,
+  "passed": true
+}

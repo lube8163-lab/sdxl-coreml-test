@@ -1,0 +1,37 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "install",
+      "app",
+      "--device",
+      "YOUR_DEVICE_UDID",
+      "--json-output",
+      "/Users/REDACTED/.codex/tmp/flux3-steps-20261018/install.json",
+      "/Users/REDACTED/.codex/tmp/flux3-steps-20261018/device-build/Build/Products/Release-iphoneos/Flux3GenerationProbe.app"
+    ],
+    "commandType" : "devicectl.device.install.app",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 5,
+    "outcome" : "success",
+    "version" : "642.16"
+  },
+  "result" : {
+    "deviceIdentifier" : "F4356C14-E61A-5340-9938-4E443BF06F25",
+    "installedApplications" : [
+      {
+        "bundleID" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+        "databaseSequenceNumber" : 3452,
+        "databaseUUID" : "3DFC166D-21D5-4348-AA7C-76CB85E15BA5",
+        "installationURL" : "file:///private/var/containers/Bundle/Application/9D972F1C-F8E4-4F68-B36E-476B19D37AB3/Flux3GenerationProbe.app/",
+        "launchServicesIdentifier" : "unknown",
+        "options" : {
+
+        }
+      }
+    ]
+  }
+}

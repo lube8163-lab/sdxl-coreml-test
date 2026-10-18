@@ -1,0 +1,91 @@
+--- /Users/REDACTED/.codex/tmp/flux3-publication-20261018/repository/measurements/2026-10-18/flux3-coreai-precompute-iphone14/GenerationProbe-precompute.swift	2026-10-18 13:54:15
++++ /Users/REDACTED/.codex/tmp/flux3-publication-20261018/repository/Experiments/Flux3CoreAI/GenerationProbe.swift	2026-10-18 13:54:45
+@@ -42,6 +42,25 @@
+ private struct GroupPlan: Decodable { let groups: [ExecutionGroup] }
+ 
+ private enum ProbeError: Error { case missingAsset(String), invalidData(String), invalidOutput(String) }
++
++private func fileSHA256(_ url: URL) async throws -> String {
++    // Multi-GB integrity checks must yield the main actor while the launch scene
++    // appears. Keep the complete SHA check, with bounded temporary storage.
++    try await Task.detached(priority: .userInitiated) {
++        let file = try FileHandle(forReadingFrom: url)
++        defer { try? file.close() }
++        var hasher = SHA256()
++        while true {
++            let count = try autoreleasepool { () throws -> Int in
++                guard let bytes = try file.read(upToCount: 1 << 20), !bytes.isEmpty else { return 0 }
++                hasher.update(data: bytes)
++                return bytes.count
++            }
++            if count == 0 { break }
++        }
++        return hasher.finalize().map { String(format: "%02x", $0) }.joined()
++    }.value
++}
+ 
+ private func option(_ name: String) -> String? {
+     ProcessInfo.processInfo.arguments.first(where: { $0.hasPrefix(name + "=") }).map { String($0.dropFirst(name.count + 1)) }
+@@ -326,12 +345,10 @@
+               let modsShape = metadata["mods_shape"] as? [Int] else { throw ProbeError.invalidData("block smoke") }
+         stage("実重みINT4ブロックを確認中")
+         for (relative, hash) in hashes {
+-            let bytes = try Data(contentsOf: root.appendingPathComponent(component + ".aimodel").appendingPathComponent(relative), options: .mappedIfSafe)
+-            guard SHA256.hash(data: bytes).map({ String(format: "%02x", $0) }).joined() == hash else { throw ProbeError.invalidData(relative) }
++            guard try await fileSHA256(root.appendingPathComponent(component + ".aimodel").appendingPathComponent(relative)) == hash else { throw ProbeError.invalidData(relative) }
+         }
+         for (relative, hash) in fixtureHashes {
+-            let bytes = try Data(contentsOf: root.appendingPathComponent(relative))
+-            guard SHA256.hash(data: bytes).map({ String(format: "%02x", $0) }).joined() == hash else { throw ProbeError.invalidData(relative) }
++            guard try await fileSHA256(root.appendingPathComponent(relative)) == hash else { throw ProbeError.invalidData(relative) }
+         }
+         let inputs = ["hidden": try array(loadFloats(root.appendingPathComponent("hidden.f32")), shape: hiddenShape),
+                       "mods": try array(loadFloats(root.appendingPathComponent("mods.f32")), shape: modsShape)]
+@@ -434,21 +451,21 @@
+             report["original_prompt"] = plan.caption.originalPrompt
+             report["expanded_caption"] = plan.caption.expandedCaption
+             report["seed"] = 42; report["steps"] = 16; report["text_length"] = plan.caption.textLength
++            let verificationStart = ProcessInfo.processInfo.systemUptime
++            report["asset_verification_mode"] = "background-streamed-sha256-1mib"
+             stage("モデルのハッシュを確認中")
+             let activeComponents = plan.components.filter { groups.isEmpty || !["image_", "text_", "shared_"].contains(where: $0.component.hasPrefix) }
+             for component in activeComponents {
+                 let asset = root.appendingPathComponent(component.component + ".aimodel", isDirectory: true)
+                 for (relative, hash) in component.assetFilesSha256 {
+-                    let bytes = try Data(contentsOf: asset.appendingPathComponent(relative), options: .mappedIfSafe)
+-                    let actual = SHA256.hash(data: bytes).map { String(format: "%02x", $0) }.joined()
++                    let actual = try await fileSHA256(asset.appendingPathComponent(relative))
+                     guard actual == hash else { throw ProbeError.invalidData(component.component + "/" + relative) }
+                 }
+             }
+             if let groupRoot {
+                 for group in groups {
+                     for (relative, hash) in group.assetFilesSha256 {
+-                        let bytes = try Data(contentsOf: groupRoot.appendingPathComponent(group.component + ".aimodel").appendingPathComponent(relative), options: .mappedIfSafe)
+-                        guard SHA256.hash(data: bytes).map({ String(format: "%02x", $0) }).joined() == hash else { throw ProbeError.invalidData(group.component + "/" + relative) }
++                        guard try await fileSHA256(groupRoot.appendingPathComponent(group.component + ".aimodel").appendingPathComponent(relative)) == hash else { throw ProbeError.invalidData(group.component + "/" + relative) }
+                     }
+                 }
+             }
+@@ -458,18 +475,17 @@
+                 let part = try decoder.decode(Component.self, from: Data(contentsOf: folder.appendingPathComponent("input_image.json")))
+                 guard part.component == "input_image", part.computeDtype == "bfloat16" else { throw ProbeError.invalidData("image input slice") }
+                 for (relative, expected) in part.assetFilesSha256 {
+-                    let bytes = try Data(contentsOf: folder.appendingPathComponent("input_image.aimodel").appendingPathComponent(relative), options: .mappedIfSafe)
+-                    guard SHA256.hash(data: bytes).map({ String(format: "%02x", $0) }).joined() == expected else { throw ProbeError.invalidData("image input slice hash") }
++                    guard try await fileSHA256(folder.appendingPathComponent("input_image.aimodel").appendingPathComponent(relative)) == expected else { throw ProbeError.invalidData("image input slice hash") }
+                 }
+                 report["image_input_slice_verified"] = true
+             }
+             let fixture = root.appendingPathComponent("fixture", isDirectory: true)
+             for (relative, hash) in plan.fixtureFilesSha256 {
+-                let bytes = try Data(contentsOf: fixture.appendingPathComponent(relative))
+-                let actual = SHA256.hash(data: bytes).map { String(format: "%02x", $0) }.joined()
++                let actual = try await fileSHA256(fixture.appendingPathComponent(relative))
+                 guard actual == hash else { throw ProbeError.invalidData(relative) }
+             }
+             report["asset_hashes_verified"] = true
++            report["asset_verification_seconds"] = ProcessInfo.processInfo.systemUptime - verificationStart
+             let safetyURL = Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc")
+             let checker = ImageSafetyChecker(modelURL: safetyURL)
+             try await checker.prepare()

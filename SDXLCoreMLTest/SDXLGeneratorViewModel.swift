@@ -42,6 +42,16 @@ enum PromptExample: String, CaseIterable, Identifiable {
 @MainActor
 final class SDXLGeneratorViewModel: ObservableObject {
     @Published var prompt = PromptExample.robot.prompt
+    @Published private(set) var selectedModel: GenerationModel
+    @Published var selectedSteps = 4 {
+        didSet {
+            if selectedModel.availableSteps.contains(selectedSteps) {
+                UserDefaults.standard.set(selectedSteps, forKey: "generationSteps." + selectedModel.rawValue)
+            }
+        }
+    }
+    @Published private(set) var lastResultModel: GenerationModel?
+    @Published private(set) var lastResultSteps: Int?
     @Published var seedMode: SeedMode = .random
     @Published var manualSeedText = ""
     @Published private(set) var isGenerating = false
@@ -60,7 +70,7 @@ final class SDXLGeneratorViewModel: ObservableObject {
     @Published private(set) var currentStep = 0
     @Published private(set) var totalSteps = 0
 
-    private let generator: LocalFluxGenerator
+    private var generator: LocalImageGenerator
     private var prepareTask: Task<Void, Never>?
     private var generationTask: Task<Void, Never>?
     private var cleanupTask: Task<Void, Never>?
@@ -69,11 +79,41 @@ final class SDXLGeneratorViewModel: ObservableObject {
     private var checkingOutput = false
 
     init() {
-        generator = LocalFluxGenerator(modelDirectory: FluxModelPackage.installationDirectory,
+        let model = GenerationModel(rawValue: UserDefaults.standard.string(forKey: "selectedGenerationModelV1") ?? "") ?? .flux2
+        selectedModel = model
+        let saved = UserDefaults.standard.integer(forKey: "generationSteps." + model.rawValue)
+        selectedSteps = model.availableSteps.contains(saved) ? saved : model.defaultSteps
+        generator = LocalImageGenerator(model: model, modelDirectory: model.package.installationDirectory,
             safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"))
     }
 
-    var modelSummaryText: String { "FLUX.2 Klein / 512×512" }
+    func activateModel(_ model: GenerationModel) {
+        guard !isGenerating else { return }
+        guard model != selectedModel else { preloadResourcesIfNeeded(); return }
+        let previous = generator, previousCleanup = cleanupTask, preparation = prepareTask
+        preparation?.cancel()
+        isReleasingResources = true
+        hasPreloadedResources = false
+        cleanupTask = Task { [weak self] in
+            await previousCleanup?.value
+            await preparation?.value
+            await previous.unload()
+            guard let self else { return }
+            selectedModel = model
+            let saved = UserDefaults.standard.integer(forKey: "generationSteps." + model.rawValue)
+            selectedSteps = model.availableSteps.contains(saved) ? saved : model.defaultSteps
+            generator = LocalImageGenerator(model: model, modelDirectory: model.package.installationDirectory,
+                safetyModelURL: Bundle.main.url(forResource: "ImageSafetyClassifier", withExtension: "mlmodelc"))
+            cleanupTask = nil
+            isReleasingResources = false
+            if !isBackgrounded { preloadResourcesIfNeeded() }
+        }
+    }
+
+    var modelSummaryText: String { "\(selectedModel.title) / 512×512 / \(selectedSteps)ステップ" }
+    var lastResultSummaryText: String {
+        "\(lastResultModel?.title ?? selectedModel.title) / 512×512 / \(lastResultSteps ?? selectedSteps)ステップ"
+    }
     var promptHintText: String { "例: a small cat in a Tokyo cafe, soft morning light" }
     var promptGuidanceText: String { "描きたい内容を入力してください。英語で具体的に書くと意図が伝わりやすくなります。" }
     var lastUsedSeedText: String { lastUsedSeed.map(String.init) ?? "まだ生成していません" }
@@ -83,7 +123,20 @@ final class SDXLGeneratorViewModel: ObservableObject {
     }
     var isBusy: Bool { isGenerating || isPreparing || isReleasingResources }
 
-    func selectExample(_ example: PromptExample) { prompt = example.prompt }
+    func selectExample(_ example: PromptExample) {
+        if selectedModel == .flux3 {
+            switch example {
+            case .stillLife:
+                prompt = "A realistic still-life photograph on an oak table beside a window. A ripe red apple sits on the left and a small blue glazed ceramic mug with one handle facing right sits on the right. Soft daylight enters from the left, showing gentle shadows, wood grain, and ceramic texture. A softly blurred cream wall fills the background. Both objects are fully visible. Natural colors, no people or lettering."
+            case .landscape:
+                prompt = "A realistic landscape photograph of a quiet mountain lake at sunrise. Snowy peaks and dark green pine trees reflect in the still water. Pale mist floats above the lake. Warm golden light touches the mountain tops while the foreground stays cool and shaded. A small rocky shore frames the lower edge. A wide, balanced composition with natural colors, fine details, and no people or text."
+            case .robot:
+                prompt = "A cinematic photograph of a small friendly robot walking along a Tokyo side street at night. The robot has a rounded white metal body, two legs, and a softly glowing blue face. Its full body is visible in the center. Warm shop lights and blue neon reflect on the wet pavement. The background buildings are softly blurred. Detailed metal surfaces, gentle atmospheric lighting, no people, no readable signs."
+            case .illustration:
+                prompt = "A watercolor illustration of a small orange cat sitting beside a bright window. Two green potted plants rest on the windowsill. Warm afternoon sunlight falls from the left across a pale wooden floor. The cat is fully visible near the center and looks toward the window. Soft paper texture, delicate brush strokes, natural warm colors, a calm uncluttered composition, and no text."
+            }
+        } else { prompt = example.prompt }
+    }
 
     func preloadResourcesIfNeeded() {
         isBackgrounded = false
@@ -93,7 +146,7 @@ final class SDXLGeneratorViewModel: ObservableObject {
         isCancellationRequested = false
         operationStartedAt = Date()
         progressTitle = "画像生成の準備中"
-        progressDetail = "安全機能とモデルを準備しています。初回は数分かかることがあります。画面を開いたままお待ちください。"
+        progressDetail = "安全機能と選択したモデルを準備しています。初回は時間がかかることがあります。"
         let preparedPrompt = prompt.trimmingCharacters(in: .whitespacesAndNewlines)
         prepareTask = Task { [weak self] in
             guard let self else { return }
@@ -168,6 +221,7 @@ final class SDXLGeneratorViewModel: ObservableObject {
             showError(error)
             return
         }
+        let usedModel = selectedModel, usedSteps = selectedSteps
         let id = UUID()
         operationID = id
         checkingOutput = false
@@ -177,17 +231,19 @@ final class SDXLGeneratorViewModel: ObservableObject {
         currentStep = 0
         totalSteps = 0
         progressTitle = "生成準備中"
-        progressDetail = "モデルを準備しています。初回や準備し直す際は時間がかかることがあります。"
+        progressDetail = "文章とモデルを準備しています。初回は時間がかかることがあります。"
         let start = Date()
         generationTask = Task { [weak self] in
             guard let self else { return }
             defer { isGenerating = false; isCancellationRequested = false; operationStartedAt = nil; generationTask = nil }
             do {
-                let approved = try await generator.generate(prompt: text, seed: seed) { [weak self] progress in
+                let approved = try await generator.generate(prompt: text, seed: seed, steps: usedSteps) { [weak self] progress in
                     Task { @MainActor in self?.receive(progress, operation: id) }
                 }
                 try Task.checkCancellation()
                 guard !isBackgrounded else { throw CancellationError() }
+                lastResultModel = usedModel
+                lastResultSteps = usedSteps
                 lastUsedSeed = seed
                 lastResultPrompt = text
                 result = approved
@@ -213,7 +269,7 @@ final class SDXLGeneratorViewModel: ObservableObject {
         switch progress {
         case .preparing:
             progressTitle = "生成準備中"
-            progressDetail = "モデルを準備しています。初回や準備し直す際は時間がかかることがあります。"
+            progressDetail = "文章とモデルを準備しています。初回は時間がかかることがあります。"
         case .denoising(let step, let total):
             guard !checkingOutput else { return }
             progressTitle = "画像を生成中"

@@ -1,0 +1,74 @@
+{
+  "hardware_model": "iPhone18,3",
+  "os": "27.0.1 (24A446)",
+  "physical_memory_bytes": 8045641728,
+  "conditions": "512x512,16steps,seed42,fixed caption,Release source17609b25,Groups8/shared4/cache0",
+  "same_build_runs": {
+    "control": {
+      "runs": [
+        "control-02"
+      ],
+      "n": 1,
+      "model_pipeline_seconds": {
+        "mean": 98.76416279166006,
+        "min": 98.76416279166006,
+        "max": 98.76416279166006
+      },
+      "denoising_seconds": {
+        "mean": 93.35543825000059,
+        "min": 93.35543825000059,
+        "max": 93.35543825000059
+      },
+      "sampled_peak_footprint_bytes": {
+        "mean": 1605718160,
+        "min": 1605718160,
+        "max": 1605718160
+      }
+    },
+    "precompute": {
+      "runs": [
+        "precompute-01",
+        "precompute-02"
+      ],
+      "n": 2,
+      "model_pipeline_seconds": {
+        "mean": 68.45548350003082,
+        "min": 67.7500507083023,
+        "max": 69.16091629175935
+      },
+      "denoising_seconds": {
+        "mean": 60.412941625050735,
+        "min": 59.80447591666598,
+        "max": 61.02140733343549
+      },
+      "sampled_peak_footprint_bytes": {
+        "mean": 1182879612,
+        "min": 1180864368,
+        "max": 1184894856
+      }
+    }
+  },
+  "pipeline_reduction_fraction": 0.306879321759295,
+  "sampled_peak_reduction_fraction": 0.2633329799296783,
+  "all_completed_png_sha256": "f71fb682f82e7c16d4eba4a3bfd43312637e9b8c12789f130f58eb9c923da674",
+  "completed_runs": 6,
+  "matches_previous_iphone17_png": true,
+  "all_step_extrema_identical": true,
+  "six_view_safety_passed_all_runs": true,
+  "thermal_state_counts": {
+    "0": 15,
+    "1": 66,
+    "2": 15,
+    "3": 0
+  },
+  "low_power_mode_any_run": false,
+  "excluded": [
+    "Initial b68 watchdog failure before inference",
+    "Fixed-build warmup excluded from warm means",
+    "control-03: thermal state serious in12/16steps",
+    "control-04 also reached serious; only one matched control available"
+  ],
+  "selection_rule": "Retain all raw runs. Compare complete non-warmup runs without serious/critical thermal steps; rule set before control04 completed.",
+  "original_two_control_unfiltered_mean_seconds": 113.46104281250155,
+  "scope": "Model wall time includes Qwen, precompute, DiT,VAE; excludes launch, hashes and output safety. Physical footprint is sampled, not isolated GPU allocation."
+}

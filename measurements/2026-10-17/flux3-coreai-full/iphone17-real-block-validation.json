@@ -1,0 +1,38 @@
+{
+  "asset_hashes_verified" : true,
+  "available_process_memory_bytes" : 3297196216,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "coreai_execution" : true,
+  "coreai_vs_quantized_pytorch_relative_rmse" : 0.00087677504234440987,
+  "finite" : true,
+  "free_storage_bytes_at_start" : 31375360000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : false,
+  "image_generated" : false,
+  "image_saved" : false,
+  "input_shape" : [
+    1184,
+    3072
+  ],
+  "max_absolute_error" : 2,
+  "maximum_observed_sample_gap_ms" : 50.986958318389952,
+  "memory_sample_count" : 31,
+  "mode" : "one_real_INT4_block_numeric_smoke",
+  "numeric_smoke_passed" : true,
+  "numeric_smoke_seconds" : 1.3594722499838099,
+  "os_version" : "27.0.1",
+  "physical_footprint_bytes" : 242796360,
+  "physical_memory_bytes" : 8045641728,
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "sampled_peak_physical_footprint_bytes" : 254150496,
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4 \/ other weights FP16",
+  "source_sha256" : "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+  "stage" : "実重みINT4の数値確認が完了しました",
+  "started_at" : "2026-10-17T15:15:41Z",
+  "step_records" : [
+
+  ],
+  "uptime" : 594685.09357033332
+}

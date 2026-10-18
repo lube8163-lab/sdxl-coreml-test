@@ -1,0 +1,18 @@
+{
+  "source_sha256": "ea8ac4ab0535c4455b1518e8dddf69bcacd6e9c686eaf61bc4d6d605c30cd705",
+  "xcode": "27.0 (27A266a)",
+  "target_configuration": "Release",
+  "target_os": "iOS 27.0.1",
+  "model_plan_sha256": "90c8b69f8f6419a82445ef37f208404597d15be29f2afa5cfcd7e8a732f3e52f",
+  "native_bf16_bridge_local_roundtrip_passed": true,
+  "roundtrip_values": [
+    0,
+    1,
+    -1.25,
+    131072,
+    70144,
+    0.0009765625
+  ],
+  "ties_to_even_verified": true,
+  "memory_sampling": "phys_footprint requested every 50ms; observed gaps are reported; not an instantaneous maximum"
+}

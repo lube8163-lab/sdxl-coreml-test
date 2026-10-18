@@ -1,0 +1,313 @@
+{
+  "all_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 44,
+    "calls" : 74,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.041598342359066e-06,
+      "conditioning.function_load" : 1.2261242083040997,
+      "conditioning.inference_await" : 0.34363174985628575,
+      "conditioning.model_load" : 0.0035954583436250687,
+      "conditioning.total" : 1.5734705834183842,
+      "denoising.eviction" : 9.1708498075604439e-05,
+      "denoising.function_load" : 4.4493875418556854,
+      "denoising.inference_await" : 11.909783583250828,
+      "denoising.model_load" : 0.033456916804425418,
+      "denoising.total" : 16.394434291520156,
+      "text.eviction" : 3.808317705988884e-05,
+      "text.function_load" : 3.6769897497724742,
+      "text.inference_await" : 0.52772537502460182,
+      "text.model_load" : 0.053274666424840689,
+      "text.total" : 4.2584967081202194,
+      "vae.eviction" : 1.2499513104557991e-06,
+      "vae.function_load" : 0.13902629166841507,
+      "vae.inference_await" : 0.6181054167682305,
+      "vae.model_load" : 0.0082320000510662794,
+      "vae.total" : 0.76541620830539614
+    }
+  },
+  "asset_hashes_verified" : true,
+  "asset_verification_mode" : "background-streamed-sha256-1mib",
+  "asset_verification_seconds" : 3.4373434166191146,
+  "available_process_memory_bytes" : 3293100168,
+  "bf16_bridge_verified" : true,
+  "bundle_id" : "com.tasuku.sdxlcoremltest.flux3generationprobe",
+  "cached_text_step_count" : 4,
+  "coreai_execution" : true,
+  "denoising_component_metrics" : {
+    "cache_hits" : 30,
+    "cache_misses" : 43,
+    "calls" : 73,
+    "retained_components" : [
+      "image_g00",
+      "input_image",
+      "join",
+      "output",
+      "shared_g00",
+      "shared_g01",
+      "shared_g02",
+      "shared_g03"
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.041598342359066e-06,
+      "conditioning.function_load" : 1.2261242083040997,
+      "conditioning.inference_await" : 0.34363174985628575,
+      "conditioning.model_load" : 0.0035954583436250687,
+      "conditioning.total" : 1.5734705834183842,
+      "denoising.eviction" : 9.1708498075604439e-05,
+      "denoising.function_load" : 4.4493875418556854,
+      "denoising.inference_await" : 11.909783583250828,
+      "denoising.model_load" : 0.033456916804425418,
+      "denoising.total" : 16.394434291520156,
+      "text.eviction" : 3.808317705988884e-05,
+      "text.function_load" : 3.6769897497724742,
+      "text.inference_await" : 0.52772537502460182,
+      "text.model_load" : 0.053274666424840689,
+      "text.total" : 4.2584967081202194
+    }
+  },
+  "denoising_seconds" : 16.483465333352797,
+  "diffusion_compute_dtype" : "bfloat16",
+  "execution_groups" : [
+    {
+      "component" : "image_g00",
+      "members" : [
+        "image_00",
+        "image_01",
+        "image_02",
+        "image_03",
+        "image_04"
+      ],
+      "mode" : "image"
+    },
+    {
+      "component" : "text_g00",
+      "members" : [
+        "text_00",
+        "text_01",
+        "text_02",
+        "text_03",
+        "text_04"
+      ],
+      "mode" : "text"
+    },
+    {
+      "component" : "shared_g00",
+      "members" : [
+        "shared_00",
+        "shared_01",
+        "shared_02",
+        "shared_03",
+        "shared_04",
+        "shared_05",
+        "shared_06",
+        "shared_07"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g01",
+      "members" : [
+        "shared_08",
+        "shared_09",
+        "shared_10",
+        "shared_11",
+        "shared_12",
+        "shared_13",
+        "shared_14",
+        "shared_15"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g02",
+      "members" : [
+        "shared_16",
+        "shared_17",
+        "shared_18",
+        "shared_19",
+        "shared_20",
+        "shared_21",
+        "shared_22",
+        "shared_23"
+      ],
+      "mode" : "shared"
+    },
+    {
+      "component" : "shared_g03",
+      "members" : [
+        "shared_24",
+        "shared_25",
+        "shared_26",
+        "shared_27"
+      ],
+      "mode" : "shared"
+    }
+  ],
+  "execution_kind" : "grouped",
+  "execution_profile" : "automatic-groups8-shared-retained",
+  "expanded_caption" : "A close-up still-life photograph of a transparent clear glass bowl containing a small bunch of green grapes on a dark walnut table. A polished stainless steel spoon lies beside the bowl on the right, and a folded cream linen napkin rests on the left. Show the glass rim, refraction through the bowl, small highlights on the grape skins, the reflective spoon, and fine woven threads in the cloth. Gentle daylight comes from a window outside the frame. Keep the arrangement uncluttered and realistic, with natural colors, no people, and no lettering.",
+  "experiment_label" : "stepcompare-20261018-materials-seed1234-s4",
+  "finished_at" : "2026-10-18T04:28:55Z",
+  "fixture_profile" : "materials-seed1234",
+  "fixture_profile_sha256" : "ac3705863ab2f76564de9b20d5f0ba7f10fd577671c1b2dacf3070b0ef1a6410",
+  "free_storage_bytes_at_start" : 8560640000,
+  "hardware_model" : "iPhone18,3",
+  "image_approved" : true,
+  "image_filename" : "flux3-512-seed42-approved.png",
+  "image_generated" : true,
+  "image_input_slice_verified" : true,
+  "image_saved" : true,
+  "image_sha256" : "c2468759908477642a9f2d00690231bfc1915147edc034eaca8c4c2262a76ae1",
+  "input_safety_passed" : true,
+  "input_safety_seconds" : 0.0031997916521504521,
+  "low_power_mode" : false,
+  "maximum_observed_sample_gap_ms" : 51.07808334287256,
+  "memory_sample_count" : 538,
+  "model_cache_capacity" : 0,
+  "original_prompt" : "Green grapes in a glass bowl, a metal spoon, and folded linen on dark wood.",
+  "os_version" : "27.0.1",
+  "output_safety_seconds" : 0.12391154165379703,
+  "physical_footprint_bytes" : 246892408,
+  "physical_memory_bytes" : 8045641728,
+  "pinned_components" : [
+    "image_g00",
+    "input_image",
+    "join",
+    "output",
+    "shared_g00",
+    "shared_g01",
+    "shared_g02",
+    "shared_g03"
+  ],
+  "pinned_heavy_block_count" : 33,
+  "pinned_shared_group_count" : 4,
+  "precompute_component_metrics" : {
+    "cache_hits" : 6,
+    "cache_misses" : 35,
+    "calls" : 41,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "conditioning.eviction" : 5.041598342359066e-06,
+      "conditioning.function_load" : 1.2261242083040997,
+      "conditioning.inference_await" : 0.34363174985628575,
+      "conditioning.model_load" : 0.0035954583436250687,
+      "conditioning.total" : 1.5734705834183842,
+      "text.eviction" : 3.808317705988884e-05,
+      "text.function_load" : 3.6769897497724742,
+      "text.inference_await" : 0.52772537502460182,
+      "text.model_load" : 0.053274666424840689,
+      "text.total" : 4.2584967081202194
+    }
+  },
+  "preferred_compute_unit" : "GPU; fallback allowed",
+  "real_checkpoint_used" : true,
+  "requested_sample_interval_ms" : 50,
+  "run_to_saved_seconds" : 26.883070624899119,
+  "safety_decisions" : [
+    {
+      "nsfl" : 0.033758107572793961,
+      "nsfw" : 0.042965736240148544,
+      "sfw" : 0.92327612638473511
+    },
+    {
+      "nsfl" : 0.037930194288492203,
+      "nsfw" : 0.042050376534461975,
+      "sfw" : 0.92001938819885254
+    },
+    {
+      "nsfl" : 0.031431764364242554,
+      "nsfw" : 0.034746862947940826,
+      "sfw" : 0.93382138013839722
+    },
+    {
+      "nsfl" : 0.036736682057380676,
+      "nsfw" : 0.036630786955356598,
+      "sfw" : 0.92663252353668213
+    },
+    {
+      "nsfl" : 0.030229117721319199,
+      "nsfw" : 0.04348759725689888,
+      "sfw" : 0.92628329992294312
+    },
+    {
+      "nsfl" : 0.034863036125898361,
+      "nsfw" : 0.031276963651180267,
+      "sfw" : 0.93386006355285645
+    }
+  ],
+  "safety_preparation_seconds" : 0.027093958342447877,
+  "safety_revision" : "swiftformer-1d648298-sixviews-all-sfw90-v2",
+  "sampled_peak_physical_footprint_bytes" : 1168314176,
+  "sampling_schedule" : [
+    1,
+    0.95410740375518799,
+    0.87389659881591797,
+    0.69788515567779541,
+    0
+  ],
+  "sampling_schedule_source" : "reference-alpha6.93-linspace-full-1-to-0",
+  "scope" : "Fixed expanded caption, offline 512px text-to-image; CoreAI linear INT4; per-component floating-point precision in model plan",
+  "seed" : 1234,
+  "stage" : "生成と安全性確認が完了しました",
+  "started_at" : "2026-10-18T04:28:28Z",
+  "step_records" : [
+    {
+      "latent_max" : 3.9636867046356201,
+      "latent_min" : -3.9918186664581299,
+      "seconds" : 6.9214126666774973,
+      "step" : 1,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.6152896881103516,
+      "latent_min" : -3.7111084461212158,
+      "seconds" : 3.3583494166377932,
+      "step" : 2,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 3.2130429744720459,
+      "latent_min" : -3.2113187313079834,
+      "seconds" : 3.0773140416713431,
+      "step" : 3,
+      "thermal_state" : 1
+    },
+    {
+      "latent_max" : 4.3258752822875977,
+      "latent_min" : -4.6282811164855957,
+      "seconds" : 3.1248536249622703,
+      "step" : 4,
+      "thermal_state" : 1
+    }
+  ],
+  "steps" : 4,
+  "text_component_metrics" : {
+    "cache_hits" : 0,
+    "cache_misses" : 33,
+    "calls" : 33,
+    "retained_components" : [
+
+    ],
+    "seconds" : {
+      "text.eviction" : 3.808317705988884e-05,
+      "text.function_load" : 3.6769897497724742,
+      "text.inference_await" : 0.52772537502460182,
+      "text.model_load" : 0.053274666424840689,
+      "text.total" : 4.2584967081202194
+    }
+  },
+  "text_encoding_seconds" : 4.3431024583987892,
+  "text_length" : 160,
+  "text_precompute_enabled" : true,
+  "text_precompute_seconds" : 1.6037248333450407,
+  "thermal_state_at_start" : 1,
+  "uptime" : 636445.16281954176,
+  "vae_seconds" : 0.77497987495735288,
+  "verified_active_component_count" : 43
+}
