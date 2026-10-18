@@ -11,8 +11,8 @@
 ```sh
 git clone https://github.com/lube8163-lab/sdxl-coreml-test.git
 cd sdxl-coreml-test
-# 公開資料のpublication.jsonに記載したsourceCommitへ固定する。
-git checkout YOUR_SOURCE_COMMIT
+# 実装と実機データを固定したコミット。
+git checkout 85db0c97f2ae37f82ee69b3fdbeb4de588732361
 python3 scripts/prepare_safety_assets.py
 python3 scripts/prepare_model_preview.py \
   --destination /tmp/local-image-preview \

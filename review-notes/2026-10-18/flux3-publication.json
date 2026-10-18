@@ -1,0 +1,22 @@
+{
+  "title": "FLUX.3 Image KleinをiPhoneで動かす：CoreAI INT4化と4ステップ生成の実測",
+  "date": "2026-10-18",
+  "sourceCommit": "85db0c97f2ae37f82ee69b3fdbeb4de588732361",
+  "sourceBranch": "codex/flux3-iphone-report",
+  "repository": "https://github.com/lube8163-lab/sdxl-coreml-test",
+  "zennDraftURL": "https://zenn.dev/articles/830a537cb29e16/edit",
+  "published": false,
+  "articleCharacters": 11093,
+  "articleSHA256": "70c84b1af9c43c30f46a7aaec79dacf7dddb0290262bab9a633613f2382f59ff",
+  "topics": [
+    "ios",
+    "swift",
+    "画像生成",
+    "量子化",
+    "coreai"
+  ],
+  "emoji": "📱",
+  "category": "Tech",
+  "referenceArticle": "https://zenn.dev/lube8163/articles/e24eda10d2a9be",
+  "scope": "Prepared GitHub reproduction materials and an unpublished Zenn draft. No App Store or MiM changes."
+}
