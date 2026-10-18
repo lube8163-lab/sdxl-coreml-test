@@ -18,5 +18,14 @@
   "emoji": "📱",
   "category": "Tech",
   "referenceArticle": "https://zenn.dev/lube8163/articles/e24eda10d2a9be",
-  "scope": "Prepared GitHub reproduction materials and an unpublished Zenn draft. No App Store or MiM changes."
+  "scope": "Prepared GitHub reproduction materials and an unpublished Zenn draft. No App Store or MiM changes.",
+  "pullRequestURL": "https://github.com/lube8163-lab/sdxl-coreml-test/pull/2",
+  "pullRequestDraft": true,
+  "zennVerification": {
+    "savedAndReloaded": true,
+    "bodyClipboardSHA256Matched": true,
+    "previewImagesVisuallyVerified": 3,
+    "publishToggleEnabled": false,
+    "checkedAt": "2026-10-18T07:15:59.521006+00:00"
+  }
 }
